@@ -121,7 +121,8 @@ const complaints = [
     "Whyyy is it so hot in here???",
     "Did you remember to sign in?",
     "I rephrased this question 27 times and drew 4 visuals.",
-    "why is there a banana here"
+    "Why is there a banana here?",
+	"Don't forget the '+ c'."
 ];
 
 function randomGrab(array) {
