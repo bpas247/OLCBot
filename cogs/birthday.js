@@ -28,9 +28,7 @@ const birthday = (message, args, client, db) => {
             for (let row of result.rows) {
               if (row[0] == affectedUser) {
                 if (row[1] == date) {
-                  message.channel.send(
-                    "Name and date already in the database, so I'm not gonna re-add it."
-                  );
+                  return "Name and date already in the database, so I'm not gonna re-add it."
                 } else {
                   db.query(
                     "UPDATE birthday SET date = $1 WHERE id = $2",
@@ -38,9 +36,9 @@ const birthday = (message, args, client, db) => {
                     err => {
                       if (err) {
                         console.log(err);
-                        message.channel.send("Could not update entry.");
+                        return "Could not update entry.";
                       } else {
-                        message.channel.send("Updated entry!");
+                        return "Updated entry!";
                       }
                     }
                   );
@@ -57,18 +55,16 @@ const birthday = (message, args, client, db) => {
                 err => {
                   if (err) {
                     console.log(err);
-                    message.channel.send(
-                      "Something went wrong! yell at the dev!!!"
-                    );
+                    return "Something went wrong! yell at the dev!!!"
                   } else {
-                    message.channel.send("Successfully added birthday!");
+                    return "Successfully added birthday!";
                   }
                 }
               );
             }
           });
         } else {
-          message.channel.send("You didn't enter a valid date");
+          return "You didn't enter a valid date";
         }
       } else if (args.indexOf("ls") != -1) {
         const querySelect = {
@@ -93,7 +89,7 @@ const birthday = (message, args, client, db) => {
             out += "\n" + name + " - " + row[1];
           }
 
-          message.channel.send(out);
+          return out;
         });
       }
     }

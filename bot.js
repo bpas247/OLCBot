@@ -88,17 +88,23 @@ client.on(
 
     let operation = cogs.get(command);
 
+    // Default case
+    let outMessage = "Could not recognize command";
+
     if(operation !== undefined) {
       if(command == "say") {
-        operation(message, args);
+        outMessage = operation(message, args);
       } else if(command == "alive") {
-        operation(message, startDate);
+        outMessage = operation(startDate);
       } else if(command == "birthday") {
-        operation(message, args, client, db);
+        outMessage = operation(message, args, client, db);
       } else {
-        operation(message);
+        outMessage = operation();
       }
-    }
+    } 
+
+    // Send the message
+    message.channel.send(outMessage);
   },
   err => {
     if (err) {
