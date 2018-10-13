@@ -102,6 +102,8 @@ client.on(
       } else {
         outMessage = operation();
       }
+    } else {
+      message.channel.send("Command not recognized.");
     } 
     // Send the message
     if(outMessage !== undefined) {
