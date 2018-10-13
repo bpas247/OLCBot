@@ -1,5 +1,19 @@
 require('dotenv').config();
 
+// Load up the database
+const { Client } = require('pg');
+
+const db = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+db.connect((err) => {
+    if(err) {
+        console.log(err);
+    }
+});
+
 // Load up the discord.js library
 const Discord = require("discord.js");
 
@@ -22,7 +36,18 @@ client.on("ready", () => {
 
   // set the date
   startDate = new Date();
-});
+
+  // create the table (if it doesn't exist)
+  db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)', (err) => {
+      if(err) {
+          console.log(err);
+      }
+  });
+}, (err) => {
+    if(err) {
+        console.log(err);
+    }
+})
 
 client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
@@ -99,6 +124,85 @@ client.on("message", async message => {
       message.channel.send(out);
   }
 
+  if(command == "birthday") {
+      if(args.indexOf("add") != -1) {
+          var affectedUser = message.author.id;
+
+          var date = undefined;
+
+          args.forEach(arg => {
+              if(isValidDate(arg)) {
+                  date = arg;
+              }
+          });
+
+          if(date !== undefined) {
+            const querySelect = {
+                text:'SELECT id as name FROM birthday',
+                rowMode: 'array' 
+            };
+  
+            // Some really bad code coming up, brace yourselves...
+            // Querying to see if the user already exists in the database
+            db.query(querySelect, (err, result) => {
+                if(err) {
+                  console.log(err);
+                }
+
+                var isValid = true;
+    
+                for(let row of result.rows) {
+                    if(row[0] == affectedUser) {
+                        message.channel.send("Name already in the database, so I'm not gonna re-add it.");
+                        isValid = false;   
+                        break;       
+                    }
+                }
+                // If the user is valid, insert into the database
+                if(isValid) {
+                    db.query('INSERT into birthday (id, date) VALUES($1, $2)', [affectedUser, date], (err) => {
+                        if (err) {
+                            console.log(err);
+                            message.channel.send("Something went wrong! yell at the dev!!!");
+                        } else {
+                            message.channel.send("Successfully added birthday!");
+                        }
+                    });        
+                }          
+            });  
+          } else {
+              message.channel.send("You didn't enter a valid date");
+          }
+      }
+
+      if(args.indexOf("ls") != -1) {
+          const querySelect = {
+              text:'SELECT id as name, date as dBirthday FROM birthday',
+              rowMode: 'array' 
+          };
+
+          db.query(querySelect, (err, result) => {
+              if(err) {
+                  console.log(err);
+              }
+
+              var out = "List of everyone's birthday goes as follows:";
+
+              for(let row of result.rows) {
+                  var name = undefined;
+                  for(let user of client.users.array()) {
+                      if(user.id == row[0]) {
+                          name = user;
+                      }
+                  }
+                  out += "\n" + name + " - " + row[1];
+              }
+
+              message.channel.send(out);
+          });
+      }
+  }
+
   if(command == "help") {
       message.channel.send(
           "!ping - Tests to see if the bot is working\n"
@@ -106,9 +210,15 @@ client.on("message", async message => {
           + "!do - Tell the bot to do something\n"
           + "!complain - Generate a random complaint\n"
           + "!motivate - Generate a random motivation\n"
-          + "!alive - How long have I been alive for?"
+          + "!alive - How long have I been alive for?\n"
+          + "!birthday add MM/DD/YYYY - add a birthday to the list\n"
+          + "!birthday ls - list everyone's birthday"
         );
   }
+}, (err) => {
+    if(err) {
+        console.log(err);
+    }
 });
 
 const sass = [
@@ -142,5 +252,20 @@ const motivation = [
 function randomGrab(array) {
     return array[Math.floor(Math.random() * array.length)];
 };
+
+// Checks to see if a date follows the following format: mm/dd/yyyy
+function isValidDate(text) {
+    var t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+
+    if (t !== null) {
+        var m = +t[1], d = +t[2], y = +t[3];
+        var date = new Date(y, m - 1, d);
+
+        return date.getFullYear() === y 
+            && date.getMonth() === m - 1;
+    }
+
+    return false;
+}
 
 client.login(process.env.TOKEN);
