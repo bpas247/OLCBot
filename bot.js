@@ -89,7 +89,13 @@ client.on(
     let operation = cogs.get(command);
 
     if(operation !== undefined) {
-      operation(message, startDate);
+      if(command == "say") {
+        operation(message, args);
+      } else if(command == "alive") {
+        operation(message, startDate);
+      } else {
+        operation(message);
+      }
     } else if (command == "birthday") {
       if (args.indexOf("add") != -1) {
         var affectedUser = message.author.id;
