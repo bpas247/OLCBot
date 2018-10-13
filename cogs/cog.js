@@ -4,8 +4,8 @@ const cogs = new Map
   ([
     [
       "ping",
-      (message) => {
-        message.channel.send("Pong!");
+      () => {
+        return "Pong!";
       }
     ],
     [
@@ -112,8 +112,8 @@ const cogs = new Map
     ],
     [
       "birthday",
-      (message, args, client, db) => {
-        birthday(message, args, client, db);
+      (authorId, args, users, db, channel) => {
+        birthday(authorId, args, users, db, channel);
       }
     ]
   ]);

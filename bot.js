@@ -86,10 +86,10 @@ client.on(
       .split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    let operation = cogs.get(command);
-
     // Default case
     let outMessage = "Could not recognize command";
+
+    let operation = cogs.get(command);
 
     if(operation !== undefined) {
       if(command == "say") {
@@ -97,14 +97,17 @@ client.on(
       } else if(command == "alive") {
         outMessage = operation(startDate);
       } else if(command == "birthday") {
-        outMessage = operation(message, args, client, db);
+        operation(message.author.id, args, client.users.array(), db, message.channel);
+        outMessage = undefined;
       } else {
         outMessage = operation();
       }
     } 
-
     // Send the message
-    message.channel.send(outMessage);
+    if(outMessage !== undefined) {
+      console.log("got in here somehow");
+      message.channel.send(outMessage);
+    }
   },
   err => {
     if (err) {

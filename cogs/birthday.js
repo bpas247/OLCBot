@@ -1,6 +1,5 @@
-const birthday = (message, args, client, db) => {
+const birthday = (authorId, args, users, db, channel) => {
     if (args.indexOf("add") != -1) {
-        var affectedUser = message.author.id;
 
         var date = undefined;
 
@@ -26,19 +25,19 @@ const birthday = (message, args, client, db) => {
             var isValid = true;
 
             for (let row of result.rows) {
-              if (row[0] == affectedUser) {
+              if (row[0] == authorId) {
                 if (row[1] == date) {
-                  return "Name and date already in the database, so I'm not gonna re-add it."
+                  channel.send("Name and date already in the database, so I'm not gonna re-add it.");
                 } else {
                   db.query(
                     "UPDATE birthday SET date = $1 WHERE id = $2",
-                    [date, affectedUser],
+                    [date, authorId],
                     err => {
                       if (err) {
                         console.log(err);
-                        return "Could not update entry.";
+                        channel.send("Could not update entry.");
                       } else {
-                        return "Updated entry!";
+                        channel.send("Updated entry!");
                       }
                     }
                   );
@@ -51,13 +50,13 @@ const birthday = (message, args, client, db) => {
             if (isValid) {
               db.query(
                 "INSERT into birthday (id, date) VALUES($1, $2)",
-                [affectedUser, date],
+                [authorId, date],
                 err => {
                   if (err) {
                     console.log(err);
-                    return "Something went wrong! yell at the dev!!!"
+                    channel.send("Something went wrong! yell at the dev!!!");
                   } else {
-                    return "Successfully added birthday!";
+                    channel.send("Successfully added birthday!");
                   }
                 }
               );
@@ -75,13 +74,14 @@ const birthday = (message, args, client, db) => {
         db.query(querySelect, (err, result) => {
           if (err) {
             console.log(err);
+            channel.send("Something went wrong trying to access the database");
           }
 
           var out = "List of everyone's birthday goes as follows:";
 
           for (let row of result.rows) {
             var name = undefined;
-            for (let user of client.users.array()) {
+            for (let user of users) {
               if (user.id == row[0]) {
                 name = user;
               }
@@ -89,8 +89,10 @@ const birthday = (message, args, client, db) => {
             out += "\n" + name + " - " + row[1];
           }
 
-          return out;
+          channel.send(out);
         });
+      } else {
+        channel.send("Command for birthday could not be found");
       }
     }
 
