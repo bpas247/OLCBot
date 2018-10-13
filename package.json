@@ -9,13 +9,11 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
-    "husky": "^1.1.2",
-    "lint-staged": "^7.3.0",
-    "pg": "^7.5.0",
-    "prettier": "^1.14.3"
+    "pg": "^7.5.0"
   },
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js",
+    "local": "heroku local"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -27,5 +25,11 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "devDependencies": {
+    "heroku": "^7.16.8",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
   }
 }
