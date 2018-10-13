@@ -1,3 +1,5 @@
+const birthday = require('./birthday.js').birthday;
+
 const cogs = new Map
   ([
     [
@@ -110,6 +112,12 @@ const cogs = new Map
           "!birthday add MM/DD/YYYY - add a birthday to the list\n" +
           "!birthday ls - list everyone's birthday"          
         )
+      }
+    ],
+    [
+      "birthday",
+      (message, args, client, db) => {
+        birthday(message, args, client, db);
       }
     ]
   ]);
