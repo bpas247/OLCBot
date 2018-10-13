@@ -9,9 +9,23 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
-    "pg": "^7.5.0"
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "pg": "^7.5.0",
+    "prettier": "^1.14.3"
   },
   "scripts": {
     "start": "node bot.js"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
