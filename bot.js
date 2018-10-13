@@ -138,7 +138,7 @@ client.on("message", async message => {
 
           if(date !== undefined) {
             const querySelect = {
-                text:'SELECT id as name FROM birthday',
+                text:'SELECT id as name, date as dBirthday FROM birthday',
                 rowMode: 'array' 
             };
   
@@ -153,9 +153,20 @@ client.on("message", async message => {
     
                 for(let row of result.rows) {
                     if(row[0] == affectedUser) {
-                        message.channel.send("Name already in the database, so I'm not gonna re-add it.");
+                        if(row[1] == date) {
+                            message.channel.send("Name and date already in the database, so I'm not gonna re-add it.");
+                        } else {
+                            db.query('UPDATE birthday SET date = $1 WHERE id = $2', [date, affectedUser], (err) => {
+                                if(err) {
+                                    console.log(err);
+                                    message.channel.send("Could not update entry.");
+                                } else {
+                                    message.channel.send("Updated entry!");
+                                }
+                            })
+                        }
                         isValid = false;   
-                        break;       
+                        break;
                     }
                 }
                 // If the user is valid, insert into the database
