@@ -3,6 +3,9 @@ require("dotenv").config();
 // Load up the database
 const { Client } = require("pg");
 
+// Import cogs
+const cogs = require("./cogs/cog.js").cogs;
+
 const db = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true
@@ -83,69 +86,11 @@ client.on(
       .split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    // Let's go with a few common example commands! Feel free to delete or change those.
+    let operation = cogs.get(command);
 
-    if (command === "ping") {
-      // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-      // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-      const m = await message.channel.send("Ping?");
-      m.edit(
-        `Pong! Latency is ${m.createdTimestamp -
-          message.createdTimestamp}ms. API Latency is ${Math.round(
-          client.ping
-        )}ms`
-      );
-    }
-
-    if (command === "say") {
-      // makes the bot say something and delete the message. As an example, it's open to anyone to use.
-      // To get the "message" itself we join the `args` back into a string with spaces:
-      const sayMessage = args.join(" ");
-      // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-      message.delete().catch(O_o => {});
-      // And we get the bot to say the thing:
-      message.channel.send(sayMessage);
-    }
-
-    if (command == "complain") {
-      message.channel.send(randomGrab(complaints));
-    }
-
-    if (command == "do") {
-      message.channel.send(randomGrab(sass));
-    }
-
-    if (command == "motivate") {
-      message.channel.send(randomGrab(motivation));
-    }
-
-    if (command == "alive") {
-      const currentTime = new Date();
-
-      var difference = Math.abs(startDate - currentTime);
-
-      var out = "I have been alive for: \n";
-
-      out += Math.floor(difference / (1000 * 60 * 60 * 24)) + " days, ";
-
-      difference -= days * 100 * 60 * 60 * 24;
-
-      out += Math.floor(difference / (1000 * 60 * 60)) + " hours, ";
-
-      difference -= hours * 1000 * 60 * 60;
-
-      out += Math.floor(difference / (1000 * 60)) + " minutes, ";
-
-      difference -= minutes * 1000 * 60;
-
-      out += Math.floor(difference / 1000) + " seconds.\n";
-
-      out += "Please don't reset me!";
-
-      message.channel.send(out);
-    }
-
-    if (command == "birthday") {
+    if(operation !== undefined) {
+      operation(message, startDate);
+    } else if (command == "birthday") {
       if (args.indexOf("add") != -1) {
         var affectedUser = message.author.id;
 
@@ -246,19 +191,6 @@ client.on(
         });
       }
     }
-
-    if (command == "help") {
-      message.channel.send(
-        "!ping - Tests to see if the bot is working\n" +
-          "!say - Tell the bot to say something\n" +
-          "!do - Tell the bot to do something\n" +
-          "!complain - Generate a random complaint\n" +
-          "!motivate - Generate a random motivation\n" +
-          "!alive - How long have I been alive for?\n" +
-          "!birthday add MM/DD/YYYY - add a birthday to the list\n" +
-          "!birthday ls - list everyone's birthday"
-      );
-    }
   },
   err => {
     if (err) {
@@ -266,38 +198,6 @@ client.on(
     }
   }
 );
-
-const sass = [
-  "no.",
-  "Let me get back to you on that :information_desk_person:",
-  "Here's a suggestion: how about you do it?",
-  "Could you ask for nothing? I'll be able to do nothing."
-];
-
-const complaints = [
-  "Why doesn't anyone use introductory sentences?",
-  "I'm not a style guide!",
-  "Just google it!!",
-  "TOO MUCH PERSONAL INFORMATION—MY EYES ARE BLEEDING",
-  "Why is it so cold in here?",
-  "Whyyy is it so hot in here???",
-  "Did you remember to sign in?",
-  "I rephrased this question 27 times and drew 4 visuals.",
-  "Why is there a banana here?",
-  "Don't forget the '+ c'."
-];
-
-const motivation = [
-  "students who visit the Bock Learning Center have improved grades",
-  "a student has successfully understood the concept you explained",
-  "a student has signed in successfully",
-  "a student has pushed in their chair as they left",
-  "there are no students left in the center at closing time"
-];
-
-function randomGrab(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
 
 // Checks to see if a date follows the following format: mm/dd/yyyy
 function isValidDate(text) {
