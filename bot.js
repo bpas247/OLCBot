@@ -105,7 +105,6 @@ client.on(
     } 
     // Send the message
     if(outMessage !== undefined) {
-      console.log("got in here somehow");
       message.channel.send(outMessage);
     }
   },
