@@ -1,3 +1,4 @@
+Master Build - [![Build Status](https://travis-ci.com/bpas247/OLCBot.svg?branch=master)](https://travis-ci.com/bpas247/OLCBot)
 # BLC-Bot
 ## A useless bot for Discord
 
