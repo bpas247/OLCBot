@@ -2,8 +2,9 @@ const cogs = require("./cog.js").cogs;
 const complain = require('./messages.js').complain;
 const sass = require('./messages.js').sassy;
 const motivate = require('./messages.js').motivate;
+const help = require('./messages.js').help;
 
-it("Successfully pings", ()=> {
+it("Successfully pings", () => {
     var test = cogs.get("ping");
     expect(test()).toBe("Pong!");
 });
@@ -25,6 +26,12 @@ it("Sucessfully grabs a motivation", () => {
     var out = test();
     expect(foundInArray(out, motivate)).toBe(true);
 })
+
+it("Successfully returns help", ()=> {
+    var test = cogs.get("help");
+    expect(test()).toBe(help);
+});
+
 
 function foundInArray(string, arr) {
     for(var i = 0; i < arr.length; i++) {

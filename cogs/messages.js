@@ -26,8 +26,19 @@ const complain = [
     "Don't forget the '+ c'."
 ];
 
+const help = "!ping - Tests to see if the bot is working\n" +
+"!say - Tell the bot to say something\n" +
+"!do - Tell the bot to do something\n" +
+"!complain - Generate a random complaint\n" +
+"!motivate - Generate a random motivation\n" +
+"!alive - How long have I been alive for?\n" +
+"!birthday add MM/DD/YYYY - add a birthday to the list\n" +
+"!birthday ls - list everyone's birthday";
+
+
 module.exports = {
     motivate,
     sassy,
-    complain
+    complain,
+    help
 };
