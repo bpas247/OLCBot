@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "node bot.js",
-    "local": "heroku local"
+    "local": "heroku local",
+    "test": "jest"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -29,6 +30,7 @@
   "devDependencies": {
     "heroku": "^7.16.8",
     "husky": "^1.1.2",
+    "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3"
   }
