@@ -1,9 +1,10 @@
-const birthday = require('./birthday.js').birthday;
-const complain = require('./messages.js').complain;
-const sass = require('./messages.js').sassy;
-const motivate = require('./messages.js').motivate;
-const help = require('./messages.js').help;
-const memeRuler = require('./meme-ruler.js').memeRuler;
+const birthday = require('./birthday').birthday;
+const complain = require('./messages').complain;
+const sass = require('./messages').sassy;
+const motivate = require('./messages').motivate;
+const help = require('./messages').help;
+const memeRuler = require('./meme-ruler').memeRuler;
+const randomGrab = require('./Utilities').randomGrab;
 
 const cogs = new Map
   ([
@@ -99,10 +100,6 @@ const cogs = new Map
     //   }
     // ]
   ]);
-
-function randomGrab(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
 
 module.exports = {
   cogs

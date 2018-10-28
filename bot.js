@@ -4,7 +4,7 @@ require("dotenv").config();
 const { Client } = require("pg");
 
 // Import cogs
-const cogs = require("./cogs/cog.js").cogs;
+const cogs = require("./cogs/cog").cogs;
 
 const db = new Client({
   connectionString: process.env.DATABASE_URL,
