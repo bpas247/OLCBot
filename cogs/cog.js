@@ -5,6 +5,7 @@ const motivate = require('./messages').motivate;
 const help = require('./messages').help;
 const memeRuler = require('./meme-ruler').memeRuler;
 const randomGrab = require('./Utilities').randomGrab;
+const alive = require('./alive').alive;
 
 const cogs = new Map
   ([
@@ -48,37 +49,37 @@ const cogs = new Map
     [
       "alive",
       (startDate) => {
-        const currentTime = new Date();
+        // const currentTime = new Date();
 
-        var difference = Math.abs(startDate - currentTime);
+        // var difference = Math.abs(startDate - currentTime);
 
-        var out = "I have been alive for: \n";
+        // var out = "I have been alive for: \n";
 
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        // const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-        out += days + " days, ";
+        // out += days + " days, ";
 
-        difference -= days * 100 * 60 * 60 * 24;
+        // difference -= days * 100 * 60 * 60 * 24;
 
-        const hours = Math.floor(difference / (1000 * 60 * 60));
+        // const hours = Math.floor(difference / (1000 * 60 * 60));
 
-        out += hours + " hours, ";
+        // out += hours + " hours, ";
 
-        difference -= hours * 1000 * 60 * 60;
+        // difference -= hours * 1000 * 60 * 60;
 
-        const minutes = Math.floor(difference / (1000 * 60));
+        // const minutes = Math.floor(difference / (1000 * 60));
 
-        out += minutes + " minutes, ";
+        // out += minutes + " minutes, ";
 
-        difference -= minutes * 1000 * 60;
+        // difference -= minutes * 1000 * 60;
 
-        const seconds = Math.floor(difference / 1000);
+        // const seconds = Math.floor(difference / 1000);
 
-        out += seconds + " seconds.\n";
+        // out += seconds + " seconds.\n";
 
-        out += "Please don't reset me!";
+        // out += "Please don't reset me!";
 
-        return out;
+        return alive(startDate, new Date());
       }
     ],
     [
