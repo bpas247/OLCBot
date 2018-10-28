@@ -27,6 +27,19 @@ const queryInsert = (queryText, queryArgs, db, channel) => {
   );
 } 
 
+const queryCreate = (tableName, tableArgs, db) => {
+  db.query(
+    "CREATE TABLE IF NOT EXISTS " 
+    + tableName 
+    +  "(" + tableArgs + ")",
+    err => {
+      if (err) {
+        console.log(err);
+      }
+    }
+  );
+};
+
 const isValidDate = text => {
   var t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
 
@@ -49,6 +62,7 @@ const randomGrab = array => {
 module.exports = {
     query,
     queryInsert,
+    queryCreate,
     isValidDate,
     randomGrab
 }

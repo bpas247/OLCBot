@@ -6,6 +6,8 @@ const { Client } = require("pg");
 // Import cogs
 const cogs = require("./cogs/cog").cogs;
 
+const queryCreate = require("./cogs/Utilities").queryCreate;
+
 const db = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true
@@ -43,35 +45,11 @@ client.on(
     // set the date
     startDate = new Date();
 
-    // create the table (if it doesn't exist)
-    db.query(
-      "CREATE TABLE IF NOT EXISTS birthday (id text, date text)",
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
-    );
+    queryCreate("birthay", "id text, date text", db);
 
-    // create the table for storing the last time it has ran
-    db.query(
-      "CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)",
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
-    );
+    queryCreate("meme_last_ran", "month text, day text", db);
 
-    // create the table for storing the last time it has ran
-    db.query(
-      "CREATE TABLE IF NOT EXISTS meme_count (id text, count int)",
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
-    );
+    queryCreate("meme_count", "id text, count int", db);
   },
   err => {
     if (err) {
