@@ -23,9 +23,6 @@ const Discord = require("discord.js");
 // Prefix
 const Prefix = "!";
 
-// This is your client. Some people call it `bot`, some people call it `self`,
-// some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
-// this is what we're refering to. Your client.
 const client = new Discord.Client();
 
 var startDate;
@@ -49,6 +46,26 @@ client.on(
     // create the table (if it doesn't exist)
     db.query(
       "CREATE TABLE IF NOT EXISTS birthday (id text, date text)",
+      err => {
+        if (err) {
+          console.log(err);
+        }
+      }
+    );
+
+    // create the table for storing the last time it has ran
+    db.query(
+      "CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)",
+      err => {
+        if (err) {
+          console.log(err);
+        }
+      }
+    );
+
+    // create the table for storing the last time it has ran
+    db.query(
+      "CREATE TABLE IF NOT EXISTS meme_count (id text, count int)",
       err => {
         if (err) {
           console.log(err);
@@ -98,6 +115,9 @@ client.on(
         outMessage = operation(startDate);
       } else if(command == "birthday") {
         operation(message.author.id, args, client.users.array(), db, message.channel);
+        outMessage = undefined;
+      } else if(command == "memes") {
+        operation(message.author, args, client.users.array(), db, message.channel);
         outMessage = undefined;
       } else {
         outMessage = operation();

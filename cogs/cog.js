@@ -3,6 +3,7 @@ const complain = require('./messages.js').complain;
 const sass = require('./messages.js').sassy;
 const motivate = require('./messages.js').motivate;
 const help = require('./messages.js').help;
+const memeRuler = require('./meme-ruler.js').memeRuler;
 
 const cogs = new Map
   ([
@@ -90,7 +91,13 @@ const cogs = new Map
       (authorId, args, users, db, channel) => {
         birthday(authorId, args, users, db, channel);
       }
-    ]
+    ],
+    // [
+    //   "memes",
+    //   (author, args, users, db, channel) => {
+    //     memeRuler(author, args, users, db, channel);
+    //   }
+    // ]
   ]);
 
 function randomGrab(array) {
