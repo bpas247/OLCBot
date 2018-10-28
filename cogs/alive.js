@@ -5,7 +5,7 @@ const calculateTimeDist = (startDate, endDate) => {
 
     out.push(Math.floor(difference / (1000 * 60 * 60 * 24)));
 
-    difference -= out[0] * 100 * 60 * 60 * 24;
+    difference -= out[0] * 1000 * 60 * 60 * 24;
 
     out.push(Math.floor(difference / (1000 * 60 * 60)));
 
@@ -43,5 +43,6 @@ const alive = (startDate, endDate) => {
 };
 
 module.exports ={
-    alive
+    alive,
+    calculateTimeDist
 }
