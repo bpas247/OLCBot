@@ -25,7 +25,6 @@ const cogs = new Map
         message.delete().catch(O_o => { });
         // And we get the bot to say the thing:
         return sayMessage;
-        //message.channel.send(sayMessage);
       }
     ],
     [
@@ -49,36 +48,6 @@ const cogs = new Map
     [
       "alive",
       (startDate) => {
-        // const currentTime = new Date();
-
-        // var difference = Math.abs(startDate - currentTime);
-
-        // var out = "I have been alive for: \n";
-
-        // const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-
-        // out += days + " days, ";
-
-        // difference -= days * 100 * 60 * 60 * 24;
-
-        // const hours = Math.floor(difference / (1000 * 60 * 60));
-
-        // out += hours + " hours, ";
-
-        // difference -= hours * 1000 * 60 * 60;
-
-        // const minutes = Math.floor(difference / (1000 * 60));
-
-        // out += minutes + " minutes, ";
-
-        // difference -= minutes * 1000 * 60;
-
-        // const seconds = Math.floor(difference / 1000);
-
-        // out += seconds + " seconds.\n";
-
-        // out += "Please don't reset me!";
-
         return alive(startDate, new Date());
       }
     ],
