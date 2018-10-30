@@ -10,7 +10,10 @@ install:
 script:
   - yarn test --coverage
 deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_API
-    
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  target-branch: build
+  on:
+    branch: master    
