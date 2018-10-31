@@ -3,7 +3,7 @@ const complain = require('./messages').complain;
 const sass = require('./messages').sassy;
 const motivate = require('./messages').motivate;
 const help = require('./messages').help;
-const memeRuler = require('./meme-ruler').memeRuler;
+// const memeRuler = require('./meme-ruler').memeRuler;
 const randomGrab = require('./Utilities').randomGrab;
 const alive = require('./alive').alive;
 
