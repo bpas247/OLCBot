@@ -58,8 +58,8 @@ const cogs = new Map([
   ],
   [
     'birthday',
-    (authorId, args, users, db, channel) => {
-      birthday(authorId, args, users, db, channel);
+    async (authorId, args, users, db) => {
+      return await birthday(authorId, args, users, db);
     }
   ]
   // [

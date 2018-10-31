@@ -1,21 +1,14 @@
 require('dotenv').config();
 
 // Load up the database
-const { Client } = require('pg');
+const pgp = require('pg-promise')();
+
+pgp.pg.defaults.ssl = true;
+
+const db = pgp(process.env.DATABASE_URL);
 
 // Import cogs
 const cogs = require('./cogs/cog.js').cogs;
-
-const db = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
-});
-
-db.connect(err => {
-  if (err) {
-    console.log(err);
-  }
-});
 
 // Load up the discord.js library
 const Discord = require('discord.js');
@@ -29,7 +22,7 @@ var startDate;
 
 client.on(
   'ready',
-  () => {
+  async () => {
     // This event will run if the bot starts, and logs in, successfully.
     console.log(
       `Bot has started, with ${client.users.size} users, in ${
@@ -43,35 +36,17 @@ client.on(
     // set the date
     startDate = new Date();
 
-    // create the table (if it doesn't exist)
-    db.query(
-      'CREATE TABLE IF NOT EXISTS birthday (id text, date text)',
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
+    await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
+
+    await db.query(
+      'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
     );
 
-    // create the table for storing the last time it has ran
-    db.query(
-      'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)',
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
+    await db.query(
+      'CREATE TABLE IF NOT EXISTS meme_count (id text, count int)'
     );
 
-    // create the table for storing the last time it has ran
-    db.query(
-      'CREATE TABLE IF NOT EXISTS meme_count (id text, count int)',
-      err => {
-        if (err) {
-          console.log(err);
-        }
-      }
-    );
+    console.log('All database tables are ready!');
   },
   err => {
     if (err) {
@@ -114,24 +89,24 @@ client.on(
       } else if (command == 'alive') {
         outMessage = operation(startDate);
       } else if (command == 'birthday') {
-        operation(
+        outMessage = await operation(
           message.author.id,
           args,
           client.users.array(),
-          db,
-          message.channel
+          db
         );
-        outMessage = undefined;
-      } else if (command == 'memes') {
-        operation(
-          message.author,
-          args,
-          client.users.array(),
-          db,
-          message.channel
-        );
-        outMessage = undefined;
-      } else {
+      }
+      // else if (command == 'memes') {
+      //   operation(
+      //     message.author,
+      //     args,
+      //     client.users.array(),
+      //     db,
+      //     message.channel
+      //   );
+      //   outMessage = undefined;
+      // }
+      else {
         outMessage = operation();
       }
     } else {
