@@ -1,10 +1,12 @@
-require("dotenv").config();
+require('@babel/polyfill');
+
+require('dotenv').config();
 
 // Load up the database
-const { Client } = require("pg");
+const { Client } = require('pg');
 
 // Import cogs
-const cogs = require("./cogs/cog.js").cogs;
+const cogs = require('./cogs/cog.js').cogs;
 
 const db = new Client({
   connectionString: process.env.DATABASE_URL,
@@ -18,17 +20,17 @@ db.connect(err => {
 });
 
 // Load up the discord.js library
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 
 // Prefix
-const Prefix = "!";
+const Prefix = '!';
 
 const client = new Discord.Client();
 
 var startDate;
 
 client.on(
-  "ready",
+  'ready',
   () => {
     // This event will run if the bot starts, and logs in, successfully.
     console.log(
@@ -45,7 +47,7 @@ client.on(
 
     // create the table (if it doesn't exist)
     db.query(
-      "CREATE TABLE IF NOT EXISTS birthday (id text, date text)",
+      'CREATE TABLE IF NOT EXISTS birthday (id text, date text)',
       err => {
         if (err) {
           console.log(err);
@@ -55,7 +57,7 @@ client.on(
 
     // create the table for storing the last time it has ran
     db.query(
-      "CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)",
+      'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)',
       err => {
         if (err) {
           console.log(err);
@@ -65,7 +67,7 @@ client.on(
 
     // create the table for storing the last time it has ran
     db.query(
-      "CREATE TABLE IF NOT EXISTS meme_count (id text, count int)",
+      'CREATE TABLE IF NOT EXISTS meme_count (id text, count int)',
       err => {
         if (err) {
           console.log(err);
@@ -81,7 +83,7 @@ client.on(
 );
 
 client.on(
-  "message",
+  'message',
   async message => {
     // This event will run on every single message received, from any channel or DM.
 
@@ -104,29 +106,41 @@ client.on(
     const command = args.shift().toLowerCase();
 
     // Default case
-    let outMessage = "Could not recognize command";
+    let outMessage = 'Could not recognize command';
 
     let operation = cogs.get(command);
 
-    if(operation !== undefined) {
-      if(command == "say") {
+    if (operation !== undefined) {
+      if (command == 'say') {
         outMessage = operation(message, args);
-      } else if(command == "alive") {
+      } else if (command == 'alive') {
         outMessage = operation(startDate);
-      } else if(command == "birthday") {
-        operation(message.author.id, args, client.users.array(), db, message.channel);
+      } else if (command == 'birthday') {
+        operation(
+          message.author.id,
+          args,
+          client.users.array(),
+          db,
+          message.channel
+        );
         outMessage = undefined;
-      } else if(command == "memes") {
-        operation(message.author, args, client.users.array(), db, message.channel);
+      } else if (command == 'memes') {
+        operation(
+          message.author,
+          args,
+          client.users.array(),
+          db,
+          message.channel
+        );
         outMessage = undefined;
       } else {
         outMessage = operation();
       }
     } else {
-      message.channel.send("Command not recognized.");
-    } 
+      message.channel.send('Command not recognized.');
+    }
     // Send the message
-    if(outMessage !== undefined) {
+    if (outMessage !== undefined) {
       message.channel.send(outMessage);
     }
   },

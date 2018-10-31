@@ -12,9 +12,10 @@
     "pg": "^7.5.0"
   },
   "scripts": {
-    "start": "node bot.js",
+    "start": "yarn build && node lib/bot.js",
     "local": "heroku local",
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src -d lib"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -28,6 +29,12 @@
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.0.0-0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
     "heroku": "^7.16.8",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
