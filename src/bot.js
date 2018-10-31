@@ -1,5 +1,3 @@
-require('@babel/polyfill');
-
 require('dotenv').config();
 
 // Load up the database
