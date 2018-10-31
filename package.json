@@ -14,7 +14,8 @@
   "scripts": {
     "start": "yarn build && node lib/bot.js",
     "test": "jest",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "heroku": "node lib/bot.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -34,7 +35,6 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.6.0",
-    "heroku": "^7.16.8",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
