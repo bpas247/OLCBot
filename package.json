@@ -13,9 +13,8 @@
   },
   "scripts": {
     "start": "yarn build && node lib/bot.js",
-    "local": "heroku local",
     "test": "jest",
-    "build": "babel src -d lib package.json Procfile --copy-files"
+    "build": "babel src -d lib"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
