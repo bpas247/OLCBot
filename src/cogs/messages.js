@@ -34,7 +34,7 @@ const help =
   '!motivate - Generate a random motivation\n' +
   '!alive - How long have I been alive for?\n' +
   '!birthday add MM/DD/YYYY - add a birthday to the list\n' +
-  "!birthday ls - list everyone's birthday" +
+  "!birthday ls - list everyone's birthday\n" +
   '!trickOrTreat - _spooky_ game of heads or tails';
 
 module.exports = {
