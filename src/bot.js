@@ -10,121 +10,81 @@ const db = pgp(process.env.DATABASE_URL);
 // Import cogs
 const cogs = require('./cogs/cog.js').cogs;
 
-// Load up the discord.js library
-const Discord = require('discord.js');
-
 // Prefix
 const Prefix = '!';
 
-const client = new Discord.Client();
-
 var startDate;
 
-client.on(
-  'ready',
-  async () => {
-    // This event will run if the bot starts, and logs in, successfully.
-    console.log(
-      `Bot has started, with ${client.users.size} users, in ${
-        client.channels.size
-      } channels of ${client.guilds.size} guilds.`
-    );
-    // Example of changing the bot's playing game to something useful. `client.user` is what the
-    // docs refer to as the "ClientUser".
-    client.user.setActivity(`Type !help for more info`);
+const onCreate = async client => {
+  // This event will run if the bot starts, and logs in, successfully.
+  console.log(
+    `Bot has started, with ${client.users.size} users, in ${
+      client.channels.size
+    } channels of ${client.guilds.size} guilds.`
+  );
 
-    // set the date
-    startDate = new Date();
+  // set the date
+  startDate = new Date();
 
-    await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
+  // Example of changing the bot's playing game to something useful. `client.user` is what the
+  // docs refer to as the "ClientUser".
+  client.user.setActivity(`Type !help for more info`);
 
-    await db.query(
-      'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
-    );
+  await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
 
-    await db.query(
-      'CREATE TABLE IF NOT EXISTS meme_count (id text, count int)'
-    );
+  await db.query(
+    'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
+  );
 
-    console.log('All database tables are ready!');
-  },
-  err => {
-    if (err) {
-      console.log(err);
-    }
-  }
-);
+  await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
 
-client.on(
-  'message',
-  async message => {
-    // This event will run on every single message received, from any channel or DM.
+  console.log('All database tables are ready!');
+};
 
-    // It's good practice to ignore other bots. This also makes your bot ignore itself
-    // and not get into a spam loop (we call that "botception").
-    if (message.author.bot) return;
+const onMessage = async (client, message) => {
+  // This event will run on every single message received, from any channel or DM.
 
-    // Also good practice to ignore any message that does not start with our prefix,
-    // which is set in the configuration file.
-    if (message.content.indexOf(Prefix) !== 0) return;
+  // It's good practice to ignore other bots. This also makes your bot ignore itself
+  // and not get into a spam loop (we call that "botception").
+  if (message.author.bot) return;
 
-    // Here we separate our "command" name, and our "arguments" for the command.
-    // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
-    // command = say
-    // args = ["Is", "this", "the", "real", "life?"]
-    const args = message.content
-      .slice(Prefix.length)
-      .trim()
-      .split(/ +/g);
-    const command = args.shift();
+  // Also good practice to ignore any message that does not start with our prefix,
+  // which is set in the configuration file.
+  if (message.content.indexOf(Prefix) !== 0) return;
 
-    // Default case
-    let outMessage = 'Could not recognize command';
+  // Here we separate our "command" name, and our "arguments" for the command.
+  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
+  // command = say
+  // args = ["Is", "this", "the", "real", "life?"]
+  const args = message.content
+    .slice(Prefix.length)
+    .trim()
+    .split(/ +/g);
+  const command = args.shift().toLowerCase();
 
-    let operation = cogs.get(command);
+  // Default case
+  let outMessage = 'Could not recognize command';
 
-    if (operation !== undefined) {
-      if (command == 'say') {
-        outMessage = operation(message, args);
-      } else if (command == 'alive') {
-        outMessage = operation(startDate);
-      } else if (command == 'birthday') {
-        outMessage = await operation(
-          message.author.id,
-          args,
-          client.users.array(),
-          db
-        );
-      } else if (command == 'trickOrTreat') {
-        //console.log("got here");
-        outMessage = await operation(message.guild, message.author);
-      }
-      // else if (command == 'memes') {
-      //   operation(
-      //     message.author,
-      //     args,
-      //     client.users.array(),
-      //     db,
-      //     message.channel
-      //   );
-      //   outMessage = undefined;
-      // }
-      else {
-        outMessage = operation();
-      }
+  let operation = cogs.get(command);
+
+  if (operation !== undefined) {
+    if (command == 'alive') {
+      outMessage = operation(message, args, startDate);
+    } else if (command == 'birthday') {
+      outMessage = await operation(message, args, client.users.array(), db);
     } else {
-      outMessage = 'Command not recognized.';
+      outMessage = await operation(message, args);
     }
-    // Send the message
-    if (outMessage !== undefined) {
-      message.channel.send(outMessage);
-    }
-  },
-  err => {
-    if (err) {
-      console.log(err);
-    }
+  } else {
+    outMessage = 'Command not recognized.';
   }
-);
+  // Send the message
+  if (outMessage !== undefined) {
+    message.channel.send(outMessage);
+  }
+};
 
-client.login(process.env.TOKEN);
+module.exports = {
+  onCreate,
+  onMessage
+};

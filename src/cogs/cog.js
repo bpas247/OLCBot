@@ -47,7 +47,7 @@ const cogs = new Map([
   ],
   [
     'alive',
-    startDate => {
+    (message, args, startDate) => {
       return alive(startDate, new Date());
     }
   ],
@@ -59,14 +59,14 @@ const cogs = new Map([
   ],
   [
     'birthday',
-    async (authorId, args, users, db) => {
-      return await birthday(authorId, args, users, db);
+    async (message, args, users, db) => {
+      return await birthday(message.author.id, args, users, db);
     }
   ],
   [
     'trickOrTreat',
-    async (guild, author) => {
-      return await trickOrTreat(guild, author);
+    async message => {
+      return await trickOrTreat(message.guild, message.author);
     }
   ]
   // [
