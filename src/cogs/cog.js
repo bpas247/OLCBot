@@ -6,6 +6,7 @@ const help = require('./messages').help;
 // const memeRuler = require('./meme-ruler').memeRuler;
 const randomGrab = require('./Utilities').randomGrab;
 const alive = require('./alive').alive;
+const trickOrTreat = require('./trick-or-treat').trickOrTreat;
 
 const cogs = new Map([
   [
@@ -60,6 +61,12 @@ const cogs = new Map([
     'birthday',
     async (authorId, args, users, db) => {
       return await birthday(authorId, args, users, db);
+    }
+  ],
+  [
+    'trickOrTreat',
+    async (guild, author) => {
+      return await trickOrTreat(guild, author);
     }
   ]
   // [

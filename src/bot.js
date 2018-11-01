@@ -76,7 +76,7 @@ client.on(
       .slice(Prefix.length)
       .trim()
       .split(/ +/g);
-    const command = args.shift().toLowerCase();
+    const command = args.shift();
 
     // Default case
     let outMessage = 'Could not recognize command';
@@ -95,6 +95,9 @@ client.on(
           client.users.array(),
           db
         );
+      } else if (command == 'trickOrTreat') {
+        //console.log("got here");
+        outMessage = await operation(message.guild, message.author);
       }
       // else if (command == 'memes') {
       //   operation(
@@ -110,7 +113,7 @@ client.on(
         outMessage = operation();
       }
     } else {
-      message.channel.send('Command not recognized.');
+      outMessage = 'Command not recognized.';
     }
     // Send the message
     if (outMessage !== undefined) {
