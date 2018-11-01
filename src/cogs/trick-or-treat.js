@@ -42,7 +42,7 @@ const trick = [
   'Monday',
   'Unprepared for exam',
   'Basic grammar issues',
-  '"Feedback"',
+  'Feedback',
   'Shift Coverage'
 ];
 
