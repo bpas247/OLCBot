@@ -1,7 +1,7 @@
 {
   "name": "blc-bot",
   "version": "0.0.1",
-  "main": "bot.js",
+  "main": "client.js",
   "repository": "https://github.com/bpas247/OLCBot.git",
   "author": "Brady Pascoe <bpas247@hotmail.com>",
   "license": "MIT",
@@ -13,7 +13,12 @@
   },
   "scripts": {
     "start": "node src/client.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
+    "production": "node lib/client.js"
+  },
+  "babel": {
+    "ignore": ["src/**/*.test.js"]
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -27,6 +32,8 @@
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
     "coveralls": "^3.0.2",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
