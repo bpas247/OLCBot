@@ -1,5 +1,4 @@
 import { calculateTimeDist } from './alive';
-
 describe('Time Calculation tests', () => {
   var curTime;
   var addedSeconds;

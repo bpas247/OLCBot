@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "client.js",
   "repository": "https://github.com/bpas247/OLCBot.git",
-  "author": "Brady Pascoe <bpas247@hotmail.com>",
+  "author": "Brady Pascoe",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -14,11 +14,15 @@
   "scripts": {
     "test": "jest",
     "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
-    "start": "babel-node src/client.js"
+    "start": "babel-node src/client.js",
+    "flow": "flow"
   },
   "babel": {
     "plugins": [
       "@babel/plugin-transform-modules-commonjs"
+    ],
+    "presets": [
+      "@babel/preset-flow"
     ]
   },
   "jest": {
@@ -42,9 +46,11 @@
     "@babel/core": "^7.1.2",
     "@babel/node": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "coveralls": "^3.0.2",
+    "flow-bin": "^0.85.0",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",

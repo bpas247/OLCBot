@@ -1,4 +1,5 @@
-export const calculateTimeDist = (startDate, endDate) => {
+// @flow
+export const calculateTimeDist = (startDate: Date, endDate: Date) => {
   var out = [];
 
   var difference = Math.abs(startDate - endDate);
@@ -20,7 +21,7 @@ export const calculateTimeDist = (startDate, endDate) => {
   return out;
 };
 
-export default (startDate, endDate) => {
+export default (startDate: Date, endDate: Date) => {
   const timeDist = calculateTimeDist(startDate, endDate);
 
   const labels = ['days', 'hours', 'minutes', 'seconds'];

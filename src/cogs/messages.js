@@ -1,3 +1,4 @@
+// @flow
 export const motivate = [
   'students who visit the Bock Learning Center have improved grades',
   'a student has successfully understood the concept you explained',

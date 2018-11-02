@@ -1,7 +1,14 @@
-//const isValidDate = require('./Utilities').isValidDate;
+// @flow
+import { Collection, Snowflake, User } from 'discord.js';
+import { Database } from 'pg-promise';
 import { isValidDate } from './Utilities';
 
-export default async (authorId, args, users, db) => {
+export default async (
+  authorId: number,
+  args: Array<string>,
+  users: Collection<Snowflake, User>,
+  db: Database
+) => {
   if (args.indexOf('add') != -1) {
     var date = undefined;
 
@@ -45,7 +52,7 @@ export default async (authorId, args, users, db) => {
     var out = "List of everyone's birthday goes as follows:";
 
     for (let row of result) {
-      var name = undefined;
+      var name = 'undefined';
       for (let user of users) {
         if (user.id == row.id) {
           name = user;
