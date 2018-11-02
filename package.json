@@ -12,9 +12,9 @@
     "pg-promise": "^8.5.1"
   },
   "scripts": {
-    "test": "yarn build && jest",
+    "test": "jest",
     "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
-    "prod": "yarn build && node lib/client.js"
+    "start": "babel-node src/client.js"
   },
   "babel": {
     "plugins": [
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
