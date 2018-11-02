@@ -14,7 +14,7 @@
   "scripts": {
     "start": "node src/client.js",
     "test": "jest",
-    "build": "babel src --out-dir lib --copy-files production/package.json production/yarn.lock",
+    "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
     "production": "node lib/client.js"
   },
   "babel": {
