@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.calculateTimeDist = void 0;
+
 const calculateTimeDist = (startDate, endDate) => {
   var out = [];
   var difference = Math.abs(startDate - endDate);
@@ -11,7 +18,9 @@ const calculateTimeDist = (startDate, endDate) => {
   return out;
 };
 
-const alive = (startDate, endDate) => {
+exports.calculateTimeDist = calculateTimeDist;
+
+var _default = (startDate, endDate) => {
   const timeDist = calculateTimeDist(startDate, endDate);
   const labels = ['days', 'hours', 'minutes', 'seconds'];
   var out = 'I have been alive for: \n';
@@ -27,7 +36,4 @@ const alive = (startDate, endDate) => {
   return out;
 };
 
-module.exports = {
-  alive,
-  calculateTimeDist
-};
+exports.default = _default;

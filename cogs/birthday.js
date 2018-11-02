@@ -1,10 +1,18 @@
-const isValidDate = require('./Utilities').isValidDate;
+"use strict";
 
-const birthday = async (authorId, args, users, db) => {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Utilities = require("./Utilities");
+
+//const isValidDate = require('./Utilities').isValidDate;
+var _default = async (authorId, args, users, db) => {
   if (args.indexOf('add') != -1) {
     var date = undefined;
     args.forEach(arg => {
-      if (isValidDate(arg)) {
+      if ((0, _Utilities.isValidDate)(arg)) {
         date = arg;
       }
     });
@@ -56,6 +64,4 @@ const birthday = async (authorId, args, users, db) => {
   }
 };
 
-module.exports = {
-  birthday
-};
+exports.default = _default;

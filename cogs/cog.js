@@ -1,20 +1,21 @@
-const birthday = require('./birthday').birthday;
+"use strict";
 
-const complain = require('./messages').complain;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-const sass = require('./messages').sassy;
+var _birthday = _interopRequireDefault(require("./birthday"));
 
-const motivate = require('./messages').motivate;
+var _messages = require("./messages");
 
-const help = require('./messages').help; // const memeRuler = require('./meme-ruler').memeRuler;
+var _Utilities = require("./Utilities");
 
+var _alive = _interopRequireDefault(require("./alive"));
 
-const randomGrab = require('./Utilities').randomGrab;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const alive = require('./alive').alive; // const trickOrTreat = require('./trick-or-treat').trickOrTreat;
-
-
-const cogs = new Map([['ping', () => {
+var _default = new Map([['ping', () => {
   return 'Pong!';
 }], ['say', (message, args) => {
   // makes the bot say something and delete the message. As an example, it's open to anyone to use.
@@ -25,31 +26,23 @@ const cogs = new Map([['ping', () => {
 
   return sayMessage;
 }], ['complain', () => {
-  return randomGrab(complain);
+  return (0, _Utilities.randomGrab)(_messages.complain);
 }], ['do', () => {
-  return randomGrab(sass);
+  return (0, _Utilities.randomGrab)(_messages.sassy);
 }], ['motivate', () => {
-  return randomGrab(motivate);
+  return (0, _Utilities.randomGrab)(_messages.motivate);
 }], ['alive', (message, args, startDate) => {
-  return alive(startDate, new Date());
+  return (0, _alive.default)(startDate, new Date());
 }], ['help', () => {
-  return help;
+  return _messages.help;
 }], ['birthday', async (message, args, users, db) => {
-  return await birthday(message.author.id, args, users, db);
-}] //,
-// [
-//   'trickOrTreat',
-//   async message => {
-//     return await trickOrTreat(message.guild, message.author);
-//   }
-// ]
-// [
+  return await (0, _birthday.default)(message.author.id, args, users, db);
+}] // [
 //   "memes",
 //   (author, args, users, db, channel) => {
 //     memeRuler(author, args, users, db, channel);
 //   }
 // ]
 ]);
-module.exports = {
-  cogs
-};
+
+exports.default = _default;

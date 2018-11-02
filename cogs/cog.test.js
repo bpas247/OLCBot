@@ -1,35 +1,38 @@
-const cogs = require('./cog.js').cogs;
-const complain = require('./messages.js').complain;
-const sass = require('./messages.js').sassy;
-const motivate = require('./messages.js').motivate;
-const help = require('./messages.js').help;
+"use strict";
+
+var _cog = _interopRequireDefault(require("./cog"));
+
+var _messages = require("./messages");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 it('Successfully pings', () => {
-  var test = cogs.get('ping');
+  var test = _cog.default.get('ping');
+
   expect(test()).toBe('Pong!');
 });
-
 it('Sucessfully grabs a complaint', () => {
-  var test = cogs.get('complain');
-  var out = test();
-  expect(foundInArray(out, complain)).toBe(true);
-});
+  var test = _cog.default.get('complain');
 
+  var out = test();
+  expect(foundInArray(out, _messages.complain)).toBe(true);
+});
 it('Sucessfully grabs a sass', () => {
-  var test = cogs.get('do');
-  var out = test();
-  expect(foundInArray(out, sass)).toBe(true);
-});
+  var test = _cog.default.get('do');
 
+  var out = test();
+  expect(foundInArray(out, _messages.sassy)).toBe(true);
+});
 it('Sucessfully grabs a motivation', () => {
-  var test = cogs.get('motivate');
-  var out = test();
-  expect(foundInArray(out, motivate)).toBe(true);
-});
+  var test = _cog.default.get('motivate');
 
+  var out = test();
+  expect(foundInArray(out, _messages.motivate)).toBe(true);
+});
 it('Successfully returns help', () => {
-  var test = cogs.get('help');
-  expect(test()).toBe(help);
+  var test = _cog.default.get('help');
+
+  expect(test()).toBe(_messages.help);
 });
 
 function foundInArray(string, arr) {
@@ -38,5 +41,6 @@ function foundInArray(string, arr) {
       return true;
     }
   }
+
   return false;
 }

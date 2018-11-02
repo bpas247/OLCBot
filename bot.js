@@ -1,3 +1,14 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.onMessage = exports.onCreate = void 0;
+
+var _cog = _interopRequireDefault(require("./cogs/cog"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 require('dotenv').config(); // Load up the database
 
 
@@ -6,9 +17,7 @@ const pgp = require('pg-promise')();
 pgp.pg.defaults.ssl = true;
 const db = pgp(process.env.DATABASE_URL); // Import cogs
 
-const cogs = require('./cogs/cog.js').cogs; // Prefix
-
-
+// Prefix
 const Prefix = '!';
 var startDate;
 
@@ -26,6 +35,8 @@ const onCreate = async client => {
   console.log('All database tables are ready!');
 };
 
+exports.onCreate = onCreate;
+
 const onMessage = async (client, message) => {
   // This event will run on every single message received, from any channel or DM.
   // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -42,7 +53,8 @@ const onMessage = async (client, message) => {
   const command = args.shift().toLowerCase(); // Default case
 
   let outMessage = 'Could not recognize command';
-  let operation = cogs.get(command);
+
+  let operation = _cog.default.get(command);
 
   if (operation !== undefined) {
     if (command == 'alive') {
@@ -62,7 +74,4 @@ const onMessage = async (client, message) => {
   }
 };
 
-module.exports = {
-  onCreate,
-  onMessage
-};
+exports.onMessage = onMessage;

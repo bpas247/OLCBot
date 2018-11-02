@@ -1,23 +1,25 @@
+"use strict";
+
+var _discord = _interopRequireDefault(require("discord.js"));
+
+var _bot = require("./bot");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 require('dotenv').config(); // Load up the discord.js library
 
 
-const Discord = require('discord.js');
-
-const client = new Discord.Client(); // Load up the bot functions
-
-const onCreate = require('./bot').onCreate;
-
-const onMessage = require('./bot').onMessage;
+const client = new _discord.default.Client(); // Load up the bot functions
 
 client.on('ready', async () => {
-  await onCreate(client);
+  await (0, _bot.onCreate)(client);
 }, err => {
   if (err) {
     console.log(err);
   }
 });
 client.on('message', async message => {
-  await onMessage(client, message);
+  await (0, _bot.onMessage)(client, message);
 }, err => {
   if (err) {
     console.log(err);

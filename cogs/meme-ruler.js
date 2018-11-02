@@ -86,3 +86,4 @@
 // module.exports = {
 //   memeRuler
 // };
+"use strict";
