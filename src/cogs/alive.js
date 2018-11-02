@@ -1,4 +1,4 @@
-const calculateTimeDist = (startDate, endDate) => {
+export const calculateTimeDist = (startDate, endDate) => {
   var out = [];
 
   var difference = Math.abs(startDate - endDate);
@@ -20,7 +20,7 @@ const calculateTimeDist = (startDate, endDate) => {
   return out;
 };
 
-const alive = (startDate, endDate) => {
+export default (startDate, endDate) => {
   const timeDist = calculateTimeDist(startDate, endDate);
 
   const labels = ['days', 'hours', 'minutes', 'seconds'];
@@ -35,9 +35,4 @@ const alive = (startDate, endDate) => {
   }
 
   return out;
-};
-
-module.exports = {
-  alive,
-  calculateTimeDist
 };

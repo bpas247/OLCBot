@@ -8,9 +8,8 @@ notifications:
 install:
   - yarn install
 script:
-  - jest --coverage --coverageReporters=text-lcov | coveralls
-before_deploy:
   - yarn build
+  - jest --coverage --coverageReporters=text-lcov | coveralls
 deploy:
   local_dir: 'lib/'
   provider: pages

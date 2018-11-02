@@ -1,5 +1,4 @@
-const randomGrab = require('./Utilities').randomGrab;
-const isValidDate = require('./Utilities').isValidDate;
+import { randomGrab, isValidDate } from './Utilities';
 
 it('Should randomly grab something in the array', () => {
   const arrTest = [5, 4, 9, 2];

@@ -1,8 +1,5 @@
-const cogs = require('./cog.js').cogs;
-const complain = require('./messages.js').complain;
-const sass = require('./messages.js').sassy;
-const motivate = require('./messages.js').motivate;
-const help = require('./messages.js').help;
+import cogs from './cog';
+import { complain, sassy, motivate, help } from './messages';
 
 it('Successfully pings', () => {
   var test = cogs.get('ping');
@@ -18,7 +15,7 @@ it('Sucessfully grabs a complaint', () => {
 it('Sucessfully grabs a sass', () => {
   var test = cogs.get('do');
   var out = test();
-  expect(foundInArray(out, sass)).toBe(true);
+  expect(foundInArray(out, sassy)).toBe(true);
 });
 
 it('Sucessfully grabs a motivation', () => {

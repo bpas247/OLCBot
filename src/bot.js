@@ -2,20 +2,18 @@ require('dotenv').config();
 
 // Load up the database
 const pgp = require('pg-promise')();
-
 pgp.pg.defaults.ssl = true;
-
 const db = pgp(process.env.DATABASE_URL);
 
 // Import cogs
-const cogs = require('./cogs/cog.js').cogs;
+import cogs from './cogs/cog';
 
 // Prefix
 const Prefix = '!';
 
 var startDate;
 
-const onCreate = async client => {
+export const onCreate = async client => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(
     `Bot has started, with ${client.users.size} users, in ${
@@ -41,7 +39,7 @@ const onCreate = async client => {
   console.log('All database tables are ready!');
 };
 
-const onMessage = async (client, message) => {
+export const onMessage = async (client, message) => {
   // This event will run on every single message received, from any channel or DM.
 
   // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -82,9 +80,4 @@ const onMessage = async (client, message) => {
   if (outMessage !== undefined) {
     message.channel.send(outMessage);
   }
-};
-
-module.exports = {
-  onCreate,
-  onMessage
 };

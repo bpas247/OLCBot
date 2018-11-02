@@ -1,12 +1,11 @@
 require('dotenv').config();
 
 // Load up the discord.js library
-const Discord = require('discord.js');
+import Discord from 'discord.js';
 const client = new Discord.Client();
 
 // Load up the bot functions
-const onCreate = require('./bot').onCreate;
-const onMessage = require('./bot').onMessage;
+import { onCreate, onMessage } from './bot';
 
 client.on(
   'ready',

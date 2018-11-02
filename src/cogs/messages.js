@@ -1,4 +1,4 @@
-const motivate = [
+export const motivate = [
   'students who visit the Bock Learning Center have improved grades',
   'a student has successfully understood the concept you explained',
   'a student has signed in successfully',
@@ -6,14 +6,14 @@ const motivate = [
   'there are no students left in the center at closing time'
 ];
 
-const sassy = [
+export const sassy = [
   'no.',
   'Let me get back to you on that :information_desk_person:',
   "Here's a suggestion: how about you do it?",
   "Could you ask for nothing? I'll be able to do nothing."
 ];
 
-const complain = [
+export const complain = [
   "Why doesn't anyone use introductory sentences?",
   "I'm not a style guide!",
   'Just google it!!',
@@ -26,7 +26,7 @@ const complain = [
   "Don't forget the '+ c'."
 ];
 
-const help =
+export const help =
   '!ping - Tests to see if the bot is working\n' +
   '!say - Tell the bot to say something\n' +
   '!do - Tell the bot to do something\n' +
@@ -34,12 +34,4 @@ const help =
   '!motivate - Generate a random motivation\n' +
   '!alive - How long have I been alive for?\n' +
   '!birthday add MM/DD/YYYY - add a birthday to the list\n' +
-  "!birthday ls - list everyone's birthday\n"; //+
-// '!trickOrTreat - _spooky_ game of heads or tails';
-
-module.exports = {
-  motivate,
-  sassy,
-  complain,
-  help
-};
+  "!birthday ls - list everyone's birthday\n";

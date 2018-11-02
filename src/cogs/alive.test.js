@@ -1,4 +1,4 @@
-const calculateTimeDist = require('./alive').calculateTimeDist;
+import { calculateTimeDist } from './alive';
 
 describe('Time Calculation tests', () => {
   var curTime;

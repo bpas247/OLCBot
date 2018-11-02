@@ -1,6 +1,7 @@
-const isValidDate = require('./Utilities').isValidDate;
+//const isValidDate = require('./Utilities').isValidDate;
+import { isValidDate } from './Utilities';
 
-const birthday = async (authorId, args, users, db) => {
+export default async (authorId, args, users, db) => {
   if (args.indexOf('add') != -1) {
     var date = undefined;
 
@@ -57,8 +58,4 @@ const birthday = async (authorId, args, users, db) => {
   } else {
     return 'Command for birthday could not be found';
   }
-};
-
-module.exports = {
-  birthday
 };

@@ -1,4 +1,4 @@
-const isValidDate = text => {
+export const isValidDate = text => {
   var t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
 
   if (t !== null) {
@@ -13,11 +13,6 @@ const isValidDate = text => {
   return false;
 };
 
-const randomGrab = array => {
+export const randomGrab = array => {
   return array[Math.floor(Math.random() * array.length)];
-};
-
-module.exports = {
-  isValidDate,
-  randomGrab
 };

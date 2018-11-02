@@ -12,13 +12,19 @@
     "pg-promise": "^8.5.1"
   },
   "scripts": {
-    "start": "node src/client.js",
-    "test": "jest",
+    "test": "yarn build && jest",
     "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
-    "production": "node lib/client.js"
+    "prod": "yarn build && node lib/client.js"
   },
   "babel": {
-    "ignore": ["src/**/*.test.js"]
+    "plugins": [
+      "@babel/plugin-transform-modules-commonjs"
+    ]
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "src/*"
+    ]
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -34,6 +40,9 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "coveralls": "^3.0.2",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
