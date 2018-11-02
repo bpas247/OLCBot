@@ -23,7 +23,7 @@
   },
   "jest": {
     "modulePathIgnorePatterns": [
-      "src/*"
+      "lib/*"
     ]
   },
   "lint-staged": {
