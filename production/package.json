@@ -1,8 +1,0 @@
-{
-  "main": "bot.bundle.js",
-  "private": true,
-  "dependencies": {},
-  "scripts": {
-    "start": "node bot.bundle.js"
-  }
-}
