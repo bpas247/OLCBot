@@ -58,7 +58,7 @@ export default async (
           name = user;
         }
       }
-      out += '\n' + name + ' - ' + row.date;
+      out += '\n' + name.username + ' - ' + row.date;
     }
 
     return out;

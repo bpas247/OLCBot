@@ -61,7 +61,7 @@ export default async (
           name = user;
         }
       }
-      out += '\n' + name + ' - ' + row.count;
+      out += '\n' + name.username + ' - ' + row.count;
     }
 
     return out;
