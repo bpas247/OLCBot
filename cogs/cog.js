@@ -13,6 +13,8 @@ var _Utilities = require("./Utilities");
 
 var _alive = _interopRequireDefault(require("./alive"));
 
+var _memeRuler = _interopRequireDefault(require("./meme-ruler"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = new Map([['ping', () => {
@@ -37,12 +39,9 @@ var _default = new Map([['ping', () => {
   return _messages.help;
 }], ['birthday', async (message, args, users, db) => {
   return await (0, _birthday.default)(message.author.id, args, users, db);
-}] // [
-//   "memes",
-//   (author, args, users, db, channel) => {
-//     memeRuler(author, args, users, db, channel);
-//   }
-// ]
-]);
+}], ['memes', async (message, args, users, db) => {
+  let author = await message.guild.fetchMember(message.author);
+  return await (0, _memeRuler.default)(author, args, users, db);
+}]]);
 
 exports.default = _default;

@@ -5,9 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _discord = require("discord.js");
+
+var _pgPromise = require("pg-promise");
+
 var _Utilities = require("./Utilities");
 
-//const isValidDate = require('./Utilities').isValidDate;
 var _default = async (authorId, args, users, db) => {
   if (args.indexOf('add') != -1) {
     var date = undefined;
@@ -47,7 +50,7 @@ var _default = async (authorId, args, users, db) => {
     var out = "List of everyone's birthday goes as follows:";
 
     for (let row of result) {
-      var name = undefined;
+      var name = 'undefined';
 
       for (let user of users) {
         if (user.id == row.id) {
