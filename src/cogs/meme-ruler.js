@@ -55,13 +55,19 @@ export default async (
     let out = "List of everyone's scores:";
 
     for (let row of result) {
-      var name = 'undefined';
+      var name: 'undefined' | User = 'undefined';
       for (let user of users) {
         if (user.id == row.id) {
           name = user;
         }
       }
-      out += '\n' + name.username + ' - ' + row.count;
+
+      if (name !== 'undefined') {
+        var userName: string = name.username;
+        out += '\n' + userName + ' - ' + row.count;
+      } else {
+        out += '\n' + name + ' - ' + row.count;
+      }
     }
 
     return out;
