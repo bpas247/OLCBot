@@ -1,0 +1,7 @@
+{
+  "main": "bot.bundle.js",
+  "private": true,
+  "scripts": {
+    "start": "node bot.bundle.js"
+  }
+}

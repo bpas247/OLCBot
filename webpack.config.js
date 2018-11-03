@@ -15,6 +15,9 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: 'production/Procfile'
+      },
+      {
+        from: 'production/package.json'
       }
     ])
   ],
