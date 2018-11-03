@@ -17,14 +17,6 @@
     "start": "babel-node src/client.js",
     "flow": "flow"
   },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-transform-modules-commonjs"
-    ],
-    "presets": [
-      "@babel/preset-flow"
-    ]
-  },
   "jest": {
     "modulePathIgnorePatterns": [
       "lib/*"
