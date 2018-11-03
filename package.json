@@ -13,9 +13,10 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "babel src --out-dir lib --copy-files production/package.json production/Procfile production/yarn.lock",
+    "build": "webpack",
     "start": "babel-node src/client.js",
-    "flow": "flow"
+    "flow": "flow",
+    "prod": "node lib/bot.bundle.js"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -41,11 +42,16 @@
     "@babel/preset-flow": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.6.0",
     "coveralls": "^3.0.2",
     "flow-bin": "^0.85.0",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }
