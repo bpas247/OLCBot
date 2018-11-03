@@ -1,96 +1,135 @@
-// const memeRuler = (author, args, users, db, channel) => {
-//   if (args.indexOf('start') !== -1) {
-//     let isAdmin = author.permissions.has('ADMINISTRATOR');
-//     if (isAdmin) {
-//       // Continue
-//       const querySelect = {
-//         text: 'SELECT date as currentDate FROM meme_last_ran',
-//         rowMode: 'array'
-//       };
+// @flow
+import { Collection, Snowflake, User, GuildMember } from 'discord.js';
+import { Database } from 'pg-promise';
 
-//       db.query(querySelect, (err, result) => {
-//         var out;
-//         if (err) {
-//           console.log(err);
-//           out = 'Something went wrong trying to access the database';
-//         } else {
-//           if (result[0] !== undefined) {
-//             out = 'Command has already ran, so nothing else will be done.';
-//           } else {
-//             // Time to start it!
-//             const curDay = new Date();
-//             db.query(
-//               'INSERT into meme_last_ran (month, day) VALUES($1, $2)',
-//               [curDay.getMonth(), curDay.getDay()],
-//               err => {
-//                 if (err) {
-//                   console.log(err);
-//                   channel.send('Something went wrong! yell at the dev!!!');
-//                 } else {
-//                   channel.send('Successfully started the memes!');
-//                 }
-//               }
-//             );
-//           }
-//         }
+export default async (
+  author: GuildMember,
+  args: Array<string>,
+  users: Collection<Snowflake, User>,
+  db: Database
+) => {
+  if (args.indexOf('start') !== -1) {
+    let isAdmin = author.hasPermission('ADMINISTRATOR');
 
-//         channel.send(out);
-//       });
-//     } else {
-//       channel.send("You don't have the permissions for this command.");
-//     }
-//   } else if (args.indexOf('ls') !== -1) {
-//     const querySelect = {
-//       text: 'SELECT id as name, count as counting FROM meme_count',
-//       rowMode: 'array'
-//     };
+    if (!isAdmin) {
+      return "You don't have the permissions for this command.";
+    }
+    // Continue
+    let result = await db.any('SELECT month, day FROM meme_last_ran');
 
-//     db.query(querySelect, (err, result) => {
-//       var out;
-//       if (err) {
-//         console.log(err);
-//         out = 'Something went wrong trying to access the database';
-//       } else {
-//         out = "List of everyone's scores:";
+    let out;
 
-//         for (let row of result.rows) {
-//           var name = undefined;
-//           for (let user of users) {
-//             if (user.id == row[0]) {
-//               name = user;
-//             }
-//           }
-//           out += '\n' + name + ' - ' + row[1];
-//         }
-//       }
+    if (result[0] !== undefined) {
+      out = 'Command has already ran, so nothing else will be done.';
+    } else {
+      // Time to start it!
+      const curDay = new Date();
 
-//       channel.send(out);
-//     });
-//   } else if (args.indexOf('lastRan') !== -1) {
-//     const querySelect = {
-//       text: 'SELECT month as month, day as day FROM meme_last_ran',
-//       rowMode: 'array'
-//     };
+      try {
+        await db.query(
+          'INSERT into meme_last_ran (month, day) VALUES($1, $2)',
+          [curDay.getMonth(), curDay.getDate()]
+        );
+      } catch (error) {
+        console.log(error);
+        out = 'Something went wrong! yell at the dev!!!';
+      }
 
-//     db.query(querySelect, (err, result) => {
-//       var out;
-//       if (err) {
-//         console.log(err);
-//         out = 'Something went wrong trying to access the database';
-//       } else {
-//         out =
-//           'Last ran on ' +
-//           result.rows[0][0] +
-//           '/' +
-//           result.rows[0][1] +
-//           '/2018';
-//       }
+      out = 'Sucessfully started!';
+    }
 
-//       channel.send(out);
-//     });
-//   }
-// };
+    return out;
+  } else if (args.indexOf('ls') !== -1) {
+    let result;
+    try {
+      result = await db.any('SELECT id, count FROM meme_count');
+    } catch (err) {
+      console.log(err);
+      return "Something went wrong, it probably wasn't started";
+    }
 
-// module.exports = {
-//   memeRuler
-// };
+    if (result.length == 0) {
+      return 'Nobodye has posted any memes yet :(';
+    }
+
+    let out = "List of everyone's scores:";
+
+    for (let row of result) {
+      var name = 'undefined';
+      for (let user of users) {
+        if (user.id == row.id) {
+          name = user;
+        }
+      }
+      out += '\n' + name + ' - ' + row.count;
+    }
+
+    return out;
+  } else if (args.indexOf('lastRan') !== -1) {
+    let result = await db.any('SELECT month, day FROM meme_last_ran');
+    if (result[0] == undefined) {
+      return "hasn't been ran before";
+    }
+
+    let out =
+      'Last ran on ' +
+      (parseInt(result[0].month) + 1) +
+      '/' +
+      result[0].day +
+      '/2018';
+
+    return out;
+  } else if (args.indexOf('resetTime') !== -1) {
+    let isAdmin = author.hasPermission('ADMINISTRATOR');
+
+    if (!isAdmin) {
+      return "You don't have the permissions for this command.";
+    }
+
+    await db.query('DELETE FROM meme_last_ran');
+
+    return 'Successfully reset the time';
+  } else if (args.indexOf('resetCount') !== -1) {
+    let isAdmin = author.hasPermission('ADMINISTRATOR');
+
+    if (!isAdmin) {
+      return "You don't have the permissions for this command.";
+    }
+
+    await db.query('DELETE FROM meme_count');
+
+    return 'Successfully reset the count';
+  }
+};
+
+export const updateCount = async (
+  user: number,
+  newCount: number,
+  db: Database
+) => {
+  // await db.query("DROP TABLE meme_count");
+  // return "dropped it";
+  // Get the current count
+  let result;
+  try {
+    result = await db.any('SELECT count FROM meme_count WHERE id = $1', user);
+  } catch (err) {
+    console.log(err);
+    return 'something went wrong';
+  }
+  //console.log(result[0].count);
+  if (result.length === 0) {
+    // Create a new entry
+    await db.query('INSERT into meme_count (id, count) VALUES($1, $2)', [
+      user,
+      newCount
+    ]);
+    return 'Added new entry!';
+  } else {
+    await db.query('UPDATE meme_count SET count = $1 WHERE id = $2', [
+      result[0].count + newCount,
+      user
+    ]);
+    return 'Updated entry!';
+  }
+};

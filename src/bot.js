@@ -11,6 +11,8 @@ import { Client, Message } from 'discord.js';
 // Import cogs
 import cogs from './cogs/cog';
 
+import { updateCount } from './cogs/meme-ruler';
+
 // Prefix
 const Prefix = '!';
 
@@ -42,13 +44,7 @@ export const onCreate = async (client: Client) => {
   console.log('All database tables are ready!');
 };
 
-export const onMessage = async (client: Client, message: Message) => {
-  // This event will run on every single message received, from any channel or DM.
-
-  // It's good practice to ignore other bots. This also makes your bot ignore itself
-  // and not get into a spam loop (we call that "botception").
-  if (message.author.bot) return;
-
+const onCommand = async (client: Client, message: Message) => {
   // Also good practice to ignore any message that does not start with our prefix,
   // which is set in the configuration file.
   if (message.content.indexOf(Prefix) !== 0) return;
@@ -73,6 +69,8 @@ export const onMessage = async (client: Client, message: Message) => {
       outMessage = operation(message, args, startDate);
     } else if (command == 'birthday') {
       outMessage = await operation(message, args, client.users.array(), db);
+    } else if (command == 'memes') {
+      outMessage = await operation(message, args, client.users.array(), db);
     } else {
       outMessage = await operation(message, args);
     }
@@ -82,5 +80,33 @@ export const onMessage = async (client: Client, message: Message) => {
   // Send the message
   if (outMessage !== undefined) {
     message.channel.send(outMessage);
+  }
+};
+
+export const onMessage = async (client: Client, message: Message) => {
+  // This event will run on every single message received, from any channel or DM.
+
+  // It's good practice to ignore other bots. This also makes your bot ignore itself
+  // and not get into a spam loop (we call that "botception").
+  if (message.author.bot) return;
+
+  if (message.content.indexOf(Prefix) !== 0) {
+    // Watchers
+    let reactions;
+    // Reaction timers
+    try {
+      reactions = await message.awaitReactions(
+        (reaction, user) => true,
+        { time: 300000 } // production
+        //{time: 3000} // testing
+      );
+      //message.channel.send("User has over " + reactions.size + " reactions");
+      let result = await updateCount(message.author.id, reactions.size, db);
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
+  } else {
+    await onCommand(client, message);
   }
 };

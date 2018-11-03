@@ -2,6 +2,7 @@ import birthday from './birthday';
 import { complain, sassy, motivate, help } from './messages';
 import { randomGrab } from './Utilities';
 import alive from './alive';
+import memeRuler from './meme-ruler';
 
 export default new Map([
   [
@@ -57,11 +58,12 @@ export default new Map([
     async (message, args, users, db) => {
       return await birthday(message.author.id, args, users, db);
     }
+  ],
+  [
+    'memes',
+    async (message, args, users, db) => {
+      let author = await message.guild.fetchMember(message.author);
+      return await memeRuler(author, args, users, db);
+    }
   ]
-  // [
-  //   "memes",
-  //   (author, args, users, db, channel) => {
-  //     memeRuler(author, args, users, db, channel);
-  //   }
-  // ]
 ]);
