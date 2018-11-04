@@ -18,6 +18,9 @@ module.exports = {
       },
       {
         from: 'production/package.json'
+      },
+      {
+        from: 'production/yarn.lock'
       }
     ])
   ],
