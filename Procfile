@@ -1,1 +1,1 @@
-worker: node bot.bundle.js
+worker: yarn start
