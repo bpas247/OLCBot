@@ -9,7 +9,7 @@ install:
   - yarn install
 script:
   - yarn flow
-  - jest --coverage --coverageReporters=text-lcov | coveralls
+  - jest --detectOpenHandles --coverage --coverageReporters=text-lcov | coveralls
 before_deploy:
   - yarn build
 deploy:
