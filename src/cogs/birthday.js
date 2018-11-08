@@ -36,7 +36,7 @@ const getUser = (userId: string, users: Collection<Snowflake, User>) => {
   return name;
 };
 
-const getDateFromArgs = (args: Array<string>) => {
+export const getDateFromArgs = (args: Array<string>) => {
   var date = undefined;
   for (let i = 0; i < args.length; i++) {
     if (isValidDate(args[i])) {
