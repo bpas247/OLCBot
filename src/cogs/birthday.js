@@ -39,8 +39,8 @@ export default async (
       // If the user is valid, insert into the database
       if (isValid) {
         await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [
-          date,
-          authorId
+          authorId,
+          date
         ]);
         return 'Added new entry!';
       }
@@ -52,12 +52,8 @@ export default async (
     var out = "List of everyone's birthday goes as follows:";
 
     for (let row of result) {
-      var name: 'undefined' | User = 'undefined';
-      for (let user of users) {
-        if (user.id == row.id) {
-          name = user;
-        }
-      }
+      var name: 'undefined' | User = getUser(row.id, users);
+
       if (name !== 'undefined') {
         var userName: string = name.username;
         out += '\n' + userName + ' - ' + row.date;
@@ -70,4 +66,14 @@ export default async (
   } else {
     return 'Command for birthday could not be found';
   }
+};
+
+const getUser = (userId: string, users: Collection<Snowflake, User>) => {
+  var name: 'undefined' | User = 'undefined';
+  for (let user of users) {
+    if (user.id == userId) {
+      name = user;
+    }
+  }
+  return name;
 };
