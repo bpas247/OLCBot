@@ -89,9 +89,7 @@ export const onMessage = async (client: Client, message: Message) => {
         { time: 300000 } // production
         //{time: 3000} // testing
       );
-      //message.channel.send("User has over " + reactions.size + " reactions");
       let result = await updateCount(message.author.id, reactions.size, db);
-      console.log(result);
     } catch (err) {
       console.log(err);
     }
