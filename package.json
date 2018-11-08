@@ -12,7 +12,7 @@
     "pg-promise": "^8.5.1"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack",
     "start": "babel-node src/client.js",
     "flow": "flow",
