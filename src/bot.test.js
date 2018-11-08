@@ -1,7 +1,7 @@
 import { onCreate, db } from './bot';
 
 test('Test to make sure it creates the databases', async () => {
-  onCreate();
+  await onCreate();
   expect(await doesExist('birthday')).toBe(true);
   expect(await doesExist('meme_count')).toBe(true);
   expect(await doesExist('meme_last_ran')).toBe(true);
