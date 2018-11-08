@@ -18,20 +18,9 @@ const Prefix = '!';
 
 var startDate;
 
-export const onCreate = async (client: Client) => {
-  // This event will run if the bot starts, and logs in, successfully.
-  console.log(
-    `Bot has started, with ${client.users.size} users, in ${
-      client.channels.size
-    } channels of ${client.guilds.size} guilds.`
-  );
-
+export const onCreate = async () => {
   // set the date
   startDate = new Date();
-
-  // Example of changing the bot's playing game to something useful. `client.user` is what the
-  // docs refer to as the "ClientUser".
-  client.user.setActivity(`Type !help for more info`);
 
   await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
 

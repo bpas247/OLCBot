@@ -52,13 +52,18 @@ export default async (
     var out = "List of everyone's birthday goes as follows:";
 
     for (let row of result) {
-      var name = 'undefined';
+      var name: 'undefined' | User = 'undefined';
       for (let user of users) {
         if (user.id == row.id) {
           name = user;
         }
       }
-      out += '\n' + name + ' - ' + row.date;
+      if (name !== 'undefined') {
+        var userName: string = name.username;
+        out += '\n' + userName + ' - ' + row.date;
+      } else {
+        out += '\n' + name + ' - ' + row.date;
+      }
     }
 
     return out;
