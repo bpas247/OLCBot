@@ -4,7 +4,7 @@ require('dotenv').config();
 // Load up the database
 const pgp = require('pg-promise')();
 pgp.pg.defaults.ssl = true;
-const db = pgp(process.env.DATABASE_URL);
+export const db = pgp(process.env.DATABASE_URL);
 
 import { Client, Message } from 'discord.js';
 
