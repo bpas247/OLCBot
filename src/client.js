@@ -21,7 +21,7 @@ client.on(
     // docs refer to as the "ClientUser".
     client.user.setActivity(`Type !help for more info`);
 
-    await onCreate(client);
+    await onCreate();
   },
   err => {
     if (err) {
