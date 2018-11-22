@@ -1,5 +1,5 @@
 import { Collection, Snowflake, User } from 'discord.js';
-import { isValidDate } from './Utilities';
+import { isValidDate, getUser } from './Utilities';
 
 export default async (
   authorId: number,
@@ -28,10 +28,6 @@ export default async (
   }
 };
 
-const getUser = (userId: string, users: Collection<string, User>): undefined | User => {
-  return users.find(user => user.id == userId);
-};
-
 export const getDateFromArgs = (args: Array<string>) => {
   var date = undefined;
   for (let i = 0; i < args.length; i++) {
@@ -43,7 +39,7 @@ export const getDateFromArgs = (args: Array<string>) => {
   return date;
 };
 
-const isInDatabase = (authorId: number, result: Array<any>) => {
+export const isInDatabase = (authorId: number, result: Array<any>) => {
   var isInDatabase = false;
   for (let row of result) {
     if (row.id == authorId) {
