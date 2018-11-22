@@ -22,11 +22,6 @@ client.on(
     client.user.setActivity(`Type !help for more info`);
 
     await onCreate();
-  },
-  err => {
-    if (err) {
-      console.log(err);
-    }
   }
 );
 
@@ -34,11 +29,6 @@ client.on(
   'message',
   async message => {
     await onMessage(client, message);
-  },
-  err => {
-    if (err) {
-      console.log(err);
-    }
   }
 );
 

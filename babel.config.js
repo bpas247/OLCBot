@@ -1,4 +1,4 @@
-{
+module.exports = {
   "plugins": [
     "@babel/plugin-transform-modules-commonjs",
     "@babel/proposal-class-properties",
