@@ -49,7 +49,7 @@ export const isInDatabase = (authorId: number, result: Array<any>) => {
   return isInDatabase;
 };
 
-const isDuplicateEntry = (
+export const isDuplicateEntry = (
   authorId: number,
   date: string,
   result: Array<any>
