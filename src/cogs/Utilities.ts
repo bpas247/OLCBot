@@ -1,4 +1,5 @@
-// @flow
+import { Collection, User } from 'discord.js';
+
 export const isValidDate = (text: string) => {
   var t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
 
@@ -16,4 +17,8 @@ export const isValidDate = (text: string) => {
 
 export const randomGrab = (array: Array<string>) => {
   return array[Math.floor(Math.random() * array.length)];
+};
+
+export const getUser = (userId: string, users: Collection<string, User>): undefined | User => {
+  return users.find(user => user.id == userId);
 };

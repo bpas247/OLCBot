@@ -1,9 +1,10 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/client.js',
+  entry: ['@babel/polyfill','./src/client.ts'],
   mode: 'production',
   target: 'node', // in order to ignore built-in modules like path, fs, etc.
   externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
@@ -12,6 +13,7 @@ module.exports = {
     filename: 'bot.bundle.js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: 'production/Procfile'
@@ -27,20 +29,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.ts?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [
-              "@babel/plugin-transform-modules-commonjs"
-            ],
-            presets: [
-              "@babel/preset-flow"
+            "presets": [
+              "@babel/env",
+              "@babel/typescript"
             ]
           }
         }
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: [ '.ts', '.js' ]
+  },
 };

@@ -1,7 +1,7 @@
 import { randomGrab, isValidDate } from './Utilities';
 
 it('Should randomly grab something in the array', () => {
-  const arrTest = [5, 4, 9, 2];
+  const arrTest = ["5", "4", "9", "2"];
   const returns = randomGrab(arrTest);
 
   var out = false;

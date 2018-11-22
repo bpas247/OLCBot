@@ -1,8 +1,7 @@
-// @flow
 export const calculateTimeDist = (startDate: Date, endDate: Date) => {
   var out = [];
 
-  var difference = Math.abs(startDate - endDate);
+  var difference:number = Math.abs(Number(startDate) - Number(endDate));
 
   out.push(Math.floor(difference / (1000 * 60 * 60 * 24)));
 

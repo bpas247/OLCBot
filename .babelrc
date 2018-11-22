@@ -1,8 +1,6 @@
 {
-  "plugins": [
-    "@babel/plugin-transform-modules-commonjs"
-  ],
   "presets": [
-    "@babel/preset-flow"
+    "@babel/env",
+    "@babel/typescript"
   ]
 }
