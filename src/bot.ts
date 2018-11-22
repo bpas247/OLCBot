@@ -1,4 +1,3 @@
-// @flow
 require('dotenv').config();
 
 // Load up the database
@@ -46,8 +45,14 @@ const onCommand = async (client: Client, message: Message) => {
     .slice(Prefix.length)
     .trim()
     .split(/ +/g);
-    
-  const command = args.shift().toLowerCase();
+  
+  const testCommand:(string | undefined) = args.shift();
+
+  let command:string;
+  if(testCommand !== undefined)
+    command = testCommand.toLowerCase();
+  else
+    command = "undefined";
 
   // Default case
   let outMessage = 'Could not recognize command';

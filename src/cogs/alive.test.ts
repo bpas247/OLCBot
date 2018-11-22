@@ -1,7 +1,7 @@
 import { calculateTimeDist } from './alive';
 describe('Time Calculation tests', () => {
-  var curTime;
-  var addedSeconds;
+  var curTime: Date;
+  var addedSeconds: Date;
 
   beforeEach(() => {
     curTime = new Date('December 17, 1995 00:00:00');
@@ -36,7 +36,7 @@ describe('Time Calculation tests', () => {
   });
 });
 
-function valuesAreSame(arr1, arr2) {
+function valuesAreSame(arr1:Array<number>, arr2:Array<number>) {
   if (arr1.length !== arr2.length) {
     return false;
   } else {

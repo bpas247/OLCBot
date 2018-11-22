@@ -5,7 +5,7 @@ export default async (
   author: GuildMember,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db
+  db:any
 ) => {
   if (args.indexOf('start') !== -1) {
     let isAdmin = author.hasPermission('ADMINISTRATOR');
@@ -54,14 +54,14 @@ export default async (
     let out = "List of everyone's scores:";
 
     for (let row of result) {
-      var name: 'undefined' | User = 'undefined';
+      var name:User|undefined = undefined;
       for (let user of users) {
-        if (user.id == row.id) {
-          name = user;
+        if (user[1].id == row.id) {
+          name = user[1];
         }
       }
 
-      if (name !== 'undefined') {
+      if (name !== undefined) {
         var userName: string = name.username;
         out += '\n' + userName + ' - ' + row.count;
       } else {
@@ -108,9 +108,9 @@ export default async (
 };
 
 export const updateCount = async (
-  user: number,
+  user: string,
   newCount: number,
-  db
+  db:any
 ) => {
   // await db.query("DROP TABLE meme_count");
   // return "dropped it";

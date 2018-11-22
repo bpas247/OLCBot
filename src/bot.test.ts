@@ -7,7 +7,7 @@ test('Test to make sure it creates the databases', async () => {
   expect(await doesExist('meme_last_ran')).toBe(true);
 });
 
-async function doesExist(name) {
+async function doesExist(name:string) {
   try {
     return (await db.any('SELECT * FROM ' + name)) !== undefined;
   } catch (error) {

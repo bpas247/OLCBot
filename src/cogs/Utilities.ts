@@ -1,4 +1,3 @@
-// @flow
 export const isValidDate = (text: string) => {
   var t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
 
