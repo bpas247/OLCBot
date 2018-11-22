@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles",
     "build": "webpack",
-    "start": "babel-node src/client.ts --extensions '.ts'",
+    "start": "yarn build && yarn prod",
     "type": "tsc",
     "prod": "node lib/bot.bundle.js"
   },
@@ -32,7 +32,6 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
@@ -44,6 +43,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "coveralls": "^3.0.2",
     "husky": "^1.1.2",

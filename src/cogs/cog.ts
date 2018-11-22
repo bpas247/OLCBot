@@ -1,3 +1,4 @@
+import { Message } from 'discord.js';
 import birthday from './birthday';
 import { complain, sassy, motivate, help } from './messages';
 import { randomGrab } from './Utilities';
@@ -61,9 +62,13 @@ export default new Map<string, Function>([
   ],
   [
     'memes',
-    async (message:any, args:Array<string>, users:any, db:any) => {
-      let author = await message.guild.fetchMember(message.author);
-      return await memeRuler(author, args, users, db);
+    async (message:Message, args:Array<string>, users:any, db:any) => {
+      if(message.guild !== null) {
+        let author = await message.guild.fetchMember(message.author);
+        return await memeRuler(author, args, users, db);
+      } else {
+        return "Command does not work in DM";
+      }
     }
   ]
 ]);

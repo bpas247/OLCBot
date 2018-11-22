@@ -17,21 +17,19 @@ export default async (
       return "You didn't enter a valid date";
     }
   } else if (args.indexOf('ls') != -1) {
-    const result = await db.any('SELECT id, date FROM birthday');
-    return listUsers(result, users);
+    try {
+      const result:Object = await db.any('SELECT id, date FROM birthday');
+      return listUsers(result, users);
+    } catch(e) {
+      console.log(e);
+    }
   } else {
     return 'Command for birthday could not be found';
   }
 };
 
-const getUser = (userId: string, users: Collection<Snowflake, User>) => {
-  var name: undefined | User = undefined;
-  for (let user of users) {
-    if (user[1].id == userId) {
-      name = user[1];
-    }
-  }
-  return name;
+const getUser = (userId: string, users: Collection<string, User>): undefined | User => {
+  return users.find(user => user.id == userId);
 };
 
 export const getDateFromArgs = (args: Array<string>) => {
@@ -93,7 +91,7 @@ const updateEntry = async (
 };
 
 const listUsers = (
-  result: Array<any>,
+  result: any,
   users: Collection<Snowflake, User>
 ) => {
   var out = "List of everyone's birthday goes as follows:";

@@ -1,5 +1,5 @@
 import { Collection, Snowflake, User, GuildMember } from 'discord.js';
-// import { Database } from 'pg-promise';
+import { getUser } from './Utilities';
 
 export default async (
   author: GuildMember,
@@ -39,7 +39,7 @@ export default async (
 
     return out;
   } else if (args.indexOf('ls') !== -1) {
-    let result;
+    let result:Array<any> | undefined = undefined;
     try {
       result = await db.any('SELECT id, count FROM meme_count');
     } catch (err) {
@@ -47,22 +47,20 @@ export default async (
       return "Something went wrong, it probably wasn't started";
     }
 
+    if(result === undefined)
+      return "Could not access database";
+
     if (result.length == 0) {
-      return 'Nobodye has posted any memes yet :(';
+      return 'Nobody has posted any memes yet :(';
     }
 
     let out = "List of everyone's scores:";
 
     for (let row of result) {
-      var name:User|undefined = undefined;
-      for (let user of users) {
-        if (user[1].id == row.id) {
-          name = user[1];
-        }
-      }
+      let name:User|undefined = getUser(row.id, users);
 
       if (name !== undefined) {
-        var userName: string = name.username;
+        var userName:string = name.username;
         out += '\n' + userName + ' - ' + row.count;
       } else {
         out += '\n' + name + ' - ' + row.count;
