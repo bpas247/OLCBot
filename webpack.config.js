@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.ts?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -36,11 +36,14 @@ module.exports = {
               "@babel/plugin-transform-modules-commonjs"
             ],
             presets: [
-              "@babel/preset-flow"
+              "@babel/typescript"
             ]
           }
         }
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: [ '.ts', '.js' ]
+  },
 };

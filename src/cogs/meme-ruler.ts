@@ -1,12 +1,11 @@
-// @flow
 import { Collection, Snowflake, User, GuildMember } from 'discord.js';
-import { Database } from 'pg-promise';
+// import { Database } from 'pg-promise';
 
 export default async (
   author: GuildMember,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db: Database
+  db
 ) => {
   if (args.indexOf('start') !== -1) {
     let isAdmin = author.hasPermission('ADMINISTRATOR');
@@ -111,7 +110,7 @@ export default async (
 export const updateCount = async (
   user: number,
   newCount: number,
-  db: Database
+  db
 ) => {
   // await db.query("DROP TABLE meme_count");
   // return "dropped it";

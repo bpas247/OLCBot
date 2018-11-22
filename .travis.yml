@@ -8,7 +8,7 @@ notifications:
 install:
   - yarn install
 script:
-  - yarn flow
+  - yarn type
   - jest --forceExit --coverage --coverageReporters=text-lcov | coveralls
 before_deploy:
   - yarn build

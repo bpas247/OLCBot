@@ -1,4 +1,3 @@
-// @flow
 export const calculateTimeDist = (startDate: Date, endDate: Date) => {
   var out = [];
 

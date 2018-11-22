@@ -16,7 +16,7 @@ import { updateCount } from './cogs/meme-ruler';
 // Prefix
 const Prefix = '!';
 
-var startDate;
+let startDate: Date;
 
 export const onCreate = async () => {
   // set the date
@@ -46,6 +46,7 @@ const onCommand = async (client: Client, message: Message) => {
     .slice(Prefix.length)
     .trim()
     .split(/ +/g);
+    
   const command = args.shift().toLowerCase();
 
   // Default case

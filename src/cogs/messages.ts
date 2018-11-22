@@ -1,5 +1,4 @@
-// @flow
-export const motivate = [
+export const motivate:Array<string> = [
   'students who visit the Bock Learning Center have improved grades',
   'a student has successfully understood the concept you explained',
   'a student has signed in successfully',
@@ -7,14 +6,14 @@ export const motivate = [
   'there are no students left in the center at closing time'
 ];
 
-export const sassy = [
+export const sassy:Array<string> = [
   'no.',
   'Let me get back to you on that :information_desk_person:',
   "Here's a suggestion: how about you do it?",
   "Could you ask for nothing? I'll be able to do nothing."
 ];
 
-export const complain = [
+export const complain:Array<string> = [
   "Why doesn't anyone use introductory sentences?",
   "I'm not a style guide!",
   'Just google it!!',
@@ -27,7 +26,7 @@ export const complain = [
   "Don't forget the '+ c'."
 ];
 
-export const help =
+export const help:string =
   '!ping - Tests to see if the bot is working\n' +
   '!say - Tell the bot to say something\n' +
   '!do - Tell the bot to do something\n' +

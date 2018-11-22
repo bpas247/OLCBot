@@ -1,13 +1,12 @@
 // @flow
 import { Collection, Snowflake, User } from 'discord.js';
-import { Database } from 'pg-promise';
 import { isValidDate } from './Utilities';
 
 export default async (
   authorId: number,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db: Database
+  db
 ) => {
   if (args.indexOf('add') != -1) {
     const date: string | typeof undefined = getDateFromArgs(args);
@@ -27,7 +26,7 @@ export default async (
 };
 
 const getUser = (userId: string, users: Collection<Snowflake, User>) => {
-  var name: 'undefined' | User = 'undefined';
+  var name: undefined | User = undefined;
   for (let user of users) {
     if (user.id == userId) {
       name = user;
@@ -74,7 +73,7 @@ const updateEntry = async (
   authorId: number,
   date: string,
   result: Array<Object>,
-  db: Database
+  db
 ) => {
   if (!isInDatabase(authorId, result)) {
     await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [
