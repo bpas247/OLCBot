@@ -53,56 +53,63 @@ export default async (
     if (result.length == 0) {
       return 'Nobody has posted any memes yet :(';
     }
-
-    let out = "List of everyone's scores:";
-
-    for (let row of result) {
-      let name:User|undefined = getUser(row.id, users);
-
-      if (name !== undefined) {
-        var userName:string = name.username;
-        out += '\n' + userName + ' - ' + row.count;
-      } else {
-        out += '\n' + name + ' - ' + row.count;
-      }
-    }
-
-    return out;
-  } else if (args.indexOf('lastRan') !== -1) {
-    let result = await db.any('SELECT month, day FROM meme_last_ran');
-    if (result[0] == undefined) {
-      return "hasn't been ran before";
-    }
-
-    let out =
-      'Last ran on ' +
-      (parseInt(result[0].month) + 1) +
-      '/' +
-      result[0].day +
-      '/2018';
-
-    return out;
-  } else if (args.indexOf('resetTime') !== -1) {
-    let isAdmin = author.hasPermission('ADMINISTRATOR');
-
-    if (!isAdmin) {
-      return "You don't have the permissions for this command.";
-    }
-
-    await db.query('DELETE FROM meme_last_ran');
-
-    return 'Successfully reset the time';
-  } else if (args.indexOf('resetCount') !== -1) {
-    let isAdmin = author.hasPermission('ADMINISTRATOR');
-
-    if (!isAdmin) {
-      return "You don't have the permissions for this command.";
-    }
-
-    await db.query('DELETE FROM meme_count');
-
-    return 'Successfully reset the count';
+    return listCounts(result, users);
   }
+  // else if (args.indexOf('lastRan') !== -1) {
+  //   let result = await db.any('SELECT month, day FROM meme_last_ran');
+  //   if (result[0] == undefined) {
+  //     return "hasn't been ran before";
+  //   }
+
+  //   let out =
+  //     'Last ran on ' +
+  //     (parseInt(result[0].month) + 1) +
+  //     '/' +
+  //     result[0].day +
+  //     '/2018';
+
+  //   return out;
+  // } else if (args.indexOf('resetTime') !== -1) {
+  //   let isAdmin = author.hasPermission('ADMINISTRATOR');
+
+  //   if (!isAdmin) {
+  //     return "You don't have the permissions for this command.";
+  //   }
+
+  //   await db.query('DELETE FROM meme_last_ran');
+
+  //   return 'Successfully reset the time';
+  // } else if (args.indexOf('resetCount') !== -1) {
+  //   let isAdmin = author.hasPermission('ADMINISTRATOR');
+
+  //   if (!isAdmin) {
+  //     return "You don't have the permissions for this command.";
+  //   }
+
+  //   await db.query('DELETE FROM meme_count');
+
+  //   return 'Successfully reset the count';
+  // }
+};
+
+export const listCounts = (
+  result:Array<any>,
+  users: Collection<string, User>
+) => {
+  let out = "List of everyone's scores:";
+
+  for (let row of result) {
+    let name:User|undefined = getUser(row.id, users);
+
+    if (name !== undefined) {
+      var userName:string = name.username;
+      out += '\n' + userName + ' - ' + row.count;
+    } else {
+      out += '\n' + name + ' - ' + row.count;
+    }
+  }
+
+  return out;
 };
 
 export const updateCount = async (
@@ -110,8 +117,6 @@ export const updateCount = async (
   newCount: number,
   db:any
 ) => {
-  // await db.query("DROP TABLE meme_count");
-  // return "dropped it";
   // Get the current count
   let result;
   try {
@@ -120,7 +125,6 @@ export const updateCount = async (
     console.log(err);
     return 'something went wrong';
   }
-  //console.log(result[0].count);
   if (result.length === 0) {
     // Create a new entry
     await db.query('INSERT into meme_count (id, count) VALUES($1, $2)', [
