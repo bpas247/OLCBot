@@ -7,38 +7,39 @@ export default async (
   users: Collection<Snowflake, User>,
   db:any
 ) => {
-  if (args.indexOf('start') !== -1) {
-    let isAdmin = author.hasPermission('ADMINISTRATOR');
+  // if (args.indexOf('start') !== -1) {
+  //   let isAdmin = author.hasPermission('ADMINISTRATOR');
 
-    if (!isAdmin) {
-      return "You don't have the permissions for this command.";
-    }
-    // Continue
-    let result = await db.any('SELECT month, day FROM meme_last_ran');
+  //   if (!isAdmin) {
+  //     return "You don't have the permissions for this command.";
+  //   }
+  //   // Continue
+  //   let result = await db.any('SELECT month, day FROM meme_last_ran');
 
-    let out;
+  //   let out;
 
-    if (result[0] !== undefined) {
-      out = 'Command has already ran, so nothing else will be done.';
-    } else {
-      // Time to start it!
-      const curDay = new Date();
+  //   if (result[0] !== undefined) {
+  //     out = 'Command has already ran, so nothing else will be done.';
+  //   } else {
+  //     // Time to start it!
+  //     const curDay = new Date();
 
-      try {
-        await db.query(
-          'INSERT into meme_last_ran (month, day) VALUES($1, $2)',
-          [curDay.getMonth(), curDay.getDate()]
-        );
-      } catch (error) {
-        console.log(error);
-        out = 'Something went wrong! yell at the dev!!!';
-      }
+  //     try {
+  //       await db.query(
+  //         'INSERT into meme_last_ran (month, day) VALUES($1, $2)',
+  //         [curDay.getMonth(), curDay.getDate()]
+  //       );
+  //     } catch (error) {
+  //       console.log(error);
+  //       out = 'Something went wrong! yell at the dev!!!';
+  //     }
 
-      out = 'Sucessfully started!';
-    }
+  //     out = 'Sucessfully started!';
+  //   }
 
-    return out;
-  } else if (args.indexOf('ls') !== -1) {
+  //   return out;
+  // } 
+  if (args.indexOf('ls') !== -1) {
     let result:Array<any> | undefined = undefined;
     try {
       result = await db.any('SELECT id, count FROM meme_count');
@@ -68,31 +69,33 @@ export default async (
     }
 
     return out;
-  } else if (args.indexOf('lastRan') !== -1) {
-    let result = await db.any('SELECT month, day FROM meme_last_ran');
-    if (result[0] == undefined) {
-      return "hasn't been ran before";
-    }
+  } 
+  // else if (args.indexOf('lastRan') !== -1) {
+  //   let result = await db.any('SELECT month, day FROM meme_last_ran');
+  //   if (result[0] == undefined) {
+  //     return "hasn't been ran before";
+  //   }
 
-    let out =
-      'Last ran on ' +
-      (parseInt(result[0].month) + 1) +
-      '/' +
-      result[0].day +
-      '/2018';
+  //   let out =
+  //     'Last ran on ' +
+  //     (parseInt(result[0].month) + 1) +
+  //     '/' +
+  //     result[0].day +
+  //     '/2018';
 
-    return out;
-  } else if (args.indexOf('resetTime') !== -1) {
-    let isAdmin = author.hasPermission('ADMINISTRATOR');
+  //   return out;
+  // } else if (args.indexOf('resetTime') !== -1) {
+  //   let isAdmin = author.hasPermission('ADMINISTRATOR');
 
-    if (!isAdmin) {
-      return "You don't have the permissions for this command.";
-    }
+  //   if (!isAdmin) {
+  //     return "You don't have the permissions for this command.";
+  //   }
 
-    await db.query('DELETE FROM meme_last_ran');
+  //   await db.query('DELETE FROM meme_last_ran');
 
-    return 'Successfully reset the time';
-  } else if (args.indexOf('resetCount') !== -1) {
+  //   return 'Successfully reset the time';
+  // }
+  else if (args.indexOf('resetCount') !== -1) {
     let isAdmin = author.hasPermission('ADMINISTRATOR');
 
     if (!isAdmin) {
