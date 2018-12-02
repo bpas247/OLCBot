@@ -1,4 +1,6 @@
 import { calculateTimeDist } from './alive';
+import Alive from './alive';
+
 describe('Time Calculation tests', () => {
   var curTime: Date;
   var addedSeconds: Date;
@@ -34,6 +36,13 @@ describe('Time Calculation tests', () => {
 
     expect(valuesAreSame(returns, [3, 0, 0, 0])).toBe(true);
   });
+});
+
+it('Should print out the correct time', () => {
+  let expectedOut:string = "I have been alive for: \n0 days, 0 hours, 0 minutes, 0 seconds";
+  let testDate:Date = new Date();
+
+  expect(Alive(testDate, testDate)).toBe(expectedOut);
 });
 
 function valuesAreSame(arr1:Array<number>, arr2:Array<number>) {

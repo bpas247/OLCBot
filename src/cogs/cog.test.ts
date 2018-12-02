@@ -43,6 +43,15 @@ it('Successfully returns help', () => {
   }
 });
 
+it('Successfully returns the correct time', () => {
+  let test = cogs.get('alive');
+  expect(test).toBeDefined();
+
+  if(test !== undefined) {
+    expect(test("", [], new Date())).toBeDefined();
+  }
+});
+
 function foundInArray(string:string, arr:Array<string>) {
   for (var i = 0; i < arr.length; i++) {
     if (string == arr[i]) {

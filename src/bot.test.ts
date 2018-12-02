@@ -2,9 +2,12 @@ import { onCreate, db } from './bot';
 
 test('Test to make sure it creates the databases', async () => {
   await onCreate();
-  expect(await doesExist('birthday')).toBe(true);
-  expect(await doesExist('meme_count')).toBe(true);
-  expect(await doesExist('meme_last_ran')).toBe(true);
+  let dbNames:Array<string> = ['birthday', 'meme_count', 'meme_last_ran'];
+
+  for(let name of dbNames) {
+    let returns = await doesExist(name);
+    expect(returns).toBeTruthy();
+  }
 });
 
 async function doesExist(name:string) {
