@@ -5004,10 +5004,10 @@ pg-pool@^2.0.4:
   resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-2.0.4.tgz#05ad0f2d9437d89c94ccc4f4d0a44ac65ade865b"
   integrity sha512-Mi2AsmlFkVMpI28NreaDkz5DkfxLOG16C/HNwi091LDlOiDiQACtAroLxSd1vIS2imBqxdjjO9cQZg2CwsOPbw==
 
-pg-promise@^8.5.1:
-  version "8.5.3"
-  resolved "https://registry.yarnpkg.com/pg-promise/-/pg-promise-8.5.3.tgz#2d17bf5c6eca8cb7aa19ceb08194e68f5fea721a"
-  integrity sha512-jSDl0dRaA6215qObUXGcq5cYqtUwIHQ89OMt8gWmHQN20a4I1pH+TIMXuKc58V5Ny2Qws0WPqTUg5aWfIm42Vg==
+pg-promise@^8.5.4:
+  version "8.5.4"
+  resolved "https://registry.yarnpkg.com/pg-promise/-/pg-promise-8.5.4.tgz#3c1c656d340b1d8e21bbd8017a650c795b375aca"
+  integrity sha512-GjGEL5WuRJOjTdTiI/v8x4SUd+nLh/fnAgKa8GvMi6xNKLaxvXOC6PiVj53n/oppUN6QjewGh06RBod4VrXhGQ==
   dependencies:
     manakin "0.5.2"
     pg "7.7.1"
