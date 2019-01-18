@@ -48,7 +48,7 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.14.3",
     "ts-jest": "^23.10.4",
-    "typescript": "^3.2.2",
+    "typescript": "^3.2.4",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-node-externals": "^1.7.2"
