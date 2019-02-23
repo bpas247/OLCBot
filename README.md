@@ -21,5 +21,5 @@ yarn install
 ### Running the bot locally 
 If you want to run the bot locally, you'll have to be signed into heroku. Then, run the following command:
 ```
-yarn run local
+yarn start
 ```
