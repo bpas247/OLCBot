@@ -32,7 +32,7 @@ client.on(
 client.on(
   'message',
   async message => {
-    await onMessage(client, message, db);
+    await onMessage(message, db);
   }
 );
 
