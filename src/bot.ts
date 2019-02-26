@@ -57,8 +57,10 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
 
   if (operation !== undefined) {
     if (command == 'alive') {
-      outMessage = operation(message, args, startDate);
-    } else {
+      outMessage = await operation(message, args, startDate);
+    } else if(command === 'birthday' || command === 'memes') {
+      outMessage = await operation(message, args, db);
+    }else {
       outMessage = await operation(message, args);
     }
   } else {

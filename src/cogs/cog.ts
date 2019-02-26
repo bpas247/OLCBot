@@ -57,7 +57,7 @@ export default new Map<string, Function>([
   ],
   [
     'birthday',
-    async (message:any, args:Array<string>, db:any) => {
+    async (message:any, args:Array<string>, db: IDatabase<any>) => {
       return await birthday(message.author.id, args, message.client.users.array(), db);
     }
   ],
