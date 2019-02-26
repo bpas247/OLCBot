@@ -1,5 +1,4 @@
 import { Collection, Snowflake, User, GuildMember } from 'discord.js';
-import { getUser } from './Utilities';
 
 export default async (
   author: GuildMember,
@@ -99,7 +98,7 @@ export const listCounts = (
   let out = "List of everyone's scores:";
 
   for (let row of result) {
-    let name:User|undefined = getUser(row.id, users);
+    let name: User | undefined = users.find(user => user.id == row.id);
 
     if (name !== undefined) {
       var userName:string = name.username;

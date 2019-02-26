@@ -1,4 +1,5 @@
-import { getDateFromArgs, isInDatabase, isDuplicateEntry } from './birthday';
+import sinon from 'sinon';
+import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers } from './birthday';
 
 describe('getDateFromArgs', () => {
   it('should get a valid date', () => {
@@ -14,30 +15,67 @@ describe('getDateFromArgs', () => {
 
 describe('isInDatabase', () => {
   it('should find the user in the array', () => {
-    let testId:number = 2124588682
-    let testArray:Array<Object> = [new Object({id: testId})];
-    expect(isInDatabase(testId,testArray)).toBeTruthy();
+    let testId: number = 2124588682
+    let testArray: Array<Object> = [new Object({ id: testId })];
+    expect(isInDatabase(testId, testArray)).toBeTruthy();
   });
 
-    it('should not find the user in the array', () => {
-    let testId:number = 2124588682
-    let testArray:Array<Object> = [new Object({id: testId + 25})];
-    expect(isInDatabase(testId,testArray)).toBeFalsy();
+  it('should not find the user in the array', () => {
+    let testId: number = 2124588682
+    let testArray: Array<Object> = [new Object({ id: testId + 25 })];
+    expect(isInDatabase(testId, testArray)).toBeFalsy();
   })
 });
 
 describe('isDuplicateEntry', () => {
   it('should detect that there is a duplicate', () => {
-    let testId:number = 2124588682;
-    let testDate:string = "December 5, 1981";
-    let testArray:Array<Object> = [new Object({id: testId, date: testDate})];
-    expect(isDuplicateEntry(testId, testDate, testArray)).toBeTruthy();    
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId, date: testDate })];
+    expect(isDuplicateEntry(testId, testDate, testArray)).toBeTruthy();
   });
 
   it('should detect that there is not a duplicate', () => {
-    let testId:number = 2124588682;
-    let testDate:string = "December 5, 1981";
-    let testArray:Array<Object> = [new Object({id: testId + 25, date: testDate})];
-    expect(isDuplicateEntry(testId, testDate, testArray)).toBeFalsy();    
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId + 25, date: testDate })];
+    expect(isDuplicateEntry(testId, testDate, testArray)).toBeFalsy();
+  });
+});
+
+describe("listUsers", () => {
+  it("should list current users", () => {
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId, date: testDate })];
+    let findStub = sinon.stub();
+    findStub.returns({
+      username: testId,
+      date: testDate
+    });
+    let users: any = {
+      find: findStub
+    }
+
+    let returns = listUsers(testArray, users);
+    expect(returns).toBe(
+      `List of everyone's birthday goes as follows:\n${testId} - ${testDate}`
+    );
+  });
+
+  it("Should not list a user not actively in the server", () => {
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId, date: testDate })];
+    let findStub = sinon.stub();
+    findStub.returns(undefined);
+    let users: any = {
+      find: findStub
+    }
+
+    let returns = listUsers(testArray, users);
+    expect(returns).toBe(
+      `List of everyone's birthday goes as follows:\n${undefined} - ${testDate}`
+    );
   });
 });

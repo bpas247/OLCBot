@@ -1,5 +1,5 @@
 import { Collection, Snowflake, User } from 'discord.js';
-import { isValidDate, getUser } from './Utilities';
+import { isValidDate } from './Utilities';
 import { IDatabase } from 'pg-promise';
 
 export default async (
@@ -87,14 +87,14 @@ const updateEntry = async (
   }
 };
 
-const listUsers = (
+export const listUsers = (
   result: any,
   users: Collection<Snowflake, User>
 ) => {
   var out = "List of everyone's birthday goes as follows:";
 
   for (let row of result) {
-    var name: undefined | User = getUser(row.id, users);
+    var name: undefined | User = users.find(user => user.id == row.id);
 
     if (name !== undefined) {
       var userName: string = name.username;
