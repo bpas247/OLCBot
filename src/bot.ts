@@ -1,23 +1,19 @@
 require('dotenv').config();
 
-// Load up the database
-const pgp = require('pg-promise')();
-pgp.pg.defaults.ssl = true;
-export const db = pgp(process.env.DATABASE_URL);
-
 import { Client, Message } from 'discord.js';
 
 // Import cogs
 import cogs from './cogs/cog';
 
 import { updateCount } from './cogs/meme-ruler';
+import { IDatabase } from 'pg-promise';
 
 // Prefix
 const Prefix = '!';
 
 let startDate: Date;
 
-export const onCreate = async () => {
+export const onCreate = async (db: IDatabase<any>) => {
   // set the date
   startDate = new Date();
 
@@ -32,7 +28,7 @@ export const onCreate = async () => {
   console.log('All database tables are ready!');
 };
 
-const onCommand = async (client: Client, message: Message) => {
+const onCommand = async (client: Client, message: Message, db: IDatabase<any>) => {
   // Also good practice to ignore any message that does not start with our prefix,
   // which is set in the configuration file.
   if (message.content.indexOf(Prefix) !== 0) return;
@@ -62,9 +58,7 @@ const onCommand = async (client: Client, message: Message) => {
   if (operation !== undefined) {
     if (command == 'alive') {
       outMessage = operation(message, args, startDate);
-    } else if (command == 'birthday') {
-      outMessage = await operation(message, args, client.users.array(), db);
-    } else if (command == 'memes') {
+    } else if (command == 'birthday' || command == 'memes') {
       outMessage = await operation(message, args, client.users.array(), db);
     } else {
       outMessage = await operation(message, args);
@@ -78,7 +72,7 @@ const onCommand = async (client: Client, message: Message) => {
   }
 };
 
-export const onMessage = async (client: Client, message: Message) => {
+export const onMessage = async (client: Client, message: Message, db: IDatabase<any>) => {
   // This event will run on every single message received, from any channel or DM.
 
   // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -100,6 +94,6 @@ export const onMessage = async (client: Client, message: Message) => {
       console.log(err);
     }
   } else {
-    await onCommand(client, message);
+    await onCommand(client, message, db);
   }
 };

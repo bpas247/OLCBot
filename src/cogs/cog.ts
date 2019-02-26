@@ -4,6 +4,7 @@ import { complain, sassy, motivate, help } from './messages';
 import { randomGrab } from './Utilities';
 import alive from './alive';
 import memeRuler from './meme-ruler';
+import { IDatabase } from 'pg-promise';
 
 export default new Map<string, Function>([
   [
@@ -62,7 +63,7 @@ export default new Map<string, Function>([
   ],
   [
     'memes',
-    async (message:Message, args:Array<string>, users:any, db:any) => {
+    async (message:Message, args:Array<string>, users:any, db: IDatabase<any>) => {
       if(message.guild !== null) {
         let author = await message.guild.fetchMember(message.author);
         return await memeRuler(author, args, users, db);

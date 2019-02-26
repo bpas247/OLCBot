@@ -1,11 +1,12 @@
 import { Collection, Snowflake, User } from 'discord.js';
 import { isValidDate, getUser } from './Utilities';
+import { IDatabase } from 'pg-promise';
 
 export default async (
   authorId: number,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db:any
+  db: IDatabase<any>
 ) => {
   if (args.indexOf('add') != -1) {
     const date: string | typeof undefined = getDateFromArgs(args);

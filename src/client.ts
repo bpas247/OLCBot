@@ -7,6 +7,10 @@ const client = new Discord.Client();
 // Load up the bot functions
 import { onCreate, onMessage } from './bot';
 
+
+// Load up the db
+import db from './db';
+
 client.on(
   'ready',
   async () => {
@@ -21,14 +25,14 @@ client.on(
     // docs refer to as the "ClientUser".
     client.user.setActivity(`Type !help for more info`);
 
-    await onCreate();
+    await onCreate(db);
   }
 );
 
 client.on(
   'message',
   async message => {
-    await onMessage(client, message);
+    await onMessage(client, message, db);
   }
 );
 
