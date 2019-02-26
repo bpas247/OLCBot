@@ -34,4 +34,10 @@ describe("onCommand", () => {
     await onCommand(messageMock, dbMock);
     expect(messageMock.channel.send.callCount).toEqual(0);  
   });
+
+  it("should reply with an unrecognized command if passed in an invalid command", async () => {
+    messageMock.content = "!poing";
+    await onCommand(messageMock, dbMock);
+    expect(messageMock.channel.send.calledWith('Command not recognized.')).toBeTruthy();  
+  });
 });
