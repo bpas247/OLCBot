@@ -63,11 +63,11 @@ export const isDuplicateEntry = (
   return isDuplicate;
 };
 
-const updateEntry = async (
+export const updateEntry = async (
   authorId: number,
   date: string,
   result: Array<Object>,
-  db:any
+  db: IDatabase<any>
 ) => {
   if (!isInDatabase(authorId, result)) {
     await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [

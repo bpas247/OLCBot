@@ -1,5 +1,5 @@
 import sinon from 'sinon';
-import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers } from './birthday';
+import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
 
 describe('getDateFromArgs', () => {
   it('should get a valid date', () => {
@@ -77,5 +77,46 @@ describe("listUsers", () => {
     expect(returns).toBe(
       `List of everyone's birthday goes as follows:\n${undefined} - ${testDate}`
     );
+  });
+});
+
+describe("updateEntry", () => {
+  it("Should add a new entry", async () => {
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [];
+    let db: any = {
+      query: sinon.spy()
+    }
+
+    let returns = await updateEntry(testId, testDate, testArray, db);
+    expect(returns).toEqual('Added new entry!');
+    expect(db.query.calledOnce).toBeTruthy();
+  });
+  
+  it("Should update an existing entry", async () => {
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId, date: "December 7, 1981" })];
+    let db: any = {
+      query: sinon.spy()
+    }
+
+    let returns = await updateEntry(testId, testDate, testArray, db);
+    expect(returns).toEqual('Updated entry!');
+    expect(db.query.calledOnce).toBeTruthy();
+  });
+
+  it("Should not update the db if nothing changed", async () => {
+    let testId: number = 2124588682;
+    let testDate: string = "December 5, 1981";
+    let testArray: Array<Object> = [new Object({ id: testId, date: testDate })];
+    let db: any = {
+      query: sinon.spy()
+    }
+
+    let returns = await updateEntry(testId, testDate, testArray, db);
+    expect(returns).toEqual("Name and date already in the database, so I'm not gonna re-add it.");
+    expect(db.query.callCount).toBe(0);
   });
 });
