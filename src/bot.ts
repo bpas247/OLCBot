@@ -42,7 +42,7 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
     .trim()
     .split(/ +/g);
   
-  const testCommand:(string | undefined) = args.shift();
+  const testCommand: (string | undefined) = args.shift();
 
   let command: string;
   if(testCommand !== undefined)
@@ -58,8 +58,6 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
   if (operation !== undefined) {
     if (command == 'alive') {
       outMessage = operation(message, args, startDate);
-    } else if (command == 'birthday' || command == 'memes') {
-      outMessage = await operation(message, args, message.client.users.array(), db);
     } else {
       outMessage = await operation(message, args);
     }

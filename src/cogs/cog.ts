@@ -57,16 +57,16 @@ export default new Map<string, Function>([
   ],
   [
     'birthday',
-    async (message:any, args:Array<string>, users:any, db:any) => {
-      return await birthday(message.author.id, args, users, db);
+    async (message:any, args:Array<string>, db:any) => {
+      return await birthday(message.author.id, args, message.client.users.array(), db);
     }
   ],
   [
     'memes',
-    async (message:Message, args:Array<string>, users:any, db: IDatabase<any>) => {
+    async (message:Message, args:Array<string>, db: IDatabase<any>) => {
       if(message.guild !== null) {
         let author = await message.guild.fetchMember(message.author);
-        return await memeRuler(author, args, users, db);
+        return await memeRuler(author, args, message.client.users, db);
       } else {
         return "Command does not work in DM";
       }
