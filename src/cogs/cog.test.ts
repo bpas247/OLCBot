@@ -52,11 +52,11 @@ it('Successfully returns the correct time', () => {
   }
 });
 
-function foundInArray(string:string, arr:Array<string>) {
-  for (var i = 0; i < arr.length; i++) {
-    if (string == arr[i]) {
-      return true;
-    }
-  }
-  return false;
+function foundInArray(toFind: string, arr:Array<string>) {
+  let out = false;
+  arr.forEach(element => {
+    if(toFind === element) out = true;
+  });
+
+  return out;
 }

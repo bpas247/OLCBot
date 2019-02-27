@@ -1,13 +1,14 @@
-import { Collection, Snowflake, User } from 'discord.js';
+import { Collection, Snowflake, User, Message } from 'discord.js';
 import { isValidDate } from './Utilities';
 import { IDatabase } from 'pg-promise';
 
 export default async (
-  authorId: number,
+  message: Message,
   args: Array<string>,
-  users: Collection<Snowflake, User>,
   db: IDatabase<any>
 ) => {
+  let authorId: number = parseInt(message.author.id);
+  let users: Collection<Snowflake, User> = message.client.users;
   if (args.indexOf('add') != -1) {
     const date: string | typeof undefined = getDateFromArgs(args);
 
@@ -19,7 +20,7 @@ export default async (
     }
   } else if (args.indexOf('ls') != -1) {
     try {
-      const result:Object = await db.any('SELECT id, date FROM birthday');
+      const result: object = await db.any('SELECT id, date FROM birthday');
       return listUsers(result, users);
     } catch(e) {
       console.log(e);

@@ -1,15 +1,45 @@
-import sinon from 'sinon';
-import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
+import sinon, { SinonStub } from 'sinon';
+import birthday, { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
+
+describe('birthday', () => {
+  it("should list all birthdays", async () => {
+    let anyStub: SinonStub = sinon.stub();
+    let users: Array<object> = [
+      {
+        id: 12345,
+        date: "01/01/2000",
+        username: "testName"
+      }
+    ];
+
+    anyStub.returns(users);
+    
+    const db: any = {
+      any: anyStub
+    }
+    const message: any = {
+      author: {
+        id: 12345
+      },
+      client: {
+        users: users
+      }
+    }
+    let result = await birthday(message, ['ls'], db);
+    expect(db.any.calledOnce).toBeTruthy();
+    expect(result).toEqual(`List of everyone's birthday goes as follows:\ntestName - 01/01/2000`);
+  });
+});
 
 describe('getDateFromArgs', () => {
   it('should get a valid date', () => {
-    expect(getDateFromArgs(['01/01/2000'])).not.toBe(undefined);
-    expect(getDateFromArgs(['05/15/2004'])).not.toBe(undefined);
+    expect(getDateFromArgs(['01/01/2000'])).toBeDefined();
+    expect(getDateFromArgs(['05/15/2004'])).toBeDefined();
   });
 
   it('should not get an invalid date', () => {
-    expect(getDateFromArgs(['01/01/200'])).toBe(undefined);
-    expect(getDateFromArgs(['0250/15/204'])).toBe(undefined);
+    expect(getDateFromArgs(['01/01/200'])).not.toBeDefined();
+    expect(getDateFromArgs(['0250/15/204'])).not.toBeDefined();
   });
 });
 
@@ -94,16 +124,16 @@ describe("updateEntry", () => {
       query: sinon.spy()
     }
   });
-  
+
   it("Should add a new entry", async () => {
     let returns = await updateEntry(testId, testDate, testArray, db);
     expect(returns).toEqual('Added new entry!');
     expect(db.query.calledOnce).toBeTruthy();
   });
-  
+
   it("Should update an existing entry", async () => {
     testArray = [new Object({ id: testId, date: "December 7, 1981" })];
-    
+
     let returns = await updateEntry(testId, testDate, testArray, db);
     expect(returns).toEqual('Updated entry!');
     expect(db.query.calledOnce).toBeTruthy();
@@ -111,7 +141,7 @@ describe("updateEntry", () => {
 
   it("Should not update the db if nothing changed", async () => {
     testArray = [new Object({ id: testId, date: testDate })];
-    
+
     let returns = await updateEntry(testId, testDate, testArray, db);
     expect(returns).toEqual("Name and date already in the database, so I'm not gonna re-add it.");
     expect(db.query.callCount).toBe(0);

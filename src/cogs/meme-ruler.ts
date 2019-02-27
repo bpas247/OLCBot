@@ -1,10 +1,11 @@
 import { Collection, Snowflake, User, GuildMember } from 'discord.js';
+import { IDatabase } from 'pg-promise';
 
 export default async (
   author: GuildMember,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db:any
+  db: IDatabase<any>
 ) => {
   if (args.indexOf('start') !== -1) {
     let isAdmin = author.hasPermission('ADMINISTRATOR');
@@ -114,7 +115,7 @@ export const listCounts = (
 export const updateCount = async (
   user: string,
   newCount: number,
-  db:any
+  db: IDatabase<any>
 ) => {
   // Get the current count
   let result;
