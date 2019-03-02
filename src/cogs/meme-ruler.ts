@@ -50,9 +50,9 @@ export default async (
     if(result === undefined)
       return "Could not access database";
 
-    if (result.length == 0) {
+    if (result.length == 0)
       return 'Nobody has posted any memes yet :(';
-    }
+    
     return listCounts(result, users);
   }
   // else if (args.indexOf('lastRan') !== -1) {

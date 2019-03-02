@@ -1,5 +1,33 @@
 import sinon, { SinonStub } from "sinon";
-import { listCounts, updateCount } from "./meme-ruler";
+import memes, { listCounts, updateCount } from "./meme-ruler";
+
+describe("memes", () => {
+  describe("start", () => {});
+  describe("ls", () => {
+    let args: Array<string> = ["ls"];
+    let author: any = {};
+    let users: any = [];
+    let db: any = {
+      any: sinon.stub()
+    };
+
+    beforeEach(() => {
+      db.any = sinon.stub();
+    });
+
+    it("should respond that it couldnt access the db", async () => {
+      db.any.returns(undefined);
+      let returns: string | undefined = await memes(author, args, users, db);
+      expect(returns).toEqual("Could not access database");
+    });
+
+    it("should reply that no memes have been posted", async () => {
+      db.any.returns([]);
+      let returns: string | undefined = await memes(author, args, users, db);
+      expect(returns).toEqual('Nobody has posted any memes yet :(');
+    });
+  });
+});
 
 describe("listCounts", () => {
   it("should list all of the counts", () => {
