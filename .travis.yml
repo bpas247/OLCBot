@@ -12,7 +12,7 @@ install:
   - yarn install
 script:
   - yarn type
-  - jest --forceExit --coverage --coverageReporters=text-lcov | coveralls
+  - yarn test --coverage --coverageReporters=text-lcov | coveralls
 before_deploy:
   - yarn build
 deploy:

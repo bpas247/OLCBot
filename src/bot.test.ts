@@ -1,19 +1,43 @@
-import { onCreate, db } from './bot';
+import { onCreate, onCommand } from './bot';
+import sinon from 'sinon';
 
-test('Test to make sure it creates the databases', async () => {
-  await onCreate();
-  let dbNames:Array<string> = ['birthday', 'meme_count', 'meme_last_ran'];
+const dbMock: any = {
+  query: sinon.spy()
+}
 
-  for(let name of dbNames) {
-    let returns = await doesExist(name);
-    expect(returns).toBeTruthy();
-  }
+describe("onCreate", () => {
+  it("should create the databases", async () => {
+    await onCreate(dbMock);
+    expect(dbMock.query.callCount).toEqual(3);  
+  });
 });
 
-async function doesExist(name:string) {
-  try {
-    return (await db.any('SELECT * FROM ' + name)) !== undefined;
-  } catch (error) {
-    return false;
-  }
-}
+describe("onCommand", () => {
+  let messageMock: any;
+
+  beforeEach(() => {
+    messageMock = {
+      content: "!ping",
+      channel: {
+        send: sinon.spy()
+      }
+    }    
+  });
+
+  it("should make sure it can resolve a simple command", async () => {
+    await onCommand(messageMock, dbMock);
+    expect(messageMock.channel.send.calledWith('Pong!')).toBeTruthy();  
+  });
+
+  it("should not send a message to a channel if the prefix is invalid", async () => {
+    messageMock.content = ">poing";
+    await onCommand(messageMock, dbMock);
+    expect(messageMock.channel.send.callCount).toEqual(0);  
+  });
+
+  it("should reply with an unrecognized command if passed in an invalid command", async () => {
+    messageMock.content = "!poing";
+    await onCommand(messageMock, dbMock);
+    expect(messageMock.channel.send.calledWith('Command not recognized.')).toBeTruthy();  
+  });
+});

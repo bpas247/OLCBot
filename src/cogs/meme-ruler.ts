@@ -1,11 +1,11 @@
 import { Collection, Snowflake, User, GuildMember } from 'discord.js';
-import { getUser } from './Utilities';
+import { IDatabase } from 'pg-promise';
 
 export default async (
   author: GuildMember,
   args: Array<string>,
   users: Collection<Snowflake, User>,
-  db:any
+  db: IDatabase<any>
 ) => {
   if (args.indexOf('start') !== -1) {
     let isAdmin = author.hasPermission('ADMINISTRATOR');
@@ -50,9 +50,9 @@ export default async (
     if(result === undefined)
       return "Could not access database";
 
-    if (result.length == 0) {
+    if (result.length == 0)
       return 'Nobody has posted any memes yet :(';
-    }
+    
     return listCounts(result, users);
   }
   // else if (args.indexOf('lastRan') !== -1) {
@@ -99,7 +99,7 @@ export const listCounts = (
   let out = "List of everyone's scores:";
 
   for (let row of result) {
-    let name:User|undefined = getUser(row.id, users);
+    let name: User | undefined = users.find(user => user.id == row.id);
 
     if (name !== undefined) {
       var userName:string = name.username;
@@ -115,7 +115,7 @@ export const listCounts = (
 export const updateCount = async (
   user: string,
   newCount: number,
-  db:any
+  db: IDatabase<any>
 ) => {
   // Get the current count
   let result;

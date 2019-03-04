@@ -1,12 +1,14 @@
-import { Collection, Snowflake, User } from 'discord.js';
-import { isValidDate, getUser } from './Utilities';
+import { Collection, Snowflake, User, Message } from 'discord.js';
+import { isValidDate } from './Utilities';
+import { IDatabase } from 'pg-promise';
 
 export default async (
-  authorId: number,
+  message: Message,
   args: Array<string>,
-  users: Collection<Snowflake, User>,
-  db:any
+  db: IDatabase<any>
 ) => {
+  let authorId: number = parseInt(message.author.id);
+  let users: Collection<Snowflake, User> = message.client.users;
   if (args.indexOf('add') != -1) {
     const date: string | typeof undefined = getDateFromArgs(args);
 
@@ -18,7 +20,7 @@ export default async (
     }
   } else if (args.indexOf('ls') != -1) {
     try {
-      const result:Object = await db.any('SELECT id, date FROM birthday');
+      const result: object = await db.any('SELECT id, date FROM birthday');
       return listUsers(result, users);
     } catch(e) {
       console.log(e);
@@ -62,11 +64,11 @@ export const isDuplicateEntry = (
   return isDuplicate;
 };
 
-const updateEntry = async (
+export const updateEntry = async (
   authorId: number,
   date: string,
   result: Array<Object>,
-  db:any
+  db: IDatabase<any>
 ) => {
   if (!isInDatabase(authorId, result)) {
     await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [
@@ -86,14 +88,14 @@ const updateEntry = async (
   }
 };
 
-const listUsers = (
+export const listUsers = (
   result: any,
   users: Collection<Snowflake, User>
 ) => {
   var out = "List of everyone's birthday goes as follows:";
 
   for (let row of result) {
-    var name: undefined | User = getUser(row.id, users);
+    var name: undefined | User = users.find(user => user.id == row.id);
 
     if (name !== undefined) {
       var userName: string = name.username;
