@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // Load up the discord.js library
-import Discord from 'discord.js';
+import Discord, { Message } from 'discord.js';
 const client = new Discord.Client();
 
 // Load up the bot functions
@@ -31,7 +31,7 @@ client.on(
 
 client.on(
   'message',
-  async message => {
+  async (message: Message) => {
     await onMessage(message, db);
   }
 );

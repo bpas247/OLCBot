@@ -81,7 +81,6 @@ export const updateEntry = async (
       date,
       authorId
     ]);
-
     return 'Updated entry!';
   } else {
     return "Name and date already in the database, so I'm not gonna re-add it.";
