@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
+    "@babel/polyfill": "^7.4.0",
     "discord.js": "^11.4.2",
     "dotenv": "^7.0.0",
     "pg-promise": "^8.6.4"
