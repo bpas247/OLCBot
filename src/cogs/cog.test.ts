@@ -35,13 +35,13 @@ it('Sucessfully grabs a motivation', () => {
   }
 });
 
-it('Successfully returns help', () => {
-  var test = cogs.get('help');
-  expect(test).toBeDefined();
-  if(test !== undefined) {
-    expect(test()).toBe(help);
-  }
-});
+// it('Successfully returns help', () => {
+//   var test = cogs.get('help');
+//   expect(test).toBeDefined();
+//   if(test !== undefined) {
+//     expect(test()).toBe(help);
+//   }
+// });
 
 it('Successfully returns the correct time', () => {
   let test = cogs.get('alive');
