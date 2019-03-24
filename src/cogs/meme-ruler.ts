@@ -1,58 +1,65 @@
-import { Collection, Snowflake, User, GuildMember } from 'discord.js';
-import { IDatabase } from 'pg-promise';
+import { Collection, Snowflake, User, GuildMember, Message } from "discord.js";
+import { IDatabase } from "pg-promise";
 
 export default async (
-  author: GuildMember,
+  message: Message,
   args: Array<string>,
-  users: Collection<Snowflake, User>,
   db: IDatabase<any>
 ) => {
-  if (args.indexOf('start') !== -1) {
-    let isAdmin = author.hasPermission('ADMINISTRATOR');
+  let author: GuildMember;
+  if (message.guild !== null) {
+    author = await message.guild.fetchMember(message.author);
+    // return await memeRuler(author, args, message.client.users, db);
+  } else {
+    return "Command does not work in DM";
+  }
+
+  let users: Collection<Snowflake, User> = message.client.users;
+
+  if (args.indexOf("start") !== -1) {
+    let isAdmin = author.hasPermission("ADMINISTRATOR");
 
     if (!isAdmin) {
       return "You don't have the permissions for this command.";
     }
     // Continue
-    let result = await db.any('SELECT month, day FROM meme_last_ran');
+    let result = await db.any("SELECT month, day FROM meme_last_ran");
 
     let out;
 
     if (result[0] !== undefined) {
-      out = 'Command has already ran, so nothing else will be done.';
+      out = "Command has already ran, so nothing else will be done.";
     } else {
       // Time to start it!
       const curDay = new Date();
 
       try {
         await db.query(
-          'INSERT into meme_last_ran (month, day) VALUES($1, $2)',
+          "INSERT into meme_last_ran (month, day) VALUES($1, $2)",
           [curDay.getMonth(), curDay.getDate()]
         );
       } catch (error) {
         console.log(error);
-        out = 'Something went wrong! yell at the dev!!!';
+        out = "Something went wrong! yell at the dev!!!";
       }
 
-      out = 'Sucessfully started!';
+      out = "Sucessfully started!";
     }
 
     return out;
-  } else if (args.indexOf('ls') !== -1) {
-    let result:Array<any> | undefined = undefined;
+  } else if (args.indexOf("ls") !== -1) {
+    let result: Array<any> | undefined = undefined;
     try {
-      result = await db.any('SELECT id, count FROM meme_count');
+      result = await db.any("SELECT id, count FROM meme_count");
     } catch (err) {
       console.log(err);
       return "Something went wrong, it probably wasn't started";
     }
 
-    if(result === undefined)
-      return "Could not access database";
+    if (result === undefined) return "Could not access database";
 
-    if (result.length == 0)
-      return 'Nobody has posted any memes yet :(';
-    
+    if (result.length == 0) return "Nobody has posted any memes yet :(";
+
     return listCounts(result, users);
   }
   // else if (args.indexOf('lastRan') !== -1) {
@@ -93,7 +100,7 @@ export default async (
 };
 
 export const listCounts = (
-  result:Array<any>,
+  result: Array<any>,
   users: Collection<string, User>
 ) => {
   let out = "List of everyone's scores:";
@@ -102,10 +109,10 @@ export const listCounts = (
     let name: User | undefined = users.find(user => user.id == row.id);
 
     if (name !== undefined) {
-      var userName:string = name.username;
-      out += '\n' + userName + ' - ' + row.count;
+      var userName: string = name.username;
+      out += "\n" + userName + " - " + row.count;
     } else {
-      out += '\n' + name + ' - ' + row.count;
+      out += "\n" + name + " - " + row.count;
     }
   }
 
@@ -120,23 +127,23 @@ export const updateCount = async (
   // Get the current count
   let result;
   try {
-    result = await db.any('SELECT count FROM meme_count WHERE id = $1', user);
+    result = await db.any("SELECT count FROM meme_count WHERE id = $1", user);
   } catch (err) {
     console.log(err);
-    return 'something went wrong';
+    return "something went wrong";
   }
   if (result.length === 0) {
     // Create a new entry
-    await db.query('INSERT into meme_count (id, count) VALUES($1, $2)', [
+    await db.query("INSERT into meme_count (id, count) VALUES($1, $2)", [
       user,
       newCount
     ]);
-    return 'Added new entry!';
+    return "Added new entry!";
   } else {
-    await db.query('UPDATE meme_count SET count = $1 WHERE id = $2', [
+    await db.query("UPDATE meme_count SET count = $1 WHERE id = $2", [
       result[0].count + newCount,
       user
     ]);
-    return 'Updated entry!';
+    return "Updated entry!";
   }
 };

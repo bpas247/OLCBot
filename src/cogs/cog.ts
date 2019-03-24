@@ -34,14 +34,7 @@ const cogs: Array<Cog> = [
   new Cog('alive', () => alive(startDate, new Date())),
   new Cog('help', () => help),
   new Cog('birthday', birthday),
-  new Cog('memes', async (message: Message, args: Array<string>, db: IDatabase<any>) => {
-    if (message.guild !== null) {
-      let author = await message.guild.fetchMember(message.author);
-      return await memeRuler(author, args, message.client.users, db);
-    } else {
-      return "Command does not work in DM";
-    }
-  })
+  new Cog('memes', memeRuler)
 ]
 
 const cogsMap: Map<string, Function> = new Map<string, Function>();
