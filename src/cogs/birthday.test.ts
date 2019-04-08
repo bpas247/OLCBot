@@ -1,6 +1,7 @@
 import sinon, { SinonStub } from 'sinon';
 import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
-import { BirthdayCog } from './cog';
+import BirthdayCog from './birthday';
+
 describe('birthday', () => {
   it("should list all birthdays", async () => {
     let anyStub: SinonStub = sinon.stub();

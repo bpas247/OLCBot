@@ -1,6 +1,6 @@
 import sinon, { SinonStub } from "sinon";
-import { listCounts, updateCount } from "./meme-ruler";
-import { MemeRulerCog } from './cog';
+import MemeRulerCog, { listCounts, updateCount } from "./meme-ruler";
+
 describe("memes", () => {
   describe("start", () => { });
   describe("ls", () => {
@@ -20,7 +20,7 @@ describe("memes", () => {
     let memesCog = MemeRulerCog.getAppropriateCog(["ls"]);
     let memes: Function;
 
-    if(memesCog) memes = memesCog.func;
+    if (memesCog) memes = memesCog.func;
 
     beforeEach(() => {
       db.any = sinon.stub();

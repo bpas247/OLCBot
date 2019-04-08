@@ -1,34 +1,7 @@
 import { Collection, Snowflake, User, Message } from "discord.js";
 import { isValidDate } from "./Utilities";
 import { IDatabase } from "pg-promise";
-
-// export default async (
-//   message: Message,
-//   args: Array<string>,
-//   db: IDatabase<any>
-// ) => {
-//   let authorId: number = parseInt(message.author.id);
-//   let users: Collection<Snowflake, User> = message.client.users;
-//   if (args.indexOf("add") != -1) {
-//     const date: string | typeof undefined = getDateFromArgs(args);
-
-//     if (date !== undefined) {
-//       const result = await db.any("SELECT id, date FROM birthday");
-//       return await updateEntry(authorId, date, result, db);
-//     } else {
-//       return "You didn't enter a valid date";
-//     }
-//   } else if (args.indexOf("ls") != -1) {
-//     try {
-//       const result: object = await db.any("SELECT id, date FROM birthday");
-//       return listUsers(result, users);
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   } else {
-//     return "Command for birthday could not be found";
-//   }
-// };
+import Cog from './cog';
 
 export const getDateFromArgs = (args: Array<string>) => {
   var date = undefined;
@@ -103,3 +76,36 @@ export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
 
   return out;
 };
+
+const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
+  new Cog(
+    "add",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      const authorId: number = parseInt(message.author.id);
+      const date: string | typeof undefined = getDateFromArgs(args);
+
+      if (date !== undefined) {
+        const result = await db.any("SELECT id, date FROM birthday");
+        return await updateEntry(authorId, date, result, db);
+      } else {
+        return "You didn't enter a valid date";
+      }
+    },
+    "adds a new birthday"
+  ),
+  new Cog(
+    "ls",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      const users: Collection<Snowflake, User> = message.client.users;
+      try {
+        const result: object = await db.any("SELECT id, date FROM birthday");
+        return listUsers(result, users);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    "lists all of the current birthdays"
+  )
+]);
+
+export default BirthdayCog;

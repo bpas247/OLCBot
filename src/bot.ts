@@ -3,8 +3,8 @@ require('dotenv').config();
 import { Message } from 'discord.js';
 
 // Import cogs
-import cogs,{ Cog } from './cogs/cog';
-
+import cogs from './cogs/cogs';
+import Cog from './cogs/cog';
 import { updateCount } from './cogs/meme-ruler';
 import { IDatabase } from 'pg-promise';
 
@@ -57,13 +57,13 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
     let cog: Cog | undefined = cogs.get(command);
 
     if (cog !== undefined)
-    try {
-      let appropriateCog = cog.getAppropriateCog(args);
-      if(appropriateCog) {
-        let cogFunc = appropriateCog.func;
-        if(cogFunc) outMessage = await cogFunc(message, args, db); 
-      }
-    } catch(err) { console.error(err); }
+      try {
+        let appropriateCog = cog.getAppropriateCog(args);
+        if (appropriateCog) {
+          let cogFunc = appropriateCog.func;
+          if (cogFunc) outMessage = await cogFunc(message, args, db);
+        }
+      } catch (err) { console.error(err); }
   }
   // Send the message
   message.channel.send(outMessage);

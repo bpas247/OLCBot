@@ -1,4 +1,4 @@
-import cogs from "./cog";
+import cogs from "./cogs";
 import { complain, sassy, motivate, help } from "./messages";
 
 it("Successfully pings", () => {
