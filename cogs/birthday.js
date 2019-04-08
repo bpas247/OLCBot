@@ -1,32 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("./Utilities");
-exports.default = async (message, args, db) => {
-    let authorId = parseInt(message.author.id);
-    let users = message.client.users;
-    if (args.indexOf('add') != -1) {
-        const date = exports.getDateFromArgs(args);
-        if (date !== undefined) {
-            const result = await db.any('SELECT id, date FROM birthday');
-            return await exports.updateEntry(authorId, date, result, db);
-        }
-        else {
-            return "You didn't enter a valid date";
-        }
-    }
-    else if (args.indexOf('ls') != -1) {
-        try {
-            const result = await db.any('SELECT id, date FROM birthday');
-            return exports.listUsers(result, users);
-        }
-        catch (e) {
-            console.log(e);
-        }
-    }
-    else {
-        return 'Command for birthday could not be found';
-    }
-};
+const cog_1 = __importDefault(require("./cog"));
 exports.getDateFromArgs = (args) => {
     var date = undefined;
     for (let i = 0; i < args.length; i++) {
@@ -54,18 +32,18 @@ exports.isDuplicateEntry = (authorId, date, result) => {
 };
 exports.updateEntry = async (authorId, date, result, db) => {
     if (!exports.isInDatabase(authorId, result)) {
-        await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [
+        await db.query("INSERT into birthday (id, date) VALUES($1, $2)", [
             authorId,
             date
         ]);
-        return 'Added new entry!';
+        return "Added new entry!";
     }
     else if (!exports.isDuplicateEntry(authorId, date, result)) {
-        await db.query('UPDATE birthday SET date = $1 WHERE id = $2', [
+        await db.query("UPDATE birthday SET date = $1 WHERE id = $2", [
             date,
             authorId
         ]);
-        return 'Updated entry!';
+        return "Updated entry!";
     }
     else {
         return "Name and date already in the database, so I'm not gonna re-add it.";
@@ -77,11 +55,35 @@ exports.listUsers = (result, users) => {
         var name = users.find(user => user.id == row.id);
         if (name !== undefined) {
             var userName = name.username;
-            out += '\n' + userName + ' - ' + row.date;
+            out += "\n" + userName + " - " + row.date;
         }
         else {
-            out += '\n' + name + ' - ' + row.date;
+            out += "\n" + name + " - " + row.date;
         }
     }
     return out;
 };
+const BirthdayCog = new cog_1.default("birthday", () => "", "Birthday commands", [
+    new cog_1.default("add", async (message, args, db) => {
+        const authorId = parseInt(message.author.id);
+        const date = exports.getDateFromArgs(args);
+        if (date !== undefined) {
+            const result = await db.any("SELECT id, date FROM birthday");
+            return await exports.updateEntry(authorId, date, result, db);
+        }
+        else {
+            return "You didn't enter a valid date";
+        }
+    }, "adds a new birthday"),
+    new cog_1.default("ls", async (message, args, db) => {
+        const users = message.client.users;
+        try {
+            const result = await db.any("SELECT id, date FROM birthday");
+            return exports.listUsers(result, users);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }, "lists all of the current birthdays")
+]);
+exports.default = BirthdayCog;

@@ -5,14 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 // Import cogs
-const cog_1 = __importDefault(require("./cogs/cog"));
+const cogs_1 = __importDefault(require("./cogs/cogs"));
 const meme_ruler_1 = require("./cogs/meme-ruler");
 // Prefix
 const Prefix = '!';
-let startDate;
 exports.onCreate = async (db) => {
     // set the date
-    startDate = new Date();
+    exports.startDate = new Date();
     await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
     await db.query('CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)');
     await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
@@ -36,27 +35,26 @@ exports.onCommand = async (message, db) => {
     if (testCommand !== undefined)
         command = testCommand.toLowerCase();
     else
-        command = "undefined";
+        command = undefined;
     // Default case
-    let outMessage = 'Could not recognize command';
-    let operation = cog_1.default.get(command);
-    if (operation !== undefined) {
-        if (command == 'alive') {
-            outMessage = await operation(message, args, startDate);
-        }
-        else if (command === 'birthday' || command === 'memes') {
-            outMessage = await operation(message, args, db);
-        }
-        else {
-            outMessage = await operation(message, args);
-        }
-    }
-    else {
-        outMessage = 'Command not recognized.';
+    let outMessage = 'Command not recognized.';
+    if (command !== undefined) {
+        let cog = cogs_1.default.get(command);
+        if (cog !== undefined)
+            try {
+                let appropriateCog = cog.getAppropriateCog(args);
+                if (appropriateCog) {
+                    let cogFunc = appropriateCog.func;
+                    if (cogFunc)
+                        outMessage = await cogFunc(message, args, db);
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
     }
     // Send the message
-    if (outMessage !== undefined)
-        message.channel.send(outMessage);
+    message.channel.send(outMessage);
 };
 exports.onMessage = async (message, db) => {
     // This event will run on every single message received, from any channel or DM.
