@@ -1,5 +1,6 @@
 import sinon, { SinonStub } from 'sinon';
-import birthday, { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
+import { getDateFromArgs, isInDatabase, isDuplicateEntry, listUsers, updateEntry } from './birthday';
+import BirthdayCog from './birthday';
 
 describe('birthday', () => {
   it("should list all birthdays", async () => {
@@ -13,7 +14,7 @@ describe('birthday', () => {
     ];
 
     anyStub.returns(users);
-    
+
     const db: any = {
       any: anyStub
     }
@@ -25,7 +26,10 @@ describe('birthday', () => {
         users: users
       }
     }
-    let result = await birthday(message, ['ls'], db);
+    const birthdayLsCog = BirthdayCog.getAppropriateCog(["ls"]);
+    let result;
+
+    if(birthdayLsCog) result = await birthdayLsCog.func(message, ['ls'], db);
     expect(db.any.calledOnce).toBeTruthy();
     expect(result).toEqual(`List of everyone's birthday goes as follows:\ntestName - 01/01/2000`);
   });

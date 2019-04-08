@@ -3,15 +3,15 @@ require('dotenv').config();
 import { Message } from 'discord.js';
 
 // Import cogs
-import cogs from './cogs/cog';
-
+import cogs from './cogs/cogs';
+import Cog from './cogs/cog';
 import { updateCount } from './cogs/meme-ruler';
 import { IDatabase } from 'pg-promise';
 
 // Prefix
 const Prefix = '!';
 
-let startDate: Date;
+export let startDate: Date;
 
 export const onCreate = async (db: IDatabase<any>) => {
   // set the date
@@ -41,35 +41,32 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
     .slice(Prefix.length)
     .trim()
     .split(/ +/g);
-  
-  const testCommand: (string | undefined) = args.shift();
 
-  let command: string;
-  if(testCommand !== undefined)
+  const testCommand: string | undefined = args.shift();
+
+  let command: string | undefined;
+  if (testCommand !== undefined)
     command = testCommand.toLowerCase();
   else
-    command = "undefined";
+    command = undefined;
 
   // Default case
-  let outMessage = 'Could not recognize command';
+  let outMessage: string | undefined = 'Command not recognized.';
 
-  let operation = cogs.get(command);
+  if (command !== undefined) {
+    let cog: Cog | undefined = cogs.get(command);
 
-  if (operation !== undefined) {
-    if (command == 'alive') {
-      outMessage = await operation(message, args, startDate);
-    } else if(command === 'birthday' || command === 'memes') {
-      outMessage = await operation(message, args, db);
-    }else {
-      outMessage = await operation(message, args);
-    }
-  } else {
-    outMessage = 'Command not recognized.';
+    if (cog !== undefined)
+      try {
+        let appropriateCog = cog.getAppropriateCog(args);
+        if (appropriateCog) {
+          let cogFunc = appropriateCog.func;
+          if (cogFunc) outMessage = await cogFunc(message, args, db);
+        }
+      } catch (err) { console.error(err); }
   }
-
   // Send the message
-  if (outMessage !== undefined)
-    message.channel.send(outMessage);
+  message.channel.send(outMessage);
 };
 
 export const onMessage = async (message: Message, db: IDatabase<any>) => {
