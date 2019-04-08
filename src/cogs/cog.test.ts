@@ -2,9 +2,12 @@ import cogs from "./cog";
 import { complain, sassy, motivate, help } from "./messages";
 
 it("Successfully pings", () => {
-  var test: Function | undefined = cogs.get("ping");
+  var test = cogs.get("ping");
   expect(test).toBeDefined();
-  if (test !== undefined) expect(test()).toBe("Pong!");
+  if (test) {
+    let returnFunc: any = test.getFunc();
+    expect(returnFunc()).toBe("Pong!");
+  }
 });
 
 it("Successfully says what was given", () => {
@@ -19,51 +22,57 @@ it("Successfully says what was given", () => {
     if (i < toArray.length - 1) call += " ";
   });
 
-  let returnFunc = cogs.get("say");
-  expect(returnFunc).toBeDefined();
-  if (returnFunc)
-    expect(returnFunc({ delete: () => Promise.resolve() }, toArray)).toBe(says);
-});
+  let returnCog = cogs.get("say");
+  expect(returnCog).toBeDefined();
+  if (returnCog) {
+    let returnFunc = returnCog.getFunc();
+    let msg: any = { delete: () => Promise.resolve() };
+    let db: any = {};
 
-it("Sucessfully grabs a complaint", () => {
-  var test = cogs.get("complain");
-  expect(test).toBeDefined();
-  if (test !== undefined) {
-    var out: string = test();
-    expect(foundInArray(out, complain)).toBe(true);
+    if (returnFunc) expect(returnFunc(msg, toArray, db)).toBe(says);
   }
 });
 
-it("Sucessfully grabs a sass", () => {
-  var test = cogs.get("do");
-  expect(test).toBeDefined();
-  if (test !== undefined) {
-    var out = test();
-    expect(foundInArray(out, sassy)).toBe(true);
-  }
-});
+describe("random message commands", () => {
+  let msg: any = {};
+  let args: any = {};
+  let db: any = {};
+  let runTest = (cmd: string, arr: Array<string>) => {
+    let test = cogs.get(cmd);
+    expect(test).toBeDefined();
+    if (test !== undefined) {
+      let returnFunc: any = test.getFunc();
+      if (returnFunc) {
+        let out: any = returnFunc(msg, args, db);
+        expect(foundInArray(out, arr)).toBe(true);
+      }
+    }
+  };
 
-it("Sucessfully grabs a motivation", () => {
-  var test = cogs.get("motivate");
-  expect(test).toBeDefined();
-  if (test !== undefined) {
-    var out = test();
-    expect(foundInArray(out, motivate)).toBe(true);
-  }
+  it("Sucessfully grabs a complaint", () => runTest("complain", complain));
+  it("Sucessfully grabs a sass", () => runTest("do", sassy));
+  it("Sucessfully grabs a motivation", () => runTest("motivate", motivate));
 });
 
 it("Successfully returns a help message", () => {
-  let returnFunc = cogs.get("help");
-  expect(returnFunc).toBeDefined();
-  if (returnFunc) expect(returnFunc()).toBeDefined();
+  let returnCog = cogs.get("help");
+  expect(returnCog).toBeDefined();
+  if (returnCog) {
+    let returnFunc: any = returnCog.getFunc();
+    expect(returnFunc()).toBeDefined();
+  }
 });
 
 it("Successfully returns the correct time", () => {
   let test = cogs.get("alive");
   expect(test).toBeDefined();
 
-  if (test !== undefined) {
-    expect(test("", [], new Date())).toBeDefined();
+  if (test) {
+    let msg: any = {};
+    let args: any = {};
+    let db: any = {};
+    let returnFunc: any = test.getFunc();
+    expect(returnFunc(msg, args, db)).toBeDefined();
   }
 });
 

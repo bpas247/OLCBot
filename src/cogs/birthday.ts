@@ -1,6 +1,7 @@
-import { Collection, Snowflake, User, Message } from 'discord.js';
-import { isValidDate } from './Utilities';
-import { IDatabase } from 'pg-promise';
+import { Collection, Snowflake, User, Message } from "discord.js";
+import { isValidDate } from "./Utilities";
+import { IDatabase } from "pg-promise";
+import { Cog } from './cog';
 
 export default async (
   message: Message,
@@ -9,24 +10,24 @@ export default async (
 ) => {
   let authorId: number = parseInt(message.author.id);
   let users: Collection<Snowflake, User> = message.client.users;
-  if (args.indexOf('add') != -1) {
+  if (args.indexOf("add") != -1) {
     const date: string | typeof undefined = getDateFromArgs(args);
 
     if (date !== undefined) {
-      const result = await db.any('SELECT id, date FROM birthday');
+      const result = await db.any("SELECT id, date FROM birthday");
       return await updateEntry(authorId, date, result, db);
     } else {
       return "You didn't enter a valid date";
     }
-  } else if (args.indexOf('ls') != -1) {
+  } else if (args.indexOf("ls") != -1) {
     try {
-      const result: object = await db.any('SELECT id, date FROM birthday');
+      const result: object = await db.any("SELECT id, date FROM birthday");
       return listUsers(result, users);
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
   } else {
-    return 'Command for birthday could not be found';
+    return "Command for birthday could not be found";
   }
 };
 
@@ -71,26 +72,23 @@ export const updateEntry = async (
   db: IDatabase<any>
 ) => {
   if (!isInDatabase(authorId, result)) {
-    await db.query('INSERT into birthday (id, date) VALUES($1, $2)', [
+    await db.query("INSERT into birthday (id, date) VALUES($1, $2)", [
       authorId,
       date
     ]);
-    return 'Added new entry!';
+    return "Added new entry!";
   } else if (!isDuplicateEntry(authorId, date, result)) {
-    await db.query('UPDATE birthday SET date = $1 WHERE id = $2', [
+    await db.query("UPDATE birthday SET date = $1 WHERE id = $2", [
       date,
       authorId
     ]);
-    return 'Updated entry!';
+    return "Updated entry!";
   } else {
     return "Name and date already in the database, so I'm not gonna re-add it.";
   }
 };
 
-export const listUsers = (
-  result: any,
-  users: Collection<Snowflake, User>
-) => {
+export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
   var out = "List of everyone's birthday goes as follows:";
 
   for (let row of result) {
@@ -98,9 +96,9 @@ export const listUsers = (
 
     if (name !== undefined) {
       var userName: string = name.username;
-      out += '\n' + userName + ' - ' + row.date;
+      out += "\n" + userName + " - " + row.date;
     } else {
-      out += '\n' + name + ' - ' + row.date;
+      out += "\n" + name + " - " + row.date;
     }
   }
 

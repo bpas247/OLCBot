@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+import { Collection, Snowflake, User, Message } from "discord.js";
 import birthday from "./birthday";
 import { complain, sassy, motivate, help } from "./messages";
 import { randomGrab } from "./Utilities";
@@ -6,8 +6,9 @@ import alive from "./alive";
 import memeRuler from "./meme-ruler";
 import { IDatabase } from "pg-promise";
 import { startDate } from "../bot";
+import { getDateFromArgs, updateEntry, listUsers } from "./birthday";
 
-class Cog {
+export class Cog {
   public constructor(
     private _command: string,
     private _func: (
@@ -15,19 +16,67 @@ class Cog {
       args: Array<string>,
       db: IDatabase<any>
     ) => Promise<string | undefined> | string,
-    private _help?: string
+    private _help?: string,
+    private _args?: Array<Cog>
   ) {}
 
   get command() {
     return this._command;
   }
-  get func() {
-    return this._func;
-  }
+
+  public getFunc = (args?: Array<string>) => {
+    if (args === undefined || args.length === 0) return this._func;
+    else if (this._args === undefined) return undefined;
+    else {
+      // There are args, so find the arg and run that function instead
+      let argCog: Cog | undefined = undefined;
+
+      this._args.forEach((arg: Cog) => {
+        if (arg.command === args[0]) argCog = arg;
+      });
+
+      return argCog;
+    }
+  };
+
   get help() {
     return this._help;
   }
+  get args() {
+    return this._args;
+  }
 }
+
+const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
+  new Cog(
+    "add",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      const authorId: number = parseInt(message.author.id);
+      const date: string | typeof undefined = getDateFromArgs(args);
+
+      if (date !== undefined) {
+        const result = await db.any("SELECT id, date FROM birthday");
+        return await updateEntry(authorId, date, result, db);
+      } else {
+        return "You didn't enter a valid date";
+      }
+    },
+    "adds a new birthday"
+  ),
+  new Cog(
+    "ls",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      const users: Collection<Snowflake, User> = message.client.users;
+      try {
+        const result: object = await db.any("SELECT id, date FROM birthday");
+        return listUsers(result, users);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    "lists all of the current birthdays"
+  )
+]);
 
 const cogs: Array<Cog> = [
   new Cog("ping", () => "Pong!", "Tests to see if the bot is working"),
@@ -63,18 +112,24 @@ const cogs: Array<Cog> = [
   new Cog("help", () => {
     let out: string = "Here are the list of commands that are available:\n\n";
     cogs.forEach(cog => {
-      if (cog.help) out += `!${cog.command} - ${cog.help}\n`;
+      if (cog.help) {
+        out += `\`!${cog.command}\` - ${cog.help}\n`;
+        if(cog.args && cog.args.length > 0 )
+          cog.args.forEach(arg => {
+            out += `\t\`${arg.command}\` - ${arg.help}\n`;
+          });
+      }
     });
     return out;
   }),
-  new Cog("birthday", birthday, "Birthday commands"),
+  BirthdayCog,
   new Cog("memes", memeRuler, "Meme commands")
 ];
 
-const cogsMap: Map<string, Function> = new Map<string, Function>();
+const cogsMap: Map<string, Cog> = new Map<string, Cog>();
 
 cogs.forEach(cog => {
-  cogsMap.set(cog.command, cog.func);
+  cogsMap.set(cog.command, cog);
 });
 
 export default cogsMap;

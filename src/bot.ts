@@ -3,7 +3,7 @@ require('dotenv').config();
 import { Message } from 'discord.js';
 
 // Import cogs
-import cogs from './cogs/cog';
+import cogs,{ Cog } from './cogs/cog';
 
 import { updateCount } from './cogs/meme-ruler';
 import { IDatabase } from 'pg-promise';
@@ -51,14 +51,15 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
     command = undefined;
 
   // Default case
-  let outMessage = 'Command not recognized.';
+  let outMessage: string | undefined = 'Command not recognized.';
 
   if (command !== undefined) {
-    let operation = cogs.get(command);
+    let cog: Cog | undefined = cogs.get(command);
 
-    if (operation !== undefined)
+    if (cog !== undefined)
     try {
-      outMessage = await operation(message, args, db); 
+      let cogFunc = cog.getFunc(args);
+      if(cogFunc) outMessage = await cogFunc(message, args, db); 
     } catch(err) { console.error(err); }
   }
   // Send the message
