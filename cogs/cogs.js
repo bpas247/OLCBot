@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const messages_1 = require("./messages");
-const Utilities_1 = require("./Utilities");
+const messages_1 = require("../util/messages");
+const Utilities_1 = require("../util/Utilities");
 const alive_1 = __importDefault(require("./alive"));
 const bot_1 = require("../bot");
 const cog_1 = __importDefault(require("./cog"));
