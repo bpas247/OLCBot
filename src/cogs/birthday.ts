@@ -1,5 +1,5 @@
 import { Collection, Snowflake, User, Message } from "discord.js";
-import { isValidDate } from "./Utilities";
+import { isValidDate } from "../util/Utilities";
 import { IDatabase } from "pg-promise";
 import Cog from './cog';
 

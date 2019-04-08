@@ -1,5 +1,5 @@
 import cogs from "./cogs";
-import { complain, sassy, motivate, help } from "./messages";
+import { complain, sassy, motivate } from "../util/messages";
 
 it("Successfully pings", () => {
   var test = cogs.get("ping");

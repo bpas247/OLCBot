@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
-import { complain, sassy, motivate } from "./messages";
-import { randomGrab } from "./Utilities";
+import { complain, sassy, motivate } from "../util/messages";
+import { randomGrab } from "../util/Utilities";
 import alive from "./alive";
 import { startDate } from "../bot";
 import Cog from './cog';
