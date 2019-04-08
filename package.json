@@ -16,7 +16,7 @@
     "type": "tsc",
     "build": "yarn type && cp -r production/* lib",
     "start": "yarn build && yarn prod",
-    "prod": "node lib/client.js"
+    "prod": "cd lib && yarn start"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
