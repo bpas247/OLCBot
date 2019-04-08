@@ -11,7 +11,6 @@ cache:
 install:
   - yarn install
 script:
-  - yarn type
   - yarn test --coverage --coverageReporters=text-lcov | coveralls
 before_deploy:
   - yarn build
