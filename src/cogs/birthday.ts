@@ -1,35 +1,34 @@
 import { Collection, Snowflake, User, Message } from "discord.js";
 import { isValidDate } from "./Utilities";
 import { IDatabase } from "pg-promise";
-import { Cog } from './cog';
 
-export default async (
-  message: Message,
-  args: Array<string>,
-  db: IDatabase<any>
-) => {
-  let authorId: number = parseInt(message.author.id);
-  let users: Collection<Snowflake, User> = message.client.users;
-  if (args.indexOf("add") != -1) {
-    const date: string | typeof undefined = getDateFromArgs(args);
+// export default async (
+//   message: Message,
+//   args: Array<string>,
+//   db: IDatabase<any>
+// ) => {
+//   let authorId: number = parseInt(message.author.id);
+//   let users: Collection<Snowflake, User> = message.client.users;
+//   if (args.indexOf("add") != -1) {
+//     const date: string | typeof undefined = getDateFromArgs(args);
 
-    if (date !== undefined) {
-      const result = await db.any("SELECT id, date FROM birthday");
-      return await updateEntry(authorId, date, result, db);
-    } else {
-      return "You didn't enter a valid date";
-    }
-  } else if (args.indexOf("ls") != -1) {
-    try {
-      const result: object = await db.any("SELECT id, date FROM birthday");
-      return listUsers(result, users);
-    } catch (e) {
-      console.log(e);
-    }
-  } else {
-    return "Command for birthday could not be found";
-  }
-};
+//     if (date !== undefined) {
+//       const result = await db.any("SELECT id, date FROM birthday");
+//       return await updateEntry(authorId, date, result, db);
+//     } else {
+//       return "You didn't enter a valid date";
+//     }
+//   } else if (args.indexOf("ls") != -1) {
+//     try {
+//       const result: object = await db.any("SELECT id, date FROM birthday");
+//       return listUsers(result, users);
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   } else {
+//     return "Command for birthday could not be found";
+//   }
+// };
 
 export const getDateFromArgs = (args: Array<string>) => {
   var date = undefined;

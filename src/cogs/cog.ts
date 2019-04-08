@@ -1,9 +1,8 @@
-import { Collection, Snowflake, User, Message } from "discord.js";
-import birthday from "./birthday";
+import { Collection, Snowflake, User, Message, GuildMember } from "discord.js";
+import { listCounts } from './meme-ruler';
 import { complain, sassy, motivate, help } from "./messages";
 import { randomGrab } from "./Utilities";
 import alive from "./alive";
-import memeRuler from "./meme-ruler";
 import { IDatabase } from "pg-promise";
 import { startDate } from "../bot";
 import { getDateFromArgs, updateEntry, listUsers } from "./birthday";
@@ -18,18 +17,22 @@ export class Cog {
     ) => Promise<string | undefined> | string,
     private _help?: string,
     private _args?: Array<Cog>
-  ) {}
+  ) { }
 
   get command() {
     return this._command;
   }
 
-  public getFunc = (args?: Array<string>) => {
-    if (args === undefined || args.length === 0) return this._func;
+  get func() {
+    return this._func;
+  }
+
+  public getAppropriateCog = (args?: Array<string>) => {
+    if (args === undefined || args.length === 0) return this;
     else if (this._args === undefined) return undefined;
     else {
       // There are args, so find the arg and run that function instead
-      let argCog: Cog | undefined = undefined;
+      let argCog: Cog = this;
 
       this._args.forEach((arg: Cog) => {
         if (arg.command === args[0]) argCog = arg;
@@ -47,7 +50,7 @@ export class Cog {
   }
 }
 
-const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
+export const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
   new Cog(
     "add",
     async (message: Message, args: Array<string>, db: IDatabase<any>) => {
@@ -78,6 +81,66 @@ const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
   )
 ]);
 
+export const MemeRulerCog = new Cog("memes", () => "", "Meme Commands", [
+  new Cog(
+    "start",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      let author: GuildMember;
+      if (message.guild !== null)
+        author = await message.guild.fetchMember(message.author);
+      else return "Command does not work in DM";
+
+      let isAdmin = author.hasPermission("ADMINISTRATOR");
+
+      if (!isAdmin)
+        return "You don't have the permissions for this command.";
+
+      // Continue
+      let result = await db.any("SELECT month, day FROM meme_last_ran");
+
+      let out;
+
+      if (result[0] !== undefined) {
+        out = "Command has already ran, so nothing else will be done.";
+      } else {
+        // Time to start it!
+        const curDay = new Date();
+
+        try {
+          await db.query(
+            "INSERT into meme_last_ran (month, day) VALUES($1, $2)",
+            [curDay.getMonth(), curDay.getDate()]
+          );
+        } catch (error) {
+          console.log(error);
+          out = "Something went wrong! yell at the dev!!!";
+        }
+
+        out = "Sucessfully started!";
+      }
+
+      return out;
+    }, "Start the bot's listening functionality for the memes"),
+  new Cog(
+    "ls",
+    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+      let result: Array<any> | undefined = undefined;
+      try {
+        result = await db.any("SELECT id, count FROM meme_count");
+      } catch (err) {
+        console.log(err);
+        return "Something went wrong, it probably wasn't started";
+      }
+
+      if (result === undefined) return "Could not access database";
+
+      if (result.length == 0) return "Nobody has posted any memes yet :(";
+
+      let users: Collection<Snowflake, User> = message.client.users;
+
+      return listCounts(result, users);
+    }, "List all of the current scores for every member that's submitted memes")
+])
 const cogs: Array<Cog> = [
   new Cog("ping", () => "Pong!", "Tests to see if the bot is working"),
   new Cog(
@@ -87,7 +150,7 @@ const cogs: Array<Cog> = [
       // To get the "message" itself we join the `args` back into a string with spaces:
       const sayMessage = args.join(" ");
       // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-      message.delete().catch((O_o: any) => {});
+      message.delete().catch((O_o: any) => { });
       // And we get the bot to say the thing:
       return sayMessage;
     },
@@ -114,7 +177,7 @@ const cogs: Array<Cog> = [
     cogs.forEach(cog => {
       if (cog.help) {
         out += `\`!${cog.command}\` - ${cog.help}\n`;
-        if(cog.args && cog.args.length > 0 )
+        if (cog.args && cog.args.length > 0)
           cog.args.forEach(arg => {
             out += `\t\`${arg.command}\` - ${arg.help}\n`;
           });
@@ -123,7 +186,7 @@ const cogs: Array<Cog> = [
     return out;
   }),
   BirthdayCog,
-  new Cog("memes", memeRuler, "Meme commands")
+  MemeRulerCog
 ];
 
 const cogsMap: Map<string, Cog> = new Map<string, Cog>();

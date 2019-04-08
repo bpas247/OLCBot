@@ -5,7 +5,7 @@ it("Successfully pings", () => {
   var test = cogs.get("ping");
   expect(test).toBeDefined();
   if (test) {
-    let returnFunc: any = test.getFunc();
+    let returnFunc: any = test.func;
     expect(returnFunc()).toBe("Pong!");
   }
 });
@@ -25,7 +25,7 @@ it("Successfully says what was given", () => {
   let returnCog = cogs.get("say");
   expect(returnCog).toBeDefined();
   if (returnCog) {
-    let returnFunc = returnCog.getFunc();
+    let returnFunc = returnCog.func;
     let msg: any = { delete: () => Promise.resolve() };
     let db: any = {};
 
@@ -41,7 +41,7 @@ describe("random message commands", () => {
     let test = cogs.get(cmd);
     expect(test).toBeDefined();
     if (test !== undefined) {
-      let returnFunc: any = test.getFunc();
+      let returnFunc: any = test.func;
       if (returnFunc) {
         let out: any = returnFunc(msg, args, db);
         expect(foundInArray(out, arr)).toBe(true);
@@ -58,7 +58,7 @@ it("Successfully returns a help message", () => {
   let returnCog = cogs.get("help");
   expect(returnCog).toBeDefined();
   if (returnCog) {
-    let returnFunc: any = returnCog.getFunc();
+    let returnFunc: any = returnCog.func;
     expect(returnFunc()).toBeDefined();
   }
 });
@@ -71,7 +71,7 @@ it("Successfully returns the correct time", () => {
     let msg: any = {};
     let args: any = {};
     let db: any = {};
-    let returnFunc: any = test.getFunc();
+    let returnFunc: any = test.func;
     expect(returnFunc(msg, args, db)).toBeDefined();
   }
 });

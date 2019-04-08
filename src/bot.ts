@@ -58,8 +58,11 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
 
     if (cog !== undefined)
     try {
-      let cogFunc = cog.getFunc(args);
-      if(cogFunc) outMessage = await cogFunc(message, args, db); 
+      let appropriateCog = cog.getAppropriateCog(args);
+      if(appropriateCog) {
+        let cogFunc = appropriateCog.func;
+        if(cogFunc) outMessage = await cogFunc(message, args, db); 
+      }
     } catch(err) { console.error(err); }
   }
   // Send the message
