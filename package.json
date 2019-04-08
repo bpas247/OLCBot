@@ -2,10 +2,9 @@
   "main": "bot.bundle.js",
   "private": true,
   "scripts": {
-    "start": "node bot.bundle.js"
+    "start": "node client.js"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.0",
     "discord.js": "^11.4.2",
     "dotenv": "^7.0.0",
     "pg-promise": "^8.6.4"
