@@ -8,7 +8,7 @@ exports.listCounts = (result, users) => {
     let out = "List of everyone's scores:";
     for (let row of result) {
         let name = users.find(user => user.id == row.id);
-        if (name !== undefined) {
+        if (name) {
             var userName = name.username;
             out += "\n" + userName + " - " + row.count;
         }
