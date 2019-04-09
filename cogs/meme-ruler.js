@@ -45,50 +45,28 @@ exports.updateCount = async (user, newCount, db) => {
     }
 };
 const MemeRulerCog = new cog_1.default("memes", () => "", "Meme Commands", [
-    new cog_1.default("start", async (message, args, db) => {
-        let author;
-        if (message.guild !== null)
-            author = await message.guild.fetchMember(message.author);
+    // new Cog(
+    //   "ls",
+    //   async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+    //     let result: Array<any> | undefined = undefined;
+    //     try {
+    //       result = await db.any("SELECT id, count FROM meme_count");
+    //     } catch (err) {
+    //       console.log(err);
+    //       return "Something went wrong, it probably wasn't started";
+    //     }
+    //     if (result === undefined) return "Could not access database";
+    //     if (result.length == 0) return "Nobody has posted any memes yet :(";
+    //     let users: Collection<Snowflake, User> = message.client.users;
+    //     return listCounts(result, users);
+    //   }, "List all of the current scores for every member that's submitted memes"),
+    new cog_1.default("random", async (message, args, db) => {
+        let returnsFromDb = await db.any("SELECT id, message, attachment from memes");
+        let rand = returnsFromDb[Math.floor(Math.random() * returnsFromDb.length)];
+        if (!rand)
+            return "no memes have been posted yet";
         else
-            return "Command does not work in DM";
-        let isAdmin = author.hasPermission("ADMINISTRATOR");
-        if (!isAdmin)
-            return "You don't have the permissions for this command.";
-        // Continue
-        let result = await db.any("SELECT month, day FROM meme_last_ran");
-        let out;
-        if (result[0] !== undefined) {
-            out = "Command has already ran, so nothing else will be done.";
-        }
-        else {
-            // Time to start it!
-            const curDay = new Date();
-            try {
-                await db.query("INSERT into meme_last_ran (month, day) VALUES($1, $2)", [curDay.getMonth(), curDay.getDate()]);
-            }
-            catch (error) {
-                console.log(error);
-                out = "Something went wrong! yell at the dev!!!";
-            }
-            out = "Sucessfully started!";
-        }
-        return out;
-    }, "Start the bot's listening functionality for the memes"),
-    new cog_1.default("ls", async (message, args, db) => {
-        let result = undefined;
-        try {
-            result = await db.any("SELECT id, count FROM meme_count");
-        }
-        catch (err) {
-            console.log(err);
-            return "Something went wrong, it probably wasn't started";
-        }
-        if (result === undefined)
-            return "Could not access database";
-        if (result.length == 0)
-            return "Nobody has posted any memes yet :(";
-        let users = message.client.users;
-        return exports.listCounts(result, users);
-    }, "List all of the current scores for every member that's submitted memes")
+            return `from **${rand.id}**\n${rand.message}` + (rand.attachment ? `\n${rand.attachment}` : "");
+    }, "Grab a random meme from our awesome collection")
 ]);
 exports.default = MemeRulerCog;
