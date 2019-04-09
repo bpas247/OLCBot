@@ -5,7 +5,7 @@ import { Message } from 'discord.js';
 // Import cogs
 import cogs from './cogs/cogs';
 import Cog from './cogs/cog';
-import { updateCount } from './cogs/meme-ruler';
+// import { updateCount } from './cogs/meme-ruler';
 import { IDatabase } from 'pg-promise';
 
 // Prefix
@@ -19,11 +19,13 @@ export const onCreate = async (db: IDatabase<any>) => {
 
   await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
 
-  await db.query(
-    'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
-  );
+  // await db.query(
+  //   'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
+  // );
 
-  await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
+  // await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
+
+  await db.query('CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)');
 
   console.log('All database tables are ready!');
 };
@@ -77,20 +79,21 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
   if (message.author.bot) return;
 
   if (message.content.indexOf(Prefix) !== 0) {
-    // Watchers
-    let reactions;
-    // Reaction timers
-    try {
-      reactions = await message.awaitReactions(
-        (reaction, user) => true,
-        { time: 300000 } // production
-        //{time: 3000} // testing
-      );
-      let result = await updateCount(message.author.id, reactions.size, db);
-    } catch (err) {
-      console.log(err);
+    // If it is identified as a meme
+    if (message.content.indexOf(`[MEME]`) !== -1) {
+      let id = message.author.username;
+      let purgedContent = message.content.split(`[MEME]`).pop(); 
+      let content = "";
+      if(purgedContent) content = purgedContent.trim();
+      let attachmentURL: string | undefined = undefined;
+      if (message.attachments.size > 0)
+        attachmentURL = message.attachments.first().url;
+
+      await db.query("INSERT into memes (id, message, attachment) VALUES($1, $2, $3)", [id, content, attachmentURL]);
+
+      await message.react('🅱');
     }
-  } else {
-    await onCommand(message, db);
+} else {
+  await onCommand(message, db);
   }
 };

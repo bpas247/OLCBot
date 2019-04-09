@@ -8,7 +8,7 @@ const dbMock: any = {
 describe("onCreate", () => {
   it("should create the databases", async () => {
     await onCreate(dbMock);
-    expect(dbMock.query.callCount).toEqual(3);  
+    expect(dbMock.query.callCount).toEqual(2);  
   });
 });
 

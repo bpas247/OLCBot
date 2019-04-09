@@ -3,41 +3,41 @@ import MemeRulerCog, { listCounts, updateCount } from "./meme-ruler";
 
 describe("memes", () => {
   describe("start", () => { });
-  describe("ls", () => {
-    let args: Array<string> = ["ls"];
-    let message: any = {
-      guild: {
-        fetchMember: sinon.stub()
-      },
-      client: {
-        users: ["user1"]
-      }
-    };
-    let db: any = {
-      any: sinon.stub()
-    };
+  // describe("ls", () => {
+  //   let args: Array<string> = ["ls"];
+  //   let message: any = {
+  //     guild: {
+  //       fetchMember: sinon.stub()
+  //     },
+  //     client: {
+  //       users: ["user1"]
+  //     }
+  //   };
+  //   let db: any = {
+  //     any: sinon.stub()
+  //   };
 
-    let memesCog = MemeRulerCog.getAppropriateCog(["ls"]);
-    let memes: Function;
+  //   let memesCog = MemeRulerCog.getAppropriateCog(["ls"]);
+  //   let memes: Function;
 
-    if (memesCog) memes = memesCog.func;
+  //   if (memesCog) memes = memesCog.func;
 
-    beforeEach(() => {
-      db.any = sinon.stub();
-    });
+  //   beforeEach(() => {
+  //     db.any = sinon.stub();
+  //   });
 
-    it("should respond that it couldnt access the db", async () => {
-      db.any.returns(undefined);
-      let returns: string | undefined = await memes(message, args, db);
-      expect(returns).toEqual("Could not access database");
-    });
+  //   it("should respond that it couldnt access the db", async () => {
+  //     db.any.returns(undefined);
+  //     let returns: string | undefined = await memes(message, args, db);
+  //     expect(returns).toEqual("Could not access database");
+  //   });
 
-    it("should reply that no memes have been posted", async () => {
-      db.any.returns([]);
-      let returns: string | undefined = await memes(message, args, db);
-      expect(returns).toEqual('Nobody has posted any memes yet :(');
-    });
-  });
+  //   it("should reply that no memes have been posted", async () => {
+  //     db.any.returns([]);
+  //     let returns: string | undefined = await memes(message, args, db);
+  //     expect(returns).toEqual('Nobody has posted any memes yet :(');
+  //   });
+  // });
 });
 
 describe("listCounts", () => {
