@@ -11,11 +11,7 @@ import { IDatabase } from 'pg-promise';
 // Prefix
 const Prefix = '!';
 
-export let startDate: Date;
-
 export const onCreate = async (db: IDatabase<any>) => {
-  // set the date
-  startDate = new Date();
 
   await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
 
@@ -50,7 +46,6 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
   let outMessage: string | undefined = 'Command not recognized';
 
   if (command !== undefined) {
-    console.log("COMMAND: " + command);
     let cog: Cog | undefined = cogs.get(command);
 
     if (cog)

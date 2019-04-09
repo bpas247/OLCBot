@@ -1,12 +1,11 @@
 import { Message, GuildMember } from "discord.js";
 import { complain, sassy, motivate } from "../util/messages";
 import { randomGrab } from "../util/Utilities";
-import alive from "./alive";
-import { startDate } from "../bot";
 import Cog from './cog';
 import BirthdayCog from './birthday';
 import MemeRulerCog from './meme-ruler';
 import { IDatabase } from "pg-promise";
+import AliveCog from "./alive";
 
 const cogs: Array<Cog> = [
   new Cog("ping", () => "Pong!", "Tests to see if the bot is working"),
@@ -33,11 +32,6 @@ const cogs: Array<Cog> = [
     "motivate",
     () => randomGrab(motivate),
     "Generate a random motivation"
-  ),
-  new Cog(
-    "alive",
-    () => alive(startDate, new Date()),
-    "How long have I been alive for?"
   ),
   new Cog("help", () => {
     let out: string = "Here are the list of commands that are available:\n\n";
@@ -72,6 +66,7 @@ const cogs: Array<Cog> = [
       }
       return `Successfuly cleared ${args[0]}`;
     }),
+  AliveCog,
   BirthdayCog,
   MemeRulerCog
 ];

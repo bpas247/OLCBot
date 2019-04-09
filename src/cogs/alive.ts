@@ -1,7 +1,10 @@
+import Cog from './cog';
+const startDate = new Date();
+
 export const calculateTimeDist = (startDate: Date, endDate: Date) => {
   var out = [];
 
-  var difference:number = Math.abs(Number(startDate) - Number(endDate));
+  var difference: number = Math.abs(Number(startDate) - Number(endDate));
 
   out.push(Math.floor(difference / (1000 * 60 * 60 * 24)));
 
@@ -20,7 +23,7 @@ export const calculateTimeDist = (startDate: Date, endDate: Date) => {
   return out;
 };
 
-export default (startDate: Date, endDate: Date) => {
+export const alive = (startDate: Date, endDate: Date) => {
   const timeDist = calculateTimeDist(startDate, endDate);
 
   const labels = ['days', 'hours', 'minutes', 'seconds'];
@@ -36,3 +39,12 @@ export default (startDate: Date, endDate: Date) => {
 
   return out;
 };
+
+const AliveCog = new Cog(
+  "alive",
+  () => alive(startDate, new Date()),
+  "How long have I been alive for?"
+);
+
+export default AliveCog;
+
