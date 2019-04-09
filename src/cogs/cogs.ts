@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+import { Message, GuildMember } from "discord.js";
 import { complain, sassy, motivate } from "../util/messages";
 import { randomGrab } from "../util/Utilities";
 import alive from "./alive";
@@ -6,6 +6,7 @@ import { startDate } from "../bot";
 import Cog from './cog';
 import BirthdayCog from './birthday';
 import MemeRulerCog from './meme-ruler';
+import { IDatabase } from "pg-promise";
 
 const cogs: Array<Cog> = [
   new Cog("ping", () => "Pong!", "Tests to see if the bot is working"),
@@ -51,6 +52,26 @@ const cogs: Array<Cog> = [
     });
     return out;
   }),
+  new Cog(
+    "clearTable",
+    async (message: Message, args: string[], db: IDatabase<any>) => {
+      let author: GuildMember;
+      if (message.guild !== null)
+        author = await message.guild.fetchMember(message.author);
+      else return "Command does not work in DM";
+
+      let isAdmin = author.hasPermission("ADMINISTRATOR");
+
+      if (!isAdmin)
+        return "You don't have the permissions for this command.";
+
+      try {
+        await db.query(`DELETE from ${args[0]}`);
+      } catch (error) {
+        return `Could not clear the database table ${args[0]}`;
+      }
+      return `Successfuly cleared ${args[0]}`;
+    }),
   BirthdayCog,
   MemeRulerCog
 ];

@@ -44,28 +44,23 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
     .trim()
     .split(/ +/g);
 
-  const testCommand: string | undefined = args.shift();
-
-  let command: string | undefined;
-  if (testCommand !== undefined)
-    command = testCommand.toLowerCase();
-  else
-    command = undefined;
+  const command: string | undefined = args.shift();
 
   // Default case
-  let outMessage: string | undefined = 'Command not recognized.';
+  let outMessage: string | undefined = 'Command not recognized';
 
   if (command !== undefined) {
+    console.log("COMMAND: " + command);
     let cog: Cog | undefined = cogs.get(command);
 
-    if (cog !== undefined)
+    if (cog)
       try {
         let appropriateCog = cog.getAppropriateCog(args);
-        if (appropriateCog) {
-          let cogFunc = appropriateCog.func;
-          if (cogFunc) outMessage = await cogFunc(message, args, db);
-        }
+        let cogFunc = appropriateCog.func;
+        if (cogFunc) outMessage = await cogFunc(message, args, db);
+        else outMessage += ": Function undefined";
       } catch (err) { console.error(err); }
+    else outMessage += ": Base Cog undefined";
   }
   // Send the message
   message.channel.send(outMessage);
@@ -82,9 +77,9 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
     // If it is identified as a meme
     if (message.content.indexOf(`[MEME]`) === 0) {
       let id = message.author.username;
-      let purgedContent = message.content.split(`[MEME]`).pop(); 
+      let purgedContent = message.content.split(`[MEME]`).pop();
       let content = "";
-      if(purgedContent) content = purgedContent.trim();
+      if (purgedContent) content = purgedContent.trim();
       let attachmentURL: string | undefined = undefined;
       if (message.attachments.size > 0)
         attachmentURL = message.attachments.first().url;
@@ -93,7 +88,7 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
 
       await message.react('🅱');
     }
-} else {
-  await onCommand(message, db);
+  } else {
+    await onCommand(message, db);
   }
 };

@@ -38,6 +38,6 @@ describe("onCommand", () => {
   it("should reply with an unrecognized command if passed in an invalid command", async () => {
     messageMock.content = "!poing";
     await onCommand(messageMock, dbMock);
-    expect(messageMock.channel.send.calledWith('Command not recognized.')).toBeTruthy();  
+    expect(messageMock.channel.send.calledWith('Command not recognized: Base Cog undefined')).toBeTruthy();  
   });
 });

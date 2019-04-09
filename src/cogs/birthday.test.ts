@@ -109,7 +109,7 @@ describe("listUsers", () => {
 
     let returns = listUsers(testArray, users);
     expect(returns).toBe(
-      `List of everyone's birthday goes as follows:\n${undefined} - ${testDate}`
+      `List of everyone's birthday goes as follows:`
     );
   });
 });

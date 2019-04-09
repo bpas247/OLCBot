@@ -23,7 +23,7 @@ class Cog {
 
   public getAppropriateCog = (args?: Array<string>) => {
     if (args === undefined || args.length === 0) return this;
-    else if (this._args === undefined) return undefined;
+    else if (this._args === undefined) return this;
     else {
       // There are args, so find the arg and run that function instead
       let argCog: Cog = this;

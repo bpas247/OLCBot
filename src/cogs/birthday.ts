@@ -66,12 +66,10 @@ export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
   for (let row of result) {
     var name: undefined | User = users.find(user => user.id == row.id);
 
-    if (name !== undefined) {
+    if (name) {
       var userName: string = name.username;
       out += "\n" + userName + " - " + row.date;
-    } else {
-      out += "\n" + name + " - " + row.date;
-    }
+    } 
   }
 
   return out;
