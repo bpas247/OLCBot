@@ -80,7 +80,7 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
 
   if (message.content.indexOf(Prefix) !== 0) {
     // If it is identified as a meme
-    if (message.content.indexOf(`[MEME]`) !== -1) {
+    if (message.content.indexOf(`[MEME]`) === 0) {
       let id = message.author.username;
       let purgedContent = message.content.split(`[MEME]`).pop(); 
       let content = "";
