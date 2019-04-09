@@ -32,28 +32,26 @@ exports.onCommand = async (message, db) => {
         .slice(Prefix.length)
         .trim()
         .split(/ +/g);
-    const testCommand = args.shift();
-    let command;
-    if (testCommand !== undefined)
-        command = testCommand.toLowerCase();
-    else
-        command = undefined;
+    const command = args.shift();
     // Default case
-    let outMessage = 'Command not recognized.';
+    let outMessage = 'Command not recognized';
     if (command !== undefined) {
+        console.log("COMMAND: " + command);
         let cog = cogs_1.default.get(command);
-        if (cog !== undefined)
+        if (cog)
             try {
                 let appropriateCog = cog.getAppropriateCog(args);
-                if (appropriateCog) {
-                    let cogFunc = appropriateCog.func;
-                    if (cogFunc)
-                        outMessage = await cogFunc(message, args, db);
-                }
+                let cogFunc = appropriateCog.func;
+                if (cogFunc)
+                    outMessage = await cogFunc(message, args, db);
+                else
+                    outMessage += ": Function undefined";
             }
             catch (err) {
                 console.error(err);
             }
+        else
+            outMessage += ": Base Cog undefined";
     }
     // Send the message
     message.channel.send(outMessage);

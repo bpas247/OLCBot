@@ -10,7 +10,7 @@ class Cog {
             if (args === undefined || args.length === 0)
                 return this;
             else if (this._args === undefined)
-                return undefined;
+                return this;
             else {
                 // There are args, so find the arg and run that function instead
                 let argCog = this;

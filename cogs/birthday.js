@@ -53,12 +53,9 @@ exports.listUsers = (result, users) => {
     var out = "List of everyone's birthday goes as follows:";
     for (let row of result) {
         var name = users.find(user => user.id == row.id);
-        if (name !== undefined) {
+        if (name) {
             var userName = name.username;
             out += "\n" + userName + " - " + row.date;
-        }
-        else {
-            out += "\n" + name + " - " + row.date;
         }
     }
     return out;

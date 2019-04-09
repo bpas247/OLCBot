@@ -38,6 +38,23 @@ const cogs = [
         });
         return out;
     }),
+    new cog_1.default("clearTable", async (message, args, db) => {
+        let author;
+        if (message.guild !== null)
+            author = await message.guild.fetchMember(message.author);
+        else
+            return "Command does not work in DM";
+        let isAdmin = author.hasPermission("ADMINISTRATOR");
+        if (!isAdmin)
+            return "You don't have the permissions for this command.";
+        try {
+            await db.query(`DELETE from ${args[0]}`);
+        }
+        catch (error) {
+            return `Could not clear the database table ${args[0]}`;
+        }
+        return `Successfuly cleared ${args[0]}`;
+    }),
     birthday_1.default,
     meme_ruler_1.default
 ];

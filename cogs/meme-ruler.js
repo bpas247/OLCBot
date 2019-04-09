@@ -44,7 +44,7 @@ exports.updateCount = async (user, newCount, db) => {
         return "Updated entry!";
     }
 };
-const MemeRulerCog = new cog_1.default("memes", () => "", "Meme Commands", [
+const MemeRulerCog = new cog_1.default("memes", () => "Not a meme command", "Meme Commands", [
     // new Cog(
     //   "ls",
     //   async (message: Message, args: Array<string>, db: IDatabase<any>) => {
