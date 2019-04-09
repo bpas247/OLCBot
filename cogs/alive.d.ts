@@ -1,3 +1,5 @@
+import Cog from './cog';
 export declare const calculateTimeDist: (startDate: Date, endDate: Date) => number[];
-declare const _default: (startDate: Date, endDate: Date) => string;
-export default _default;
+export declare const alive: (startDate: Date, endDate: Date) => string;
+declare const AliveCog: Cog;
+export default AliveCog;

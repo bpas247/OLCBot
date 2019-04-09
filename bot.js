@@ -9,8 +9,6 @@ const cogs_1 = __importDefault(require("./cogs/cogs"));
 // Prefix
 const Prefix = '!';
 exports.onCreate = async (db) => {
-    // set the date
-    exports.startDate = new Date();
     await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
     // await db.query(
     //   'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
@@ -36,7 +34,6 @@ exports.onCommand = async (message, db) => {
     // Default case
     let outMessage = 'Command not recognized';
     if (command !== undefined) {
-        console.log("COMMAND: " + command);
         let cog = cogs_1.default.get(command);
         if (cog)
             try {

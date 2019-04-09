@@ -5,11 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const messages_1 = require("../util/messages");
 const Utilities_1 = require("../util/Utilities");
-const alive_1 = __importDefault(require("./alive"));
-const bot_1 = require("../bot");
 const cog_1 = __importDefault(require("./cog"));
 const birthday_1 = __importDefault(require("./birthday"));
 const meme_ruler_1 = __importDefault(require("./meme-ruler"));
+const alive_1 = __importDefault(require("./alive"));
 const cogs = [
     new cog_1.default("ping", () => "Pong!", "Tests to see if the bot is working"),
     new cog_1.default("say", (message, args) => {
@@ -24,7 +23,6 @@ const cogs = [
     new cog_1.default("complain", () => Utilities_1.randomGrab(messages_1.complain), "Generate a random complaint"),
     new cog_1.default("do", () => Utilities_1.randomGrab(messages_1.sassy), "Tell the bot to do something"),
     new cog_1.default("motivate", () => Utilities_1.randomGrab(messages_1.motivate), "Generate a random motivation"),
-    new cog_1.default("alive", () => alive_1.default(bot_1.startDate, new Date()), "How long have I been alive for?"),
     new cog_1.default("help", () => {
         let out = "Here are the list of commands that are available:\n\n";
         cogs.forEach(cog => {
@@ -55,6 +53,7 @@ const cogs = [
         }
         return `Successfuly cleared ${args[0]}`;
     }),
+    alive_1.default,
     birthday_1.default,
     meme_ruler_1.default
 ];

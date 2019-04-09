@@ -1,5 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const cog_1 = __importDefault(require("./cog"));
+const startDate = new Date();
 exports.calculateTimeDist = (startDate, endDate) => {
     var out = [];
     var difference = Math.abs(Number(startDate) - Number(endDate));
@@ -12,7 +17,7 @@ exports.calculateTimeDist = (startDate, endDate) => {
     out.push(Math.floor(difference / 1000));
     return out;
 };
-exports.default = (startDate, endDate) => {
+exports.alive = (startDate, endDate) => {
     const timeDist = exports.calculateTimeDist(startDate, endDate);
     const labels = ['days', 'hours', 'minutes', 'seconds'];
     var out = 'I have been alive for: \n';
@@ -24,3 +29,5 @@ exports.default = (startDate, endDate) => {
     }
     return out;
 };
+const AliveCog = new cog_1.default("alive", () => exports.alive(startDate, new Date()), "How long have I been alive for?");
+exports.default = AliveCog;
