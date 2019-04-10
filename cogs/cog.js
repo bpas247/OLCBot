@@ -6,6 +6,12 @@ class Cog {
         this._func = _func;
         this._help = _help;
         this._args = _args;
+        this.run = async (message, args, db) => {
+            let cogToRun = this;
+            if (args)
+                cogToRun = this.getAppropriateCog(args);
+            return await cogToRun._func(message, args, db);
+        };
         this.getAppropriateCog = (args) => {
             if (args === undefined || args.length === 0)
                 return this;
@@ -24,9 +30,6 @@ class Cog {
     }
     get command() {
         return this._command;
-    }
-    get func() {
-        return this._func;
     }
     get help() {
         return this._help;

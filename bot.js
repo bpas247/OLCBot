@@ -33,16 +33,11 @@ exports.onCommand = async (message, db) => {
     const command = args.shift();
     // Default case
     let outMessage = 'Command not recognized';
-    if (command !== undefined) {
+    if (command) {
         let cog = cogs_1.default.get(command);
         if (cog)
             try {
-                let appropriateCog = cog.getAppropriateCog(args);
-                let cogFunc = appropriateCog.func;
-                if (cogFunc)
-                    outMessage = await cogFunc(message, args, db);
-                else
-                    outMessage += ": Function undefined";
+                outMessage = await cog.run(message, args, db);
             }
             catch (err) {
                 console.error(err);

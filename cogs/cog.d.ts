@@ -7,8 +7,8 @@ declare class Cog {
     private _args?;
     constructor(_command: string, _func: (message: Message, args: Array<string>, db: IDatabase<any>) => Promise<string | undefined> | string, _help?: string | undefined, _args?: Cog[] | undefined);
     readonly command: string;
-    readonly func: (message: Message, args: string[], db: IDatabase<any>) => string | Promise<string | undefined>;
-    getAppropriateCog: (args?: string[] | undefined) => Cog;
+    run: (message: Message, args: string[], db: IDatabase<any>) => Promise<string | undefined>;
+    private getAppropriateCog;
     readonly help: string | undefined;
     readonly args: Cog[] | undefined;
 }
