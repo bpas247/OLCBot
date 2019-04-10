@@ -17,11 +17,14 @@ class Cog {
     return this._command;
   }
 
-  get func() {
-    return this._func;
+  public run = async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+    let cogToRun: Cog = this;
+    if (args) cogToRun = this.getAppropriateCog(args);
+
+    return await cogToRun._func(message, args, db);
   }
 
-  public getAppropriateCog = (args?: Array<string>) => {
+  private getAppropriateCog = (args?: Array<string>) => {
     if (args === undefined || args.length === 0) return this;
     else if (this._args === undefined) return this;
     else {

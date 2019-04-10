@@ -1,16 +1,21 @@
 import cogs from "./cogs";
 import { complain, sassy, motivate } from "../util/messages";
 
-it("Successfully pings", () => {
-  var test = cogs.get("ping");
+let msg: any = { delete: () => Promise.resolve() };
+
+let args: Array<string> = [];
+
+let db: any = {};
+
+it("Successfully pings", async () => {
+  let test = cogs.get("ping");
   expect(test).toBeDefined();
   if (test) {
-    let returnFunc: any = test.func;
-    expect(returnFunc()).toBe("Pong!");
+    expect(await test.run(msg, args, db)).toBe("Pong!");
   }
 });
 
-it("Successfully says what was given", () => {
+it("Successfully says what was given", async () => {
   let says: string = "This is what I'm saying";
 
   let toArray: Array<string> = says.split(" ");
@@ -24,43 +29,30 @@ it("Successfully says what was given", () => {
 
   let returnCog = cogs.get("say");
   expect(returnCog).toBeDefined();
-  if (returnCog) {
-    let returnFunc = returnCog.func;
-    let msg: any = { delete: () => Promise.resolve() };
-    let db: any = {};
-
-    if (returnFunc) expect(returnFunc(msg, toArray, db)).toBe(says);
-  }
+  if (returnCog)
+    expect(await returnCog.run(msg, toArray, db)).toBe(says);
 });
 
 describe("random message commands", () => {
-  let msg: any = {};
-  let args: any = {};
-  let db: any = {};
-  let runTest = (cmd: string, arr: Array<string>) => {
+  let runTest = async (cmd: string, arr: Array<string>) => {
     let test = cogs.get(cmd);
     expect(test).toBeDefined();
     if (test !== undefined) {
-      let returnFunc: any = test.func;
-      if (returnFunc) {
-        let out: any = returnFunc(msg, args, db);
-        expect(foundInArray(out, arr)).toBe(true);
-      }
+      let out: any = await test.run(msg, args, db);
+      expect(foundInArray(out, arr)).toBe(true);
     }
   };
 
-  it("Sucessfully grabs a complaint", () => runTest("complain", complain));
-  it("Sucessfully grabs a sass", () => runTest("do", sassy));
-  it("Sucessfully grabs a motivation", () => runTest("motivate", motivate));
+  it("Sucessfully grabs a complaint", async () => await runTest("complain", complain));
+  it("Sucessfully grabs a sass", async () => await runTest("do", sassy));
+  it("Sucessfully grabs a motivation", async () => await runTest("motivate", motivate));
 });
 
 it("Successfully returns a help message", () => {
   let returnCog = cogs.get("help");
   expect(returnCog).toBeDefined();
-  if (returnCog) {
-    let returnFunc: any = returnCog.func;
-    expect(returnFunc()).toBeDefined();
-  }
+  if (returnCog)
+    expect(returnCog.run(msg, args, db)).toBeDefined();
 });
 
 it("Successfully returns the correct time", () => {
@@ -68,11 +60,7 @@ it("Successfully returns the correct time", () => {
   expect(test).toBeDefined();
 
   if (test) {
-    let msg: any = {};
-    let args: any = {};
-    let db: any = {};
-    let returnFunc: any = test.func;
-    expect(returnFunc(msg, args, db)).toBeDefined();
+    expect(test.run(msg, args, db)).toBeDefined();
   }
 });
 

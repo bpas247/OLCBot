@@ -26,10 +26,8 @@ describe('birthday', () => {
         users: users
       }
     }
-    const birthdayLsCog = BirthdayCog.getAppropriateCog(["ls"]);
-    let result;
-
-    if(birthdayLsCog) result = await birthdayLsCog.func(message, ['ls'], db);
+    let result = await BirthdayCog.run(message, ['ls'], db);
+    
     expect(db.any.calledOnce).toBeTruthy();
     expect(result).toEqual(`List of everyone's birthday goes as follows:\ntestName - 01/01/2000`);
   });

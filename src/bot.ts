@@ -45,15 +45,12 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
   // Default case
   let outMessage: string | undefined = 'Command not recognized';
 
-  if (command !== undefined) {
+  if (command) {
     let cog: Cog | undefined = cogs.get(command);
 
     if (cog)
       try {
-        let appropriateCog = cog.getAppropriateCog(args);
-        let cogFunc = appropriateCog.func;
-        if (cogFunc) outMessage = await cogFunc(message, args, db);
-        else outMessage += ": Function undefined";
+        outMessage = await cog.run(message, args, db);
       } catch (err) { console.error(err); }
     else outMessage += ": Base Cog undefined";
   }
