@@ -1,4 +1,4 @@
-import { GuildMember, Message } from "discord.js";
+import { Message } from "discord.js";
 import { IDatabase } from "pg-promise";
 
 class Cog {
@@ -10,35 +10,21 @@ class Cog {
       db: IDatabase<any>
     ) => Promise<string | undefined> | string,
     private _help?: string,
-    private _args?: Array<Cog>,
-    private _isAdmin: boolean = false
+    private _args?: Array<Cog>
   ) { }
 
   get command() {
     return this._command;
   }
 
-  public run = async (message: Message, args: Array<string>, db: IDatabase<any>) => {
-    if (this._isAdmin) {
-      let author: GuildMember;
-      if (message.guild)
-        author = await message.guild.fetchMember(message.author);
-      else return "Command does not work in DM";
-
-      let isAdmin = author.hasPermission("ADMINISTRATOR");
-
-      if (!isAdmin)
-        return "You don't have the permissions for this command.";
-
-    }
-
+  public async run (message: Message, args: Array<string>, db: IDatabase<any>) {
     let cogToRun: Cog = this;
     if (args) cogToRun = this.getAppropriateCog(args);
 
     return await cogToRun._func(message, args, db);
   }
 
-  protected getAppropriateCog = (args?: Array<string>) => {
+  private getAppropriateCog (args?: Array<string>) {
     if (args === undefined || args.length === 0) return this;
     else if (this._args === undefined) return this;
     else {
