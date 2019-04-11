@@ -49,23 +49,16 @@ const cogs: Array<Cog> = [
   new Cog(
     "clearTable",
     async (message: Message, args: string[], db: IDatabase<any>) => {
-      let author: GuildMember;
-      if (message.guild !== null)
-        author = await message.guild.fetchMember(message.author);
-      else return "Command does not work in DM";
-
-      let isAdmin = author.hasPermission("ADMINISTRATOR");
-
-      if (!isAdmin)
-        return "You don't have the permissions for this command.";
-
       try {
         await db.query(`DELETE from ${args[0]}`);
       } catch (error) {
         return `Could not clear the database table ${args[0]}`;
       }
       return `Successfuly cleared ${args[0]}`;
-    }),
+    },
+    "Clears the selected table out of the database",
+    [],
+    true),
   AliveCog,
   BirthdayCog,
   MemeRulerCog

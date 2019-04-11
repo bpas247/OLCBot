@@ -68,7 +68,7 @@ export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
 
     if (name) {
       var userName: string = name.username;
-      out += "\n" + userName + " - " + row.date;
+      out += `\n${userName} - ${row.date}`;
     } 
   }
 
