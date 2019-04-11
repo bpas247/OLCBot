@@ -55,7 +55,7 @@ exports.listUsers = (result, users) => {
         var name = users.find(user => user.id == row.id);
         if (name) {
             var userName = name.username;
-            out += "\n" + userName + " - " + row.date;
+            out += `\n${userName} - ${row.date}`;
         }
     }
     return out;

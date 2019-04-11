@@ -1,12 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Cog {
-    constructor(_command, _func, _help, _args) {
+    constructor(_command, _func, _help, _args, _isAdmin = false) {
         this._command = _command;
         this._func = _func;
         this._help = _help;
         this._args = _args;
+        this._isAdmin = _isAdmin;
         this.run = async (message, args, db) => {
+            if (this._isAdmin) {
+                let author;
+                if (message.guild)
+                    author = await message.guild.fetchMember(message.author);
+                else
+                    return "Command does not work in DM";
+                let isAdmin = author.hasPermission("ADMINISTRATOR");
+                if (!isAdmin)
+                    return "You don't have the permissions for this command.";
+            }
             let cogToRun = this;
             if (args)
                 cogToRun = this.getAppropriateCog(args);
