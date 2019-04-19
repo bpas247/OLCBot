@@ -22,7 +22,7 @@
     "prettier": "^1.17.0",
     "sinon": "^7.3.2",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.4"
   },
   "scripts": {
     "test": "jest --detectOpenHandles",
