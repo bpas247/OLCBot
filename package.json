@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "type": "tsc",
+    "type": "DATABASE_PASSWORD=1234 tsc",
     "build": "yarn type && cp -r production/* lib",
     "start": "yarn build && yarn prod",
     "prod": "cd lib && yarn start"
@@ -37,6 +37,7 @@
     }
   },
   "jest": {
+    "globalTeardown": "./src/test/globalTeardown.js",
     "roots": [
       "<rootDir>/src"
     ],

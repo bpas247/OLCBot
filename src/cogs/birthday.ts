@@ -52,7 +52,7 @@ export const updateEntry = async (
   } else if (!isDuplicateEntry(authorId, date, result)) {
     await db.query("UPDATE birthday SET date = $1 WHERE id = $2", [
       date,
-      authorId
+      `${authorId}`
     ]);
     return "Updated entry!";
   } else {
@@ -97,6 +97,7 @@ const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
       const users: Collection<Snowflake, User> = message.client.users;
       try {
         const result: object = await db.any("SELECT id, date FROM birthday");
+        console.log(`result: ${result}`);
         return listUsers(result, users);
       } catch (e) {
         console.log(e);
