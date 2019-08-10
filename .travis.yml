@@ -1,4 +1,7 @@
 language: node_js
+sudo: required
+addons:
+  postgresql: "10"
 node_js:
   - "node"
 notifications:
@@ -10,6 +13,8 @@ cache:
   - node_modules/
 install:
   - yarn install
+before_script:
+- psql -c 'create database test;' -U postgres
 script:
   - yarn test --coverage --coverageReporters=text-lcov | coveralls
 before_deploy:
