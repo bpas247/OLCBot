@@ -1,6 +1,4 @@
-// @ts-ignore:
-import { pgp } from './pgMock';
-import { IDatabase } from 'pg-promise';
+import { IDatabase, IMain } from 'pg-promise';
 
 export const cleanup = async (db: IDatabase<any>) => {
     await db.any("DROP TABLE IF EXISTS birthday");
@@ -10,7 +8,7 @@ export const cleanup = async (db: IDatabase<any>) => {
     await db.query('CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)');    
 }
 
-export default pgp({
+export default (pgp: IMain) => pgp({
     host: 'localhost',
     port: 5432,
     database: 'test',

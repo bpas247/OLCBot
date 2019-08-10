@@ -37,7 +37,6 @@
     }
   },
   "jest": {
-    "globalTeardown": "./src/test/globalTeardown.js",
     "roots": [
       "<rootDir>/src"
     ],

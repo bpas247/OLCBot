@@ -1,9 +1,20 @@
 import { onCreate, onCommand } from './bot';
-import db, { cleanup } from './test/dbMock';
 import sinon from 'sinon';
+import createDb, { cleanup } from './test/dbMock';
+import { IDatabase, IMain } from 'pg-promise';
+import pgPromise from 'pg-promise';
+
 
 describe('bot', () => {
-  beforeEach(async () => cleanup(db));
+  let db: IDatabase<any>;
+  let pgp: IMain;
+
+  beforeAll(() => {
+    pgp = pgPromise();
+    db = createDb(pgp);
+  })
+  beforeEach(async() => cleanup(db));
+  afterAll(() => pgp.end());
 
   describe("onCreate", () => {
     it("should not throw an error on create", async () => {
