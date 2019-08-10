@@ -17,8 +17,6 @@ before_script:
 - psql -c 'create database test;' -U postgres
 script:
   - yarn test --coverage --coverageReporters=text-lcov | coveralls
-after_script:
-  - pkill postgres
 before_deploy:
   - yarn build
 deploy:
