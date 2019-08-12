@@ -33,7 +33,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "jest": {
@@ -59,5 +60,20 @@
       "prettier --single-quote --write",
       "git add"
     ]
+  },
+  "release": {
+		"branch": "master",
+		"verifyConditions": [
+			"@semantic-release/changelog",
+			"@semantic-release/git",
+			"@qiwi/semantic-release-gh-pages-plugin"
+		],
+		"publish": [
+			"@semantic-release/github",
+			{
+				"path": "@qiwi/semantic-release-gh-pages-plugin",
+				"src": "lib"
+			}
+		]
   }
 }
