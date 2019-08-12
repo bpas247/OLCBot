@@ -10,8 +10,10 @@ cache:
   - node_modules/
 install:
   - yarn install
+  - npm install -g codecov
 script:
-  - yarn test --coverage --coverageReporters=text-lcov | coveralls
+  - yarn test
+  - codecov
 before_deploy:
   - yarn build
 deploy:
