@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const messages_1 = require("../util/messages");
 const Utilities_1 = require("../util/Utilities");
 const cog_1 = __importDefault(require("./cog"));
+const cog_admin_1 = __importDefault(require("./admin/cog-admin"));
 const birthday_1 = __importDefault(require("./birthday"));
 const meme_ruler_1 = __importDefault(require("./meme-ruler"));
 const alive_1 = __importDefault(require("./alive"));
@@ -36,7 +37,7 @@ const cogs = [
         });
         return out;
     }),
-    new cog_1.default("clearTable", async (message, args, db) => {
+    new cog_admin_1.default("clearTable", async (message, args, db) => {
         try {
             await db.query(`DELETE from ${args[0]}`);
         }
@@ -44,7 +45,7 @@ const cogs = [
             return `Could not clear the database table ${args[0]}`;
         }
         return `Successfuly cleared ${args[0]}`;
-    }, "Clears the selected table out of the database", [], true),
+    }, "Clears the selected table out of the database"),
     alive_1.default,
     birthday_1.default,
     meme_ruler_1.default
