@@ -1,9 +1,10 @@
 import { Message, GuildMember } from "discord.js";
 import { complain, sassy, motivate } from "../util/messages";
 import { randomGrab } from "../util/Utilities";
-import Cog from './cog';
-import BirthdayCog from './birthday';
-import MemeRulerCog from './meme-ruler';
+import Cog from "./cog";
+import AdminCog from "./admin/cog-admin"
+import BirthdayCog from "./birthday";
+import MemeRulerCog from "./meme-ruler";
 import { IDatabase } from "pg-promise";
 import AliveCog from "./alive";
 
@@ -16,7 +17,7 @@ const cogs: Array<Cog> = [
       // To get the "message" itself we join the `args` back into a string with spaces:
       const sayMessage = args.join(" ");
       // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-      message.delete().catch((O_o: any) => { });
+      message.delete().catch((O_o: any) => {});
       // And we get the bot to say the thing:
       return sayMessage;
     },
@@ -46,7 +47,7 @@ const cogs: Array<Cog> = [
     });
     return out;
   }),
-  new Cog(
+  new AdminCog(
     "clearTable",
     async (message: Message, args: string[], db: IDatabase<any>) => {
       try {
@@ -56,9 +57,8 @@ const cogs: Array<Cog> = [
       }
       return `Successfuly cleared ${args[0]}`;
     },
-    "Clears the selected table out of the database",
-    [],
-    true),
+    "Clears the selected table out of the database"
+  ),
   AliveCog,
   BirthdayCog,
   MemeRulerCog
