@@ -4,7 +4,6 @@ import createDb, { cleanup } from './test/dbMock';
 import { IDatabase, IMain } from 'pg-promise';
 import pgPromise from 'pg-promise';
 
-
 describe('bot', () => {
   let db: IDatabase<any>;
   let pgp: IMain;
