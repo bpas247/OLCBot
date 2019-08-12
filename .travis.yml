@@ -13,11 +13,13 @@ cache:
   - node_modules/
 install:
   - yarn install
+  - npm install -g codecov
 before_script:
-- psql -c 'create database test;' -U postgres
+  - psql -c 'create database test;' -U postgres
 script:
-  - yarn test --coverage --coverageReporters=text-lcov | coveralls
   - commitlint-travis
+  - yarn test
+  - codecov
 before_deploy:
   - yarn build
 # Define the release stage that runs semantic-release
