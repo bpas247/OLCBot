@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/bpas247/OLCBot.svg?branch=master)](https://travis-ci.com/bpas247/OLCBot)
-[![Coverage Status](https://coveralls.io/repos/github/bpas247/OLCBot/badge.svg?branch=master)](https://coveralls.io/github/bpas247/OLCBot?branch=master)
 # BLC-Bot
 ## A useless bot for Discord
+[![Build Status](https://travis-ci.com/bpas247/OLCBot.svg?branch=master)](https://travis-ci.com/bpas247/OLCBot)
+[![codecov](https://codecov.io/gh/bpas247/OLCBot/branch/master/graph/badge.svg)](https://codecov.io/gh/bpas247/OLCBot)
 
 ### Prerequisites
 - NodeJS
