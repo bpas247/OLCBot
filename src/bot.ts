@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-import { Message } from 'discord.js';
+import Discord, { Message } from 'discord.js';
 
 // Import cogs
 import cogs from './cogs/cogs';
@@ -11,16 +11,12 @@ import { IDatabase } from 'pg-promise';
 // Prefix
 const Prefix = '!';
 
+// Load up the db
+import db from "./db";
+
 export const onCreate = async (db: IDatabase<any>) => {
 
   await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
-
-  // await db.query(
-  //   'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
-  // );
-
-  // await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
-
   await db.query('CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)');
 
   console.log('All database tables are ready!');
@@ -84,3 +80,28 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
     await onCommand(message, db);
   }
 };
+
+const bot = new Discord.Client();
+
+
+bot.on("ready", () => {
+  // This event will run if the bot starts, and logs in, successfully.
+  console.log(
+    `Bot has started, with ${bot.users.size} users, in ${
+      bot.channels.size
+    } channels of ${bot.guilds.size} guilds.`
+  );
+
+  // Example of changing the bot's playing game to something useful. `client.user` is what the
+  // docs refer to as the "ClientUser".
+  bot.user.setActivity(`Type !help for more info`);
+
+  onCreate(db);
+});
+
+bot.on("message", (message: Message) => {
+  onMessage(message, db);
+});
+
+
+export default bot;
