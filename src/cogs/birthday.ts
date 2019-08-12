@@ -52,7 +52,7 @@ export const updateEntry = async (
   } else if (!isDuplicateEntry(authorId, date, result)) {
     await db.query("UPDATE birthday SET date = $1 WHERE id = $2", [
       date,
-      authorId
+      `${authorId}`
     ]);
     return "Updated entry!";
   } else {
