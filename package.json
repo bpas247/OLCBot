@@ -80,7 +80,8 @@
 			"@semantic-release/github",
 			{
 				"path": "@qiwi/semantic-release-gh-pages-plugin",
-				"src": "lib"
+				"src": "lib",
+        "branch": "build"
 			}
 		]
   }
