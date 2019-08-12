@@ -12,6 +12,13 @@
     "pg-promise": "^9.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+		"@commitlint/config-conventional": "^8.1.0",
+		"@commitlint/travis-cli": "^8.1.0",
+		"@qiwi/semantic-release-gh-pages-plugin": "^1.10.5",
+		"@semantic-release/changelog": "^3.0.4",
+		"@semantic-release/git": "^7.0.16",
+		"@semantic-release/github": "^5.4.2",
     "@types/sinon": "^7.0.13",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
@@ -33,7 +40,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "jest": {
@@ -59,5 +67,20 @@
       "prettier --single-quote --write",
       "git add"
     ]
+  },
+  "release": {
+		"branch": "master",
+		"verifyConditions": [
+			"@semantic-release/changelog",
+			"@semantic-release/git",
+			"@qiwi/semantic-release-gh-pages-plugin"
+		],
+		"publish": [
+			"@semantic-release/github",
+			{
+				"path": "@qiwi/semantic-release-gh-pages-plugin",
+				"src": "lib"
+			}
+		]
   }
 }
