@@ -10,9 +10,11 @@ cache:
   - node_modules/
 install:
   - yarn install
+  - npm install -g codecov
 script:
-  - yarn test --coverage --coverageReporters=text-lcov | coveralls
   - commitlint-travis
+  - yarn test
+  - codecov
 before_deploy:
   - yarn build
 # Define the release stage that runs semantic-release
