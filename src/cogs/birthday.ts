@@ -97,7 +97,6 @@ const BirthdayCog = new Cog("birthday", () => "", "Birthday commands", [
       const users: Collection<Snowflake, User> = message.client.users;
       try {
         const result: object = await db.any("SELECT id, date FROM birthday");
-        console.log(`result: ${result}`);
         return listUsers(result, users);
       } catch (e) {
         console.log(e);
