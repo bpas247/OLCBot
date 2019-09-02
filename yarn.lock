@@ -812,10 +812,10 @@ asn1@~0.2.3:
   dependencies:
     safer-buffer "~2.1.0"
 
-assert-options@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/assert-options/-/assert-options-0.5.0.tgz#d899458bf5f0a99733faeca1525afc7d4f2b32a0"
-  integrity sha512-Vmvi35I4B+8K9pNQpoAzGZiJaM8nN+8fZAR4d4mo0MDyP4RRox/JYmdH97xvLrUSI6kubopwmbWjLu+bUSTn/Q==
+assert-options@0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/assert-options/-/assert-options-0.6.0.tgz#3c5cb87fd1a5e807b64257a25d16a1431b84ed2e"
+  integrity sha512-xmBFb5sY0AO8SNihIfavR6uMhOyzq6D7RoFKJxxAditMQc876szBBQ9RQVwLi6Bm3zUoG0nexZK11Gy5TBX69A==
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -3931,12 +3931,12 @@ pg-pool@^2.0.4:
   resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-2.0.7.tgz#f14ecab83507941062c313df23f6adcd9fd0ce54"
   integrity sha512-UiJyO5B9zZpu32GSlP0tXy8J2NsJ9EFGFfz5v6PSbdz/1hBLX1rNiiy5+mAm5iJJYwfCv4A0EBcQLGWwjbpzZw==
 
-pg-promise@^9.1.1:
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/pg-promise/-/pg-promise-9.1.1.tgz#1c43b70a48780237e400659bb7fca982e59a2eeb"
-  integrity sha512-2HxXdy7t4QW94vNRTlvHpJQpXWmPjx4wWLnapr0kZPCZ7kcAyBlo14giHdkApCxGonhgDwc/Ebn+iRGi5Hk+Ww==
+pg-promise@^9.1.2:
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/pg-promise/-/pg-promise-9.1.2.tgz#57eccd540260a7b1def36df59a752b20140e011e"
+  integrity sha512-7b34YoxDechuN5rUKjxGzJ+OEW7GIAkbeJK/X1zZdkTDrnI37Is5+MnumnIziJWkgu65pnH3guu3oAAkR9e1ng==
   dependencies:
-    assert-options "0.5.0"
+    assert-options "0.6.0"
     manakin "0.5.2"
     pg "7.12.1"
     pg-minify "1.5.0"
