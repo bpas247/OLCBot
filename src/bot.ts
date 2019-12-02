@@ -66,9 +66,9 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
 
 	if (message.content.indexOf(Prefix) !== 0) {
 		// If it is identified as a meme
-		if (message.content.indexOf(`[MEME]`) === 0) {
+		if (message.content.indexOf("[MEME]") === 0) {
 			let id = message.author.username;
-			let purgedContent = message.content.split(`[MEME]`).pop();
+			let purgedContent = message.content.split("[MEME]").pop();
 			let content = "";
 			if (purgedContent) content = purgedContent.trim();
 			let attachmentURL: string | undefined = undefined;
@@ -97,7 +97,7 @@ bot.on("ready", () => {
 
 	// Example of changing the bot's playing game to something useful. `client.user` is what the
 	// docs refer to as the "ClientUser".
-	bot.user.setActivity(`Type !help for more info`);
+	bot.user.setActivity("Type !help for more info");
 
 	onCreate(db);
 });

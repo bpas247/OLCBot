@@ -37,7 +37,7 @@
 		"start": "yarn build && yarn prod",
 		"prod": "cd lib && yarn start",
 		"lint": "eslint src/**/*.ts && prettier --check src/**/*.ts",
-		"format": "prettier --write src/**/*.ts"
+		"format": "prettier --write src/**/*.ts && eslint --fix src/**/*.ts"
 	},
 	"husky": {
 		"hooks": {
