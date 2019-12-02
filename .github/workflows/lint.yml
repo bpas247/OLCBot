@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "node"
+          node-version: node
       - name: Install Dependencies
         run: yarn install
       - name: Lint Files
