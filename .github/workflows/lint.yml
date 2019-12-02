@@ -1,0 +1,14 @@
+name: Lint Files
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out Repository
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: yarn install
+      - name: Lint Files
+        run: yarn lint
