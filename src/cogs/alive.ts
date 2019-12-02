@@ -2,9 +2,9 @@ import Cog from "./cog";
 const startDate = new Date();
 
 export const calculateTimeDist = (startDate: Date, endDate: Date) => {
-	var out = [];
+	const out = [];
 
-	var difference: number = Math.abs(Number(startDate) - Number(endDate));
+	let difference: number = Math.abs(Number(startDate) - Number(endDate));
 
 	out.push(Math.floor(difference / (1000 * 60 * 60 * 24)));
 
@@ -28,9 +28,9 @@ export const alive = (startDate: Date, endDate: Date) => {
 
 	const labels = ["days", "hours", "minutes", "seconds"];
 
-	var out = "I have been alive for: \n";
+	let out = "I have been alive for: \n";
 
-	for (var i = 0; i < labels.length; i++) {
+	for (let i = 0; i < labels.length; i++) {
 		out += timeDist[i] + " " + labels[i];
 		if (i !== labels.length - 1) {
 			out += ", ";

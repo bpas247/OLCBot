@@ -23,7 +23,7 @@ class CogAdmin extends Cog {
 
 		if (!author) return "Could not find the user in the server to authenticate";
 
-		let isAdmin = author.hasPermission("ADMINISTRATOR");
+		const isAdmin = author.hasPermission("ADMINISTRATOR");
 
 		if (!isAdmin) return "You don't have the permissions for this command.";
 

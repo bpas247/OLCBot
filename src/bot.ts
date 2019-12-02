@@ -43,7 +43,7 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
 	let outMessage: string | undefined = "Command not recognized";
 
 	if (command) {
-		let cog: Cog | undefined = cogs.get(command);
+		const cog: Cog | undefined = cogs.get(command);
 
 		if (cog)
 			try {
@@ -67,8 +67,8 @@ export const onMessage = async (message: Message, db: IDatabase<any>) => {
 	if (message.content.indexOf(Prefix) !== 0) {
 		// If it is identified as a meme
 		if (message.content.indexOf("[MEME]") === 0) {
-			let id = message.author.username;
-			let purgedContent = message.content.split("[MEME]").pop();
+			const id = message.author.username;
+			const purgedContent = message.content.split("[MEME]").pop();
 			let content = "";
 			if (purgedContent) content = purgedContent.trim();
 			let attachmentURL: string | undefined = undefined;

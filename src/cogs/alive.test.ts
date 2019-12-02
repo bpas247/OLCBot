@@ -1,8 +1,8 @@
 import { alive, calculateTimeDist } from "./alive";
 
 describe("Time Calculation tests", () => {
-	var curTime: Date;
-	var addedSeconds: Date;
+	let curTime: Date;
+	let addedSeconds: Date;
 
 	beforeEach(() => {
 		curTime = new Date("December 17, 1995 00:00:00");
@@ -38,9 +38,9 @@ describe("Time Calculation tests", () => {
 });
 
 it("Should print out the correct time", () => {
-	let expectedOut: string =
+	const expectedOut =
 		"I have been alive for: \n0 days, 0 hours, 0 minutes, 0 seconds";
-	let testDate: Date = new Date();
+	const testDate: Date = new Date();
 
 	expect(alive(testDate, testDate)).toBe(expectedOut);
 });
@@ -49,7 +49,7 @@ function valuesAreSame(arr1: Array<number>, arr2: Array<number>) {
 	if (arr1.length !== arr2.length) {
 		return false;
 	} else {
-		for (var i = 0; i < arr1.length; i++) {
+		for (let i = 0; i < arr1.length; i++) {
 			if (arr1[i] !== arr2[i]) {
 				return false;
 			}

@@ -4,7 +4,7 @@ import { IDatabase } from "pg-promise";
 import Cog from "./cog";
 
 export const getDateFromArgs = (args: Array<string>) => {
-	var date = undefined;
+	let date = undefined;
 	for (let i = 0; i < args.length; i++) {
 		if (isValidDate(args[i])) {
 			date = args[i];
@@ -15,8 +15,8 @@ export const getDateFromArgs = (args: Array<string>) => {
 };
 
 export const isInDatabase = (authorId: number, result: Array<any>) => {
-	var isInDatabase = false;
-	for (let row of result) {
+	let isInDatabase = false;
+	for (const row of result) {
 		if (row.id == authorId) {
 			isInDatabase = true;
 		}
@@ -29,9 +29,9 @@ export const isDuplicateEntry = (
 	date: string,
 	result: Array<any>
 ) => {
-	var isDuplicate = false;
+	let isDuplicate = false;
 
-	for (let row of result)
+	for (const row of result)
 		if (row.id == authorId && row.date == date) isDuplicate = true;
 
 	return isDuplicate;
@@ -40,7 +40,7 @@ export const isDuplicateEntry = (
 export const updateEntry = async (
 	authorId: number,
 	date: string,
-	result: Array<Object>,
+	result: Array<Record<string, any>>,
 	db: IDatabase<any>
 ) => {
 	if (!isInDatabase(authorId, result)) {
@@ -61,13 +61,13 @@ export const updateEntry = async (
 };
 
 export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
-	var out = "List of everyone's birthday goes as follows:";
+	let out = "List of everyone's birthday goes as follows:";
 
-	for (let row of result) {
-		var name: undefined | User = users.find(user => user.id == row.id);
+	for (const row of result) {
+		const name: undefined | User = users.find(user => user.id == row.id);
 
 		if (name) {
-			var userName: string = name.username;
+			const userName: string = name.username;
 			out += `\n${userName} - ${row.date}`;
 		}
 	}

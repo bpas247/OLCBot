@@ -52,21 +52,21 @@ describe("memes", () => {
 	// });
 	describe("listCounts", () => {
 		it("should list all of the counts", () => {
-			let results: any = [
+			const results: any = [
 				{
 					id: 12345,
 					count: 10
 				}
 			];
 
-			let users: any = [
+			const users: any = [
 				{
 					id: 12345,
 					username: "testName"
 				}
 			];
 
-			let returns = listCounts(results, users);
+			const returns = listCounts(results, users);
 
 			expect(returns).toEqual(
 				`List of everyone's scores:\n${users[0].username} - ${results[0].count}`
@@ -75,11 +75,11 @@ describe("memes", () => {
 	});
 
 	describe("updateCount", () => {
-		let user: string = "testUser";
-		let newCount: number = 37;
+		const user = "testUser";
+		const newCount = 37;
 
 		it("should add a new entry", async () => {
-			let returns: string = await updateCount(user, newCount, db);
+			const returns: string = await updateCount(user, newCount, db);
 
 			expect(returns).toEqual("Added new entry!");
 		});

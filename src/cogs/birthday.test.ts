@@ -23,8 +23,8 @@ describe("birthday", () => {
 	afterAll(() => pgp.end());
 
 	it("should list all birthdays", async () => {
-		let anyStub: SinonStub = sinon.stub();
-		let users: Array<object> = [
+		const anyStub: SinonStub = sinon.stub();
+		const users: Array<object> = [
 			{
 				id: 12345,
 				date: "01/01/2000",
@@ -43,7 +43,7 @@ describe("birthday", () => {
 			}
 		};
 		await BirthdayCog.run(message, ["add", "01/01/2000"], db);
-		let result = await BirthdayCog.run(message, ["ls"], db);
+		const result = await BirthdayCog.run(message, ["ls"], db);
 
 		// expect(db.any.calledOnce).toBeTruthy();
 		expect(result).toEqual(
@@ -65,32 +65,36 @@ describe("birthday", () => {
 
 	describe("isInDatabase", () => {
 		it("should find the user in the array", () => {
-			let testId: number = 2124588682;
-			let testArray: Array<Object> = [new Object({ id: testId })];
+			const testId = 2124588682;
+			const testArray: Array<Record<string, any>> = [
+				new Object({ id: testId })
+			];
 			expect(isInDatabase(testId, testArray)).toBeTruthy();
 		});
 
 		it("should not find the user in the array", () => {
-			let testId: number = 2124588682;
-			let testArray: Array<Object> = [new Object({ id: testId + 25 })];
+			const testId = 2124588682;
+			const testArray: Array<Record<string, any>> = [
+				new Object({ id: testId + 25 })
+			];
 			expect(isInDatabase(testId, testArray)).toBeFalsy();
 		});
 	});
 
 	describe("isDuplicateEntry", () => {
 		it("should detect that there is a duplicate", () => {
-			let testId: number = 2124588682;
-			let testDate: string = "December 5, 1981";
-			let testArray: Array<Object> = [
+			const testId = 2124588682;
+			const testDate = "December 5, 1981";
+			const testArray: Array<Record<string, any>> = [
 				new Object({ id: testId, date: testDate })
 			];
 			expect(isDuplicateEntry(testId, testDate, testArray)).toBeTruthy();
 		});
 
 		it("should detect that there is not a duplicate", () => {
-			let testId: number = 2124588682;
-			let testDate: string = "December 5, 1981";
-			let testArray: Array<Object> = [
+			const testId = 2124588682;
+			const testDate = "December 5, 1981";
+			const testArray: Array<Record<string, any>> = [
 				new Object({ id: testId + 25, date: testDate })
 			];
 			expect(isDuplicateEntry(testId, testDate, testArray)).toBeFalsy();
@@ -99,39 +103,39 @@ describe("birthday", () => {
 
 	describe("listUsers", () => {
 		it("should list current users", () => {
-			let testId: number = 2124588682;
-			let testDate: string = "December 5, 1981";
-			let testArray: Array<Object> = [
+			const testId = 2124588682;
+			const testDate = "December 5, 1981";
+			const testArray: Array<Record<string, any>> = [
 				new Object({ id: testId, date: testDate })
 			];
-			let findStub = sinon.stub();
+			const findStub = sinon.stub();
 			findStub.returns({
 				username: testId,
 				date: testDate
 			});
-			let users: any = {
+			const users: any = {
 				find: findStub
 			};
 
-			let returns = listUsers(testArray, users);
+			const returns = listUsers(testArray, users);
 			expect(returns).toBe(
 				`List of everyone's birthday goes as follows:\n${testId} - ${testDate}`
 			);
 		});
 
 		it("Should not list a user not actively in the server", () => {
-			let testId: number = 2124588682;
-			let testDate: string = "December 5, 1981";
-			let testArray: Array<Object> = [
+			const testId = 2124588682;
+			const testDate = "December 5, 1981";
+			const testArray: Array<Record<string, any>> = [
 				new Object({ id: testId, date: testDate })
 			];
-			let findStub = sinon.stub();
+			const findStub = sinon.stub();
 			findStub.returns(undefined);
-			let users: any = {
+			const users: any = {
 				find: findStub
 			};
 
-			let returns = listUsers(testArray, users);
+			const returns = listUsers(testArray, users);
 			expect(returns).toBe("List of everyone's birthday goes as follows:");
 		});
 	});
@@ -139,7 +143,7 @@ describe("birthday", () => {
 	describe("updateEntry", () => {
 		let testId: number;
 		let testDate: string;
-		let testArray: Array<Object>;
+		let testArray: Array<Record<string, any>>;
 
 		beforeEach(() => {
 			testId = 2124588682;
@@ -148,21 +152,21 @@ describe("birthday", () => {
 		});
 
 		it("Should add a new entry", async () => {
-			let returns = await updateEntry(testId, testDate, testArray, db);
+			const returns = await updateEntry(testId, testDate, testArray, db);
 			expect(returns).toEqual("Added new entry!");
 		});
 
 		it("Should update an existing entry", async () => {
 			testArray = [new Object({ id: testId, date: "December 7, 1981" })];
 
-			let returns = await updateEntry(testId, testDate, testArray, db);
+			const returns = await updateEntry(testId, testDate, testArray, db);
 			expect(returns).toEqual("Updated entry!");
 		});
 
 		it("Should not update the db if nothing changed", async () => {
 			testArray = [new Object({ id: testId, date: testDate })];
 
-			let returns = await updateEntry(testId, testDate, testArray, db);
+			const returns = await updateEntry(testId, testDate, testArray, db);
 			expect(returns).toEqual(
 				"Name and date already in the database, so I'm not gonna re-add it."
 			);

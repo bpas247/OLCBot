@@ -4,9 +4,9 @@ import createDb, { cleanup } from "../test/dbMock";
 import { IDatabase, IMain } from "pg-promise";
 import pgPromise from "pg-promise";
 
-let msg: any = { delete: () => Promise.resolve() };
+const msg: any = { delete: () => Promise.resolve() };
 
-let args: Array<string> = [];
+const args: Array<string> = [];
 
 function foundInArray(toFind: string, arr: Array<string>) {
 	let out = false;
@@ -29,7 +29,7 @@ describe("cogs", () => {
 	afterAll(() => pgp.end());
 
 	it("Successfully pings", async () => {
-		let test = cogs.get("ping");
+		const test = cogs.get("ping");
 		expect(test).toBeDefined();
 		if (test) {
 			expect(await test.run(msg, args, db)).toBe("Pong!");
@@ -37,28 +37,28 @@ describe("cogs", () => {
 	});
 
 	it("Successfully says what was given", async () => {
-		let says: string = "This is what I'm saying";
+		const says = "This is what I'm saying";
 
-		let toArray: Array<string> = says.split(" ");
+		const toArray: Array<string> = says.split(" ");
 
-		let call: string = "say ";
+		let call = "say ";
 
 		toArray.forEach((element, i) => {
 			call += element;
 			if (i < toArray.length - 1) call += " ";
 		});
 
-		let returnCog = cogs.get("say");
+		const returnCog = cogs.get("say");
 		expect(returnCog).toBeDefined();
 		if (returnCog) expect(await returnCog.run(msg, toArray, db)).toBe(says);
 	});
 
 	describe("random message commands", () => {
-		let runTest = async (cmd: string, arr: Array<string>) => {
-			let test = cogs.get(cmd);
+		const runTest = async (cmd: string, arr: Array<string>) => {
+			const test = cogs.get(cmd);
 			expect(test).toBeDefined();
 			if (test !== undefined) {
-				let out: any = await test.run(msg, args, db);
+				const out: any = await test.run(msg, args, db);
 				expect(foundInArray(out, arr)).toBe(true);
 			}
 		};
@@ -71,13 +71,13 @@ describe("cogs", () => {
 	});
 
 	it("Successfully returns a help message", () => {
-		let returnCog = cogs.get("help");
+		const returnCog = cogs.get("help");
 		expect(returnCog).toBeDefined();
 		if (returnCog) expect(returnCog.run(msg, args, db)).toBeDefined();
 	});
 
 	it("Successfully returns the correct time", () => {
-		let test = cogs.get("alive");
+		const test = cogs.get("alive");
 		expect(test).toBeDefined();
 
 		if (test) {

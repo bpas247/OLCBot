@@ -35,7 +35,7 @@ const cogs: Array<Cog> = [
 		"Generate a random motivation"
 	),
 	new Cog("help", () => {
-		let out: string = "Here are the list of commands that are available:\n\n";
+		let out = "Here are the list of commands that are available:\n\n";
 		cogs.forEach(cog => {
 			if (cog.help) {
 				out += `\`!${cog.command}\` - ${cog.help}\n`;

@@ -8,11 +8,11 @@ export const listCounts = (
 ) => {
 	let out = "List of everyone's scores:";
 
-	for (let row of result) {
-		let name: User | undefined = users.find(user => user.id == row.id);
+	for (const row of result) {
+		const name: User | undefined = users.find(user => user.id == row.id);
 
 		if (name) {
-			var userName: string = name.username;
+			const userName: string = name.username;
 			out += "\n" + userName + " - " + row.count;
 		} else {
 			out += "\n" + name + " - " + row.count;
@@ -78,10 +78,10 @@ const MemeRulerCog = new Cog(
 		new Cog(
 			"random",
 			async (message: Message, args: Array<string>, db: IDatabase<any>) => {
-				let returnsFromDb: any = await db.any(
+				const returnsFromDb: any = await db.any(
 					"SELECT id, message, attachment from memes"
 				);
-				let rand =
+				const rand =
 					returnsFromDb[Math.floor(Math.random() * returnsFromDb.length)];
 
 				if (!rand) return "no memes have been posted yet";

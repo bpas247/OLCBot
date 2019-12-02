@@ -4,8 +4,8 @@ it("Should randomly grab something in the array", () => {
 	const arrTest = ["5", "4", "9", "2"];
 	const returns = randomGrab(arrTest);
 
-	var out = false;
-	for (var i = 0; i < arrTest.length; i++) {
+	let out = false;
+	for (let i = 0; i < arrTest.length; i++) {
 		if (returns === arrTest[i]) {
 			out = true;
 		}
