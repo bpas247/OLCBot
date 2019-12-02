@@ -12,5 +12,5 @@ jobs:
           node-version: 12.x
       - name: Install Dependencies
         run: yarn install
-      - name: Lint Files
-        run: yarn lint
+      # - name: Lint Files
+      #   run: yarn lint
