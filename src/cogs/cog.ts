@@ -18,6 +18,7 @@ class Cog {
 	}
 
 	public async run(message: Message, args: Array<string>, db: IDatabase<any>) {
+		// TODO: fix this linting error
 		/* eslint-disable-next-line @typescript-eslint/no-this-alias */
 		let cogToRun: Cog = this;
 
@@ -31,6 +32,7 @@ class Cog {
 		else if (this._args === undefined) return this;
 		else {
 			// There are args, so find the arg and run that function instead
+			// TODO: fix this linting error
 			/* eslint-disable-next-line @typescript-eslint/no-this-alias */
 			let argCog: Cog = this;
 
