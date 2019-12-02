@@ -18,7 +18,9 @@ class Cog {
 	}
 
 	public async run(message: Message, args: Array<string>, db: IDatabase<any>) {
+		/* eslint-disable-next-line @typescript-eslint/no-this-alias */
 		let cogToRun: Cog = this;
+
 		if (args) cogToRun = this.getAppropriateCog(args);
 
 		return await cogToRun._func(message, args, db);
@@ -29,6 +31,7 @@ class Cog {
 		else if (this._args === undefined) return this;
 		else {
 			// There are args, so find the arg and run that function instead
+			/* eslint-disable-next-line @typescript-eslint/no-this-alias */
 			let argCog: Cog = this;
 
 			this._args.forEach((arg: Cog) => {
