@@ -1,5 +1,18 @@
 import { alive, calculateTimeDist } from "./alive";
 
+function valuesAreSame(arr1: Array<number>, arr2: Array<number>) {
+	if (arr1.length !== arr2.length) {
+		return false;
+	} else {
+		for (let i = 0; i < arr1.length; i++) {
+			if (arr1[i] !== arr2[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
 describe("Time Calculation tests", () => {
 	let curTime: Date;
 	let addedSeconds: Date;
@@ -44,16 +57,3 @@ it("Should print out the correct time", () => {
 
 	expect(alive(testDate, testDate)).toBe(expectedOut);
 });
-
-function valuesAreSame(arr1: Array<number>, arr2: Array<number>) {
-	if (arr1.length !== arr2.length) {
-		return false;
-	} else {
-		for (let i = 0; i < arr1.length; i++) {
-			if (arr1[i] !== arr2[i]) {
-				return false;
-			}
-		}
-		return true;
-	}
-}
