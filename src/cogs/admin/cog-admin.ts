@@ -1,34 +1,34 @@
-import Cog from '../cog';
+import Cog from "../cog";
 import { GuildMember, Message } from "discord.js";
 import { IDatabase } from "pg-promise";
 
 class CogAdmin extends Cog {
-    public constructor(
-        _command: string,
-        _func: (
-            message: Message,
-            args: Array<string>,
-            db: IDatabase<any>
-        ) => Promise<string | undefined> | string,
-        _help?: string,
-        _args?: Array<Cog>
-    ) { super(_command, _func, _help, _args) }
-    
-    public async run (message: Message, args: Array<string>, db: IDatabase<any>) {
-        let author: GuildMember | undefined = undefined;
-        if (message.guild)
-            author = await message.guild.fetchMember(message.author);
-        else return "Command does not work in DM";
+	public constructor(
+		_command: string,
+		_func: (
+			message: Message,
+			args: Array<string>,
+			db: IDatabase<any>
+		) => Promise<string | undefined> | string,
+		_help?: string,
+		_args?: Array<Cog>
+	) {
+		super(_command, _func, _help, _args);
+	}
 
-        if (!author) return "Could not find the user in the server to authenticate";
+	public async run(message: Message, args: Array<string>, db: IDatabase<any>) {
+		let author: GuildMember | undefined = undefined;
+		if (message.guild) author = await message.guild.fetchMember(message.author);
+		else return "Command does not work in DM";
 
-        let isAdmin = author.hasPermission("ADMINISTRATOR");
+		if (!author) return "Could not find the user in the server to authenticate";
 
-        if (!isAdmin)
-            return "You don't have the permissions for this command.";
+		let isAdmin = author.hasPermission("ADMINISTRATOR");
 
-        return super.run(message, args, db);
-    }
+		if (!isAdmin) return "You don't have the permissions for this command.";
+
+		return super.run(message, args, db);
+	}
 }
 
 export default CogAdmin;

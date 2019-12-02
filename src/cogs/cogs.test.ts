@@ -9,79 +9,79 @@ let msg: any = { delete: () => Promise.resolve() };
 let args: Array<string> = [];
 
 function foundInArray(toFind: string, arr: Array<string>) {
-  let out = false;
-  arr.forEach(element => {
-    if (toFind === element) out = true;
-  });
+	let out = false;
+	arr.forEach(element => {
+		if (toFind === element) out = true;
+	});
 
-  return out;
+	return out;
 }
 
 describe("cogs", () => {
-  let db: IDatabase<any>;
-  let pgp: IMain;
+	let db: IDatabase<any>;
+	let pgp: IMain;
 
-  beforeAll(() => {
-    pgp = pgPromise();
-    db = createDb(pgp);
-  });
-  beforeEach(async () => cleanup(db));
-  afterAll(() => pgp.end());
+	beforeAll(() => {
+		pgp = pgPromise();
+		db = createDb(pgp);
+	});
+	beforeEach(async () => cleanup(db));
+	afterAll(() => pgp.end());
 
-  it("Successfully pings", async () => {
-    let test = cogs.get("ping");
-    expect(test).toBeDefined();
-    if (test) {
-      expect(await test.run(msg, args, db)).toBe("Pong!");
-    }
-  });
+	it("Successfully pings", async () => {
+		let test = cogs.get("ping");
+		expect(test).toBeDefined();
+		if (test) {
+			expect(await test.run(msg, args, db)).toBe("Pong!");
+		}
+	});
 
-  it("Successfully says what was given", async () => {
-    let says: string = "This is what I'm saying";
+	it("Successfully says what was given", async () => {
+		let says: string = "This is what I'm saying";
 
-    let toArray: Array<string> = says.split(" ");
+		let toArray: Array<string> = says.split(" ");
 
-    let call: string = "say ";
+		let call: string = "say ";
 
-    toArray.forEach((element, i) => {
-      call += element;
-      if (i < toArray.length - 1) call += " ";
-    });
+		toArray.forEach((element, i) => {
+			call += element;
+			if (i < toArray.length - 1) call += " ";
+		});
 
-    let returnCog = cogs.get("say");
-    expect(returnCog).toBeDefined();
-    if (returnCog) expect(await returnCog.run(msg, toArray, db)).toBe(says);
-  });
+		let returnCog = cogs.get("say");
+		expect(returnCog).toBeDefined();
+		if (returnCog) expect(await returnCog.run(msg, toArray, db)).toBe(says);
+	});
 
-  describe("random message commands", () => {
-    let runTest = async (cmd: string, arr: Array<string>) => {
-      let test = cogs.get(cmd);
-      expect(test).toBeDefined();
-      if (test !== undefined) {
-        let out: any = await test.run(msg, args, db);
-        expect(foundInArray(out, arr)).toBe(true);
-      }
-    };
+	describe("random message commands", () => {
+		let runTest = async (cmd: string, arr: Array<string>) => {
+			let test = cogs.get(cmd);
+			expect(test).toBeDefined();
+			if (test !== undefined) {
+				let out: any = await test.run(msg, args, db);
+				expect(foundInArray(out, arr)).toBe(true);
+			}
+		};
 
-    it("Sucessfully grabs a complaint", async () =>
-      await runTest("complain", complain));
-    it("Sucessfully grabs a sass", async () => await runTest("do", sassy));
-    it("Sucessfully grabs a motivation", async () =>
-      await runTest("motivate", motivate));
-  });
+		it("Sucessfully grabs a complaint", async () =>
+			await runTest("complain", complain));
+		it("Sucessfully grabs a sass", async () => await runTest("do", sassy));
+		it("Sucessfully grabs a motivation", async () =>
+			await runTest("motivate", motivate));
+	});
 
-  it("Successfully returns a help message", () => {
-    let returnCog = cogs.get("help");
-    expect(returnCog).toBeDefined();
-    if (returnCog) expect(returnCog.run(msg, args, db)).toBeDefined();
-  });
+	it("Successfully returns a help message", () => {
+		let returnCog = cogs.get("help");
+		expect(returnCog).toBeDefined();
+		if (returnCog) expect(returnCog.run(msg, args, db)).toBeDefined();
+	});
 
-  it("Successfully returns the correct time", () => {
-    let test = cogs.get("alive");
-    expect(test).toBeDefined();
+	it("Successfully returns the correct time", () => {
+		let test = cogs.get("alive");
+		expect(test).toBeDefined();
 
-    if (test) {
-      expect(test.run(msg, args, db)).toBeDefined();
-    }
-  });
+		if (test) {
+			expect(test.run(msg, args, db)).toBeDefined();
+		}
+	});
 });
