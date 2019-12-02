@@ -1,7 +1,7 @@
 import MemeRulerCog, { listCounts, updateCount } from "./meme-ruler";
-import createDb, { cleanup } from '../test/dbMock';
-import { IDatabase, IMain } from 'pg-promise';
-import pgPromise from 'pg-promise';
+import createDb, { cleanup } from "../test/dbMock";
+import { IDatabase, IMain } from "pg-promise";
+import pgPromise from "pg-promise";
 
 describe("memes", () => {
   let db: IDatabase<any>;
@@ -10,11 +10,11 @@ describe("memes", () => {
   beforeAll(() => {
     pgp = pgPromise();
     db = createDb(pgp);
-  })
-  beforeEach(async() => cleanup(db));
+  });
+  beforeEach(async () => cleanup(db));
   afterAll(() => pgp.end());
 
-  describe("start", () => { });
+  describe("start", () => {});
   // describe("ls", () => {
   //   let args: Array<string> = ["ls"];
   //   let message: any = {
@@ -58,30 +58,30 @@ describe("memes", () => {
           count: 10
         }
       ];
-  
+
       let users: any = [
         {
           id: 12345,
           username: "testName"
         }
       ];
-  
+
       let returns = listCounts(results, users);
-  
+
       expect(returns).toEqual(
         `List of everyone's scores:\n${users[0].username} - ${results[0].count}`
       );
     });
   });
-  
+
   describe("updateCount", () => {
     let user: string = "testUser";
     let newCount: number = 37;
-  
+
     it("should add a new entry", async () => {
       let returns: string = await updateCount(user, newCount, db);
-  
-      expect(returns).toEqual(`Added new entry!`);
-    });  
-  });  
+
+      expect(returns).toEqual("Added new entry!");
+    });
+  });
 });

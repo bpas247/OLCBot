@@ -1,6 +1,6 @@
 import { Collection, Snowflake, User, GuildMember, Message } from "discord.js";
 import { IDatabase } from "pg-promise";
-import Cog from './cog';
+import Cog from "./cog";
 
 export const listCounts = (
   result: Array<any>,
@@ -51,39 +51,49 @@ export const updateCount = async (
   }
 };
 
-const MemeRulerCog = new Cog("memes", () => "Not a meme command", "Meme Commands", [
-  // new Cog(
-  //   "ls",
-  //   async (message: Message, args: Array<string>, db: IDatabase<any>) => {
-  //     let result: Array<any> | undefined = undefined;
-  //     try {
-  //       result = await db.any("SELECT id, count FROM meme_count");
-  //     } catch (err) {
-  //       console.log(err);
-  //       return "Something went wrong, it probably wasn't started";
-  //     }
+const MemeRulerCog = new Cog(
+  "memes",
+  () => "Not a meme command",
+  "Meme Commands",
+  [
+    // new Cog(
+    //   "ls",
+    //   async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+    //     let result: Array<any> | undefined = undefined;
+    //     try {
+    //       result = await db.any("SELECT id, count FROM meme_count");
+    //     } catch (err) {
+    //       console.log(err);
+    //       return "Something went wrong, it probably wasn't started";
+    //     }
 
-  //     if (result === undefined) return "Could not access database";
+    //     if (result === undefined) return "Could not access database";
 
-  //     if (result.length == 0) return "Nobody has posted any memes yet :(";
+    //     if (result.length == 0) return "Nobody has posted any memes yet :(";
 
-  //     let users: Collection<Snowflake, User> = message.client.users;
+    //     let users: Collection<Snowflake, User> = message.client.users;
 
-  //     return listCounts(result, users);
-  //   }, "List all of the current scores for every member that's submitted memes"),
-  new Cog(
-    "random",
-    async (message: Message, args: Array<string>, db: IDatabase<any>) => {
-      let returnsFromDb: any = await db.any("SELECT id, message, attachment from memes");
-      let rand = returnsFromDb[Math.floor(Math.random()*returnsFromDb.length)];
+    //     return listCounts(result, users);
+    //   }, "List all of the current scores for every member that's submitted memes"),
+    new Cog(
+      "random",
+      async (message: Message, args: Array<string>, db: IDatabase<any>) => {
+        let returnsFromDb: any = await db.any(
+          "SELECT id, message, attachment from memes"
+        );
+        let rand =
+          returnsFromDb[Math.floor(Math.random() * returnsFromDb.length)];
 
-      if (!rand)
-        return "no memes have been posted yet";
-      else
-        return `from **${rand.id}**\n${rand.message}` + (rand.attachment ? `\n${rand.attachment}`: "");
-    },
-    "Grab a random meme from our awesome collection"
-  )
-]);
+        if (!rand) return "no memes have been posted yet";
+        else
+          return (
+            `from **${rand.id}**\n${rand.message}` +
+            (rand.attachment ? `\n${rand.attachment}` : "")
+          );
+      },
+      "Grab a random meme from our awesome collection"
+    )
+  ]
+);
 
 export default MemeRulerCog;

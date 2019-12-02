@@ -1,7 +1,7 @@
 import { Collection, Snowflake, User, Message } from "discord.js";
 import { isValidDate } from "../util/Utilities";
 import { IDatabase } from "pg-promise";
-import Cog from './cog';
+import Cog from "./cog";
 
 export const getDateFromArgs = (args: Array<string>) => {
   var date = undefined;
@@ -69,7 +69,7 @@ export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
     if (name) {
       var userName: string = name.username;
       out += `\n${userName} - ${row.date}`;
-    } 
+    }
   }
 
   return out;

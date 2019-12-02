@@ -2,7 +2,7 @@ import { Message, GuildMember } from "discord.js";
 import { complain, sassy, motivate } from "../util/messages";
 import { randomGrab } from "../util/Utilities";
 import Cog from "./cog";
-import AdminCog from "./admin/cog-admin"
+import AdminCog from "./admin/cog-admin";
 import BirthdayCog from "./birthday";
 import MemeRulerCog from "./meme-ruler";
 import { IDatabase } from "pg-promise";

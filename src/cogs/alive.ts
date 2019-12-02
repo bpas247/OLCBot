@@ -1,4 +1,4 @@
-import Cog from './cog';
+import Cog from "./cog";
 const startDate = new Date();
 
 export const calculateTimeDist = (startDate: Date, endDate: Date) => {
@@ -26,14 +26,14 @@ export const calculateTimeDist = (startDate: Date, endDate: Date) => {
 export const alive = (startDate: Date, endDate: Date) => {
   const timeDist = calculateTimeDist(startDate, endDate);
 
-  const labels = ['days', 'hours', 'minutes', 'seconds'];
+  const labels = ["days", "hours", "minutes", "seconds"];
 
-  var out = 'I have been alive for: \n';
+  var out = "I have been alive for: \n";
 
   for (var i = 0; i < labels.length; i++) {
-    out += timeDist[i] + ' ' + labels[i];
+    out += timeDist[i] + " " + labels[i];
     if (i !== labels.length - 1) {
-      out += ', ';
+      out += ", ";
     }
   }
 
@@ -47,4 +47,3 @@ const AliveCog = new Cog(
 );
 
 export default AliveCog;
-
