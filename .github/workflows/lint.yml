@@ -1,8 +1,8 @@
 name: Lint Files
-on: [push, pull_request]
+on: [push]
 jobs:
-  lint:
-    runs-on: ubtuntu-latest
+  test:
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out Repository
         uses: actions/checkout@v1
