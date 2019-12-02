@@ -10,13 +10,14 @@ notifications:
     on_success: never
 cache:
   directories:
-  - node_modules/
+    - node_modules/
 install:
   - yarn install
   - npm install -g codecov
 before_script:
   - psql -c 'create database test;' -U postgres
 script:
+  - yarn lint
   - yarn test
   - codecov
 before_deploy:
