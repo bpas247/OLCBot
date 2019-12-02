@@ -1,4 +1,4 @@
-import Cog from '../cog';
+import Cog from "../cog";
 import { Message } from "discord.js";
 import { IDatabase } from "pg-promise";
 declare class CogAdmin extends Cog {

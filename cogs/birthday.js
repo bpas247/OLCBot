@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../util/Utilities");
 const cog_1 = __importDefault(require("./cog"));
 exports.getDateFromArgs = (args) => {
-    var date = undefined;
+    let date = undefined;
     for (let i = 0; i < args.length; i++) {
         if (Utilities_1.isValidDate(args[i])) {
             date = args[i];
@@ -15,8 +15,8 @@ exports.getDateFromArgs = (args) => {
     return date;
 };
 exports.isInDatabase = (authorId, result) => {
-    var isInDatabase = false;
-    for (let row of result) {
+    let isInDatabase = false;
+    for (const row of result) {
         if (row.id == authorId) {
             isInDatabase = true;
         }
@@ -24,8 +24,8 @@ exports.isInDatabase = (authorId, result) => {
     return isInDatabase;
 };
 exports.isDuplicateEntry = (authorId, date, result) => {
-    var isDuplicate = false;
-    for (let row of result)
+    let isDuplicate = false;
+    for (const row of result)
         if (row.id == authorId && row.date == date)
             isDuplicate = true;
     return isDuplicate;
@@ -41,7 +41,7 @@ exports.updateEntry = async (authorId, date, result, db) => {
     else if (!exports.isDuplicateEntry(authorId, date, result)) {
         await db.query("UPDATE birthday SET date = $1 WHERE id = $2", [
             date,
-            authorId
+            `${authorId}`
         ]);
         return "Updated entry!";
     }
@@ -50,11 +50,11 @@ exports.updateEntry = async (authorId, date, result, db) => {
     }
 };
 exports.listUsers = (result, users) => {
-    var out = "List of everyone's birthday goes as follows:";
-    for (let row of result) {
-        var name = users.find(user => user.id == row.id);
+    let out = "List of everyone's birthday goes as follows:";
+    for (const row of result) {
+        const name = users.find(user => user.id == row.id);
         if (name) {
-            var userName = name.username;
+            const userName = name.username;
             out += `\n${userName} - ${row.date}`;
         }
     }

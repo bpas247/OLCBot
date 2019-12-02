@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cog_1 = __importDefault(require("./cog"));
 exports.listCounts = (result, users) => {
     let out = "List of everyone's scores:";
-    for (let row of result) {
-        let name = users.find(user => user.id == row.id);
+    for (const row of result) {
+        const name = users.find(user => user.id == row.id);
         if (name) {
-            var userName = name.username;
+            const userName = name.username;
             out += "\n" + userName + " - " + row.count;
         }
         else {
@@ -61,12 +61,13 @@ const MemeRulerCog = new cog_1.default("memes", () => "Not a meme command", "Mem
     //     return listCounts(result, users);
     //   }, "List all of the current scores for every member that's submitted memes"),
     new cog_1.default("random", async (message, args, db) => {
-        let returnsFromDb = await db.any("SELECT id, message, attachment from memes");
-        let rand = returnsFromDb[Math.floor(Math.random() * returnsFromDb.length)];
+        const returnsFromDb = await db.any("SELECT id, message, attachment from memes");
+        const rand = returnsFromDb[Math.floor(Math.random() * returnsFromDb.length)];
         if (!rand)
             return "no memes have been posted yet";
         else
-            return `from **${rand.id}**\n${rand.message}` + (rand.attachment ? `\n${rand.attachment}` : "");
+            return (`from **${rand.id}**\n${rand.message}` +
+                (rand.attachment ? `\n${rand.attachment}` : ""));
     }, "Grab a random meme from our awesome collection")
 ]);
 exports.default = MemeRulerCog;

@@ -11,6 +11,8 @@ class Cog {
         return this._command;
     }
     async run(message, args, db) {
+        // TODO: fix this linting error
+        /* eslint-disable-next-line @typescript-eslint/no-this-alias */
         let cogToRun = this;
         if (args)
             cogToRun = this.getAppropriateCog(args);
@@ -23,6 +25,8 @@ class Cog {
             return this;
         else {
             // There are args, so find the arg and run that function instead
+            // TODO: fix this linting error
+            /* eslint-disable-next-line @typescript-eslint/no-this-alias */
             let argCog = this;
             this._args.forEach((arg) => {
                 if (arg.command === args[0])
@@ -31,7 +35,6 @@ class Cog {
             return argCog;
         }
     }
-    ;
     get help() {
         return this._help;
     }

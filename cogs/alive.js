@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cog_1 = __importDefault(require("./cog"));
 const startDate = new Date();
 exports.calculateTimeDist = (startDate, endDate) => {
-    var out = [];
-    var difference = Math.abs(Number(startDate) - Number(endDate));
+    const out = [];
+    let difference = Math.abs(Number(startDate) - Number(endDate));
     out.push(Math.floor(difference / (1000 * 60 * 60 * 24)));
     difference -= out[0] * 1000 * 60 * 60 * 24;
     out.push(Math.floor(difference / (1000 * 60 * 60)));
@@ -19,12 +19,12 @@ exports.calculateTimeDist = (startDate, endDate) => {
 };
 exports.alive = (startDate, endDate) => {
     const timeDist = exports.calculateTimeDist(startDate, endDate);
-    const labels = ['days', 'hours', 'minutes', 'seconds'];
-    var out = 'I have been alive for: \n';
-    for (var i = 0; i < labels.length; i++) {
-        out += timeDist[i] + ' ' + labels[i];
+    const labels = ["days", "hours", "minutes", "seconds"];
+    let out = "I have been alive for: \n";
+    for (let i = 0; i < labels.length; i++) {
+        out += timeDist[i] + " " + labels[i];
         if (i !== labels.length - 1) {
-            out += ', ';
+            out += ", ";
         }
     }
     return out;

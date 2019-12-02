@@ -3,19 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require('dotenv').config();
+require("dotenv").config();
+const discord_js_1 = __importDefault(require("discord.js"));
 // Import cogs
 const cogs_1 = __importDefault(require("./cogs/cogs"));
 // Prefix
-const Prefix = '!';
+const Prefix = "!";
+// Load up the db
+const db_1 = __importDefault(require("./db"));
 exports.onCreate = async (db) => {
-    await db.query('CREATE TABLE IF NOT EXISTS birthday (id text, date text)');
-    // await db.query(
-    //   'CREATE TABLE IF NOT EXISTS meme_last_ran (month text, day text)'
-    // );
-    // await db.query('CREATE TABLE IF NOT EXISTS meme_count (id text, count int)');
-    await db.query('CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)');
-    console.log('All database tables are ready!');
+    await db.query("CREATE TABLE IF NOT EXISTS birthday (id text, date text)");
+    await db.query("CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)");
+    console.log("All database tables are ready!");
 };
 exports.onCommand = async (message, db) => {
     // Also good practice to ignore any message that does not start with our prefix,
@@ -32,9 +31,9 @@ exports.onCommand = async (message, db) => {
         .split(/ +/g);
     const command = args.shift();
     // Default case
-    let outMessage = 'Command not recognized';
+    let outMessage = "Command not recognized";
     if (command) {
-        let cog = cogs_1.default.get(command);
+        const cog = cogs_1.default.get(command);
         if (cog)
             try {
                 outMessage = await cog.run(message, args, db);
@@ -56,9 +55,9 @@ exports.onMessage = async (message, db) => {
         return;
     if (message.content.indexOf(Prefix) !== 0) {
         // If it is identified as a meme
-        if (message.content.indexOf(`[MEME]`) === 0) {
-            let id = message.author.username;
-            let purgedContent = message.content.split(`[MEME]`).pop();
+        if (message.content.indexOf("[MEME]") === 0) {
+            const id = message.author.username;
+            const purgedContent = message.content.split("[MEME]").pop();
             let content = "";
             if (purgedContent)
                 content = purgedContent.trim();
@@ -66,10 +65,23 @@ exports.onMessage = async (message, db) => {
             if (message.attachments.size > 0)
                 attachmentURL = message.attachments.first().url;
             await db.query("INSERT into memes (id, message, attachment) VALUES($1, $2, $3)", [id, content, attachmentURL]);
-            await message.react('🅱');
+            await message.react("🅱");
         }
     }
     else {
         await exports.onCommand(message, db);
     }
 };
+const bot = new discord_js_1.default.Client();
+bot.on("ready", () => {
+    // This event will run if the bot starts, and logs in, successfully.
+    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`);
+    // Example of changing the bot's playing game to something useful. `client.user` is what the
+    // docs refer to as the "ClientUser".
+    bot.user.setActivity("Type !help for more info");
+    exports.onCreate(db_1.default);
+});
+bot.on("message", (message) => {
+    exports.onMessage(message, db_1.default);
+});
+exports.default = bot;
