@@ -1,13 +1,7 @@
 name: Lint Files
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [push, pull_request]
 jobs:
-  build:
+  lint:
     runs-on: ubtuntu-latest
     steps:
       - name: Checking out Repository
