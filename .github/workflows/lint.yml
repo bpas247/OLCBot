@@ -1,0 +1,22 @@
+name: Lint Files
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubtuntu-latest
+    steps:
+      - name: Checking out Repository
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "node"
+      - name: Install Dependencies
+        run: yarn install
+      - name: Lint Files
+        run: yarn lint
