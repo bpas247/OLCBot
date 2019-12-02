@@ -1,7 +1,7 @@
 name: Lint Files
-on: [push]
+on: [push, pull_request]
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out Repository
