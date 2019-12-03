@@ -18,3 +18,16 @@ before_script:
 script:
   - yarn test
   - npx codecov
+before_deploy:
+  - yarn build
+# Define the release stage that runs semantic-release
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
