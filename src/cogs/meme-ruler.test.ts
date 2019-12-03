@@ -14,7 +14,7 @@ describe("memes", () => {
 	beforeEach(async () => cleanup(db));
 	afterAll(() => pgp.end());
 
-	describe("start", () => {});
+	// describe("start", noop);
 	// describe("ls", () => {
 	//   let args: Array<string> = ["ls"];
 	//   let message: any = {
