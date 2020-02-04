@@ -9,7 +9,7 @@
 	"dependencies": {
 		"discord.js": "^11.4.2",
 		"dotenv": "^8.2.0",
-		"pg-promise": "^10.4.0"
+		"pg-promise": "^10.4.2"
 	},
 	"devDependencies": {
 		"@qiwi/semantic-release-gh-pages-plugin": "^1.15.6",
