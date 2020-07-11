@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:11.6.4"
 				],
 				["dotenv", "npm:8.2.0"],
-				["pg-promise", "npm:10.4.4"]
+				["pg-promise", "npm:10.5.8"]
 			],
 			locationBlacklistData: [],
 			packageRegistryData: [
@@ -53,7 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 										"virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:11.6.4"
 									],
 									["dotenv", "npm:8.2.0"],
-									["pg-promise", "npm:10.4.4"]
+									["pg-promise", "npm:10.5.8"]
 								],
 								linkType: "SOFT"
 							}
@@ -64,11 +64,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"assert-options",
 					[
 						[
-							"npm:0.6.1",
+							"npm:0.6.2",
 							{
 								packageLocation:
-									"./.yarn/cache/assert-options-npm-0.6.1-d5770d8207-57da2bfcec.zip/node_modules/assert-options/",
-								packageDependencies: [["assert-options", "npm:0.6.1"]],
+									"./.yarn/cache/assert-options-npm-0.6.2-781928e59f-aa5c886aa3.zip/node_modules/assert-options/",
+								packageDependencies: [["assert-options", "npm:0.6.2"]],
 								linkType: "HARD"
 							}
 						]
@@ -192,20 +192,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"pg",
 					[
 						[
-							"npm:7.18.2",
+							"npm:8.2.2",
 							{
 								packageLocation:
-									"./.yarn/cache/pg-npm-7.18.2-f1ee9eb2c6-873b753aa1.zip/node_modules/pg/",
+									"./.yarn/cache/pg-npm-8.2.2-d3f119029b-62542559a3.zip/node_modules/pg/",
 								packageDependencies: [
-									["pg", "npm:7.18.2"],
+									["pg", "npm:8.2.2"],
 									["buffer-writer", "npm:2.0.0"],
 									["packet-reader", "npm:1.0.0"],
-									["pg-connection-string", "npm:0.1.3"],
-									["pg-packet-stream", "npm:1.1.0"],
+									["pg-connection-string", "npm:2.3.0"],
 									[
 										"pg-pool",
-										"virtual:f1ee9eb2c63cf2fecd6463705d622018db3b6567b95a700d0d2a7ba6c9ff4f098d69f1b6b7216993fcefdbf19acddbba6645c65f6a4db36bb36860aa5bcdbd89#npm:2.0.10"
+										"virtual:d3f119029b1cae8d64d9b22eb011426b878b06d2a7e4764980a2ec009d0b676c96a536207fa186579f7b64a3d004ea7bf8f623fbab16177d85a367d4c8bb3414#npm:3.2.1"
 									],
+									["pg-protocol", "npm:1.2.5"],
 									["pg-types", "npm:2.2.0"],
 									["pgpass", "npm:1.0.2"],
 									["semver", "npm:4.3.2"]
@@ -219,11 +219,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"pg-connection-string",
 					[
 						[
-							"npm:0.1.3",
+							"npm:2.3.0",
 							{
 								packageLocation:
-									"./.yarn/cache/pg-connection-string-npm-0.1.3-04645365bd-9476ceeeb6.zip/node_modules/pg-connection-string/",
-								packageDependencies: [["pg-connection-string", "npm:0.1.3"]],
+									"./.yarn/cache/pg-connection-string-npm-2.3.0-f71404022d-610d03707d.zip/node_modules/pg-connection-string/",
+								packageDependencies: [["pg-connection-string", "npm:2.3.0"]],
 								linkType: "HARD"
 							}
 						]
@@ -247,25 +247,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"pg-minify",
 					[
 						[
-							"npm:1.5.2",
+							"npm:1.6.1",
 							{
 								packageLocation:
-									"./.yarn/cache/pg-minify-npm-1.5.2-61d8fea2c8-77ab5d665c.zip/node_modules/pg-minify/",
-								packageDependencies: [["pg-minify", "npm:1.5.2"]],
-								linkType: "HARD"
-							}
-						]
-					]
-				],
-				[
-					"pg-packet-stream",
-					[
-						[
-							"npm:1.1.0",
-							{
-								packageLocation:
-									"./.yarn/cache/pg-packet-stream-npm-1.1.0-b9d6f4f2b1-7b35f8de8c.zip/node_modules/pg-packet-stream/",
-								packageDependencies: [["pg-packet-stream", "npm:1.1.0"]],
+									"./.yarn/cache/pg-minify-npm-1.6.1-4b18975285-e742deadd3.zip/node_modules/pg-minify/",
+								packageDependencies: [["pg-minify", "npm:1.6.1"]],
 								linkType: "HARD"
 							}
 						]
@@ -275,16 +261,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"pg-pool",
 					[
 						[
-							"virtual:f1ee9eb2c63cf2fecd6463705d622018db3b6567b95a700d0d2a7ba6c9ff4f098d69f1b6b7216993fcefdbf19acddbba6645c65f6a4db36bb36860aa5bcdbd89#npm:2.0.10",
+							"virtual:d3f119029b1cae8d64d9b22eb011426b878b06d2a7e4764980a2ec009d0b676c96a536207fa186579f7b64a3d004ea7bf8f623fbab16177d85a367d4c8bb3414#npm:3.2.1",
 							{
 								packageLocation:
-									"./.yarn/$$virtual/pg-pool-virtual-2a3c98b5ee/0/cache/pg-pool-npm-2.0.10-fee01816fc-b828a6cdab.zip/node_modules/pg-pool/",
+									"./.yarn/$$virtual/pg-pool-virtual-80b8d5595f/0/cache/pg-pool-npm-3.2.1-962c0084b5-626e876971.zip/node_modules/pg-pool/",
 								packageDependencies: [
 									[
 										"pg-pool",
-										"virtual:f1ee9eb2c63cf2fecd6463705d622018db3b6567b95a700d0d2a7ba6c9ff4f098d69f1b6b7216993fcefdbf19acddbba6645c65f6a4db36bb36860aa5bcdbd89#npm:2.0.10"
+										"virtual:d3f119029b1cae8d64d9b22eb011426b878b06d2a7e4764980a2ec009d0b676c96a536207fa186579f7b64a3d004ea7bf8f623fbab16177d85a367d4c8bb3414#npm:3.2.1"
 									],
-									["pg", "npm:7.18.2"]
+									["pg", "npm:8.2.2"]
 								],
 								packagePeers: ["pg"],
 								linkType: "HARD"
@@ -296,17 +282,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"pg-promise",
 					[
 						[
-							"npm:10.4.4",
+							"npm:10.5.8",
 							{
 								packageLocation:
-									"./.yarn/cache/pg-promise-npm-10.4.4-fda7cab0c9-aec1dc3596.zip/node_modules/pg-promise/",
+									"./.yarn/cache/pg-promise-npm-10.5.8-af84b5dbdb-a2d4f97e09.zip/node_modules/pg-promise/",
 								packageDependencies: [
-									["pg-promise", "npm:10.4.4"],
-									["assert-options", "npm:0.6.1"],
-									["pg", "npm:7.18.2"],
-									["pg-minify", "npm:1.5.2"],
-									["spex", "npm:3.0.1"]
+									["pg-promise", "npm:10.5.8"],
+									["assert-options", "npm:0.6.2"],
+									["pg", "npm:8.2.2"],
+									["pg-minify", "npm:1.6.1"],
+									["spex", "npm:3.0.2"]
 								],
+								linkType: "HARD"
+							}
+						]
+					]
+				],
+				[
+					"pg-protocol",
+					[
+						[
+							"npm:1.2.5",
+							{
+								packageLocation:
+									"./.yarn/cache/pg-protocol-npm-1.2.5-a8ff6a471a-d61b446eeb.zip/node_modules/pg-protocol/",
+								packageDependencies: [["pg-protocol", "npm:1.2.5"]],
 								linkType: "HARD"
 							}
 						]
@@ -437,7 +437,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 										"virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:11.6.4"
 									],
 									["dotenv", "npm:8.2.0"],
-									["pg-promise", "npm:10.4.4"]
+									["pg-promise", "npm:10.5.8"]
 								],
 								linkType: "SOFT"
 							}
@@ -476,11 +476,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					"spex",
 					[
 						[
-							"npm:3.0.1",
+							"npm:3.0.2",
 							{
 								packageLocation:
-									"./.yarn/cache/spex-npm-3.0.1-7451a35e5b-d6a2bbf503.zip/node_modules/spex/",
-								packageDependencies: [["spex", "npm:3.0.1"]],
+									"./.yarn/cache/spex-npm-3.0.2-cd4c8530b2-85f792af9e.zip/node_modules/spex/",
+								packageDependencies: [["spex", "npm:3.0.2"]],
 								linkType: "HARD"
 							}
 						]
@@ -574,7 +574,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 	else if (typeof define === "function" && define.amd) define([], factory);
 	else if (typeof exports === "object") exports["pnpHook"] = factory();
 	else root["pnpHook"] = factory();
-})(global, function() {
+})(global, function () {
 	return /******/ (() => {
 		// webpackBootstrap
 		/******/ var __webpack_modules__ = {
@@ -774,7 +774,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					} else {
 						await Promise.all(
-							entries.map(async entry => {
+							entries.map(async (entry) => {
 								await copyImpl(
 									operations,
 									lutimes,
@@ -889,7 +889,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									break;
 								} catch (error) {
 									if (error.code === `EBUSY` || error.code === `ENOTEMPTY`) {
-										await new Promise(resolve => setTimeout(resolve, t * 100));
+										await new Promise((resolve) =>
+											setTimeout(resolve, t * 100)
+										);
 										continue;
 									} else {
 										throw error;
@@ -1164,7 +1166,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									}
 
 									if (Date.now() - startTime < 60 * 1000) {
-										await new Promise(resolve => setTimeout(resolve, interval));
+										await new Promise((resolve) =>
+											setTimeout(resolve, interval)
+										);
 									} else {
 										throw new Error(
 											`Couldn't acquire a lock in a reasonable time (via ${lockPath})`
@@ -1257,7 +1261,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				function getEndOfLine(content) {
 					const matches = content.match(/\r?\n/g);
 					if (matches === null) return external_os_.EOL;
-					const crlf = matches.filter(nl => nl === `\r\n`).length;
+					const crlf = matches.filter((nl) => nl === `\r\n`).length;
 					const lf = matches.length - crlf;
 					return crlf > lf ? `\r\n` : `\n`;
 				}
@@ -1292,7 +1296,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
 				var PathType;
 
-				(function(PathType) {
+				(function (PathType) {
 					PathType[(PathType["File"] = 0)] = "File";
 					PathType[(PathType["Portable"] = 1)] = "Portable";
 					PathType[(PathType["Native"] = 2)] = "Native";
@@ -1325,7 +1329,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						...segments
 					);
 
-				const contains = function(pathUtils, from, to) {
+				const contains = function (pathUtils, from, to) {
 					from = pathUtils.normalize(from);
 					to = pathUtils.normalize(to);
 					if (from === to) return `.`;
@@ -1597,7 +1601,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								{},
 								this.makeCallback(resolve, reject)
 							);
-						}).then(path => {
+						}).then((path) => {
 							return sources_path /* npath.toPortablePath */.cS
 								.toPortablePath(path);
 						});
@@ -1615,7 +1619,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					}
 
 					async existsPromise(p) {
-						return await new Promise(resolve => {
+						return await new Promise((resolve) => {
 							this.realFs.exists(
 								sources_path /* npath.fromPortablePath */.cS
 									.fromPortablePath(p),
@@ -1994,7 +1998,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								this.realFs.readdir(
 									sources_path /* npath.fromPortablePath */.cS
 										.fromPortablePath(p),
-									this.makeCallback(value => resolve(value), reject)
+									this.makeCallback((value) => resolve(value), reject)
 								);
 							}
 						});
@@ -2024,7 +2028,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									.fromPortablePath(p),
 								this.makeCallback(resolve, reject)
 							);
-						}).then(path => {
+						}).then((path) => {
 							return sources_path /* npath.toPortablePath */.cS
 								.toPortablePath(path);
 						});
@@ -2976,7 +2980,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 						});
 						const chunks = [];
-						stream.on(`data`, chunk => {
+						stream.on(`data`, (chunk) => {
 							const chunkBuffer = Buffer.from(chunk);
 							stream.bytesWritten += chunkBuffer.length;
 							chunks.push(chunkBuffer);
@@ -3722,7 +3726,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!directoryListing) throw ENOTDIR(`scandir '${p}'`);
 						const entries = [...directoryListing];
 						if (!withFileTypes) return entries;
-						return entries.map(name => {
+						return entries.map((name) => {
 							return Object.assign(
 								this.statImpl(
 									`lstat`,
@@ -4785,7 +4789,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							return await discard();
 						return await this.getZipPromise(
 							zipInfo.archivePath,
-							async zipFs => await accept(zipFs, zipInfo)
+							async (zipFs) => await accept(zipFs, zipInfo)
 						);
 					}
 
@@ -4795,7 +4799,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						const zipInfo = this.findZip(normalizedP);
 						if (!zipInfo) return discard();
 						if (requireSubpath && zipInfo.subPath === `/`) return discard();
-						return this.getZipSync(zipInfo.archivePath, zipFs =>
+						return this.getZipSync(zipInfo.archivePath, (zipFs) =>
 							accept(zipFs, zipInfo)
 						);
 					}
@@ -4914,7 +4918,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				}
 				// CONCATENATED MODULE: ../yarnpkg-libzip/sources/makeInterface.ts
 				const number64 = [`number`, `number`];
-				const makeInterface = libzip => ({
+				const makeInterface = (libzip) => ({
 					// Those are getters because they can change after memory growth
 					get HEAP8() {
 						return libzip.HEAP8;
@@ -5225,7 +5229,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							const callback = hasCallback ? args.pop() : () => {};
 							process.nextTick(() => {
 								fakeFs.existsPromise(p).then(
-									exists => {
+									(exists) => {
 										callback(exists);
 									},
 									() => {
@@ -5239,10 +5243,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							const callback = hasCallback ? args.pop() : () => {};
 							process.nextTick(() => {
 								fakeFs.readPromise(p, buffer, ...args).then(
-									bytesRead => {
+									(bytesRead) => {
 										callback(null, bytesRead, buffer);
 									},
-									error => {
+									(error) => {
 										callback(error);
 									}
 								);
@@ -5260,10 +5264,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								const callback = hasCallback ? args.pop() : () => {};
 								process.nextTick(() => {
 									fakeImpl.apply(fakeFs, args).then(
-										result => {
+										(result) => {
 											callback(null, result);
 										},
-										error => {
+										(error) => {
 											callback(error);
 										}
 									);
@@ -5278,7 +5282,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					/** Sync implementations */
 
 					{
-						setupFn(patchedFs, `existsSync`, p => {
+						setupFn(patchedFs, `existsSync`, (p) => {
 							try {
 								return fakeFs.existsSync(p);
 							} catch (error) {
@@ -5452,7 +5456,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				// CONCATENATED MODULE: ./sources/loader/internalTools.ts
 				var ErrorCode;
 
-				(function(ErrorCode) {
+				(function (ErrorCode) {
 					ErrorCode["API_ERROR"] = "API_ERROR";
 					ErrorCode["BLACKLISTED"] = "BLACKLISTED";
 					ErrorCode["BUILTIN_NODE_RESOLUTION_FAILED"] =
@@ -5537,7 +5541,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
 					const moduleExports = __webpack_require__(282); // @ts-ignore
 
-					moduleExports.findPnpApi = lookupSource => {
+					moduleExports.findPnpApi = (lookupSource) => {
 						const lookupPath =
 							lookupSource instanceof external_url_.URL
 								? (0, external_url_.fileURLToPath)(lookupSource)
@@ -5563,7 +5567,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
 					const originalModuleLoad = external_module_.Module._load;
 
-					external_module_.Module._load = function(request, parent, isMain) {
+					external_module_.Module._load = function (request, parent, isMain) {
 						if (!enableNativeHooks)
 							return originalModuleLoad.call(
 								external_module_.Module,
@@ -5658,7 +5662,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					};
 
 					function getIssuerSpecsFromPaths(paths) {
-						return paths.map(path => ({
+						return paths.map((path) => ({
 							apiPath: opts.manager.findApiPathFor(path),
 							path,
 							module: null
@@ -5695,7 +5699,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					const originalModuleResolveFilename =
 						external_module_.Module._resolveFilename;
 
-					external_module_.Module._resolveFilename = function(
+					external_module_.Module._resolveFilename = function (
 						request,
 						parent,
 						isMain,
@@ -5843,7 +5847,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
 					const originalFindPath = external_module_.Module._findPath;
 
-					external_module_.Module._findPath = function(request, paths, isMain) {
+					external_module_.Module._findPath = function (
+						request,
+						paths,
+						isMain
+					) {
 						if (request === `pnpapi`) return false;
 						if (!enableNativeHooks)
 							return originalFindPath.call(
@@ -6352,7 +6360,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						const brokenPackages = new Map();
 						const alreadyVisited = new Set();
 
-						const traversal = currentPackage => {
+						const traversal = (currentPackage) => {
 							const identifier = JSON.stringify(currentPackage.name);
 							if (alreadyVisited.has(identifier)) return;
 							alreadyVisited.add(identifier);
@@ -6657,7 +6665,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									);
 
 									if (
-										brokenAncestors.every(ancestor =>
+										brokenAncestors.every((ancestor) =>
 											isDependencyTreeRoot(ancestor)
 										)
 									) {
@@ -6671,7 +6679,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 												issuerLocator.reference
 											} (via ${issuer})\n${brokenAncestors
 												.map(
-													ancestorLocator =>
+													(ancestorLocator) =>
 														`Ancestor breaking the chain: ${ancestorLocator.name}@${ancestorLocator.reference}\n`
 												)
 												.join(``)}\n`,
@@ -6694,7 +6702,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 												issuerLocator.reference
 											} (via ${issuer})\n${brokenAncestors
 												.map(
-													ancestorLocator =>
+													(ancestorLocator) =>
 														`Ancestor breaking the chain: ${ancestorLocator.name}@${ancestorLocator.reference}\n`
 												)
 												.join(``)}\n`,
@@ -6735,10 +6743,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
 							if (dependencyReference == null) {
 								if (fallbackReference === null || error === null)
-									throw error ||
+									throw (
+										error ||
 										new Error(
 											`Assertion failed: Expected an error to have been set`
-										);
+										)
+									);
 								dependencyReference = fallbackReference;
 								const message = error.message.replace(/\n.*/g, ``);
 								error.message = message;
@@ -6818,7 +6828,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							throw internalTools_makeError(
 								ErrorCode.QUALIFIED_PATH_RESOLUTION_FAILED,
 								`Qualified path resolution failed - none of the candidates can be found on the disk.\n\nSource path: ${unqualifiedPath}\n${candidates
-									.map(candidate => `Rejected candidate: ${candidate}\n`)
+									.map((candidate) => `Rejected candidate: ${candidate}\n`)
 									.join(``)}`,
 								{
 									unqualifiedPath
@@ -6886,7 +6896,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						getDependencyTreeRoots: () => {
 							return [...runtimeState.dependencyTreeRoots];
 						},
-						getPackageInformation: locator => {
+						getPackageInformation: (locator) => {
 							const info = getPackageInformation(locator);
 							if (info === null) return null;
 							const packageLocation = sources_path /* npath.fromPortablePath */.cS
@@ -6894,7 +6904,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							const nativeInfo = { ...info, packageLocation };
 							return nativeInfo;
 						},
-						findPackageLocator: path => {
+						findPackageLocator: (path) => {
 							return findPackageLocator(
 								sources_path /* npath.toPortablePath */.cS
 									.toPortablePath(path)
@@ -6951,7 +6961,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									.fromPortablePath(resolution);
 							}
 						),
-						resolveVirtual: maybeLog(`resolveVirtual`, path => {
+						resolveVirtual: maybeLog(`resolveVirtual`, (path) => {
 							const result = resolveVirtual(
 								sources_path /* npath.toPortablePath */.cS
 									.toPortablePath(path)
@@ -7169,7 +7179,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						 * Will inject the specified API into the environment, monkey-patching FS. Is
 						 * automatically called when the hook is loaded through `--require`.
 						 */
-						setup: api => {
+						setup: (api) => {
 							applyPatch(api || defaultApi, {
 								fakeFs: defaultFsLayer,
 								manager
@@ -7213,7 +7223,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						);
 					};
 
-					const reportSuccess = resolution => {
+					const reportSuccess = (resolution) => {
 						process.stdout.write(`${JSON.stringify([null, resolution])}\n`);
 					};
 
@@ -7225,7 +7235,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					};
 
-					const processRequest = data => {
+					const processRequest = (data) => {
 						try {
 							const [request, issuer] = JSON.parse(data);
 							processResolution(request, issuer);
@@ -7247,7 +7257,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					} else {
 						let buffer = ``;
 						const decoder = new (external_string_decoder_default().StringDecoder)();
-						process.stdin.on(`data`, chunk => {
+						process.stdin.on(`data`, (chunk) => {
 							buffer += decoder.write(chunk);
 
 							do {
@@ -7280,7 +7290,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				}
 				var arguments_ = [];
 				var thisProgram = "./this.program";
-				var quit_ = function(status, toThrow) {
+				var quit_ = function (status, toThrow) {
 					throw toThrow;
 				};
 				var ENVIRONMENT_IS_WORKER = false;
@@ -7327,16 +7337,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					if (true) {
 						module["exports"] = Module;
 					}
-					(function() {})("uncaughtException", function(ex) {
+					(function () {})("uncaughtException", function (ex) {
 						if (!(ex instanceof ExitStatus)) {
 							throw ex;
 						}
 					});
-					(function() {})("unhandledRejection", abort);
-					quit_ = function(status) {
+					(function () {})("unhandledRejection", abort);
+					quit_ = function (status) {
 						process["exit"](status);
 					};
-					Module["inspect"] = function() {
+					Module["inspect"] = function () {
 						return "[Emscripten Module object]";
 					};
 				} else {
@@ -7353,7 +7363,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				if (Module["thisProgram"]) thisProgram = Module["thisProgram"];
 				if (Module["quit"]) quit_ = Module["quit"];
 				var tempRet0 = 0;
-				var setTempRet0 = function(value) {
+				var setTempRet0 = function (value) {
 					tempRet0 = value;
 				};
 				var wasmBinary;
@@ -7411,7 +7421,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				}
 				function ccall(ident, returnType, argTypes, args, opts) {
 					var toC = {
-						string: function(str) {
+						string: function (str) {
 							var ret = 0;
 							if (str !== null && str !== undefined && str !== 0) {
 								var len = (str.length << 2) + 1;
@@ -7420,7 +7430,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return ret;
 						},
-						array: function(arr) {
+						array: function (arr) {
 							var ret = stackAlloc(arr.length);
 							writeArrayToMemory(arr, ret);
 							return ret;
@@ -7452,14 +7462,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				}
 				function cwrap(ident, returnType, argTypes, opts) {
 					argTypes = argTypes || [];
-					var numericArgs = argTypes.every(function(type) {
+					var numericArgs = argTypes.every(function (type) {
 						return type === "number";
 					});
 					var numericRet = returnType !== "string";
 					if (numericRet && numericArgs && !opts) {
 						return getCFunc(ident);
 					}
-					return function() {
+					return function () {
 						return ccall(ident, returnType, argTypes, arguments, opts);
 					};
 				}
@@ -7800,7 +7810,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				var tempDouble;
 				var tempI64;
 				__ATINIT__.push({
-					func: function() {
+					func: function () {
 						___wasm_call_ctors();
 					}
 				});
@@ -7809,7 +7819,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				}
 				function demangleAll(text) {
 					var regex = /\b_Z[\w\d_]+/g;
-					return text.replace(regex, function(x) {
+					return text.replace(regex, function (x) {
 						var y = demangle(x);
 						return x === y ? x : y + " [" + x + "]";
 					});
@@ -7835,11 +7845,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					return demangleAll(js);
 				}
 				var PATH = {
-					splitPath: function(filename) {
+					splitPath: function (filename) {
 						var splitPathRe = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
 						return splitPathRe.exec(filename).slice(1);
 					},
-					normalizeArray: function(parts, allowAboveRoot) {
+					normalizeArray: function (parts, allowAboveRoot) {
 						var up = 0;
 						for (var i = parts.length - 1; i >= 0; i--) {
 							var last = parts[i];
@@ -7860,11 +7870,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return parts;
 					},
-					normalize: function(path) {
+					normalize: function (path) {
 						var isAbsolute = path.charAt(0) === "/",
 							trailingSlash = path.substr(-1) === "/";
 						path = PATH.normalizeArray(
-							path.split("/").filter(function(p) {
+							path.split("/").filter(function (p) {
 								return !!p;
 							}),
 							!isAbsolute
@@ -7877,7 +7887,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return (isAbsolute ? "/" : "") + path;
 					},
-					dirname: function(path) {
+					dirname: function (path) {
 						var result = PATH.splitPath(path),
 							root = result[0],
 							dir = result[1];
@@ -7889,20 +7899,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return root + dir;
 					},
-					basename: function(path) {
+					basename: function (path) {
 						if (path === "/") return "/";
 						var lastSlash = path.lastIndexOf("/");
 						if (lastSlash === -1) return path;
 						return path.substr(lastSlash + 1);
 					},
-					extname: function(path) {
+					extname: function (path) {
 						return PATH.splitPath(path)[3];
 					},
-					join: function() {
+					join: function () {
 						var paths = Array.prototype.slice.call(arguments, 0);
 						return PATH.normalize(paths.join("/"));
 					},
-					join2: function(l, r) {
+					join2: function (l, r) {
 						return PATH.normalize(l + "/" + r);
 					}
 				};
@@ -7911,7 +7921,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					return value;
 				}
 				var PATH_FS = {
-					resolve: function() {
+					resolve: function () {
 						var resolvedPath = "",
 							resolvedAbsolute = false;
 						for (
@@ -7931,14 +7941,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							resolvedAbsolute = path.charAt(0) === "/";
 						}
 						resolvedPath = PATH.normalizeArray(
-							resolvedPath.split("/").filter(function(p) {
+							resolvedPath.split("/").filter(function (p) {
 								return !!p;
 							}),
 							!resolvedAbsolute
 						).join("/");
 						return (resolvedAbsolute ? "/" : "") + resolvedPath || ".";
 					},
-					relative: function(from, to) {
+					relative: function (from, to) {
 						from = PATH_FS.resolve(from).substr(1);
 						to = PATH_FS.resolve(to).substr(1);
 						function trim(arr) {
@@ -7973,14 +7983,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				};
 				var TTY = {
 					ttys: [],
-					init: function() {},
-					shutdown: function() {},
-					register: function(dev, ops) {
+					init: function () {},
+					shutdown: function () {},
+					register: function (dev, ops) {
 						TTY.ttys[dev] = { input: [], output: [], ops: ops };
 						FS.registerDevice(dev, TTY.stream_ops);
 					},
 					stream_ops: {
-						open: function(stream) {
+						open: function (stream) {
 							var tty = TTY.ttys[stream.node.rdev];
 							if (!tty) {
 								throw new FS.ErrnoError(43);
@@ -7988,13 +7998,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							stream.tty = tty;
 							stream.seekable = false;
 						},
-						close: function(stream) {
+						close: function (stream) {
 							stream.tty.ops.flush(stream.tty);
 						},
-						flush: function(stream) {
+						flush: function (stream) {
 							stream.tty.ops.flush(stream.tty);
 						},
-						read: function(stream, buffer, offset, length, pos) {
+						read: function (stream, buffer, offset, length, pos) {
 							if (!stream.tty || !stream.tty.ops.get_char) {
 								throw new FS.ErrnoError(60);
 							}
@@ -8018,7 +8028,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return bytesRead;
 						},
-						write: function(stream, buffer, offset, length, pos) {
+						write: function (stream, buffer, offset, length, pos) {
 							if (!stream.tty || !stream.tty.ops.put_char) {
 								throw new FS.ErrnoError(60);
 							}
@@ -8036,7 +8046,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					},
 					default_tty_ops: {
-						get_char: function(tty) {
+						get_char: function (tty) {
 							if (!tty.input.length) {
 								var result = null;
 								if (ENVIRONMENT_IS_NODE) {
@@ -8083,7 +8093,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return tty.input.shift();
 						},
-						put_char: function(tty, val) {
+						put_char: function (tty, val) {
 							if (val === null || val === 10) {
 								out(UTF8ArrayToString(tty.output, 0));
 								tty.output = [];
@@ -8091,7 +8101,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								if (val != 0) tty.output.push(val);
 							}
 						},
-						flush: function(tty) {
+						flush: function (tty) {
 							if (tty.output && tty.output.length > 0) {
 								out(UTF8ArrayToString(tty.output, 0));
 								tty.output = [];
@@ -8099,7 +8109,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					},
 					default_tty1_ops: {
-						put_char: function(tty, val) {
+						put_char: function (tty, val) {
 							if (val === null || val === 10) {
 								err(UTF8ArrayToString(tty.output, 0));
 								tty.output = [];
@@ -8107,7 +8117,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								if (val != 0) tty.output.push(val);
 							}
 						},
-						flush: function(tty) {
+						flush: function (tty) {
 							if (tty.output && tty.output.length > 0) {
 								err(UTF8ArrayToString(tty.output, 0));
 								tty.output = [];
@@ -8117,10 +8127,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				};
 				var MEMFS = {
 					ops_table: null,
-					mount: function(mount) {
+					mount: function (mount) {
 						return MEMFS.createNode(null, "/", 16384 | 511, 0);
 					},
-					createNode: function(parent, name, mode, dev) {
+					createNode: function (parent, name, mode, dev) {
 						if (FS.isBlkdev(mode) || FS.isFIFO(mode)) {
 							throw new FS.ErrnoError(63);
 						}
@@ -8194,7 +8204,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return node;
 					},
-					getFileDataAsRegularArray: function(node) {
+					getFileDataAsRegularArray: function (node) {
 						if (node.contents && node.contents.subarray) {
 							var arr = [];
 							for (var i = 0; i < node.usedBytes; ++i)
@@ -8203,13 +8213,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return node.contents;
 					},
-					getFileDataAsTypedArray: function(node) {
+					getFileDataAsTypedArray: function (node) {
 						if (!node.contents) return new Uint8Array(0);
 						if (node.contents.subarray)
 							return node.contents.subarray(0, node.usedBytes);
 						return new Uint8Array(node.contents);
 					},
-					expandFileStorage: function(node, newCapacity) {
+					expandFileStorage: function (node, newCapacity) {
 						var prevCapacity = node.contents ? node.contents.length : 0;
 						if (prevCapacity >= newCapacity) return;
 						var CAPACITY_DOUBLING_MAX = 1024 * 1024;
@@ -8226,7 +8236,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							node.contents.set(oldContents.subarray(0, node.usedBytes), 0);
 						return;
 					},
-					resizeFileStorage: function(node, newSize) {
+					resizeFileStorage: function (node, newSize) {
 						if (node.usedBytes == newSize) return;
 						if (newSize == 0) {
 							node.contents = null;
@@ -8250,7 +8260,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						node.usedBytes = newSize;
 					},
 					node_ops: {
-						getattr: function(node) {
+						getattr: function (node) {
 							var attr = {};
 							attr.dev = FS.isChrdev(node.mode) ? node.id : 1;
 							attr.ino = node.id;
@@ -8275,7 +8285,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							attr.blocks = Math.ceil(attr.size / attr.blksize);
 							return attr;
 						},
-						setattr: function(node, attr) {
+						setattr: function (node, attr) {
 							if (attr.mode !== undefined) {
 								node.mode = attr.mode;
 							}
@@ -8286,13 +8296,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								MEMFS.resizeFileStorage(node, attr.size);
 							}
 						},
-						lookup: function(parent, name) {
+						lookup: function (parent, name) {
 							throw FS.genericErrors[44];
 						},
-						mknod: function(parent, name, mode, dev) {
+						mknod: function (parent, name, mode, dev) {
 							return MEMFS.createNode(parent, name, mode, dev);
 						},
-						rename: function(old_node, new_dir, new_name) {
+						rename: function (old_node, new_dir, new_name) {
 							if (FS.isDir(old_node.mode)) {
 								var new_node;
 								try {
@@ -8309,17 +8319,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							new_dir.contents[new_name] = old_node;
 							old_node.parent = new_dir;
 						},
-						unlink: function(parent, name) {
+						unlink: function (parent, name) {
 							delete parent.contents[name];
 						},
-						rmdir: function(parent, name) {
+						rmdir: function (parent, name) {
 							var node = FS.lookupNode(parent, name);
 							for (var i in node.contents) {
 								throw new FS.ErrnoError(55);
 							}
 							delete parent.contents[name];
 						},
-						readdir: function(node) {
+						readdir: function (node) {
 							var entries = [".", ".."];
 							for (var key in node.contents) {
 								if (!node.contents.hasOwnProperty(key)) {
@@ -8329,12 +8339,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return entries;
 						},
-						symlink: function(parent, newname, oldpath) {
+						symlink: function (parent, newname, oldpath) {
 							var node = MEMFS.createNode(parent, newname, 511 | 40960, 0);
 							node.link = oldpath;
 							return node;
 						},
-						readlink: function(node) {
+						readlink: function (node) {
 							if (!FS.isLink(node.mode)) {
 								throw new FS.ErrnoError(28);
 							}
@@ -8342,7 +8352,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					},
 					stream_ops: {
-						read: function(stream, buffer, offset, length, position) {
+						read: function (stream, buffer, offset, length, position) {
 							var contents = stream.node.contents;
 							if (position >= stream.node.usedBytes) return 0;
 							var size = Math.min(stream.node.usedBytes - position, length);
@@ -8357,7 +8367,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return size;
 						},
-						write: function(stream, buffer, offset, length, position, canOwn) {
+						write: function (stream, buffer, offset, length, position, canOwn) {
 							if (buffer.buffer === HEAP8.buffer) {
 								canOwn = false;
 							}
@@ -8398,7 +8408,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							node.usedBytes = Math.max(node.usedBytes, position + length);
 							return length;
 						},
-						llseek: function(stream, offset, whence) {
+						llseek: function (stream, offset, whence) {
 							var position = offset;
 							if (whence === 1) {
 								position += stream.position;
@@ -8412,14 +8422,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return position;
 						},
-						allocate: function(stream, offset, length) {
+						allocate: function (stream, offset, length) {
 							MEMFS.expandFileStorage(stream.node, offset + length);
 							stream.node.usedBytes = Math.max(
 								stream.node.usedBytes,
 								offset + length
 							);
 						},
-						mmap: function(stream, address, length, position, prot, flags) {
+						mmap: function (stream, address, length, position, prot, flags) {
 							assert(address === 0);
 							if (!FS.isFile(stream.node.mode)) {
 								throw new FS.ErrnoError(43);
@@ -8451,7 +8461,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return { ptr: ptr, allocated: allocated };
 						},
-						msync: function(stream, buffer, offset, length, mmapFlags) {
+						msync: function (stream, buffer, offset, length, mmapFlags) {
 							if (!FS.isFile(stream.node.mode)) {
 								throw new FS.ErrnoError(43);
 							}
@@ -8595,7 +8605,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				};
 				var NODEFS = {
 					isWindows: false,
-					staticInit: function() {
+					staticInit: function () {
 						NODEFS.isWindows = !!process.platform.match(/^win/);
 						var flags = { fs: fs.constants };
 						if (flags["fs"]) {
@@ -8612,16 +8622,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							1: flags["O_WRONLY"]
 						};
 					},
-					bufferFrom: function(arrayBuffer) {
+					bufferFrom: function (arrayBuffer) {
 						return Buffer["alloc"]
 							? Buffer.from(arrayBuffer)
 							: new Buffer(arrayBuffer);
 					},
-					convertNodeCode: function(e) {
+					convertNodeCode: function (e) {
 						var code = e.code;
 						return ERRNO_CODES[code];
 					},
-					mount: function(mount) {
+					mount: function (mount) {
 						return NODEFS.createNode(
 							null,
 							"/",
@@ -8629,7 +8639,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							0
 						);
 					},
-					createNode: function(parent, name, mode, dev) {
+					createNode: function (parent, name, mode, dev) {
 						if (!FS.isDir(mode) && !FS.isFile(mode) && !FS.isLink(mode)) {
 							throw new FS.ErrnoError(28);
 						}
@@ -8638,7 +8648,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						node.stream_ops = NODEFS.stream_ops;
 						return node;
 					},
-					getMode: function(path) {
+					getMode: function (path) {
 						var stat;
 						try {
 							stat = fs.lstatSync(path);
@@ -8651,7 +8661,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return stat.mode;
 					},
-					realPath: function(node) {
+					realPath: function (node) {
 						var parts = [];
 						while (node.parent !== node) {
 							parts.push(node.name);
@@ -8661,7 +8671,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						parts.reverse();
 						return PATH.join.apply(null, parts);
 					},
-					flagsForNode: function(flags) {
+					flagsForNode: function (flags) {
 						flags &= ~2097152;
 						flags &= ~2048;
 						flags &= ~32768;
@@ -8680,7 +8690,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					},
 					node_ops: {
-						getattr: function(node) {
+						getattr: function (node) {
 							var path = NODEFS.realPath(node);
 							var stat;
 							try {
@@ -8712,7 +8722,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								blocks: stat.blocks
 							};
 						},
-						setattr: function(node, attr) {
+						setattr: function (node, attr) {
 							var path = NODEFS.realPath(node);
 							try {
 								if (attr.mode !== undefined) {
@@ -8731,12 +8741,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						lookup: function(parent, name) {
+						lookup: function (parent, name) {
 							var path = PATH.join2(NODEFS.realPath(parent), name);
 							var mode = NODEFS.getMode(path);
 							return NODEFS.createNode(parent, name, mode);
 						},
-						mknod: function(parent, name, mode, dev) {
+						mknod: function (parent, name, mode, dev) {
 							var node = NODEFS.createNode(parent, name, mode, dev);
 							var path = NODEFS.realPath(node);
 							try {
@@ -8751,7 +8761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return node;
 						},
-						rename: function(oldNode, newDir, newName) {
+						rename: function (oldNode, newDir, newName) {
 							var oldPath = NODEFS.realPath(oldNode);
 							var newPath = PATH.join2(NODEFS.realPath(newDir), newName);
 							try {
@@ -8762,7 +8772,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							oldNode.name = newName;
 						},
-						unlink: function(parent, name) {
+						unlink: function (parent, name) {
 							var path = PATH.join2(NODEFS.realPath(parent), name);
 							try {
 								fs.unlinkSync(path);
@@ -8771,7 +8781,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						rmdir: function(parent, name) {
+						rmdir: function (parent, name) {
 							var path = PATH.join2(NODEFS.realPath(parent), name);
 							try {
 								fs.rmdirSync(path);
@@ -8780,7 +8790,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						readdir: function(node) {
+						readdir: function (node) {
 							var path = NODEFS.realPath(node);
 							try {
 								return fs.readdirSync(path);
@@ -8789,7 +8799,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						symlink: function(parent, newName, oldPath) {
+						symlink: function (parent, newName, oldPath) {
 							var newPath = PATH.join2(NODEFS.realPath(parent), newName);
 							try {
 								fs.symlinkSync(oldPath, newPath);
@@ -8798,7 +8808,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						readlink: function(node) {
+						readlink: function (node) {
 							var path = NODEFS.realPath(node);
 							try {
 								path = fs.readlinkSync(path);
@@ -8814,7 +8824,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 					},
 					stream_ops: {
-						open: function(stream) {
+						open: function (stream) {
 							var path = NODEFS.realPath(stream.node);
 							try {
 								if (FS.isFile(stream.node.mode)) {
@@ -8828,7 +8838,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						close: function(stream) {
+						close: function (stream) {
 							try {
 								if (FS.isFile(stream.node.mode) && stream.nfd) {
 									fs.closeSync(stream.nfd);
@@ -8838,7 +8848,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						read: function(stream, buffer, offset, length, position) {
+						read: function (stream, buffer, offset, length, position) {
 							if (length === 0) return 0;
 							try {
 								return fs.readSync(
@@ -8852,7 +8862,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						write: function(stream, buffer, offset, length, position) {
+						write: function (stream, buffer, offset, length, position) {
 							try {
 								return fs.writeSync(
 									stream.nfd,
@@ -8865,7 +8875,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
 							}
 						},
-						llseek: function(stream, offset, whence) {
+						llseek: function (stream, offset, whence) {
 							var position = offset;
 							if (whence === 1) {
 								position += stream.position;
@@ -8884,7 +8894,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 							return position;
 						},
-						mmap: function(stream, address, length, position, prot, flags) {
+						mmap: function (stream, address, length, position, prot, flags) {
 							assert(address === 0);
 							if (!FS.isFile(stream.node.mode)) {
 								throw new FS.ErrnoError(43);
@@ -8893,7 +8903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							NODEFS.stream_ops.read(stream, HEAP8, ptr, length, position);
 							return { ptr: ptr, allocated: true };
 						},
-						msync: function(stream, buffer, offset, length, mmapFlags) {
+						msync: function (stream, buffer, offset, length, mmapFlags) {
 							if (!FS.isFile(stream.node.mode)) {
 								throw new FS.ErrnoError(43);
 							}
@@ -8913,10 +8923,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					}
 				};
 				var NODERAWFS = {
-					lookupPath: function(path) {
+					lookupPath: function (path) {
 						return { path: path, node: { mode: NODEFS.getMode(path) } };
 					},
-					createStandardStreams: function() {
+					createStandardStreams: function () {
 						FS.streams[0] = {
 							fd: 0,
 							nfd: 0,
@@ -8938,68 +8948,68 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							};
 						}
 					},
-					cwd: function() {
+					cwd: function () {
 						return process.cwd();
 					},
-					chdir: function() {
+					chdir: function () {
 						process.chdir.apply(void 0, arguments);
 					},
-					mknod: function(path, mode) {
+					mknod: function (path, mode) {
 						if (FS.isDir(path)) {
 							fs.mkdirSync(path, mode);
 						} else {
 							fs.writeFileSync(path, "", { mode: mode });
 						}
 					},
-					mkdir: function() {
+					mkdir: function () {
 						fs.mkdirSync.apply(void 0, arguments);
 					},
-					symlink: function() {
+					symlink: function () {
 						fs.symlinkSync.apply(void 0, arguments);
 					},
-					rename: function() {
+					rename: function () {
 						fs.renameSync.apply(void 0, arguments);
 					},
-					rmdir: function() {
+					rmdir: function () {
 						fs.rmdirSync.apply(void 0, arguments);
 					},
-					readdir: function() {
+					readdir: function () {
 						fs.readdirSync.apply(void 0, arguments);
 					},
-					unlink: function() {
+					unlink: function () {
 						fs.unlinkSync.apply(void 0, arguments);
 					},
-					readlink: function() {
+					readlink: function () {
 						return fs.readlinkSync.apply(void 0, arguments);
 					},
-					stat: function() {
+					stat: function () {
 						return fs.statSync.apply(void 0, arguments);
 					},
-					lstat: function() {
+					lstat: function () {
 						return fs.lstatSync.apply(void 0, arguments);
 					},
-					chmod: function() {
+					chmod: function () {
 						fs.chmodSync.apply(void 0, arguments);
 					},
-					fchmod: function() {
+					fchmod: function () {
 						fs.fchmodSync.apply(void 0, arguments);
 					},
-					chown: function() {
+					chown: function () {
 						fs.chownSync.apply(void 0, arguments);
 					},
-					fchown: function() {
+					fchown: function () {
 						fs.fchownSync.apply(void 0, arguments);
 					},
-					truncate: function() {
+					truncate: function () {
 						fs.truncateSync.apply(void 0, arguments);
 					},
-					ftruncate: function() {
+					ftruncate: function () {
 						fs.ftruncateSync.apply(void 0, arguments);
 					},
-					utime: function() {
+					utime: function () {
 						fs.utimesSync.apply(void 0, arguments);
 					},
-					open: function(path, flags, mode, suggestFD) {
+					open: function (path, flags, mode, suggestFD) {
 						if (typeof flags === "string") {
 							flags = VFS.modeStringToFlags(flags);
 						}
@@ -9016,13 +9026,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.streams[fd] = stream;
 						return stream;
 					},
-					close: function(stream) {
+					close: function (stream) {
 						if (!stream.stream_ops) {
 							fs.closeSync(stream.nfd);
 						}
 						FS.closeStream(stream.fd);
 					},
-					llseek: function(stream, offset, whence) {
+					llseek: function (stream, offset, whence) {
 						if (stream.stream_ops) {
 							return VFS.llseek(stream, offset, whence);
 						}
@@ -9040,7 +9050,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						stream.position = position;
 						return position;
 					},
-					read: function(stream, buffer, offset, length, position) {
+					read: function (stream, buffer, offset, length, position) {
 						if (stream.stream_ops) {
 							return VFS.read(stream, buffer, offset, length, position);
 						}
@@ -9056,7 +9066,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!seeking) stream.position += bytesRead;
 						return bytesRead;
 					},
-					write: function(stream, buffer, offset, length, position) {
+					write: function (stream, buffer, offset, length, position) {
 						if (stream.stream_ops) {
 							return VFS.write(stream, buffer, offset, length, position);
 						}
@@ -9075,19 +9085,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!seeking) stream.position += bytesWritten;
 						return bytesWritten;
 					},
-					allocate: function() {
+					allocate: function () {
 						throw new FS.ErrnoError(ERRNO_CODES.EOPNOTSUPP);
 					},
-					mmap: function() {
+					mmap: function () {
 						throw new FS.ErrnoError(ERRNO_CODES.ENODEV);
 					},
-					msync: function() {
+					msync: function () {
 						return 0;
 					},
-					munmap: function() {
+					munmap: function () {
 						return 0;
 					},
-					ioctl: function() {
+					ioctl: function () {
 						throw new FS.ErrnoError(ERRNO_CODES.ENOTTY);
 					}
 				};
@@ -9107,11 +9117,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					genericErrors: {},
 					filesystems: null,
 					syncFSRequests: 0,
-					handleFSError: function(e) {
+					handleFSError: function (e) {
 						if (!(e instanceof FS.ErrnoError)) throw e + " : " + stackTrace();
 						return setErrNo(e.errno);
 					},
-					lookupPath: function(path, opts) {
+					lookupPath: function (path, opts) {
 						path = PATH_FS.resolve(FS.cwd(), path);
 						opts = opts || {};
 						if (!path) return { path: "", node: null };
@@ -9125,7 +9135,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							throw new FS.ErrnoError(32);
 						}
 						var parts = PATH.normalizeArray(
-							path.split("/").filter(function(p) {
+							path.split("/").filter(function (p) {
 								return !!p;
 							}),
 							false
@@ -9164,7 +9174,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return { path: current_path, node: current };
 					},
-					getPath: function(node) {
+					getPath: function (node) {
 						var path;
 						while (true) {
 							if (FS.isRoot(node)) {
@@ -9178,19 +9188,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							node = node.parent;
 						}
 					},
-					hashName: function(parentid, name) {
+					hashName: function (parentid, name) {
 						var hash = 0;
 						for (var i = 0; i < name.length; i++) {
 							hash = ((hash << 5) - hash + name.charCodeAt(i)) | 0;
 						}
 						return ((parentid + hash) >>> 0) % FS.nameTable.length;
 					},
-					hashAddNode: function(node) {
+					hashAddNode: function (node) {
 						var hash = FS.hashName(node.parent.id, node.name);
 						node.name_next = FS.nameTable[hash];
 						FS.nameTable[hash] = node;
 					},
-					hashRemoveNode: function(node) {
+					hashRemoveNode: function (node) {
 						var hash = FS.hashName(node.parent.id, node.name);
 						if (FS.nameTable[hash] === node) {
 							FS.nameTable[hash] = node.name_next;
@@ -9205,7 +9215,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 						}
 					},
-					lookupNode: function(parent, name) {
+					lookupNode: function (parent, name) {
 						var errCode = FS.mayLookup(parent);
 						if (errCode) {
 							throw new FS.ErrnoError(errCode, parent);
@@ -9219,39 +9229,39 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return FS.lookup(parent, name);
 					},
-					createNode: function(parent, name, mode, rdev) {
+					createNode: function (parent, name, mode, rdev) {
 						var node = new FS.FSNode(parent, name, mode, rdev);
 						FS.hashAddNode(node);
 						return node;
 					},
-					destroyNode: function(node) {
+					destroyNode: function (node) {
 						FS.hashRemoveNode(node);
 					},
-					isRoot: function(node) {
+					isRoot: function (node) {
 						return node === node.parent;
 					},
-					isMountpoint: function(node) {
+					isMountpoint: function (node) {
 						return !!node.mounted;
 					},
-					isFile: function(mode) {
+					isFile: function (mode) {
 						return (mode & 61440) === 32768;
 					},
-					isDir: function(mode) {
+					isDir: function (mode) {
 						return (mode & 61440) === 16384;
 					},
-					isLink: function(mode) {
+					isLink: function (mode) {
 						return (mode & 61440) === 40960;
 					},
-					isChrdev: function(mode) {
+					isChrdev: function (mode) {
 						return (mode & 61440) === 8192;
 					},
-					isBlkdev: function(mode) {
+					isBlkdev: function (mode) {
 						return (mode & 61440) === 24576;
 					},
-					isFIFO: function(mode) {
+					isFIFO: function (mode) {
 						return (mode & 61440) === 4096;
 					},
-					isSocket: function(mode) {
+					isSocket: function (mode) {
 						return (mode & 49152) === 49152;
 					},
 					flagModes: {
@@ -9271,21 +9281,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						"ax+": 1218,
 						"xa+": 1218
 					},
-					modeStringToFlags: function(str) {
+					modeStringToFlags: function (str) {
 						var flags = FS.flagModes[str];
 						if (typeof flags === "undefined") {
 							throw new Error("Unknown file open mode: " + str);
 						}
 						return flags;
 					},
-					flagsToPermissionString: function(flag) {
+					flagsToPermissionString: function (flag) {
 						var perms = ["r", "w", "rw"][flag & 3];
 						if (flag & 512) {
 							perms += "w";
 						}
 						return perms;
 					},
-					nodePermissions: function(node, perms) {
+					nodePermissions: function (node, perms) {
 						if (FS.ignorePermissions) {
 							return 0;
 						}
@@ -9298,20 +9308,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return 0;
 					},
-					mayLookup: function(dir) {
+					mayLookup: function (dir) {
 						var errCode = FS.nodePermissions(dir, "x");
 						if (errCode) return errCode;
 						if (!dir.node_ops.lookup) return 2;
 						return 0;
 					},
-					mayCreate: function(dir, name) {
+					mayCreate: function (dir, name) {
 						try {
 							var node = FS.lookupNode(dir, name);
 							return 20;
 						} catch (e) {}
 						return FS.nodePermissions(dir, "wx");
 					},
-					mayDelete: function(dir, name, isdir) {
+					mayDelete: function (dir, name, isdir) {
 						var node;
 						try {
 							node = FS.lookupNode(dir, name);
@@ -9336,7 +9346,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return 0;
 					},
-					mayOpen: function(node, flags) {
+					mayOpen: function (node, flags) {
 						if (!node) {
 							return 44;
 						}
@@ -9350,7 +9360,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						return FS.nodePermissions(node, FS.flagsToPermissionString(flags));
 					},
 					MAX_OPEN_FDS: 4096,
-					nextfd: function(fd_start, fd_end) {
+					nextfd: function (fd_start, fd_end) {
 						fd_start = fd_start || 0;
 						fd_end = fd_end || FS.MAX_OPEN_FDS;
 						for (var fd = fd_start; fd <= fd_end; fd++) {
@@ -9360,33 +9370,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						throw new FS.ErrnoError(33);
 					},
-					getStream: function(fd) {
+					getStream: function (fd) {
 						return FS.streams[fd];
 					},
-					createStream: function(stream, fd_start, fd_end) {
+					createStream: function (stream, fd_start, fd_end) {
 						if (!FS.FSStream) {
-							FS.FSStream = function() {};
+							FS.FSStream = function () {};
 							FS.FSStream.prototype = {
 								object: {
-									get: function() {
+									get: function () {
 										return this.node;
 									},
-									set: function(val) {
+									set: function (val) {
 										this.node = val;
 									}
 								},
 								isRead: {
-									get: function() {
+									get: function () {
 										return (this.flags & 2097155) !== 1;
 									}
 								},
 								isWrite: {
-									get: function() {
+									get: function () {
 										return (this.flags & 2097155) !== 0;
 									}
 								},
 								isAppend: {
-									get: function() {
+									get: function () {
 										return this.flags & 1024;
 									}
 								}
@@ -9402,37 +9412,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.streams[fd] = stream;
 						return stream;
 					},
-					closeStream: function(fd) {
+					closeStream: function (fd) {
 						FS.streams[fd] = null;
 					},
 					chrdev_stream_ops: {
-						open: function(stream) {
+						open: function (stream) {
 							var device = FS.getDevice(stream.node.rdev);
 							stream.stream_ops = device.stream_ops;
 							if (stream.stream_ops.open) {
 								stream.stream_ops.open(stream);
 							}
 						},
-						llseek: function() {
+						llseek: function () {
 							throw new FS.ErrnoError(70);
 						}
 					},
-					major: function(dev) {
+					major: function (dev) {
 						return dev >> 8;
 					},
-					minor: function(dev) {
+					minor: function (dev) {
 						return dev & 255;
 					},
-					makedev: function(ma, mi) {
+					makedev: function (ma, mi) {
 						return (ma << 8) | mi;
 					},
-					registerDevice: function(dev, ops) {
+					registerDevice: function (dev, ops) {
 						FS.devices[dev] = { stream_ops: ops };
 					},
-					getDevice: function(dev) {
+					getDevice: function (dev) {
 						return FS.devices[dev];
 					},
-					getMounts: function(mount) {
+					getMounts: function (mount) {
 						var mounts = [];
 						var check = [mount];
 						while (check.length) {
@@ -9442,7 +9452,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return mounts;
 					},
-					syncfs: function(populate, callback) {
+					syncfs: function (populate, callback) {
 						if (typeof populate === "function") {
 							callback = populate;
 							populate = false;
@@ -9473,14 +9483,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								doCallback(null);
 							}
 						}
-						mounts.forEach(function(mount) {
+						mounts.forEach(function (mount) {
 							if (!mount.type.syncfs) {
 								return done(null);
 							}
 							mount.type.syncfs(mount, populate, done);
 						});
 					},
-					mount: function(type, opts, mountpoint) {
+					mount: function (type, opts, mountpoint) {
 						var root = mountpoint === "/";
 						var pseudo = !mountpoint;
 						var node;
@@ -9516,7 +9526,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return mountRoot;
 					},
-					unmount: function(mountpoint) {
+					unmount: function (mountpoint) {
 						var lookup = FS.lookupPath(mountpoint, { follow_mount: false });
 						if (!FS.isMountpoint(lookup.node)) {
 							throw new FS.ErrnoError(28);
@@ -9524,7 +9534,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						var node = lookup.node;
 						var mount = node.mounted;
 						var mounts = FS.getMounts(mount);
-						Object.keys(FS.nameTable).forEach(function(hash) {
+						Object.keys(FS.nameTable).forEach(function (hash) {
 							var current = FS.nameTable[hash];
 							while (current) {
 								var next = current.name_next;
@@ -9538,10 +9548,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						var idx = node.mount.mounts.indexOf(mount);
 						node.mount.mounts.splice(idx, 1);
 					},
-					lookup: function(parent, name) {
+					lookup: function (parent, name) {
 						return parent.node_ops.lookup(parent, name);
 					},
-					mknod: function(path, mode, dev) {
+					mknod: function (path, mode, dev) {
 						var lookup = FS.lookupPath(path, { parent: true });
 						var parent = lookup.node;
 						var name = PATH.basename(path);
@@ -9557,19 +9567,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return parent.node_ops.mknod(parent, name, mode, dev);
 					},
-					create: function(path, mode) {
+					create: function (path, mode) {
 						mode = mode !== undefined ? mode : 438;
 						mode &= 4095;
 						mode |= 32768;
 						return FS.mknod(path, mode, 0);
 					},
-					mkdir: function(path, mode) {
+					mkdir: function (path, mode) {
 						mode = mode !== undefined ? mode : 511;
 						mode &= 511 | 512;
 						mode |= 16384;
 						return FS.mknod(path, mode, 0);
 					},
-					mkdirTree: function(path, mode) {
+					mkdirTree: function (path, mode) {
 						var dirs = path.split("/");
 						var d = "";
 						for (var i = 0; i < dirs.length; ++i) {
@@ -9582,7 +9592,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							}
 						}
 					},
-					mkdev: function(path, mode, dev) {
+					mkdev: function (path, mode, dev) {
 						if (typeof dev === "undefined") {
 							dev = mode;
 							mode = 438;
@@ -9590,7 +9600,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						mode |= 8192;
 						return FS.mknod(path, mode, dev);
 					},
-					symlink: function(oldpath, newpath) {
+					symlink: function (oldpath, newpath) {
 						if (!PATH_FS.resolve(oldpath)) {
 							throw new FS.ErrnoError(44);
 						}
@@ -9609,7 +9619,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return parent.node_ops.symlink(parent, newname, oldpath);
 					},
-					rename: function(old_path, new_path) {
+					rename: function (old_path, new_path) {
 						var old_dirname = PATH.dirname(old_path);
 						var new_dirname = PATH.dirname(new_path);
 						var old_name = PATH.basename(old_path);
@@ -9705,7 +9715,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							);
 						}
 					},
-					rmdir: function(path) {
+					rmdir: function (path) {
 						var lookup = FS.lookupPath(path, { parent: true });
 						var parent = lookup.node;
 						var name = PATH.basename(path);
@@ -9746,7 +9756,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							);
 						}
 					},
-					readdir: function(path) {
+					readdir: function (path) {
 						var lookup = FS.lookupPath(path, { follow: true });
 						var node = lookup.node;
 						if (!node.node_ops.readdir) {
@@ -9754,7 +9764,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return node.node_ops.readdir(node);
 					},
-					unlink: function(path) {
+					unlink: function (path) {
 						var lookup = FS.lookupPath(path, { parent: true });
 						var parent = lookup.node;
 						var name = PATH.basename(path);
@@ -9795,7 +9805,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							);
 						}
 					},
-					readlink: function(path) {
+					readlink: function (path) {
 						var lookup = FS.lookupPath(path);
 						var link = lookup.node;
 						if (!link) {
@@ -9809,7 +9819,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							link.node_ops.readlink(link)
 						);
 					},
-					stat: function(path, dontFollow) {
+					stat: function (path, dontFollow) {
 						var lookup = FS.lookupPath(path, { follow: !dontFollow });
 						var node = lookup.node;
 						if (!node) {
@@ -9820,10 +9830,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return node.node_ops.getattr(node);
 					},
-					lstat: function(path) {
+					lstat: function (path) {
 						return FS.stat(path, true);
 					},
-					chmod: function(path, mode, dontFollow) {
+					chmod: function (path, mode, dontFollow) {
 						var node;
 						if (typeof path === "string") {
 							var lookup = FS.lookupPath(path, { follow: !dontFollow });
@@ -9839,17 +9849,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							timestamp: Date.now()
 						});
 					},
-					lchmod: function(path, mode) {
+					lchmod: function (path, mode) {
 						FS.chmod(path, mode, true);
 					},
-					fchmod: function(fd, mode) {
+					fchmod: function (fd, mode) {
 						var stream = FS.getStream(fd);
 						if (!stream) {
 							throw new FS.ErrnoError(8);
 						}
 						FS.chmod(stream.node, mode);
 					},
-					chown: function(path, uid, gid, dontFollow) {
+					chown: function (path, uid, gid, dontFollow) {
 						var node;
 						if (typeof path === "string") {
 							var lookup = FS.lookupPath(path, { follow: !dontFollow });
@@ -9862,17 +9872,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						node.node_ops.setattr(node, { timestamp: Date.now() });
 					},
-					lchown: function(path, uid, gid) {
+					lchown: function (path, uid, gid) {
 						FS.chown(path, uid, gid, true);
 					},
-					fchown: function(fd, uid, gid) {
+					fchown: function (fd, uid, gid) {
 						var stream = FS.getStream(fd);
 						if (!stream) {
 							throw new FS.ErrnoError(8);
 						}
 						FS.chown(stream.node, uid, gid);
 					},
-					truncate: function(path, len) {
+					truncate: function (path, len) {
 						if (len < 0) {
 							throw new FS.ErrnoError(28);
 						}
@@ -9898,7 +9908,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						node.node_ops.setattr(node, { size: len, timestamp: Date.now() });
 					},
-					ftruncate: function(fd, len) {
+					ftruncate: function (fd, len) {
 						var stream = FS.getStream(fd);
 						if (!stream) {
 							throw new FS.ErrnoError(8);
@@ -9908,12 +9918,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						FS.truncate(stream.node, len);
 					},
-					utime: function(path, atime, mtime) {
+					utime: function (path, atime, mtime) {
 						var lookup = FS.lookupPath(path, { follow: true });
 						var node = lookup.node;
 						node.node_ops.setattr(node, { timestamp: Math.max(atime, mtime) });
 					},
-					open: function(path, flags, mode, fd_start, fd_end) {
+					open: function (path, flags, mode, fd_start, fd_end) {
 						if (path === "") {
 							throw new FS.ErrnoError(44);
 						}
@@ -10010,7 +10020,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return stream;
 					},
-					close: function(stream) {
+					close: function (stream) {
 						if (FS.isClosed(stream)) {
 							throw new FS.ErrnoError(8);
 						}
@@ -10026,10 +10036,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						stream.fd = null;
 					},
-					isClosed: function(stream) {
+					isClosed: function (stream) {
 						return stream.fd === null;
 					},
-					llseek: function(stream, offset, whence) {
+					llseek: function (stream, offset, whence) {
 						if (FS.isClosed(stream)) {
 							throw new FS.ErrnoError(8);
 						}
@@ -10043,7 +10053,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						stream.ungotten = [];
 						return stream.position;
 					},
-					read: function(stream, buffer, offset, length, position) {
+					read: function (stream, buffer, offset, length, position) {
 						if (length < 0 || position < 0) {
 							throw new FS.ErrnoError(28);
 						}
@@ -10075,7 +10085,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!seeking) stream.position += bytesRead;
 						return bytesRead;
 					},
-					write: function(stream, buffer, offset, length, position, canOwn) {
+					write: function (stream, buffer, offset, length, position, canOwn) {
 						if (length < 0 || position < 0) {
 							throw new FS.ErrnoError(28);
 						}
@@ -10122,7 +10132,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return bytesWritten;
 					},
-					allocate: function(stream, offset, length) {
+					allocate: function (stream, offset, length) {
 						if (FS.isClosed(stream)) {
 							throw new FS.ErrnoError(8);
 						}
@@ -10140,7 +10150,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						stream.stream_ops.allocate(stream, offset, length);
 					},
-					mmap: function(stream, address, length, position, prot, flags) {
+					mmap: function (stream, address, length, position, prot, flags) {
 						if (
 							(prot & 2) !== 0 &&
 							(flags & 2) === 0 &&
@@ -10163,7 +10173,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							flags
 						);
 					},
-					msync: function(stream, buffer, offset, length, mmapFlags) {
+					msync: function (stream, buffer, offset, length, mmapFlags) {
 						if (!stream || !stream.stream_ops.msync) {
 							return 0;
 						}
@@ -10175,16 +10185,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							mmapFlags
 						);
 					},
-					munmap: function(stream) {
+					munmap: function (stream) {
 						return 0;
 					},
-					ioctl: function(stream, cmd, arg) {
+					ioctl: function (stream, cmd, arg) {
 						if (!stream.stream_ops.ioctl) {
 							throw new FS.ErrnoError(59);
 						}
 						return stream.stream_ops.ioctl(stream, cmd, arg);
 					},
-					readFile: function(path, opts) {
+					readFile: function (path, opts) {
 						opts = opts || {};
 						opts.flags = opts.flags || "r";
 						opts.encoding = opts.encoding || "binary";
@@ -10205,7 +10215,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.close(stream);
 						return ret;
 					},
-					writeFile: function(path, data, opts) {
+					writeFile: function (path, data, opts) {
 						opts = opts || {};
 						opts.flags = opts.flags || "w";
 						var stream = FS.open(path, opts.flags, opts.mode);
@@ -10227,10 +10237,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						FS.close(stream);
 					},
-					cwd: function() {
+					cwd: function () {
 						return FS.currentPath;
 					},
-					chdir: function(path) {
+					chdir: function (path) {
 						var lookup = FS.lookupPath(path, { follow: true });
 						if (lookup.node === null) {
 							throw new FS.ErrnoError(44);
@@ -10244,18 +10254,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						FS.currentPath = lookup.path;
 					},
-					createDefaultDirectories: function() {
+					createDefaultDirectories: function () {
 						FS.mkdir("/tmp");
 						FS.mkdir("/home");
 						FS.mkdir("/home/web_user");
 					},
-					createDefaultDevices: function() {
+					createDefaultDevices: function () {
 						FS.mkdir("/dev");
 						FS.registerDevice(FS.makedev(1, 3), {
-							read: function() {
+							read: function () {
 								return 0;
 							},
-							write: function(stream, buffer, offset, length, pos) {
+							write: function (stream, buffer, offset, length, pos) {
 								return length;
 							}
 						});
@@ -10270,21 +10280,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							typeof crypto["getRandomValues"] === "function"
 						) {
 							var randomBuffer = new Uint8Array(1);
-							random_device = function() {
+							random_device = function () {
 								crypto.getRandomValues(randomBuffer);
 								return randomBuffer[0];
 							};
 						} else if (ENVIRONMENT_IS_NODE) {
 							try {
 								var crypto_module = __webpack_require__(417);
-								random_device = function() {
+								random_device = function () {
 									return crypto_module["randomBytes"](1)[0];
 								};
 							} catch (e) {}
 						} else {
 						}
 						if (!random_device) {
-							random_device = function() {
+							random_device = function () {
 								abort("random_device");
 							};
 						}
@@ -10293,16 +10303,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.mkdir("/dev/shm");
 						FS.mkdir("/dev/shm/tmp");
 					},
-					createSpecialDirectories: function() {
+					createSpecialDirectories: function () {
 						FS.mkdir("/proc");
 						FS.mkdir("/proc/self");
 						FS.mkdir("/proc/self/fd");
 						FS.mount(
 							{
-								mount: function() {
+								mount: function () {
 									var node = FS.createNode("/proc/self", "fd", 16384 | 511, 73);
 									node.node_ops = {
-										lookup: function(parent, name) {
+										lookup: function (parent, name) {
 											var fd = +name;
 											var stream = FS.getStream(fd);
 											if (!stream) throw new FS.ErrnoError(8);
@@ -10310,7 +10320,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 												parent: null,
 												mount: { mountpoint: "fake" },
 												node_ops: {
-													readlink: function() {
+													readlink: function () {
 														return stream.path;
 													}
 												}
@@ -10326,7 +10336,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							"/proc/self/fd"
 						);
 					},
-					createStandardStreams: function() {
+					createStandardStreams: function () {
 						if (Module["stdin"]) {
 							FS.createDevice("/dev", "stdin", Module["stdin"]);
 						} else {
@@ -10346,11 +10356,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						var stdout = FS.open("/dev/stdout", "w");
 						var stderr = FS.open("/dev/stderr", "w");
 					},
-					ensureErrnoError: function() {
+					ensureErrnoError: function () {
 						if (FS.ErrnoError) return;
 						FS.ErrnoError = function ErrnoError(errno, node) {
 							this.node = node;
-							this.setErrno = function(errno) {
+							this.setErrno = function (errno) {
 								this.errno = errno;
 							};
 							this.setErrno(errno);
@@ -10358,12 +10368,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						};
 						FS.ErrnoError.prototype = new Error();
 						FS.ErrnoError.prototype.constructor = FS.ErrnoError;
-						[44].forEach(function(code) {
+						[44].forEach(function (code) {
 							FS.genericErrors[code] = new FS.ErrnoError(code);
 							FS.genericErrors[code].stack = "<generic error, no stack>";
 						});
 					},
-					staticInit: function() {
+					staticInit: function () {
 						FS.ensureErrnoError();
 						FS.nameTable = new Array(4096);
 						FS.mount(MEMFS, {}, "/");
@@ -10372,7 +10382,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.createSpecialDirectories();
 						FS.filesystems = { MEMFS: MEMFS, NODEFS: NODEFS };
 					},
-					init: function(input, output, error) {
+					init: function (input, output, error) {
 						FS.init.initialized = true;
 						FS.ensureErrnoError();
 						Module["stdin"] = input || Module["stdin"];
@@ -10380,7 +10390,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						Module["stderr"] = error || Module["stderr"];
 						FS.createStandardStreams();
 					},
-					quit: function() {
+					quit: function () {
 						FS.init.initialized = false;
 						var fflush = Module["_fflush"];
 						if (fflush) fflush(0);
@@ -10392,24 +10402,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							FS.close(stream);
 						}
 					},
-					getMode: function(canRead, canWrite) {
+					getMode: function (canRead, canWrite) {
 						var mode = 0;
 						if (canRead) mode |= 292 | 73;
 						if (canWrite) mode |= 146;
 						return mode;
 					},
-					joinPath: function(parts, forceRelative) {
+					joinPath: function (parts, forceRelative) {
 						var path = PATH.join.apply(null, parts);
 						if (forceRelative && path[0] == "/") path = path.substr(1);
 						return path;
 					},
-					absolutePath: function(relative, base) {
+					absolutePath: function (relative, base) {
 						return PATH_FS.resolve(base, relative);
 					},
-					standardizePath: function(path) {
+					standardizePath: function (path) {
 						return PATH.normalize(path);
 					},
-					findObject: function(path, dontResolveLastLink) {
+					findObject: function (path, dontResolveLastLink) {
 						var ret = FS.analyzePath(path, dontResolveLastLink);
 						if (ret.exists) {
 							return ret.object;
@@ -10418,7 +10428,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							return null;
 						}
 					},
-					analyzePath: function(path, dontResolveLastLink) {
+					analyzePath: function (path, dontResolveLastLink) {
 						try {
 							var lookup = FS.lookupPath(path, {
 								follow: !dontResolveLastLink
@@ -10453,7 +10463,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return ret;
 					},
-					createFolder: function(parent, name, canRead, canWrite) {
+					createFolder: function (parent, name, canRead, canWrite) {
 						var path = PATH.join2(
 							typeof parent === "string" ? parent : FS.getPath(parent),
 							name
@@ -10461,7 +10471,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						var mode = FS.getMode(canRead, canWrite);
 						return FS.mkdir(path, mode);
 					},
-					createPath: function(parent, path, canRead, canWrite) {
+					createPath: function (parent, path, canRead, canWrite) {
 						parent = typeof parent === "string" ? parent : FS.getPath(parent);
 						var parts = path.split("/").reverse();
 						while (parts.length) {
@@ -10475,7 +10485,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return current;
 					},
-					createFile: function(parent, name, properties, canRead, canWrite) {
+					createFile: function (parent, name, properties, canRead, canWrite) {
 						var path = PATH.join2(
 							typeof parent === "string" ? parent : FS.getPath(parent),
 							name
@@ -10483,7 +10493,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						var mode = FS.getMode(canRead, canWrite);
 						return FS.create(path, mode);
 					},
-					createDataFile: function(
+					createDataFile: function (
 						parent,
 						name,
 						data,
@@ -10514,7 +10524,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return node;
 					},
-					createDevice: function(parent, name, input, output) {
+					createDevice: function (parent, name, input, output) {
 						var path = PATH.join2(
 							typeof parent === "string" ? parent : FS.getPath(parent),
 							name
@@ -10523,15 +10533,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!FS.createDevice.major) FS.createDevice.major = 64;
 						var dev = FS.makedev(FS.createDevice.major++, 0);
 						FS.registerDevice(dev, {
-							open: function(stream) {
+							open: function (stream) {
 								stream.seekable = false;
 							},
-							close: function(stream) {
+							close: function (stream) {
 								if (output && output.buffer && output.buffer.length) {
 									output(10);
 								}
 							},
-							read: function(stream, buffer, offset, length, pos) {
+							read: function (stream, buffer, offset, length, pos) {
 								var bytesRead = 0;
 								for (var i = 0; i < length; i++) {
 									var result;
@@ -10552,7 +10562,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								}
 								return bytesRead;
 							},
-							write: function(stream, buffer, offset, length, pos) {
+							write: function (stream, buffer, offset, length, pos) {
 								for (var i = 0; i < length; i++) {
 									try {
 										output(buffer[offset + i]);
@@ -10568,14 +10578,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						});
 						return FS.mkdev(path, mode, dev);
 					},
-					createLink: function(parent, name, target, canRead, canWrite) {
+					createLink: function (parent, name, target, canRead, canWrite) {
 						var path = PATH.join2(
 							typeof parent === "string" ? parent : FS.getPath(parent),
 							name
 						);
 						return FS.symlink(target, path);
 					},
-					forceLoadFile: function(obj) {
+					forceLoadFile: function (obj) {
 						if (obj.isDevice || obj.isFolder || obj.link || obj.contents)
 							return true;
 						var success = true;
@@ -10596,7 +10606,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (!success) setErrNo(29);
 						return success;
 					},
-					createLazyFile: function(parent, name, url, canRead, canWrite) {
+					createLazyFile: function (parent, name, url, canRead, canWrite) {
 						function LazyUint8Array() {
 							this.lengthKnown = false;
 							this.chunks = [];
@@ -10634,7 +10644,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								header === "gzip";
 							var chunkSize = 1024 * 1024;
 							if (!hasByteServing) chunkSize = datalength;
-							var doXHR = function(from, to) {
+							var doXHR = function (from, to) {
 								if (from > to)
 									throw new Error(
 										"invalid range (" +
@@ -10673,7 +10683,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								}
 							};
 							var lazyArray = this;
-							lazyArray.setDataGetter(function(chunkNum) {
+							lazyArray.setDataGetter(function (chunkNum) {
 								var start = chunkNum * chunkSize;
 								var end = (chunkNum + 1) * chunkSize - 1;
 								end = Math.min(end, datalength - 1);
@@ -10702,7 +10712,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							var lazyArray = new LazyUint8Array();
 							Object.defineProperties(lazyArray, {
 								length: {
-									get: function() {
+									get: function () {
 										if (!this.lengthKnown) {
 											this.cacheLength();
 										}
@@ -10710,7 +10720,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 									}
 								},
 								chunkSize: {
-									get: function() {
+									get: function () {
 										if (!this.lengthKnown) {
 											this.cacheLength();
 										}
@@ -10737,14 +10747,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						Object.defineProperties(node, {
 							usedBytes: {
-								get: function() {
+								get: function () {
 									return this.contents.length;
 								}
 							}
 						});
 						var stream_ops = {};
 						var keys = Object.keys(node.stream_ops);
-						keys.forEach(function(key) {
+						keys.forEach(function (key) {
 							var fn = node.stream_ops[key];
 							stream_ops[key] = function forceLoadLazyFile() {
 								if (!FS.forceLoadFile(node)) {
@@ -10780,7 +10790,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						node.stream_ops = stream_ops;
 						return node;
 					},
-					createPreloadedFile: function(
+					createPreloadedFile: function (
 						parent,
 						name,
 						url,
@@ -10814,10 +10824,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								removeRunDependency(dep);
 							}
 							var handled = false;
-							Module["preloadPlugins"].forEach(function(plugin) {
+							Module["preloadPlugins"].forEach(function (plugin) {
 								if (handled) return;
 								if (plugin["canHandle"](fullname)) {
-									plugin["handle"](byteArray, fullname, finish, function() {
+									plugin["handle"](byteArray, fullname, finish, function () {
 										if (onerror) onerror();
 										removeRunDependency(dep);
 									});
@@ -10830,7 +10840,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						if (typeof url == "string") {
 							Browser.asyncLoad(
 								url,
-								function(byteArray) {
+								function (byteArray) {
 									processData(byteArray);
 								},
 								onerror
@@ -10839,7 +10849,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							processData(url);
 						}
 					},
-					indexedDB: function() {
+					indexedDB: function () {
 						return (
 							window.indexedDB ||
 							window.mozIndexedDB ||
@@ -10847,14 +10857,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							window.msIndexedDB
 						);
 					},
-					DB_NAME: function() {
+					DB_NAME: function () {
 						return "EM_FS_" + window.location.pathname;
 					},
 					DB_VERSION: 20,
 					DB_STORE_NAME: "FILE_DATA",
-					saveFilesToDB: function(paths, onload, onerror) {
-						onload = onload || function() {};
-						onerror = onerror || function() {};
+					saveFilesToDB: function (paths, onload, onerror) {
+						onload = onload || function () {};
+						onerror = onerror || function () {};
 						var indexedDB = FS.indexedDB();
 						try {
 							var openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION);
@@ -10877,7 +10887,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								if (fail == 0) onload();
 								else onerror();
 							}
-							paths.forEach(function(path) {
+							paths.forEach(function (path) {
 								var putRequest = files.put(
 									FS.analyzePath(path).object.contents,
 									path
@@ -10895,9 +10905,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						};
 						openRequest.onerror = onerror;
 					},
-					loadFilesFromDB: function(paths, onload, onerror) {
-						onload = onload || function() {};
-						onerror = onerror || function() {};
+					loadFilesFromDB: function (paths, onload, onerror) {
+						onload = onload || function () {};
+						onerror = onerror || function () {};
 						var indexedDB = FS.indexedDB();
 						try {
 							var openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION);
@@ -10924,7 +10934,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 								if (fail == 0) onload();
 								else onerror();
 							}
-							paths.forEach(function(path) {
+							paths.forEach(function (path) {
 								var getRequest = files.get(path);
 								getRequest.onsuccess = function getRequest_onsuccess() {
 									if (FS.analyzePath(path).exists) {
@@ -10955,7 +10965,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					mappings: {},
 					DEFAULT_POLLMASK: 5,
 					umask: 511,
-					calculateAt: function(dirfd, path) {
+					calculateAt: function (dirfd, path) {
 						if (path[0] !== "/") {
 							var dir;
 							if (dirfd === -100) {
@@ -10969,7 +10979,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return path;
 					},
-					doStat: function(func, path, buf) {
+					doStat: function (func, path, buf) {
 						try {
 							var stat = func(path);
 						} catch (e) {
@@ -11037,18 +11047,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 							(HEAP32[(buf + 84) >> 2] = tempI64[1]);
 						return 0;
 					},
-					doMsync: function(addr, stream, len, flags, offset) {
+					doMsync: function (addr, stream, len, flags, offset) {
 						var buffer = HEAPU8.slice(addr, addr + len);
 						FS.msync(stream, buffer, offset, len, flags);
 					},
-					doMkdir: function(path, mode) {
+					doMkdir: function (path, mode) {
 						path = PATH.normalize(path);
 						if (path[path.length - 1] === "/")
 							path = path.substr(0, path.length - 1);
 						FS.mkdir(path, mode, 0);
 						return 0;
 					},
-					doMknod: function(path, mode, dev) {
+					doMknod: function (path, mode, dev) {
 						switch (mode & 61440) {
 							case 32768:
 							case 8192:
@@ -11062,7 +11072,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						FS.mknod(path, mode, dev);
 						return 0;
 					},
-					doReadlink: function(path, buf, bufsize) {
+					doReadlink: function (path, buf, bufsize) {
 						if (bufsize <= 0) return -28;
 						var ret = FS.readlink(path);
 						var len = Math.min(bufsize, lengthBytesUTF8(ret));
@@ -11071,7 +11081,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						HEAP8[buf + len] = endChar;
 						return len;
 					},
-					doAccess: function(path, amode) {
+					doAccess: function (path, amode) {
 						if (amode & ~7) {
 							return -28;
 						}
@@ -11090,12 +11100,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return 0;
 					},
-					doDup: function(path, flags, suggestFD) {
+					doDup: function (path, flags, suggestFD) {
 						var suggest = FS.getStream(suggestFD);
 						if (suggest) FS.close(suggest);
 						return FS.open(path, flags, 0, suggestFD, suggestFD).fd;
 					},
-					doReadv: function(stream, iov, iovcnt, offset) {
+					doReadv: function (stream, iov, iovcnt, offset) {
 						var ret = 0;
 						for (var i = 0; i < iovcnt; i++) {
 							var ptr = HEAP32[(iov + i * 8) >> 2];
@@ -11107,7 +11117,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						}
 						return ret;
 					},
-					doWritev: function(stream, iov, iovcnt, offset) {
+					doWritev: function (stream, iov, iovcnt, offset) {
 						var ret = 0;
 						for (var i = 0; i < iovcnt; i++) {
 							var ptr = HEAP32[(iov + i * 8) >> 2];
@@ -11119,21 +11129,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 						return ret;
 					},
 					varargs: undefined,
-					get: function() {
+					get: function () {
 						SYSCALLS.varargs += 4;
 						var ret = HEAP32[(SYSCALLS.varargs - 4) >> 2];
 						return ret;
 					},
-					getStr: function(ptr) {
+					getStr: function (ptr) {
 						var ret = UTF8ToString(ptr);
 						return ret;
 					},
-					getStreamFromFD: function(fd) {
+					getStreamFromFD: function (fd) {
 						var stream = FS.getStream(fd);
 						if (!stream) throw new FS.ErrnoError(8);
 						return stream;
 					},
-					get64: function(low, high) {
+					get64: function (low, high) {
 						return low;
 					}
 				};
@@ -11532,7 +11542,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					HEAP32[(tmPtr + 28) >> 2] = yday;
 					return (date.getTime() / 1e3) | 0;
 				}
-				var FSNode = function(parent, name, mode, rdev) {
+				var FSNode = function (parent, name, mode, rdev) {
 					if (!parent) {
 						parent = this;
 					}
@@ -11550,28 +11560,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				var writeMode = 146;
 				Object.defineProperties(FSNode.prototype, {
 					read: {
-						get: function() {
+						get: function () {
 							return (this.mode & readMode) === readMode;
 						},
-						set: function(val) {
+						set: function (val) {
 							val ? (this.mode |= readMode) : (this.mode &= ~readMode);
 						}
 					},
 					write: {
-						get: function() {
+						get: function () {
 							return (this.mode & writeMode) === writeMode;
 						},
-						set: function(val) {
+						set: function (val) {
 							val ? (this.mode |= writeMode) : (this.mode &= ~writeMode);
 						}
 					},
 					isFolder: {
-						get: function() {
+						get: function () {
 							return FS.isDir(this.mode);
 						}
 					},
 					isDevice: {
-						get: function() {
+						get: function () {
 							return FS.isChrdev(this.mode);
 						}
 					}
@@ -11584,8 +11594,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					NODEFS.staticInit();
 				}
 				if (ENVIRONMENT_IS_NODE) {
-					var _wrapNodeError = function(func) {
-						return function() {
+					var _wrapNodeError = function (func) {
+						return function () {
 							try {
 								return func.apply(this, arguments);
 							} catch (e) {
@@ -11617,7 +11627,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				var decodeBase64 =
 					typeof atob === "function"
 						? atob
-						: function(input) {
+						: function (input) {
 								var keyStr =
 									"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 								var output = "";
@@ -11798,8 +11808,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 					}
 					if (Module["setStatus"]) {
 						Module["setStatus"]("Running...");
-						setTimeout(function() {
-							setTimeout(function() {
+						setTimeout(function () {
+							setTimeout(function () {
 								Module["setStatus"]("");
 							}, 1);
 							doRun();
@@ -11822,63 +11832,63 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 				/***/
 			},
 
-			/***/ 417: /***/ module => {
+			/***/ 417: /***/ (module) => {
 				"use strict";
 				module.exports = require("crypto");
 
 				/***/
 			},
 
-			/***/ 747: /***/ module => {
+			/***/ 747: /***/ (module) => {
 				"use strict";
 				module.exports = require("fs");
 
 				/***/
 			},
 
-			/***/ 282: /***/ module => {
+			/***/ 282: /***/ (module) => {
 				"use strict";
 				module.exports = require("module");
 
 				/***/
 			},
 
-			/***/ 87: /***/ module => {
+			/***/ 87: /***/ (module) => {
 				"use strict";
 				module.exports = require("os");
 
 				/***/
 			},
 
-			/***/ 622: /***/ module => {
+			/***/ 622: /***/ (module) => {
 				"use strict";
 				module.exports = require("path");
 
 				/***/
 			},
 
-			/***/ 413: /***/ module => {
+			/***/ 413: /***/ (module) => {
 				"use strict";
 				module.exports = require("stream");
 
 				/***/
 			},
 
-			/***/ 304: /***/ module => {
+			/***/ 304: /***/ (module) => {
 				"use strict";
 				module.exports = require("string_decoder");
 
 				/***/
 			},
 
-			/***/ 835: /***/ module => {
+			/***/ 835: /***/ (module) => {
 				"use strict";
 				module.exports = require("url");
 
 				/***/
 			},
 
-			/***/ 669: /***/ module => {
+			/***/ 669: /***/ (module) => {
 				"use strict";
 				module.exports = require("util");
 
@@ -11920,7 +11930,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 		/************************************************************************/
 		/******/ /******/ (() => {
 			/******/ // getDefaultExport function for compatibility with non-harmony modules
-			/******/ __webpack_require__.n = module => {
+			/******/ __webpack_require__.n = (module) => {
 				/******/ var getter =
 					module && module.__esModule
 						? /******/ () => module["default"]
