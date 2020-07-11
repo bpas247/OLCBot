@@ -9,10 +9,7 @@ exports.cleanup = async (db) => {
     await db.query("CREATE TABLE IF NOT EXISTS memes(id text, message text, attachment text)");
     await db.query("CREATE TABLE IF NOT EXISTS meme_count (id text, count int)");
 };
-exports.default = (pgp) => pgp({
-    host: "localhost",
-    port: 5432,
-    database: "test",
-    user: "postgres",
-    password: process.env.CI ? undefined : "1234"
-});
+exports.default = (pgp) => {
+    pgp.pg.defaults.ssl = false;
+    return pgp(process.env.DATABASE_URL);
+};
