@@ -26,11 +26,11 @@ const cogs = [
     new cog_1.default("motivate", () => Utilities_1.randomGrab(messages_1.motivate), "Generate a random motivation"),
     new cog_1.default("help", () => {
         let out = "Here are the list of commands that are available:\n\n";
-        cogs.forEach(cog => {
+        cogs.forEach((cog) => {
             if (cog.help) {
                 out += `\`!${cog.command}\` - ${cog.help}\n`;
                 if (cog.args && cog.args.length > 0)
-                    cog.args.forEach(arg => {
+                    cog.args.forEach((arg) => {
                         out += `\t\`${arg.command}\` - ${arg.help}\n`;
                     });
             }
@@ -51,7 +51,7 @@ const cogs = [
     meme_ruler_1.default
 ];
 const cogsMap = new Map();
-cogs.forEach(cog => {
+cogs.forEach((cog) => {
     cogsMap.set(cog.command, cog);
 });
 exports.default = cogsMap;

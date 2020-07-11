@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.randomGrab = exports.isValidDate = void 0;
 exports.isValidDate = (text) => {
     const t = text.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
     if (t !== null) {

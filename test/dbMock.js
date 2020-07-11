@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.cleanup = void 0;
 exports.cleanup = async (db) => {
     await db.any("DROP TABLE IF EXISTS birthday");
     await db.any("DROP TABLE IF EXISTS memes");

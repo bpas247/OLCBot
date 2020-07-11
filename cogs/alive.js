@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.alive = exports.calculateTimeDist = void 0;
 const cog_1 = __importDefault(require("./cog"));
 const startDate = new Date();
 exports.calculateTimeDist = (startDate, endDate) => {

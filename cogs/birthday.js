@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.listUsers = exports.updateEntry = exports.isDuplicateEntry = exports.isInDatabase = exports.getDateFromArgs = void 0;
 const Utilities_1 = require("../util/Utilities");
 const cog_1 = __importDefault(require("./cog"));
 exports.getDateFromArgs = (args) => {
@@ -52,7 +53,7 @@ exports.updateEntry = async (authorId, date, result, db) => {
 exports.listUsers = (result, users) => {
     let out = "List of everyone's birthday goes as follows:";
     for (const row of result) {
-        const name = users.find(user => user.id == row.id);
+        const name = users.find((user) => user.id == row.id);
         if (name) {
             const userName = name.username;
             out += `\n${userName} - ${row.date}`;

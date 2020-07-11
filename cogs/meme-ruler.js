@@ -3,11 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateCount = exports.listCounts = void 0;
 const cog_1 = __importDefault(require("./cog"));
 exports.listCounts = (result, users) => {
     let out = "List of everyone's scores:";
     for (const row of result) {
-        const name = users.find(user => user.id == row.id);
+        const name = users.find((user) => user.id == row.id);
         if (name) {
             const userName = name.username;
             out += "\n" + userName + " - " + row.count;

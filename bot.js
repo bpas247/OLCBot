@@ -3,10 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("dotenv").config();
+exports.onMessage = exports.onCommand = exports.onCreate = void 0;
 const discord_js_1 = __importDefault(require("discord.js"));
 // Import cogs
 const cogs_1 = __importDefault(require("./cogs/cogs"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 // Prefix
 const Prefix = "!";
 // Load up the db
@@ -25,10 +27,7 @@ exports.onCommand = async (message, db) => {
     // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
     // command = say
     // args = ["Is", "this", "the", "real", "life?"]
-    const args = message.content
-        .slice(Prefix.length)
-        .trim()
-        .split(/ +/g);
+    const args = message.content.slice(Prefix.length).trim().split(/ +/g);
     const command = args.shift();
     // Default case
     let outMessage = "Command not recognized";
