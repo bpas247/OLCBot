@@ -64,7 +64,7 @@ export const listUsers = (result: any, users: Collection<Snowflake, User>) => {
 	let out = "List of everyone's birthday goes as follows:";
 
 	for (const row of result) {
-		const name: undefined | User = users.find(user => user.id == row.id);
+		const name: undefined | User = users.find((user) => user.id == row.id);
 
 		if (name) {
 			const userName: string = name.username;

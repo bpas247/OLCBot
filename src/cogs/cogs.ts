@@ -36,11 +36,11 @@ const cogs: Array<Cog> = [
 	),
 	new Cog("help", () => {
 		let out = "Here are the list of commands that are available:\n\n";
-		cogs.forEach(cog => {
+		cogs.forEach((cog) => {
 			if (cog.help) {
 				out += `\`!${cog.command}\` - ${cog.help}\n`;
 				if (cog.args && cog.args.length > 0)
-					cog.args.forEach(arg => {
+					cog.args.forEach((arg) => {
 						out += `\t\`${arg.command}\` - ${arg.help}\n`;
 					});
 			}
@@ -66,7 +66,7 @@ const cogs: Array<Cog> = [
 
 const cogsMap: Map<string, Cog> = new Map<string, Cog>();
 
-cogs.forEach(cog => {
+cogs.forEach((cog) => {
 	cogsMap.set(cog.command, cog);
 });
 

@@ -10,7 +10,7 @@ const args: Array<string> = [];
 
 function foundInArray(toFind: string, arr: Array<string>) {
 	let out = false;
-	arr.forEach(element => {
+	arr.forEach((element) => {
 		if (toFind === element) out = true;
 	});
 
