@@ -9,7 +9,7 @@ export const listCounts = (
 	let out = "List of everyone's scores:";
 
 	for (const row of result) {
-		const name: User | undefined = users.find(user => user.id == row.id);
+		const name: User | undefined = users.find((user) => user.id == row.id);
 
 		if (name) {
 			const userName: string = name.username;

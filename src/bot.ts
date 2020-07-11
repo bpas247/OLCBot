@@ -32,10 +32,7 @@ export const onCommand = async (message: Message, db: IDatabase<any>) => {
 	// e.g. if we have the message "+say Is this the real life?" , we'll get the following:
 	// command = say
 	// args = ["Is", "this", "the", "real", "life?"]
-	const args = message.content
-		.slice(Prefix.length)
-		.trim()
-		.split(/ +/g);
+	const args = message.content.slice(Prefix.length).trim().split(/ +/g);
 
 	const command: string | undefined = args.shift();
 
