@@ -1,0 +1,18 @@
+version: "3"
+services:
+  bot:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://postgres:test@postgres
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+  postgres:
+    image: "postgres:13-alpine"
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test
