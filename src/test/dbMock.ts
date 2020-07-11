@@ -12,11 +12,7 @@ export const cleanup = async (db: IDatabase<any>) => {
 	await db.query("CREATE TABLE IF NOT EXISTS meme_count (id text, count int)");
 };
 
-export default (pgp: IMain) =>
-	pgp({
-		host: "localhost",
-		port: 5432,
-		database: "test",
-		user: "postgres",
-		password: process.env.CI ? undefined : "1234"
-	});
+export default (pgp: IMain) => {
+	pgp.pg.defaults.ssl = false;
+	return pgp(process.env.DATABASE_URL as string);
+};
