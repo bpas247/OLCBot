@@ -24,7 +24,7 @@ describe("birthday", () => {
 
 	it("should list all birthdays", async () => {
 		const anyStub: SinonStub = sinon.stub();
-		const users: Array<object> = [
+		const users: Array<any> = [
 			{
 				id: 12345,
 				date: "01/01/2000",

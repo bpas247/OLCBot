@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 import Discord, { Message } from "discord.js";
 
 // Import cogs
@@ -7,6 +5,8 @@ import cogs from "./cogs/cogs";
 import Cog from "./cogs/cog";
 // import { updateCount } from './cogs/meme-ruler';
 import { IDatabase } from "pg-promise";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Prefix
 const Prefix = "!";
