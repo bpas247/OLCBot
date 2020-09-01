@@ -7,6 +7,6 @@
   "dependencies": {
     "discord.js": "11.6.4",
     "dotenv": "8.2.0",
-    "pg-promise": "10.5.8"
+    "pg-promise": "10.6.1"
   }
 }
