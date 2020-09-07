@@ -2156,7 +2156,7 @@ __metadata:
     dotenv: 8.2.0
     eslint: 7.8.1
     eslint-config-prettier: 6.11.0
-    husky: 4.2.5
+    husky: 4.3.0
     jest: 26.4.2
     pg-promise: 10.6.1
     prettier: 2.1.1
@@ -2907,6 +2907,19 @@ __metadata:
     path-type: ^4.0.0
     yaml: ^1.7.2
   checksum: bbd6bbaefe15938107da21f2b5f2d5ede75c7ed4bca5af904d91987c59b050ac95f5e786d9021e16959e0119b36174b190f6040a1daf6fddc75361ab123c0d45
+  languageName: node
+  linkType: hard
+
+"cosmiconfig@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "cosmiconfig@npm:7.0.0"
+  dependencies:
+    "@types/parse-json": ^4.0.0
+    import-fresh: ^3.2.1
+    parse-json: ^5.0.0
+    path-type: ^4.0.0
+    yaml: ^1.10.0
+  checksum: 151fcb91773c0ae826fc801eab86f8f818605dbf63c8e5515adf0ff0fec5ede8e614f387f93c088d65527a2ea9021f0cd8c6b6e5c7fef2b77480b5e2c33700dc
   languageName: node
   linkType: hard
 
@@ -4911,14 +4924,14 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"husky@npm:4.2.5":
-  version: 4.2.5
-  resolution: "husky@npm:4.2.5"
+"husky@npm:4.3.0":
+  version: 4.3.0
+  resolution: "husky@npm:4.3.0"
   dependencies:
     chalk: ^4.0.0
     ci-info: ^2.0.0
     compare-versions: ^3.6.0
-    cosmiconfig: ^6.0.0
+    cosmiconfig: ^7.0.0
     find-versions: ^3.2.0
     opencollective-postinstall: ^2.0.2
     pkg-dir: ^4.2.0
@@ -4928,7 +4941,7 @@ fsevents@^2.1.2:
   bin:
     husky-run: bin/run.js
     husky-upgrade: lib/upgrader/bin.js
-  checksum: 9d03d38c66688ab61166b425aa70229665c93a2a6fbd0d7388923205622fe34c6cc4c251777337b0813a40891750a18d603eff8451a58d06953807535a8908ed
+  checksum: c212d9732de84cbd7c25d907b874f7844503f85e28c0512518cddbac9854c54f1c569e81c5b70387f1e3c27d35c2b43256c811cf06fdad066565c5fc178f33f7
   languageName: node
   linkType: hard
 
@@ -11595,6 +11608,13 @@ typescript@3.9.7:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: a2960ef879af6ee67a76cae29bac9d8bffeb6e9e366c217dbd21464e7fce071933705544724f47e90ba5209cf9c83c17d5582dd04415d86747a826b2a231efb8
+  languageName: node
+  linkType: hard
+
+"yaml@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "yaml@npm:1.10.0"
+  checksum: d4cc9f9724f8d0aebc2cf52e4e6aa7059f12d50deb54b5225d103462fb2af36e5c0bb419101ca4b1f0cd3b4db9e4139cf2c690e863ac6227648d39d6f4e2522c
   languageName: node
   linkType: hard
 
