@@ -1313,7 +1313,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:26.0.13, @types/jest@npm:26.x":
+"@types/jest@npm:26.0.14":
+  version: 26.0.14
+  resolution: "@types/jest@npm:26.0.14"
+  dependencies:
+    jest-diff: ^25.2.1
+    pretty-format: ^25.2.1
+  checksum: bddbe82d12217c5217efabcad09e4fbe2c5eaecf9392da9b0edbe4c3d9fb240b3fab914f88c5f3708f6d5046640a2782458944873eae4ac01abcb17d32d3c78f
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:26.x":
   version: 26.0.13
   resolution: "@types/jest@npm:26.0.13"
   dependencies:
@@ -2173,7 +2183,7 @@ __metadata:
     "@semantic-release/github": 7.1.1
     "@semantic-release/npm": 7.0.6
     "@semantic-release/release-notes-generator": 9.0.1
-    "@types/jest": 26.0.13
+    "@types/jest": 26.0.14
     "@types/node": 13.13.20
     "@types/sinon": 9.0.5
     "@typescript-eslint/eslint-plugin": 3.10.1
