@@ -2199,7 +2199,7 @@ __metadata:
     pretty-quick: 2.0.2
     semantic-release: 17.1.2
     sinon: 9.0.3
-    ts-jest: 26.3.0
+    ts-jest: 26.4.0
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
@@ -6064,7 +6064,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"jest-util@npm:26.x, jest-util@npm:^26.3.0":
+"jest-util@npm:^26.1.0, jest-util@npm:^26.3.0":
   version: 26.3.0
   resolution: "jest-util@npm:26.3.0"
   dependencies:
@@ -10867,27 +10867,27 @@ resolve@^1.17.0:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:26.3.0":
-  version: 26.3.0
-  resolution: "ts-jest@npm:26.3.0"
+"ts-jest@npm:26.4.0":
+  version: 26.4.0
+  resolution: "ts-jest@npm:26.4.0"
   dependencies:
     "@types/jest": 26.x
     bs-logger: 0.x
     buffer-from: 1.x
     fast-json-stable-stringify: 2.x
-    jest-util: 26.x
+    jest-util: ^26.1.0
     json5: 2.x
     lodash.memoize: 4.x
     make-error: 1.x
     mkdirp: 1.x
     semver: 7.x
-    yargs-parser: 18.x
+    yargs-parser: 20.x
   peerDependencies:
     jest: ">=26 <27"
     typescript: ">=3.8 <5.0"
   bin:
     ts-jest: cli.js
-  checksum: aa20f07590814fe6c587733cc0278da12e0f6ed08828ed2904671cf29d31b6d1fbb67320221ad2ac7396c369df1ee777bcec7c3dfda0e383968423e78b41bfe5
+  checksum: 1c3d1aad6d62d016eaad42fdaeb9592fed2c19b3ed11a284667c1f8cfc74e8b7fd707fea3af6ca361b26b4e850a7b51a7bc856748061f4256193f3c11dec0f3a
   languageName: node
   linkType: hard
 
@@ -11663,13 +11663,10 @@ typescript@3.9.7:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:18.x, yargs-parser@npm:^18.1.2":
-  version: 18.1.2
-  resolution: "yargs-parser@npm:18.1.2"
-  dependencies:
-    camelcase: ^5.0.0
-    decamelize: ^1.2.0
-  checksum: 500c5c4268fdbf8ba31ee97132f218b547607987714b1d543f44c7da78baf18ac84b0fa6270070d1e4ca40417a08e3a509073da80c3de4e5ccf076bce40dd85d
+"yargs-parser@npm:20.x":
+  version: 20.1.0
+  resolution: "yargs-parser@npm:20.1.0"
+  checksum: 7a4f52770106fb7e3d792d7df7b8b4d594d15c67b19dd3a0c98e5ee5c019a6e9d3dea556afdccd842278d9993e367d3c597e56f5e6250dce8cc93d31e87ce775
   languageName: node
   linkType: hard
 
@@ -11690,6 +11687,16 @@ typescript@3.9.7:
     camelcase: ^5.0.0
     decamelize: ^1.2.0
   checksum: 8d857933ccbf63c542b46b57bc3c8fef28fcc209bfd386963c5d7922d459a159564c7a7f1d18948ae59dd945e83d9d39b7818e7aac5b7b94ef980f39bb3fb766
+  languageName: node
+  linkType: hard
+
+"yargs-parser@npm:^18.1.2":
+  version: 18.1.2
+  resolution: "yargs-parser@npm:18.1.2"
+  dependencies:
+    camelcase: ^5.0.0
+    decamelize: ^1.2.0
+  checksum: 500c5c4268fdbf8ba31ee97132f218b547607987714b1d543f44c7da78baf18ac84b0fa6270070d1e4ca40417a08e3a509073da80c3de4e5ccf076bce40dd85d
   languageName: node
   linkType: hard
 
