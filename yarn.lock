@@ -87,7 +87,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.2.3":
+"pg-connection-string@npm:^2.3.0":
   version: 2.3.0
   resolution: "pg-connection-string@npm:2.3.0"
   checksum: 610d03707d0544af81900facd4b7ef2d7527ea9c016c091c292966d77b53ca56327a3e1fc9a527b94094df356cba1be3bc8de72903ef9c1cd9622d4469d91196
@@ -117,15 +117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.5.8":
-  version: 10.5.8
-  resolution: "pg-promise@npm:10.5.8"
+"pg-promise@npm:10.6.2":
+  version: 10.6.2
+  resolution: "pg-promise@npm:10.6.2"
   dependencies:
     assert-options: 0.6.2
-    pg: 8.2.2
+    pg: 8.3.3
     pg-minify: 1.6.1
     spex: 3.0.2
-  checksum: a2d4f97e093f9f9d24609f6c93557d563b991aaaa33816ff52d5fdfc396c37cd8bb822100f0773b56e817e7b0d82aa91a73af5a50c3848d789e47f44bd428ae1
+  checksum: bdb3d4e0a88eecc4b5bfeece796e11f2b3b3e16e489f29a55744760d22fc532f8a4e30b3f6c7578c7bda24d2900b663f7a9997e71de0fcabddbf3f3892cd9733
   languageName: node
   linkType: hard
 
@@ -149,19 +149,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:8.2.2":
-  version: 8.2.2
-  resolution: "pg@npm:8.2.2"
+"pg@npm:8.3.3":
+  version: 8.3.3
+  resolution: "pg@npm:8.3.3"
   dependencies:
     buffer-writer: 2.0.0
     packet-reader: 1.0.0
-    pg-connection-string: ^2.2.3
+    pg-connection-string: ^2.3.0
     pg-pool: ^3.2.1
     pg-protocol: ^1.2.5
     pg-types: ^2.1.0
     pgpass: 1.x
     semver: 4.3.2
-  checksum: 62542559a31c570290baccca982b404662a7b4f2bdf64c281621448126c37d8361508f656abbc94856b0dc954ad931965b26910a8be940a4ed2961cab278d8b5
+  checksum: 56fc9d6c8537cc5ba5136861fc7fdfc284afb885034c617446af7ea8ce521b5c0514ffad1e1818ab12c800f0531934776a43434b05d87f56939156dbe562679c
   languageName: node
   linkType: hard
 
@@ -217,7 +217,7 @@ __metadata:
   dependencies:
     discord.js: 11.6.4
     dotenv: 8.2.0
-    pg-promise: 10.5.8
+    pg-promise: 10.6.2
   languageName: unknown
   linkType: soft
 
