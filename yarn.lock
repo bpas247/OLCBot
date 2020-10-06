@@ -1116,12 +1116,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/commons@npm:^1.7.2":
-  version: 1.8.0
-  resolution: "@sinonjs/commons@npm:1.8.0"
+"@sinonjs/commons@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@sinonjs/commons@npm:1.8.1"
   dependencies:
     type-detect: 4.0.8
-  checksum: 57e07458d899a3f09bd46e79445b4210837c37cbd9c9e5be9dd7746be0a02a0f9897f8dcde5e89836b1af7e2fc6cb6765626a37066747e8acc863c1b8b6fdccb
+  checksum: adbf84a27bc895ca7bbe8ea9f53df9b5625a3d4fd54bc9390c88fa86a75b9d6d56722032336ab294c184862a09640932d794c347a4ed265c9ea126d966d0bf23
   languageName: node
   linkType: hard
 
@@ -1164,14 +1164,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/samsam@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "@sinonjs/samsam@npm:5.1.0"
+"@sinonjs/samsam@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@sinonjs/samsam@npm:5.2.0"
   dependencies:
     "@sinonjs/commons": ^1.6.0
     lodash.get: ^4.4.2
     type-detect: ^4.0.8
-  checksum: 666f5da1d766c05c3d6ae88a798c7c5eb2f353af1c05b2caa02570df9f5ee5714238611203917e66ebca928bda4b41a0e1ec14622a86fdc2299c2ab24a362321
+  checksum: 744832bd12140eca2f122c7cc19830a8335969447730723712919df8fac12923ad4f712c7468e7b08f7b75f13bea4f8ed951e9750bf539638c3a7bb88a35cdd6
   languageName: node
   linkType: hard
 
@@ -2220,7 +2220,7 @@ __metadata:
     prettier: 2.1.2
     pretty-quick: 2.0.2
     semantic-release: 17.1.2
-    sinon: 9.1.0
+    sinon: 9.2.0
     ts-jest: 26.4.1
     typescript: 3.9.7
   languageName: unknown
@@ -9967,18 +9967,18 @@ resolve@^1.17.0:
   languageName: node
   linkType: hard
 
-"sinon@npm:9.1.0":
-  version: 9.1.0
-  resolution: "sinon@npm:9.1.0"
+"sinon@npm:9.2.0":
+  version: 9.2.0
+  resolution: "sinon@npm:9.2.0"
   dependencies:
-    "@sinonjs/commons": ^1.7.2
+    "@sinonjs/commons": ^1.8.1
     "@sinonjs/fake-timers": ^6.0.1
     "@sinonjs/formatio": ^5.0.1
-    "@sinonjs/samsam": ^5.1.0
+    "@sinonjs/samsam": ^5.2.0
     diff: ^4.0.2
     nise: ^4.0.4
     supports-color: ^7.1.0
-  checksum: 4c98931bd7e37b3125731b564bd35667c89d8a2c053f51883066282ee618d8f62204fea861b2bd83e2b3fa4e0e56473b11d29673d97e5601ab2851a819e2e8f9
+  checksum: b3db80ed30c61dbba8a45cc5617388fed3757eb99eb808d28dc87bd95cdf8a6b0f4bac748ce31b78bdf15febc46685cea93f68bb42e2601706c4ecfb018af831
   languageName: node
   linkType: hard
 
