@@ -1335,13 +1335,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:26.0.14":
-  version: 26.0.14
-  resolution: "@types/jest@npm:26.0.14"
+"@types/jest@npm:26.0.15":
+  version: 26.0.15
+  resolution: "@types/jest@npm:26.0.15"
   dependencies:
-    jest-diff: ^25.2.1
-    pretty-format: ^25.2.1
-  checksum: bddbe82d12217c5217efabcad09e4fbe2c5eaecf9392da9b0edbe4c3d9fb240b3fab914f88c5f3708f6d5046640a2782458944873eae4ac01abcb17d32d3c78f
+    jest-diff: ^26.0.0
+    pretty-format: ^26.0.0
+  checksum: 42fe39d582de1d79f9d6b96f3dee43ba2e9336c9d1f0e31c4f2f58bbaa059c9f4295c42a213ea9450f91400515a3abde4aae2673522fc6e11ea33f7e21c25dbe
   languageName: node
   linkType: hard
 
@@ -2205,7 +2205,7 @@ __metadata:
     "@semantic-release/github": 7.1.1
     "@semantic-release/npm": 7.0.6
     "@semantic-release/release-notes-generator": 9.0.1
-    "@types/jest": 26.0.14
+    "@types/jest": 26.0.15
     "@types/node": 13.13.26
     "@types/sinon": 9.0.8
     "@typescript-eslint/eslint-plugin": 3.10.1
@@ -5795,7 +5795,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^26.6.0":
+"jest-diff@npm:^26.0.0, jest-diff@npm:^26.6.0":
   version: 26.6.0
   resolution: "jest-diff@npm:26.6.0"
   dependencies:
@@ -8933,7 +8933,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^26.6.0":
+"pretty-format@npm:^26.0.0, pretty-format@npm:^26.6.0":
   version: 26.6.0
   resolution: "pretty-format@npm:26.6.0"
   dependencies:

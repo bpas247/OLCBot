@@ -19,7 +19,7 @@
 		"@semantic-release/github": "7.1.1",
 		"@semantic-release/npm": "7.0.6",
 		"@semantic-release/release-notes-generator": "9.0.1",
-		"@types/jest": "26.0.14",
+		"@types/jest": "26.0.15",
 		"@types/node": "13.13.26",
 		"@types/sinon": "9.0.8",
 		"@typescript-eslint/eslint-plugin": "3.10.1",
