@@ -1392,10 +1392,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:13.13.27":
-  version: 13.13.27
-  resolution: "@types/node@npm:13.13.27"
-  checksum: d47d3d6e36762a260f3d63f0930d2c14ccf45f6c62445c440ea1bdcaf27759f96706fac9a143c073f5a326e857dcdebd5c7857fbe6f9e439b2c41179864eb7d7
+"@types/node@npm:13.13.28":
+  version: 13.13.28
+  resolution: "@types/node@npm:13.13.28"
+  checksum: a65a138179bfc693c2038356dacddff78ae2cbe5f74d6ec67279bbd9a2bda858d0ee2793c1d52df0a65393a4256bb0a3ee5d65e9d0a57c6f55b2a3552af3a4aa
   languageName: node
   linkType: hard
 
@@ -2206,7 +2206,7 @@ __metadata:
     "@semantic-release/npm": 7.0.6
     "@semantic-release/release-notes-generator": 9.0.1
     "@types/jest": 26.0.15
-    "@types/node": 13.13.27
+    "@types/node": 13.13.28
     "@types/sinon": 9.0.8
     "@typescript-eslint/eslint-plugin": 3.10.1
     "@typescript-eslint/parser": 3.10.1
