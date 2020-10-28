@@ -2240,7 +2240,7 @@ __metadata:
     prettier: 2.1.2
     pretty-quick: 2.0.2
     semantic-release: 17.2.1
-    sinon: 9.2.0
+    sinon: 9.2.1
     ts-jest: 26.4.3
     typescript: 3.9.7
   languageName: unknown
@@ -10026,9 +10026,9 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"sinon@npm:9.2.0":
-  version: 9.2.0
-  resolution: "sinon@npm:9.2.0"
+"sinon@npm:9.2.1":
+  version: 9.2.1
+  resolution: "sinon@npm:9.2.1"
   dependencies:
     "@sinonjs/commons": ^1.8.1
     "@sinonjs/fake-timers": ^6.0.1
@@ -10037,7 +10037,7 @@ resolve@^1.18.1:
     diff: ^4.0.2
     nise: ^4.0.4
     supports-color: ^7.1.0
-  checksum: b3db80ed30c61dbba8a45cc5617388fed3757eb99eb808d28dc87bd95cdf8a6b0f4bac748ce31b78bdf15febc46685cea93f68bb42e2601706c4ecfb018af831
+  checksum: 7c5b3b7d06c6834e7eff397cbd2b3bc11039db984b02acfc1991735d8ab39893c75147e71d4e62fdb00f52f5545b8b8e0c0e76c52768e335f49c3cd289b39043
   languageName: node
   linkType: hard
 
