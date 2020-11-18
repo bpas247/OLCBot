@@ -117,15 +117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.7.5":
-  version: 10.7.5
-  resolution: "pg-promise@npm:10.7.5"
+"pg-promise@npm:10.8.0":
+  version: 10.8.0
+  resolution: "pg-promise@npm:10.8.0"
   dependencies:
     assert-options: 0.6.2
     pg: 8.5.1
     pg-minify: 1.6.1
     spex: 3.0.2
-  checksum: 54d9c1051d19ac61fbc8b890e0fe39978931fbf382777fe4af43dfcaee1ad75c677928d8c956f3b6c95910fc9bacd374903547cd492ab9392149c351e6defa62
+  checksum: 73f3298e315ca520efc053eb0227f948c9bbe9c916fc287aea9fc348cb0cca4b3c22c858238553ce0c819d0ba2d32f2dc2999de1cab92962c25f42016c6aa4a5
   languageName: node
   linkType: hard
 
@@ -221,7 +221,7 @@ __metadata:
   dependencies:
     discord.js: 11.6.4
     dotenv: 8.2.0
-    pg-promise: 10.7.5
+    pg-promise: 10.8.0
   languageName: unknown
   linkType: soft
 
