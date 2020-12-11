@@ -1282,14 +1282,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/samsam@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@sinonjs/samsam@npm:5.2.0"
+"@sinonjs/samsam@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@sinonjs/samsam@npm:5.3.0"
   dependencies:
     "@sinonjs/commons": ^1.6.0
     lodash.get: ^4.4.2
     type-detect: ^4.0.8
-  checksum: 744832bd12140eca2f122c7cc19830a8335969447730723712919df8fac12923ad4f712c7468e7b08f7b75f13bea4f8ed951e9750bf539638c3a7bb88a35cdd6
+  checksum: 03eb6ba70c6b9c1e4a9e98c9036944c8e1a6d2d7bec649055031cd7174765f8cc6c0237a2ea1b2406cc3a1fceddf4b56cf1ba2f20021ef3503d277193b3a25ee
   languageName: node
   linkType: hard
 
@@ -2348,7 +2348,7 @@ __metadata:
     prettier: 2.2.1
     pretty-quick: 2.0.2
     semantic-release: 17.3.0
-    sinon: 9.2.1
+    sinon: 9.2.2
     ts-jest: 26.4.4
     typescript: 3.9.7
   languageName: unknown
@@ -10286,18 +10286,18 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"sinon@npm:9.2.1":
-  version: 9.2.1
-  resolution: "sinon@npm:9.2.1"
+"sinon@npm:9.2.2":
+  version: 9.2.2
+  resolution: "sinon@npm:9.2.2"
   dependencies:
     "@sinonjs/commons": ^1.8.1
     "@sinonjs/fake-timers": ^6.0.1
     "@sinonjs/formatio": ^5.0.1
-    "@sinonjs/samsam": ^5.2.0
+    "@sinonjs/samsam": ^5.3.0
     diff: ^4.0.2
     nise: ^4.0.4
     supports-color: ^7.1.0
-  checksum: 7c5b3b7d06c6834e7eff397cbd2b3bc11039db984b02acfc1991735d8ab39893c75147e71d4e62fdb00f52f5545b8b8e0c0e76c52768e335f49c3cd289b39043
+  checksum: 349e4d79c318ebab7e4775adc6884ca36cdda6766baabbc0ff4afce59eb6b4488b22270c8dd6da0cf1c838231675ecf39e51cb9c8f4f7ee049f9177c1cf0f815
   languageName: node
   linkType: hard
 
