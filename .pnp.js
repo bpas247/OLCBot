@@ -95,7 +95,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "husky",
-        "npm:4.3.5"
+        "npm:4.3.6"
       ],
       [
         "jest",
@@ -153,7 +153,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:8.2.0"],
             ["eslint", "npm:7.15.0"],
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
-            ["husky", "npm:4.3.5"],
+            ["husky", "npm:4.3.6"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.8.1"],
             ["prettier", "npm:2.2.1"],
@@ -2743,7 +2743,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:8.2.0"],
             ["eslint", "npm:7.15.0"],
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
-            ["husky", "npm:4.3.5"],
+            ["husky", "npm:4.3.6"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.8.1"],
             ["prettier", "npm:2.2.1"],
@@ -5868,10 +5868,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["husky", [
-        ["npm:4.3.5", {
-          "packageLocation": "./.yarn/cache/husky-npm-4.3.5-a013c969bb-d15ccb44da.zip/node_modules/husky/",
+        ["npm:4.3.6", {
+          "packageLocation": "./.yarn/cache/husky-npm-4.3.6-3131736f41-3c87088878.zip/node_modules/husky/",
           "packageDependencies": [
-            ["husky", "npm:4.3.5"],
+            ["husky", "npm:4.3.6"],
             ["chalk", "npm:4.0.0"],
             ["ci-info", "npm:2.0.0"],
             ["compare-versions", "npm:3.6.0"],
