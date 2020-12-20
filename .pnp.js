@@ -103,7 +103,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "pg-promise",
-        "npm:10.8.3"
+        "npm:10.8.4"
       ],
       [
         "prettier",
@@ -155,7 +155,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
             ["husky", "npm:4.3.6"],
             ["jest", "npm:26.6.3"],
-            ["pg-promise", "npm:10.8.3"],
+            ["pg-promise", "npm:10.8.4"],
             ["prettier", "npm:2.2.1"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.3.0"],
@@ -2476,10 +2476,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["assert-options", [
-        ["npm:0.6.2", {
-          "packageLocation": "./.yarn/cache/assert-options-npm-0.6.2-781928e59f-aa5c886aa3.zip/node_modules/assert-options/",
+        ["npm:0.7.0", {
+          "packageLocation": "./.yarn/cache/assert-options-npm-0.7.0-5a2df1d4cc-52b3ab4488.zip/node_modules/assert-options/",
           "packageDependencies": [
-            ["assert-options", "npm:0.6.2"]
+            ["assert-options", "npm:0.7.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2745,7 +2745,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
             ["husky", "npm:4.3.6"],
             ["jest", "npm:26.6.3"],
-            ["pg-promise", "npm:10.8.3"],
+            ["pg-promise", "npm:10.8.4"],
             ["prettier", "npm:2.2.1"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.3.0"],
@@ -9927,15 +9927,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pg", [
-        ["virtual:660f4757472db7f5da390fb048b101554729fd250a32c5ffb18e3864d73413a275c774cd9e6fbc9e1cd0077c2be192cc254ea910ee327afbd3499d00a7326f32#npm:8.5.1", {
-          "packageLocation": "./.yarn/$$virtual/pg-virtual-67c62fb663/0/cache/pg-npm-8.5.1-fadefeb3ad-b8eed3cd38.zip/node_modules/pg/",
+        ["virtual:4c9881a9e40ca69f06324e3fa937383ba313c2a44ebcb58ba217887ee5a443bb4b5f863e6c7161c41a7437162e6c99f5b6d7b9a9ed67d1114b316ed86f2302af#npm:8.5.1", {
+          "packageLocation": "./.yarn/$$virtual/pg-virtual-16088e7e57/0/cache/pg-npm-8.5.1-fadefeb3ad-b8eed3cd38.zip/node_modules/pg/",
           "packageDependencies": [
-            ["pg", "virtual:660f4757472db7f5da390fb048b101554729fd250a32c5ffb18e3864d73413a275c774cd9e6fbc9e1cd0077c2be192cc254ea910ee327afbd3499d00a7326f32#npm:8.5.1"],
+            ["pg", "virtual:4c9881a9e40ca69f06324e3fa937383ba313c2a44ebcb58ba217887ee5a443bb4b5f863e6c7161c41a7437162e6c99f5b6d7b9a9ed67d1114b316ed86f2302af#npm:8.5.1"],
             ["buffer-writer", "npm:2.0.0"],
             ["packet-reader", "npm:1.0.0"],
             ["pg-connection-string", "npm:2.4.0"],
             ["pg-native", null],
-            ["pg-pool", "virtual:67c62fb663329a9b1a9fb61acbbf18bf599f4500082588c087df1cacb419443fbf82592ea958b444815247654a2a0c12dd25c4d6c06167a938548946ee5da8f6#npm:3.2.2"],
+            ["pg-pool", "virtual:16088e7e57d13cce4130b4a5d4ca4050603e232044b806bad06bfb20e64efe07f947562b79bc9eb177ebd065cb1eeb8fb7221f676472a6947fa9a20ef67b91d6#npm:3.2.2"],
             ["pg-protocol", "npm:1.4.0"],
             ["pg-types", "npm:2.2.0"],
             ["pgpass", "npm:1.0.2"]
@@ -9965,20 +9965,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pg-minify", [
-        ["npm:1.6.1", {
-          "packageLocation": "./.yarn/cache/pg-minify-npm-1.6.1-4b18975285-e742deadd3.zip/node_modules/pg-minify/",
+        ["npm:1.6.2", {
+          "packageLocation": "./.yarn/cache/pg-minify-npm-1.6.2-3329993678-1416b35645.zip/node_modules/pg-minify/",
           "packageDependencies": [
-            ["pg-minify", "npm:1.6.1"]
+            ["pg-minify", "npm:1.6.2"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["pg-pool", [
-        ["virtual:67c62fb663329a9b1a9fb61acbbf18bf599f4500082588c087df1cacb419443fbf82592ea958b444815247654a2a0c12dd25c4d6c06167a938548946ee5da8f6#npm:3.2.2", {
-          "packageLocation": "./.yarn/$$virtual/pg-pool-virtual-cf38903684/0/cache/pg-pool-npm-3.2.2-0c6a03a132-d25d4d0757.zip/node_modules/pg-pool/",
+        ["virtual:16088e7e57d13cce4130b4a5d4ca4050603e232044b806bad06bfb20e64efe07f947562b79bc9eb177ebd065cb1eeb8fb7221f676472a6947fa9a20ef67b91d6#npm:3.2.2", {
+          "packageLocation": "./.yarn/$$virtual/pg-pool-virtual-721aad0d18/0/cache/pg-pool-npm-3.2.2-0c6a03a132-d25d4d0757.zip/node_modules/pg-pool/",
           "packageDependencies": [
-            ["pg-pool", "virtual:67c62fb663329a9b1a9fb61acbbf18bf599f4500082588c087df1cacb419443fbf82592ea958b444815247654a2a0c12dd25c4d6c06167a938548946ee5da8f6#npm:3.2.2"],
-            ["pg", "virtual:660f4757472db7f5da390fb048b101554729fd250a32c5ffb18e3864d73413a275c774cd9e6fbc9e1cd0077c2be192cc254ea910ee327afbd3499d00a7326f32#npm:8.5.1"]
+            ["pg-pool", "virtual:16088e7e57d13cce4130b4a5d4ca4050603e232044b806bad06bfb20e64efe07f947562b79bc9eb177ebd065cb1eeb8fb7221f676472a6947fa9a20ef67b91d6#npm:3.2.2"],
+            ["pg", "virtual:4c9881a9e40ca69f06324e3fa937383ba313c2a44ebcb58ba217887ee5a443bb4b5f863e6c7161c41a7437162e6c99f5b6d7b9a9ed67d1114b316ed86f2302af#npm:8.5.1"]
           ],
           "packagePeers": [
             "pg"
@@ -9987,13 +9987,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pg-promise", [
-        ["npm:10.8.3", {
-          "packageLocation": "./.yarn/cache/pg-promise-npm-10.8.3-660f475747-cdd55fbf85.zip/node_modules/pg-promise/",
+        ["npm:10.8.4", {
+          "packageLocation": "./.yarn/cache/pg-promise-npm-10.8.4-4c9881a9e4-fa5e876d29.zip/node_modules/pg-promise/",
           "packageDependencies": [
-            ["pg-promise", "npm:10.8.3"],
-            ["assert-options", "npm:0.6.2"],
-            ["pg", "virtual:660f4757472db7f5da390fb048b101554729fd250a32c5ffb18e3864d73413a275c774cd9e6fbc9e1cd0077c2be192cc254ea910ee327afbd3499d00a7326f32#npm:8.5.1"],
-            ["pg-minify", "npm:1.6.1"],
+            ["pg-promise", "npm:10.8.4"],
+            ["assert-options", "npm:0.7.0"],
+            ["pg", "virtual:4c9881a9e40ca69f06324e3fa937383ba313c2a44ebcb58ba217887ee5a443bb4b5f863e6c7161c41a7437162e6c99f5b6d7b9a9ed67d1114b316ed86f2302af#npm:8.5.1"],
+            ["pg-minify", "npm:1.6.2"],
             ["spex", "npm:3.1.0"]
           ],
           "linkType": "HARD",
