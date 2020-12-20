@@ -117,15 +117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.8.1":
-  version: 10.8.1
-  resolution: "pg-promise@npm:10.8.1"
+"pg-promise@npm:10.8.3":
+  version: 10.8.3
+  resolution: "pg-promise@npm:10.8.3"
   dependencies:
     assert-options: 0.6.2
     pg: 8.5.1
     pg-minify: 1.6.1
-    spex: 3.0.2
-  checksum: e6ee33fe9b227fcb6d9d09b6e59d98ac2f2a666d00e9022999e005f425f75c71d4b61d1b97037f5cb9a2799396d177baf9a95cd0429947e605b4fa1b1eaf9c6e
+    spex: 3.1.0
+  checksum: cdd55fbf85f26176a8879aa4be3d80242031f84bc27ff356ab73db37f72a8644f637db81eeb24e139982da176796be61993f4f88dd71312b70b10820f6df1f0f
   languageName: node
   linkType: hard
 
@@ -221,7 +221,7 @@ __metadata:
   dependencies:
     discord.js: 11.6.4
     dotenv: 8.2.0
-    pg-promise: 10.8.1
+    pg-promise: 10.8.3
   languageName: unknown
   linkType: soft
 
@@ -232,10 +232,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"spex@npm:3.0.2":
-  version: 3.0.2
-  resolution: "spex@npm:3.0.2"
-  checksum: 85f792af9ec69412397fd6c057553b62d0d28f90c03acf196dfd4918d7b2f0e5e98243dd88f3701cdc42d0c5f72b24aa3759bedf06b80fdd654f91651231c98b
+"spex@npm:3.1.0":
+  version: 3.1.0
+  resolution: "spex@npm:3.1.0"
+  checksum: 530530fd001309be4c6a7f921236c9632c5dbcdd99b1959b3d8fa01a0e2b3e12a8cc32c356d7daff3d38d33f8424c8984d3e8e073b8eb849a77ba38525ae0454
   languageName: node
   linkType: hard
 
