@@ -2344,7 +2344,7 @@ __metadata:
     eslint-config-prettier: 6.15.0
     husky: 4.3.6
     jest: 26.6.3
-    pg-promise: 10.8.5
+    pg-promise: 10.8.6
     prettier: 2.2.1
     pretty-quick: 2.0.2
     semantic-release: 17.3.0
@@ -9003,15 +9003,15 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.8.5":
-  version: 10.8.5
-  resolution: "pg-promise@npm:10.8.5"
+"pg-promise@npm:10.8.6":
+  version: 10.8.6
+  resolution: "pg-promise@npm:10.8.6"
   dependencies:
     assert-options: 0.7.0
     pg: 8.5.1
     pg-minify: 1.6.2
-    spex: 3.1.0
-  checksum: 393d6745831a62794a6bb91386d80920bb120a8b0c68ba82fd4e34a3891b5b034d135faf215ce4b1af9f38de8f594da00805d664defb146f9ccc009886166d3c
+    spex: 3.2.0
+  checksum: ceb64b674a39756b624d411cd71e0136689f6b6ccddcfc4dac9ed532222ce8aefb0b7150796fcca4c5ad183def9d94c569b6bdae73d2d88fd60d415a7cae8475
   languageName: node
   linkType: hard
 
@@ -10521,10 +10521,10 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"spex@npm:3.1.0":
-  version: 3.1.0
-  resolution: "spex@npm:3.1.0"
-  checksum: 530530fd001309be4c6a7f921236c9632c5dbcdd99b1959b3d8fa01a0e2b3e12a8cc32c356d7daff3d38d33f8424c8984d3e8e073b8eb849a77ba38525ae0454
+"spex@npm:3.2.0":
+  version: 3.2.0
+  resolution: "spex@npm:3.2.0"
+  checksum: a71259419cadf6a33e7853360370db2c890add2414d8779888741fcae4252842dd6fa96b43cb15979789e29cfe3ebe9d4ecffe4e155b2780f89ff6e226c463b0
   languageName: node
   linkType: hard
 
