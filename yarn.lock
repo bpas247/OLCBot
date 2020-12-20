@@ -5,10 +5,10 @@ __metadata:
   version: 4
   cacheKey: 5
 
-"assert-options@npm:0.6.2":
-  version: 0.6.2
-  resolution: "assert-options@npm:0.6.2"
-  checksum: aa5c886aa3f2dbae9957d335ad5940412670ceb41917fd3618f5b1f7c76eb8bc944f6c5a2d474ec9a142db49b6601a9864cada2fb9156d7770d57f992e0f1f53
+"assert-options@npm:0.7.0":
+  version: 0.7.0
+  resolution: "assert-options@npm:0.7.0"
+  checksum: 52b3ab44881604c1027b3b92af1ca5d61e7143606d2b5406c62a145beeb8ae04698021e52ed69967888e657fa51ec83e34c425a37bddc8112f86e86e7b3bd553
   languageName: node
   linkType: hard
 
@@ -101,10 +101,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-minify@npm:1.6.1":
-  version: 1.6.1
-  resolution: "pg-minify@npm:1.6.1"
-  checksum: e742deadd3dfac417253ca4cf95ef6504cd26eeb3a5766efec81f243ecd3bfa19db2a3e5dd93c148bda0489441d75a787b553ec26c3693e17d25d852c7aa0461
+"pg-minify@npm:1.6.2":
+  version: 1.6.2
+  resolution: "pg-minify@npm:1.6.2"
+  checksum: 1416b356459816e86ac6f1b2d7507526e0277731e156bfbc609c9cc1ae97510db567603f37575a1995e11994b0be1f348e59b2258034f5e5a9c9770e68fe2138
   languageName: node
   linkType: hard
 
@@ -117,15 +117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.8.3":
-  version: 10.8.3
-  resolution: "pg-promise@npm:10.8.3"
+"pg-promise@npm:10.8.4":
+  version: 10.8.4
+  resolution: "pg-promise@npm:10.8.4"
   dependencies:
-    assert-options: 0.6.2
+    assert-options: 0.7.0
     pg: 8.5.1
-    pg-minify: 1.6.1
+    pg-minify: 1.6.2
     spex: 3.1.0
-  checksum: cdd55fbf85f26176a8879aa4be3d80242031f84bc27ff356ab73db37f72a8644f637db81eeb24e139982da176796be61993f4f88dd71312b70b10820f6df1f0f
+  checksum: fa5e876d2982402c475ade0158a8ff420746622dda63da717744f1b201807d6a043f1fb0f01022a952154b0f064e39b708b9dc932e81c840ab794292e9f1f39b
   languageName: node
   linkType: hard
 
@@ -221,7 +221,7 @@ __metadata:
   dependencies:
     discord.js: 11.6.4
     dotenv: 8.2.0
-    pg-promise: 10.8.3
+    pg-promise: 10.8.4
   languageName: unknown
   linkType: soft
 
