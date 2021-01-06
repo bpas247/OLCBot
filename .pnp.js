@@ -119,7 +119,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "sinon",
-        "npm:9.2.2"
+        "npm:9.2.3"
       ],
       [
         "ts-jest",
@@ -159,7 +159,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.3.1"],
-            ["sinon", "npm:9.2.2"],
+            ["sinon", "npm:9.2.3"],
             ["ts-jest", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:26.4.4"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -1501,28 +1501,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@sinonjs/formatio", [
-        ["npm:5.0.1", {
-          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/@sinonjs-formatio-npm-5.0.1-c914aa3077-88a5b635f8.zip/node_modules/@sinonjs/formatio/",
-          "packageDependencies": [
-            ["@sinonjs/formatio", "npm:5.0.1"],
-            ["@sinonjs/commons", "npm:1.7.0"],
-            ["@sinonjs/samsam", "npm:5.0.3"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@sinonjs/samsam", [
-        ["npm:5.0.3", {
-          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/@sinonjs-samsam-npm-5.0.3-f56b9becae-4d30cab4f8.zip/node_modules/@sinonjs/samsam/",
-          "packageDependencies": [
-            ["@sinonjs/samsam", "npm:5.0.3"],
-            ["@sinonjs/commons", "npm:1.7.0"],
-            ["lodash.get", "npm:4.4.2"],
-            ["type-detect", "npm:4.0.8"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:5.3.0", {
           "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/@sinonjs-samsam-npm-5.3.0-eb9feb77fe-03eb6ba70c.zip/node_modules/@sinonjs/samsam/",
           "packageDependencies": [
@@ -2749,7 +2728,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.3.1"],
-            ["sinon", "npm:9.2.2"],
+            ["sinon", "npm:9.2.3"],
             ["ts-jest", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:26.4.4"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -11353,13 +11332,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["sinon", [
-        ["npm:9.2.2", {
-          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/sinon-npm-9.2.2-ee6013a5f6-349e4d79c3.zip/node_modules/sinon/",
+        ["npm:9.2.3", {
+          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/sinon-npm-9.2.3-dfb20a3aca-7c818e8e3b.zip/node_modules/sinon/",
           "packageDependencies": [
-            ["sinon", "npm:9.2.2"],
+            ["sinon", "npm:9.2.3"],
             ["@sinonjs/commons", "npm:1.8.1"],
             ["@sinonjs/fake-timers", "npm:6.0.1"],
-            ["@sinonjs/formatio", "npm:5.0.1"],
             ["@sinonjs/samsam", "npm:5.3.0"],
             ["diff", "npm:4.0.2"],
             ["nise", "npm:4.0.4"],
