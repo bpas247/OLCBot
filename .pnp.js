@@ -59,7 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@types/jest",
-        "npm:26.0.19"
+        "npm:26.0.20"
       ],
       [
         "@types/node",
@@ -144,7 +144,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:7.2.0"],
             ["@semantic-release/npm", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:7.0.9"],
             ["@semantic-release/release-notes-generator", "virtual:03ccb3836fbe7d2acc7eb2414966661c1e407fde242b87e6969d3a8cd611f83aa590d834e592f9019fa3171914166b70204f09e852942fe79307f9ad9821500a#npm:9.0.1"],
-            ["@types/jest", "npm:26.0.19"],
+            ["@types/jest", "npm:26.0.20"],
             ["@types/node", "npm:13.13.39"],
             ["@types/sinon", "npm:9.0.10"],
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
@@ -1701,10 +1701,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:26.0.19", {
-          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/@types-jest-npm-26.0.19-add5d117dd-98c8daaf89.zip/node_modules/@types/jest/",
+        ["npm:26.0.20", {
+          "packageLocation": "../../../../../tmp/renovate-cache/others/yarn/@types-jest-npm-26.0.20-e4c9c054bf-221e39c7c9.zip/node_modules/@types/jest/",
           "packageDependencies": [
-            ["@types/jest", "npm:26.0.19"],
+            ["@types/jest", "npm:26.0.20"],
             ["jest-diff", "npm:26.6.0"],
             ["pretty-format", "npm:26.6.0"]
           ],
@@ -2713,7 +2713,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:7.2.0"],
             ["@semantic-release/npm", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:7.0.9"],
             ["@semantic-release/release-notes-generator", "virtual:03ccb3836fbe7d2acc7eb2414966661c1e407fde242b87e6969d3a8cd611f83aa590d834e592f9019fa3171914166b70204f09e852942fe79307f9ad9821500a#npm:9.0.1"],
-            ["@types/jest", "npm:26.0.19"],
+            ["@types/jest", "npm:26.0.20"],
             ["@types/node", "npm:13.13.39"],
             ["@types/sinon", "npm:9.0.10"],
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
