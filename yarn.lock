@@ -2323,7 +2323,7 @@ __metadata:
     eslint-config-prettier: 6.15.0
     husky: 4.3.8
     jest: 26.6.3
-    pg-promise: 10.8.7
+    pg-promise: 10.9.0
     prettier: 2.2.1
     pretty-quick: 2.0.2
     semantic-release: 17.3.3
@@ -9019,15 +9019,15 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.8.7":
-  version: 10.8.7
-  resolution: "pg-promise@npm:10.8.7"
+"pg-promise@npm:10.9.0":
+  version: 10.9.0
+  resolution: "pg-promise@npm:10.9.0"
   dependencies:
     assert-options: 0.7.0
     pg: 8.5.1
     pg-minify: 1.6.2
     spex: 3.2.0
-  checksum: 98ea490ec3bd52f1a310e070bedcd53b6b39080b08e1d903eec561ca06035795cce0c2a15576a08133d06a6f38d94d342cceb26113a6a628e95678501dd7907b
+  checksum: 2efcf4e098a0d7cfabdd2c2531f867433c74043eaadff94e34d42f946aff297c78c5e6b5a27d2b869f3b8f5c8c29b562fd50a3230f79319c3e4c3563169160be
   languageName: node
   linkType: hard
 
