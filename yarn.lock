@@ -1159,9 +1159,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:7.0.9":
-  version: 7.0.9
-  resolution: "@semantic-release/npm@npm:7.0.9"
+"@semantic-release/npm@npm:7.0.10":
+  version: 7.0.10
+  resolution: "@semantic-release/npm@npm:7.0.10"
   dependencies:
     "@semantic-release/error": ^2.2.0
     aggregate-error: ^3.0.0
@@ -1170,7 +1170,7 @@ __metadata:
     lodash: ^4.17.15
     nerf-dart: ^1.0.0
     normalize-url: ^5.0.0
-    npm: ^6.14.8
+    npm: ^6.14.9
     rc: ^1.2.8
     read-pkg: ^5.0.0
     registry-auth-token: ^4.0.0
@@ -1178,7 +1178,7 @@ __metadata:
     tempy: ^1.0.0
   peerDependencies:
     semantic-release: ">=16.0.0 <18.0.0"
-  checksum: 3612c5dc5498a075fec21dc573584b7edcc7d43f959151570c68a37a3133f8f86d224991a20cfc1809b26fefe967af7643c18307fddd4ce0d57303c76282167b
+  checksum: 4a8c6a62ed1b9d5d018618b164aec38a71bbc334e26d9b2275773473cd007e8ff60eaf57243e9b4a6fecdef5557d450b0beae0f8e261227271ddfd875a7d7ed0
   languageName: node
   linkType: hard
 
@@ -2310,7 +2310,7 @@ __metadata:
     "@semantic-release/commit-analyzer": 8.0.1
     "@semantic-release/git": 9.0.0
     "@semantic-release/github": 7.2.0
-    "@semantic-release/npm": 7.0.9
+    "@semantic-release/npm": 7.0.10
     "@semantic-release/release-notes-generator": 9.0.1
     "@types/jest": 26.0.20
     "@types/node": 13.13.40
@@ -5366,6 +5366,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"ini@npm:^1.3.8":
+  version: 1.3.8
+  resolution: "ini@npm:1.3.8"
+  checksum: 62189ce7ea44c5778e757e4232c581212e838f3c39e79d931bb9152fd4b9275f09fb20b96afdd60ba9f5d7996b92486cad6cc617fcb84ff4beedd1b33b86221e
+  languageName: node
+  linkType: hard
+
 "init-package-json@npm:^1.10.3":
   version: 1.10.3
   resolution: "init-package-json@npm:1.10.3"
@@ -8087,6 +8094,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"npm-user-validate@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "npm-user-validate@npm:1.0.1"
+  checksum: 17acd98e7d132ea6d7c85e9dfae907f2a2f453c34819c83b0a27aa1069e39c1890a3eed7432debb1157a9fa278feac8323ca9a5366085b84fe3ed9e4146f04f3
+  languageName: node
+  linkType: hard
+
 "npm-user-validate@npm:~1.0.0":
   version: 1.0.0
   resolution: "npm-user-validate@npm:1.0.0"
@@ -8228,9 +8242,9 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"npm@npm:^6.14.8":
-  version: 6.14.8
-  resolution: "npm@npm:6.14.8"
+"npm@npm:^6.14.9":
+  version: 6.14.11
+  resolution: "npm@npm:6.14.11"
   dependencies:
     JSONStream: ^1.3.5
     abbrev: ~1.1.1
@@ -8269,7 +8283,7 @@ fsevents@^2.1.2:
     infer-owner: ^1.0.4
     inflight: ~1.0.6
     inherits: ^2.0.4
-    ini: ^1.3.5
+    ini: ^1.3.8
     init-package-json: ^1.10.3
     is-cidr: ^3.0.0
     json-parse-better-errors: ^1.0.2
@@ -8312,10 +8326,10 @@ fsevents@^2.1.2:
     npm-pick-manifest: ^3.0.2
     npm-profile: ^4.0.4
     npm-registry-fetch: ^4.0.7
-    npm-user-validate: ~1.0.0
+    npm-user-validate: ^1.0.1
     npmlog: ~4.1.2
     once: ~1.4.0
-    opener: ^1.5.1
+    opener: ^1.5.2
     osenv: ^0.1.5
     pacote: ^9.5.12
     path-is-inside: ~1.0.2
@@ -8358,7 +8372,7 @@ fsevents@^2.1.2:
   bin:
     npm: bin/npm-cli.js
     npx: bin/npx-cli.js
-  checksum: 968f8b720d891b595f9505afbe46ae0c53a8131c97d5e0106893d83444686b607fa4b6cb18d765345de7fd635f3f198c728f1a1a4fc642b12f27dade23ce95f7
+  checksum: e59ef76cbb4ce38e8dddf38fbc5cd2f4cdc129265596ef7852271e4a7226b1c0174c1ceca1a2312ae4e7169bb1c345d964cf2d4ff0d438711538bce2185c3114
   languageName: node
   linkType: hard
 
@@ -8509,6 +8523,15 @@ fsevents@^2.1.2:
   bin:
     opener: bin/opener-bin.js
   checksum: 055a1efdc206e1c8ac37ca1d62e16de84c7f6ae48883ac1898f1b8e9e9b918979fe747d439b249975c707b911073072ddc933fa1993d8a7345b729393466fbbf
+  languageName: node
+  linkType: hard
+
+"opener@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "opener@npm:1.5.2"
+  bin:
+    opener: bin/opener-bin.js
+  checksum: 855420de4ffbfed1a25f000e7d146c4194aa678cc113d428572de67f9491f6721183ffdeb705af3b08404e29f7ec451b88da9ae19347a515872803dfabef471c
   languageName: node
   linkType: hard
 
