@@ -1539,12 +1539,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sinon@npm:9.0.10":
-  version: 9.0.10
-  resolution: "@types/sinon@npm:9.0.10"
+"@types/sinon@npm:9.0.11":
+  version: 9.0.11
+  resolution: "@types/sinon@npm:9.0.11"
   dependencies:
     "@types/sinonjs__fake-timers": "*"
-  checksum: dfa431fe83bcaf1c15bf6be9aa6cfa266b3951cffdeb950c0c0a45cddd6f2fa72bd81862d0f4937ac82dbe9d4712d17e33cd629e6f20822324fd713738901d49
+  checksum: c84ccbd5ac05d8eb45151a9c0790cf9b9fc78bdfc2f3feecb8866dab530bed82301ba0340cfb73de7148f08a40c9c1b1b7a920e4c9efd79195b60a52ab3e577d
   languageName: node
   linkType: hard
 
@@ -2299,7 +2299,7 @@ __metadata:
     "@semantic-release/release-notes-generator": 9.0.1
     "@types/jest": 26.0.20
     "@types/node": 13.13.45
-    "@types/sinon": 9.0.10
+    "@types/sinon": 9.0.11
     "@typescript-eslint/eslint-plugin": 3.10.1
     "@typescript-eslint/parser": 3.10.1
     discord.js: 11.6.4
