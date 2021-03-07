@@ -21,7 +21,7 @@
 		"@semantic-release/release-notes-generator": "9.0.1",
 		"@types/jest": "26.0.20",
 		"@types/node": "13.13.45",
-		"@types/sinon": "9.0.10",
+		"@types/sinon": "9.0.11",
 		"@typescript-eslint/eslint-plugin": "3.10.1",
 		"@typescript-eslint/parser": "3.10.1",
 		"eslint": "7.21.0",

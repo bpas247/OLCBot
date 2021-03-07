@@ -67,7 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@types/sinon",
-        "npm:9.0.10"
+        "npm:9.0.11"
       ],
       [
         "@typescript-eslint/eslint-plugin",
@@ -146,7 +146,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/release-notes-generator", "virtual:81d9dc362319c5451ae59129aecbb03ff1b0282dbb1e22b5f0b795a077949119b5c950ab0bc5febd243ac5340c74fc5f43d96ef75bc61e84a6af4515dab8699c#npm:9.0.1"],
             ["@types/jest", "npm:26.0.20"],
             ["@types/node", "npm:13.13.45"],
-            ["@types/sinon", "npm:9.0.10"],
+            ["@types/sinon", "npm:9.0.11"],
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["@typescript-eslint/parser", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
@@ -1819,10 +1819,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/sinon", [
-        ["npm:9.0.10", {
-          "packageLocation": "./.yarn/cache/@types-sinon-npm-9.0.10-d93c864a32-dfa431fe83.zip/node_modules/@types/sinon/",
+        ["npm:9.0.11", {
+          "packageLocation": "./.yarn/cache/@types-sinon-npm-9.0.11-231734b808-c84ccbd5ac.zip/node_modules/@types/sinon/",
           "packageDependencies": [
-            ["@types/sinon", "npm:9.0.10"],
+            ["@types/sinon", "npm:9.0.11"],
             ["@types/sinonjs__fake-timers", "npm:6.0.1"]
           ],
           "linkType": "HARD",
@@ -2700,7 +2700,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/release-notes-generator", "virtual:81d9dc362319c5451ae59129aecbb03ff1b0282dbb1e22b5f0b795a077949119b5c950ab0bc5febd243ac5340c74fc5f43d96ef75bc61e84a6af4515dab8699c#npm:9.0.1"],
             ["@types/jest", "npm:26.0.20"],
             ["@types/node", "npm:13.13.45"],
-            ["@types/sinon", "npm:9.0.10"],
+            ["@types/sinon", "npm:9.0.11"],
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["@typescript-eslint/parser", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
