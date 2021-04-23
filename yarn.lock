@@ -1035,24 +1035,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/semantic-release-gh-pages-plugin@npm:4.0.3":
-  version: 4.0.3
-  resolution: "@qiwi/semantic-release-gh-pages-plugin@npm:4.0.3"
+"@qiwi/semantic-release-gh-pages-plugin@npm:5.0.7":
+  version: 5.0.7
+  resolution: "@qiwi/semantic-release-gh-pages-plugin@npm:5.0.7"
   dependencies:
+    "@qiwi/substrate": ^1.20.4
     "@types/debug": ^4.1.5
+    "@types/gh-pages": ^3.0.0
     "@types/git-url-parse": ^9.0.0
-    aggregate-error: ^3.0.1
-    debug: ^4.1.1
-    dot: ^1.1.3
-    execa: ^4.0.3
+    "@types/lodash": ^4.14.168
+    "@types/semantic-release": ^17.2.0
+    aggregate-error: ^3.1.0
+    debug: ^4.3.1
+    execa: ^5.0.0
     gh-pages: ^3.1.0
-    git-url-parse: ^11.1.2
-    lodash: ^4.17.19
-    queuefy: ^1.1.1
+    git-url-parse: ^11.4.4
+    lodash: ^4.17.21
+    queuefy: ^1.1.5
     read-pkg: ^5.2.0
-    sync-request: ^6.1.0
-    tslib: ^2.0.0
-  checksum: 1aa6b061efe120c88329e511b7b56d714a54e09097ae27c4fc2855bb031b5f5bdefad725b76ed576ca4db15a8f7b252a00ac6c1e9dc67963b7b28f2044f77b5a
+    then-request: ^6.0.2
+    tslib: ^2.1.0
+  checksum: 006052c27098150f7a75b9b74ef1b386128c984f55e18d8c507081a5706d28dddeb512beab510ce96e842c1ccc65b3c5325a3b73b9ec9f2abbf51c2dfbf34f7b
+  languageName: node
+  linkType: hard
+
+"@qiwi/substrate-abstract@npm:1.20.2":
+  version: 1.20.2
+  resolution: "@qiwi/substrate-abstract@npm:1.20.2"
+  dependencies:
+    "@qiwi/substrate-types": 1.51.0
+  checksum: 36803fd1e130908b3c781546cdd007ed2b92eb2c8222ed1de11decbcc5c287809d26490f73d84507f2e7adb22c2abea6f56a0790ff68ad4c969da85c6525abcc
+  languageName: node
+  linkType: hard
+
+"@qiwi/substrate-std@npm:1.3.2":
+  version: 1.3.2
+  resolution: "@qiwi/substrate-std@npm:1.3.2"
+  dependencies:
+    "@qiwi/substrate-types": 1.51.0
+    tslib: ^2.2.0
+  checksum: 9a7bb65f4860e52cde91653759f4a10ac2ab32e50ec68de65a7aff7cb5d31794791a72b4a0bb6c3e61fbcd5d67c78b964aadf6cdd727a46e506d7bd4fb0dc232
+  languageName: node
+  linkType: hard
+
+"@qiwi/substrate-types@npm:1.51.0":
+  version: 1.51.0
+  resolution: "@qiwi/substrate-types@npm:1.51.0"
+  checksum: 88ab962a83a3c2a7f1c2fb26173e584c2d4542b118ebcd78893cbaad80a2292ce7a3bc5f53a17847c54d987ff3e720474a03566057c2b624773befc7ca90bc17
+  languageName: node
+  linkType: hard
+
+"@qiwi/substrate@npm:^1.20.4":
+  version: 1.20.7
+  resolution: "@qiwi/substrate@npm:1.20.7"
+  dependencies:
+    "@qiwi/substrate-abstract": 1.20.2
+    "@qiwi/substrate-std": 1.3.2
+    "@qiwi/substrate-types": 1.51.0
+    tslib: ^2.2.0
+  checksum: 07308e202f232d0ce8f19c45cdad81b996ac5940362c701b665ee93f84b9d82083b011f7bd17aacf0c6e57eeeb9be5070c5d70f2f5b8e175b9a58c9f54aab063
   languageName: node
   linkType: hard
 
@@ -1406,6 +1447,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gh-pages@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/gh-pages@npm:3.0.0"
+  checksum: 1343b3c68734424861a840fa04d57d0762f01d0dd25668a591a48fd101946f766d908e6354ca5de738b64c1fbcc88f59a3d630dde0eac067461779194c697d2e
+  languageName: node
+  linkType: hard
+
 "@types/git-url-parse@npm:^9.0.0":
   version: 9.0.0
   resolution: "@types/git-url-parse@npm:9.0.0"
@@ -1470,6 +1518,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 3aaf557d5b82e733d5a17b7f55af5d6be953363c3a594f006d64265790fe87c301c6e1400c0b6b1cf72add50a0ceddc25afb8231ab8302a2e5b6ebfbfac30e5d
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.168":
+  version: 4.14.168
+  resolution: "@types/lodash@npm:4.14.168"
+  checksum: 9a4e25f89fc035b9f0388f1f7be85e5eff49f9e6db0d93432c9a89fce0916f8a89db4e8290415f7ea02de6b00d3573826378dcb655b7b2d20530a6e8d6dd6fd0
   languageName: node
   linkType: hard
 
@@ -1556,6 +1611,15 @@ __metadata:
   version: 0.12.0
   resolution: "@types/retry@npm:0.12.0"
   checksum: 0755164f2c8d615a0385609c478aaa20b17e55bc8b16d5d56ffe6a5d30b0a9845d49452a2e8903ec7c43fa361f19daf5e68c60e7381ad10a95dd3d0bb5c9f7fd
+  languageName: node
+  linkType: hard
+
+"@types/semantic-release@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "@types/semantic-release@npm:17.2.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: a2912c09ba7eeebe4bea94ed738416f644303a025596fe4ca07cf5a1ec4e8c1d536d04987864ee73b86b54d0fd0156d63768420664c39efa35b32dd0842f8832
   languageName: node
   linkType: hard
 
@@ -1805,13 +1869,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aggregate-error@npm:^3.0.0, aggregate-error@npm:^3.0.1":
+"aggregate-error@npm:^3.0.0":
   version: 3.0.1
   resolution: "aggregate-error@npm:3.0.1"
   dependencies:
     clean-stack: ^2.0.0
     indent-string: ^4.0.0
   checksum: aee96f00c21c9a8c005d949a448e656339235faeec5c050e041ed3d33812fc3478a777ffd6309eb61c17ceb66dd0d2c6220e06e565ec994f536d9a16814e0ebf
+  languageName: node
+  linkType: hard
+
+"aggregate-error@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "aggregate-error@npm:3.1.0"
+  dependencies:
+    clean-stack: ^2.0.0
+    indent-string: ^4.0.0
+  checksum: 704d2001a303c185e9b836d211f7eef2f4557195a11c3271143b4dcda5f6f263abe746d9b8a06b5871d07870686c7db9c0b2c38e2d3cbc593784eaaee8a29043
   languageName: node
   linkType: hard
 
@@ -2310,7 +2384,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blc-bot@workspace:."
   dependencies:
-    "@qiwi/semantic-release-gh-pages-plugin": 4.0.3
+    "@qiwi/semantic-release-gh-pages-plugin": 5.0.7
     "@semantic-release/changelog": 5.0.1
     "@semantic-release/commit-analyzer": 8.0.1
     "@semantic-release/git": 9.0.0
@@ -3260,6 +3334,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:^4.3.1":
+  version: 4.3.2
+  resolution: "debug@npm:4.3.2"
+  dependencies:
+    ms: 2.1.2
+  peerDependencies:
+    supports-color: "*"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 5543570879e2274f6725d4285a034d6e0822d35faefc6f55965933fb440e8c21eb3a0bef934e66f4b6b491f898ee2de37cab980e9d4fd61372136c19d3ce4527
+  languageName: node
+  linkType: hard
+
 "debuglog@npm:*, debuglog@npm:^1.0.1":
   version: 1.0.1
   resolution: "debuglog@npm:1.0.1"
@@ -3536,15 +3624,6 @@ __metadata:
   dependencies:
     is-obj: ^2.0.0
   checksum: d2f62e0b5ec467edb8e278ab6070955f0a4aec973ec1fa837ff6152f3cdd96cd2a04c7e2626cb3eac4f639b8f6786b5b87d3c01df7ba729693c636cb78b7ae93
-  languageName: node
-  linkType: hard
-
-"dot@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "dot@npm:1.1.3"
-  bin:
-    dottojs: ./bin/dot-packer
-  checksum: 285bfefcbb118087e809dee2bffdc72d831a62abc540285b3c46553187b5e93cb5183f04d5a65fc1a2a807ef74d52e8911a2cda532ec3fa54e9fa8d189bab711
   languageName: node
   linkType: hard
 
@@ -4073,23 +4152,6 @@ __metadata:
     signal-exit: ^3.0.2
     strip-final-newline: ^2.0.0
   checksum: 0abdf9aa79577f70858732d63ebbae18db910d806d915535b8fb80f7e6b8e36a8c2babd1ac1a80f2fe19f8251845b73ee8436ce1e9c593d85953686d60a84b8a
-  languageName: node
-  linkType: hard
-
-"execa@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "execa@npm:4.0.3"
-  dependencies:
-    cross-spawn: ^7.0.0
-    get-stream: ^5.0.0
-    human-signals: ^1.1.1
-    is-stream: ^2.0.0
-    merge-stream: ^2.0.0
-    npm-run-path: ^4.0.0
-    onetime: ^5.1.0
-    signal-exit: ^3.0.2
-    strip-final-newline: ^2.0.0
-  checksum: 65b237d178b468045ee57af6aa4e4124807b28aec9573d9b3b16b02a7e41bd65996236e0c5575d053d3888585ffc795cbed38847c6c9669e9c8481fc44ac05e4
   languageName: node
   linkType: hard
 
@@ -4667,13 +4729,6 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"get-port@npm:^3.1.0":
-  version: 3.2.0
-  resolution: "get-port@npm:3.2.0"
-  checksum: 84ce817471a062262a44e8172b6e8799e7ef523240ad1c03ce1396fd63d87426d46ae9c072f9ce55c0190403bc78e72b3bb493cd5cb16b49f3be52ae0924cdc2
-  languageName: node
-  linkType: hard
-
 "get-stdin@npm:^6.0.0":
   version: 6.0.0
   resolution: "get-stdin@npm:6.0.0"
@@ -4771,12 +4826,12 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"git-url-parse@npm:^11.1.2":
-  version: 11.1.2
-  resolution: "git-url-parse@npm:11.1.2"
+"git-url-parse@npm:^11.4.4":
+  version: 11.4.4
+  resolution: "git-url-parse@npm:11.4.4"
   dependencies:
     git-up: ^4.0.0
-  checksum: 01d5ab08c08103878905f919a71ecc6c0cc6321b833b92f9cb3acbd034b9a67e4b503163f966bc0dbab05a9d07077845586034b751b4d22cd491b0e56813be8d
+  checksum: adf64775c530c2add666d0a93eeb1d2ebeb678588564f9c4d07f8880f1e089efc878a5c5701f31b3b105f38db1b86d6201bbcd4417c0d8eba368db1b4ac661e4
   languageName: node
   linkType: hard
 
@@ -7150,7 +7205,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.x, lodash@npm:^4.17.19, lodash@npm:^4.17.20":
+"lodash@npm:4.x, lodash@npm:^4.17.20":
   version: 4.17.20
   resolution: "lodash@npm:4.17.20"
   checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
@@ -7665,7 +7720,7 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"ms@npm:^2.0.0, ms@npm:^2.1.1":
+"ms@npm:2.1.2, ms@npm:^2.0.0, ms@npm:^2.1.1":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
   checksum: 9b65fb709bc30c0c07289dcbdb61ca032acbb9ea5698b55fa62e2cebb04c5953f1876a1f3f7f4bc2e91d4bf4d86003f3e207c3bc6ee2f716f99827e62389cd0e
@@ -9504,12 +9559,13 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"queuefy@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "queuefy@npm:1.1.1"
+"queuefy@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "queuefy@npm:1.1.5"
   dependencies:
-    tslib: ^2.0.0
-  checksum: de566ef4b33ac86fce0bf6c8016a09887d8743a3e93257cfa78cb96f8a59c23f710b899312530a3f330634f7f4a1b2f70e22209c596c26fc400eae1c8eb830eb
+    "@qiwi/substrate": ^1.20.4
+    tslib: ^2.1.0
+  checksum: e7a63cc482c51105a67856bafe53dcd793244289c51c7fa0c2bb5fc2491ef32c6fec842bf6d0bd990178c33929d5144f520afcf01fd3feb7a535565db5053424
   languageName: node
   linkType: hard
 
@@ -10976,26 +11032,6 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"sync-request@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "sync-request@npm:6.1.0"
-  dependencies:
-    http-response-object: ^3.0.1
-    sync-rpc: ^1.2.1
-    then-request: ^6.0.0
-  checksum: 904db919d10494babd2322e789508b326e1cfe60717de3895b9a350e1f52813cdefac6d8eedba7168a7bb1f136615d2b360687db18744ff32fa0ac79027c452b
-  languageName: node
-  linkType: hard
-
-"sync-rpc@npm:^1.2.1":
-  version: 1.3.6
-  resolution: "sync-rpc@npm:1.3.6"
-  dependencies:
-    get-port: ^3.1.0
-  checksum: b1256fbbe371c60410f60ab26a96b2771fe117b076eb656cec7e1be9e2314d56fa9439a7847af149d25562e0e59d313dcebd434525d0ee4b7148d06e76a19767
-  languageName: node
-  linkType: hard
-
 "table@npm:^6.0.4":
   version: 6.0.4
   resolution: "table@npm:6.0.4"
@@ -11113,7 +11149,7 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"then-request@npm:^6.0.0":
+"then-request@npm:^6.0.2":
   version: 6.0.2
   resolution: "then-request@npm:6.0.2"
   dependencies:
@@ -11331,10 +11367,10 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "tslib@npm:2.0.0"
-  checksum: a7369a224f12e223fb42f2a720389601a24a1e1c96c55bf0d8d4b60c131e574c175ae23578b8d1bd3f4ec790c7e0a82b43733f022f866d48a23aeadd3910755d
+"tslib@npm:^2.1.0, tslib@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "tslib@npm:2.2.0"
+  checksum: 2d35468c470410871c5246e43f12dcb6d0fc363b617c176f26443b9530e5c5ee8448966892a42956168d8f495da7865bda33dfe82c26c91991e28999974a618f
   languageName: node
   linkType: hard
 

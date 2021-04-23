@@ -31,7 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackPool": [
       [
         "@qiwi/semantic-release-gh-pages-plugin",
-        "npm:4.0.3"
+        "npm:5.0.7"
       ],
       [
         "@semantic-release/changelog",
@@ -137,7 +137,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@qiwi/semantic-release-gh-pages-plugin", "npm:4.0.3"],
+            ["@qiwi/semantic-release-gh-pages-plugin", "npm:5.0.7"],
             ["@semantic-release/changelog", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:5.0.1"],
             ["@semantic-release/commit-analyzer", "virtual:33879d04bef49b7b9fe84d7fabbf5820f5fa969041ba25c4ebd6e3f4996c9d7942420274ab424f141d5c92bfd39e850e5377ac94f2fe0e48beb1b7b64e40a05c#npm:8.0.1"],
             ["@semantic-release/git", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:9.0.0"],
@@ -1251,23 +1251,69 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@qiwi/semantic-release-gh-pages-plugin", [
-        ["npm:4.0.3", {
-          "packageLocation": "./.yarn/cache/@qiwi-semantic-release-gh-pages-plugin-npm-4.0.3-80fbabf557-1aa6b061ef.zip/node_modules/@qiwi/semantic-release-gh-pages-plugin/",
+        ["npm:5.0.7", {
+          "packageLocation": "./.yarn/cache/@qiwi-semantic-release-gh-pages-plugin-npm-5.0.7-f9a1536aee-006052c270.zip/node_modules/@qiwi/semantic-release-gh-pages-plugin/",
           "packageDependencies": [
-            ["@qiwi/semantic-release-gh-pages-plugin", "npm:4.0.3"],
+            ["@qiwi/semantic-release-gh-pages-plugin", "npm:5.0.7"],
+            ["@qiwi/substrate", "npm:1.20.7"],
             ["@types/debug", "npm:4.1.5"],
+            ["@types/gh-pages", "npm:3.0.0"],
             ["@types/git-url-parse", "npm:9.0.0"],
-            ["aggregate-error", "npm:3.0.1"],
-            ["debug", "virtual:901e1408cc8bfef5550e648cc3ee4f1ec6e307e3f5baab3ad60f0ba461a3df0a2fb4207ed57f6ec68edeacbb88063dcc84f3c35bb45638ba421a021eb350b42b#npm:4.1.1"],
-            ["dot", "npm:1.1.3"],
-            ["execa", "npm:4.0.3"],
+            ["@types/lodash", "npm:4.14.168"],
+            ["@types/semantic-release", "npm:17.2.0"],
+            ["aggregate-error", "npm:3.1.0"],
+            ["debug", "virtual:f9a1536aee84ccd470ae949281f15a6c4797a581010b808989c1481a77810202e24d6ae506d2951ed829f5c391d3091563a6983fce52d76891f8ab95103abaea#npm:4.3.2"],
+            ["execa", "npm:5.0.0"],
             ["gh-pages", "npm:3.1.0"],
-            ["git-url-parse", "npm:11.1.2"],
-            ["lodash", "npm:4.17.20"],
-            ["queuefy", "npm:1.1.1"],
+            ["git-url-parse", "npm:11.4.4"],
+            ["lodash", "npm:4.17.21"],
+            ["queuefy", "npm:1.1.5"],
             ["read-pkg", "npm:5.2.0"],
-            ["sync-request", "npm:6.1.0"],
-            ["tslib", "npm:2.0.0"]
+            ["then-request", "npm:6.0.2"],
+            ["tslib", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@qiwi/substrate", [
+        ["npm:1.20.7", {
+          "packageLocation": "./.yarn/cache/@qiwi-substrate-npm-1.20.7-bd6cb882ee-07308e202f.zip/node_modules/@qiwi/substrate/",
+          "packageDependencies": [
+            ["@qiwi/substrate", "npm:1.20.7"],
+            ["@qiwi/substrate-abstract", "npm:1.20.2"],
+            ["@qiwi/substrate-std", "npm:1.3.2"],
+            ["@qiwi/substrate-types", "npm:1.51.0"],
+            ["tslib", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@qiwi/substrate-abstract", [
+        ["npm:1.20.2", {
+          "packageLocation": "./.yarn/cache/@qiwi-substrate-abstract-npm-1.20.2-eeef8e0eb9-36803fd1e1.zip/node_modules/@qiwi/substrate-abstract/",
+          "packageDependencies": [
+            ["@qiwi/substrate-abstract", "npm:1.20.2"],
+            ["@qiwi/substrate-types", "npm:1.51.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@qiwi/substrate-std", [
+        ["npm:1.3.2", {
+          "packageLocation": "./.yarn/cache/@qiwi-substrate-std-npm-1.3.2-b608c4b352-9a7bb65f48.zip/node_modules/@qiwi/substrate-std/",
+          "packageDependencies": [
+            ["@qiwi/substrate-std", "npm:1.3.2"],
+            ["@qiwi/substrate-types", "npm:1.51.0"],
+            ["tslib", "npm:2.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@qiwi/substrate-types", [
+        ["npm:1.51.0", {
+          "packageLocation": "./.yarn/cache/@qiwi-substrate-types-npm-1.51.0-d6faabd17c-88ab962a83.zip/node_modules/@qiwi/substrate-types/",
+          "packageDependencies": [
+            ["@qiwi/substrate-types", "npm:1.51.0"]
           ],
           "linkType": "HARD",
         }]
@@ -1658,6 +1704,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/gh-pages", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/@types-gh-pages-npm-3.0.0-6721545595-1343b3c687.zip/node_modules/@types/gh-pages/",
+          "packageDependencies": [
+            ["@types/gh-pages", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/git-url-parse", [
         ["npm:9.0.0", {
           "packageLocation": "./.yarn/cache/@types-git-url-parse-npm-9.0.0-2704df37e9-d4f4731841.zip/node_modules/@types/git-url-parse/",
@@ -1732,6 +1787,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/keyv", "npm:3.1.1"],
             ["@types/node", "npm:13.9.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/lodash", [
+        ["npm:4.14.168", {
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.168-2d65abe211-9a4e25f89f.zip/node_modules/@types/lodash/",
+          "packageDependencies": [
+            ["@types/lodash", "npm:4.14.168"]
           ],
           "linkType": "HARD",
         }]
@@ -1835,6 +1899,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-retry-npm-0.12.0-e4e6294a2c-0755164f2c.zip/node_modules/@types/retry/",
           "packageDependencies": [
             ["@types/retry", "npm:0.12.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/semantic-release", [
+        ["npm:17.2.0", {
+          "packageLocation": "./.yarn/cache/@types-semantic-release-npm-17.2.0-ba1e10dbc3-a2912c09ba.zip/node_modules/@types/semantic-release/",
+          "packageDependencies": [
+            ["@types/semantic-release", "npm:17.2.0"],
+            ["@types/node", "npm:13.9.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2136,6 +2210,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/aggregate-error-npm-3.0.1-46f220b212-aee96f00c2.zip/node_modules/aggregate-error/",
           "packageDependencies": [
             ["aggregate-error", "npm:3.0.1"],
+            ["clean-stack", "npm:2.2.0"],
+            ["indent-string", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/aggregate-error-npm-3.1.0-415a406f4e-704d2001a3.zip/node_modules/aggregate-error/",
+          "packageDependencies": [
+            ["aggregate-error", "npm:3.1.0"],
             ["clean-stack", "npm:2.2.0"],
             ["indent-string", "npm:4.0.0"]
           ],
@@ -2712,7 +2795,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["blc-bot", "workspace:."],
-            ["@qiwi/semantic-release-gh-pages-plugin", "npm:4.0.3"],
+            ["@qiwi/semantic-release-gh-pages-plugin", "npm:5.0.7"],
             ["@semantic-release/changelog", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:5.0.1"],
             ["@semantic-release/commit-analyzer", "virtual:33879d04bef49b7b9fe84d7fabbf5820f5fa969041ba25c4ebd6e3f4996c9d7942420274ab424f141d5c92bfd39e850e5377ac94f2fe0e48beb1b7b64e40a05c#npm:8.0.1"],
             ["@semantic-release/git", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:9.0.0"],
@@ -3766,6 +3849,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "supports-color"
           ],
           "linkType": "HARD",
+        }],
+        ["virtual:f9a1536aee84ccd470ae949281f15a6c4797a581010b808989c1481a77810202e24d6ae506d2951ed829f5c391d3091563a6983fce52d76891f8ab95103abaea#npm:4.3.2", {
+          "packageLocation": "./.yarn/$$virtual/debug-virtual-03eadc81db/0/cache/debug-npm-4.3.2-f0148b6afe-5543570879.zip/node_modules/debug/",
+          "packageDependencies": [
+            ["debug", "virtual:f9a1536aee84ccd470ae949281f15a6c4797a581010b808989c1481a77810202e24d6ae506d2951ed829f5c391d3091563a6983fce52d76891f8ab95103abaea#npm:4.3.2"],
+            ["ms", "npm:2.1.2"],
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["debuglog", [
@@ -4054,15 +4149,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["domexception", "npm:2.0.1"],
             ["webidl-conversions", "npm:5.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["dot", [
-        ["npm:1.1.3", {
-          "packageLocation": "./.yarn/cache/dot-npm-1.1.3-a570dedf33-285bfefcbb.zip/node_modules/dot/",
-          "packageDependencies": [
-            ["dot", "npm:1.1.3"]
           ],
           "linkType": "HARD",
         }]
@@ -4633,22 +4719,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/execa-npm-4.0.0-fa9a81eac2-0abdf9aa79.zip/node_modules/execa/",
           "packageDependencies": [
             ["execa", "npm:4.0.0"],
-            ["cross-spawn", "npm:7.0.1"],
-            ["get-stream", "npm:5.1.0"],
-            ["human-signals", "npm:1.1.1"],
-            ["is-stream", "npm:2.0.0"],
-            ["merge-stream", "npm:2.0.0"],
-            ["npm-run-path", "npm:4.0.0"],
-            ["onetime", "npm:5.1.0"],
-            ["signal-exit", "npm:3.0.2"],
-            ["strip-final-newline", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:4.0.3", {
-          "packageLocation": "./.yarn/cache/execa-npm-4.0.3-b70e1b2212-65b237d178.zip/node_modules/execa/",
-          "packageDependencies": [
-            ["execa", "npm:4.0.3"],
             ["cross-spawn", "npm:7.0.1"],
             ["get-stream", "npm:5.1.0"],
             ["human-signals", "npm:1.1.1"],
@@ -5279,15 +5349,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["get-port", [
-        ["npm:3.2.0", {
-          "packageLocation": "./.yarn/cache/get-port-npm-3.2.0-4093f8843e-84ce817471.zip/node_modules/get-port/",
-          "packageDependencies": [
-            ["get-port", "npm:3.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["get-stdin", [
         ["npm:6.0.0", {
           "packageLocation": "./.yarn/cache/get-stdin-npm-6.0.0-22ebabe125-b51d664838.zip/node_modules/get-stdin/",
@@ -5391,10 +5452,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["git-url-parse", [
-        ["npm:11.1.2", {
-          "packageLocation": "./.yarn/cache/git-url-parse-npm-11.1.2-f0b367da09-01d5ab08c0.zip/node_modules/git-url-parse/",
+        ["npm:11.4.4", {
+          "packageLocation": "./.yarn/cache/git-url-parse-npm-11.4.4-4fb31e3403-adf64775c5.zip/node_modules/git-url-parse/",
           "packageDependencies": [
-            ["git-url-parse", "npm:11.1.2"],
+            ["git-url-parse", "npm:11.4.4"],
             ["git-up", "npm:4.0.1"]
           ],
           "linkType": "HARD",
@@ -10521,11 +10582,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["queuefy", [
-        ["npm:1.1.1", {
-          "packageLocation": "./.yarn/cache/queuefy-npm-1.1.1-5d4d16ad7e-de566ef4b3.zip/node_modules/queuefy/",
+        ["npm:1.1.5", {
+          "packageLocation": "./.yarn/cache/queuefy-npm-1.1.5-262b6a4c33-e7a63cc482.zip/node_modules/queuefy/",
           "packageDependencies": [
-            ["queuefy", "npm:1.1.1"],
-            ["tslib", "npm:2.0.0"]
+            ["queuefy", "npm:1.1.5"],
+            ["@qiwi/substrate", "npm:1.20.7"],
+            ["tslib", "npm:2.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -12086,28 +12148,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["sync-request", [
-        ["npm:6.1.0", {
-          "packageLocation": "./.yarn/cache/sync-request-npm-6.1.0-6ac24ab111-904db919d1.zip/node_modules/sync-request/",
-          "packageDependencies": [
-            ["sync-request", "npm:6.1.0"],
-            ["http-response-object", "npm:3.0.2"],
-            ["sync-rpc", "npm:1.3.6"],
-            ["then-request", "npm:6.0.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["sync-rpc", [
-        ["npm:1.3.6", {
-          "packageLocation": "./.yarn/cache/sync-rpc-npm-1.3.6-96e5b4b996-b1256fbbe3.zip/node_modules/sync-rpc/",
-          "packageDependencies": [
-            ["sync-rpc", "npm:1.3.6"],
-            ["get-port", "npm:3.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["table", [
         ["npm:6.0.4", {
           "packageLocation": "./.yarn/cache/table-npm-6.0.4-01d56a6830-b51d4ad0f3.zip/node_modules/table/",
@@ -12481,10 +12521,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.0.0", {
-          "packageLocation": "./.yarn/cache/tslib-npm-2.0.0-4d841ae35a-a7369a224f.zip/node_modules/tslib/",
+        ["npm:2.2.0", {
+          "packageLocation": "./.yarn/cache/tslib-npm-2.2.0-e83a07daa5-2d35468c47.zip/node_modules/tslib/",
           "packageDependencies": [
-            ["tslib", "npm:2.0.0"]
+            ["tslib", "npm:2.2.0"]
           ],
           "linkType": "HARD",
         }]
