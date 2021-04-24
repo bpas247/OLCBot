@@ -2325,7 +2325,7 @@ __metadata:
     discord.js: 11.6.4
     dotenv: 8.2.0
     eslint: 7.23.0
-    eslint-config-prettier: 6.15.0
+    eslint-config-prettier: 8.3.0
     husky: 4.3.8
     jest: 26.6.3
     pg-promise: 10.9.5
@@ -3792,16 +3792,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:6.15.0":
-  version: 6.15.0
-  resolution: "eslint-config-prettier@npm:6.15.0"
-  dependencies:
-    get-stdin: ^6.0.0
+"eslint-config-prettier@npm:8.3.0":
+  version: 8.3.0
+  resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
-    eslint: ">=3.14.1"
+    eslint: ">=7.0.0"
   bin:
-    eslint-config-prettier-check: bin/cli.js
-  checksum: a790bc61699e43a2edc5453488576cd977fad3b3cf99c129c10760ce6970d422923fddf80b65b2b10a93c00af0180a854e4b7824cc268e5957826cbe5b969e90
+    eslint-config-prettier: bin/cli.js
+  checksum: 94ccbb50fb67e5e47e8ba6cfa257b5cbf53619990ab13f46b99518cfe9b900394b93bdf6ffedbde1a8e2997d301b0fbd73a6b4202146bc53475dfb30a8c812f2
   languageName: node
   linkType: hard
 
@@ -4671,13 +4669,6 @@ fsevents@^2.1.2:
   version: 3.2.0
   resolution: "get-port@npm:3.2.0"
   checksum: 84ce817471a062262a44e8172b6e8799e7ef523240ad1c03ce1396fd63d87426d46ae9c072f9ce55c0190403bc78e72b3bb493cd5cb16b49f3be52ae0924cdc2
-  languageName: node
-  linkType: hard
-
-"get-stdin@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "get-stdin@npm:6.0.0"
-  checksum: b51d664838aef7f8353dc57371ce59cea54d8d584fec015a9d89d24561e95b97806d5b5ba120bc81574c9ed63cb3e210176ffa0ff9263c7e7ba4d56d0fe54913
   languageName: node
   linkType: hard
 

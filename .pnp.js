@@ -91,7 +91,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "eslint-config-prettier",
-        "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"
+        "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:8.3.0"
       ],
       [
         "husky",
@@ -152,7 +152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
             ["dotenv", "npm:8.2.0"],
             ["eslint", "npm:7.23.0"],
-            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
+            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:8.3.0"],
             ["husky", "npm:4.3.8"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
@@ -2727,7 +2727,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
             ["dotenv", "npm:8.2.0"],
             ["eslint", "npm:7.23.0"],
-            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
+            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:8.3.0"],
             ["husky", "npm:4.3.8"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
@@ -4403,12 +4403,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["eslint-config-prettier", [
-        ["virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0", {
-          "packageLocation": "./.yarn/$$virtual/eslint-config-prettier-virtual-0b3a4af5e2/0/cache/eslint-config-prettier-npm-6.15.0-d2085588b4-a790bc6169.zip/node_modules/eslint-config-prettier/",
+        ["virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:8.3.0", {
+          "packageLocation": "./.yarn/$$virtual/eslint-config-prettier-virtual-abe0340fd1/0/cache/eslint-config-prettier-npm-8.3.0-f540cd1f53-94ccbb50fb.zip/node_modules/eslint-config-prettier/",
           "packageDependencies": [
-            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
-            ["eslint", "npm:7.23.0"],
-            ["get-stdin", "npm:6.0.0"]
+            ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:8.3.0"],
+            ["eslint", "npm:7.23.0"]
           ],
           "packagePeers": [
             "eslint"
@@ -5284,15 +5283,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/get-port-npm-3.2.0-4093f8843e-84ce817471.zip/node_modules/get-port/",
           "packageDependencies": [
             ["get-port", "npm:3.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["get-stdin", [
-        ["npm:6.0.0", {
-          "packageLocation": "./.yarn/cache/get-stdin-npm-6.0.0-22ebabe125-b51d664838.zip/node_modules/get-stdin/",
-          "packageDependencies": [
-            ["get-stdin", "npm:6.0.0"]
           ],
           "linkType": "HARD",
         }]
