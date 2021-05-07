@@ -2333,7 +2333,7 @@ __metadata:
     pretty-quick: 2.0.2
     semantic-release: 17.4.2
     sinon: 9.2.4
-    ts-jest: 26.5.4
+    ts-jest: 26.5.6
     typescript: 3.9.9
   languageName: unknown
   linkType: soft
@@ -11301,9 +11301,9 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:26.5.4":
-  version: 26.5.4
-  resolution: "ts-jest@npm:26.5.4"
+"ts-jest@npm:26.5.6":
+  version: 26.5.6
+  resolution: "ts-jest@npm:26.5.6"
   dependencies:
     bs-logger: 0.x
     buffer-from: 1.x
@@ -11320,7 +11320,7 @@ resolve@^1.18.1:
     typescript: ">=3.8 <5.0"
   bin:
     ts-jest: cli.js
-  checksum: 8e5856b7cb990ff4cbc9577e4ec2a1135da9747e41dbf128e03ffa631dd0fdce402780a87318d28114174faa80ccdd0875b2c312b86c07a4537531c517f79101
+  checksum: fd32a8b256091d45d850c491fd090f74a368d44bccc8fedfa0dd074757727e7f07621eb2a69ebf081428f44a357a879237a2cf0aef970896410d454d0bf87ac6
   languageName: node
   linkType: hard
 
