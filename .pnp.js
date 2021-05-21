@@ -83,7 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "dotenv",
-        "npm:8.2.0"
+        "npm:10.0.0"
       ],
       [
         "eslint",
@@ -150,7 +150,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["@typescript-eslint/parser", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
-            ["dotenv", "npm:8.2.0"],
+            ["dotenv", "npm:10.0.0"],
             ["eslint", "npm:7.23.0"],
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
             ["husky", "npm:4.3.8"],
@@ -2725,7 +2725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["@typescript-eslint/parser", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.10.1"],
             ["discord.js", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:11.6.4"],
-            ["dotenv", "npm:8.2.0"],
+            ["dotenv", "npm:10.0.0"],
             ["eslint", "npm:7.23.0"],
             ["eslint-config-prettier", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:6.15.0"],
             ["husky", "npm:4.3.8"],
@@ -4086,17 +4086,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["dotenv", [
+        ["npm:10.0.0", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-10.0.0-36b272df25-9c45712e21.zip/node_modules/dotenv/",
+          "packageDependencies": [
+            ["dotenv", "npm:10.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:5.0.1", {
           "packageLocation": "./.yarn/cache/dotenv-npm-5.0.1-9cab850c63-6e5990d203.zip/node_modules/dotenv/",
           "packageDependencies": [
             ["dotenv", "npm:5.0.1"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:8.2.0", {
-          "packageLocation": "./.yarn/cache/dotenv-npm-8.2.0-6b21df4d37-16cb89cbd7.zip/node_modules/dotenv/",
-          "packageDependencies": [
-            ["dotenv", "npm:8.2.0"]
           ],
           "linkType": "HARD",
         }]
