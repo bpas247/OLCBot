@@ -111,7 +111,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "pretty-quick",
-        "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"
+        "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.1.3"
       ],
       [
         "semantic-release",
@@ -157,7 +157,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
             ["prettier", "npm:2.2.1"],
-            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
+            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.1.3"],
             ["semantic-release", "npm:17.4.2"],
             ["sinon", "npm:9.2.4"],
             ["ts-jest", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:26.5.4"],
@@ -2732,7 +2732,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
             ["prettier", "npm:2.2.1"],
-            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
+            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.1.3"],
             ["semantic-release", "npm:17.4.2"],
             ["sinon", "npm:9.2.4"],
             ["ts-jest", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:26.5.4"],
@@ -3029,6 +3029,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ansi-styles", "npm:3.2.1"],
             ["escape-string-regexp", "npm:1.0.5"],
             ["supports-color", "npm:5.5.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/chalk-npm-3.0.0-e813208025-4018b0c812.zip/node_modules/chalk/",
+          "packageDependencies": [
+            ["chalk", "npm:3.0.0"],
+            ["ansi-styles", "npm:4.2.1"],
+            ["supports-color", "npm:7.1.0"]
           ],
           "linkType": "HARD",
         }],
@@ -4610,22 +4619,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["p-finally", "npm:1.0.0"],
             ["signal-exit", "npm:3.0.2"],
             ["strip-eof", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.1.0", {
-          "packageLocation": "./.yarn/cache/execa-npm-2.1.0-9c7d62b9ab-feed94b80e.zip/node_modules/execa/",
-          "packageDependencies": [
-            ["execa", "npm:2.1.0"],
-            ["cross-spawn", "npm:7.0.1"],
-            ["get-stream", "npm:5.1.0"],
-            ["is-stream", "npm:2.0.0"],
-            ["merge-stream", "npm:2.0.0"],
-            ["npm-run-path", "npm:3.1.0"],
-            ["onetime", "npm:5.1.0"],
-            ["p-finally", "npm:2.0.1"],
-            ["signal-exit", "npm:3.0.2"],
-            ["strip-final-newline", "npm:2.0.0"]
           ],
           "linkType": "HARD",
         }],
@@ -8505,10 +8498,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["mri", [
-        ["npm:1.1.4", {
-          "packageLocation": "./.yarn/cache/mri-npm-1.1.4-d22a399f26-5ea30a4f58.zip/node_modules/mri/",
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/mri-npm-1.2.0-8ecee0357d-dcbe54fea2.zip/node_modules/mri/",
           "packageDependencies": [
-            ["mri", "npm:1.1.4"]
+            ["mri", "npm:1.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -9223,14 +9216,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:3.1.0", {
-          "packageLocation": "./.yarn/cache/npm-run-path-npm-3.1.0-dd7b0fa1be-52260837a2.zip/node_modules/npm-run-path/",
-          "packageDependencies": [
-            ["npm-run-path", "npm:3.1.0"],
-            ["path-key", "npm:3.1.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:4.0.0", {
           "packageLocation": "./.yarn/cache/npm-run-path-npm-4.0.0-4469021c97-c9fccb5d64.zip/node_modules/npm-run-path/",
           "packageDependencies": [
@@ -9563,13 +9548,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/p-finally-npm-1.0.0-35fbaa57c6-01f49b2d9c.zip/node_modules/p-finally/",
           "packageDependencies": [
             ["p-finally", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:2.0.1", {
-          "packageLocation": "./.yarn/cache/p-finally-npm-2.0.1-b59964aa17-d90a9b6b51.zip/node_modules/p-finally/",
-          "packageDependencies": [
-            ["p-finally", "npm:2.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -10273,15 +10251,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pretty-quick", [
-        ["virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2", {
-          "packageLocation": "./.yarn/$$virtual/pretty-quick-virtual-8cce2b97d8/0/cache/pretty-quick-npm-2.0.2-58817dab38-77d6db3946.zip/node_modules/pretty-quick/",
+        ["virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.1.3", {
+          "packageLocation": "./.yarn/$$virtual/pretty-quick-virtual-f47f1e7115/0/cache/pretty-quick-npm-3.1.3-b3fdb9cf9e-7ca4757f4d.zip/node_modules/pretty-quick/",
           "packageDependencies": [
-            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
-            ["chalk", "npm:2.4.2"],
-            ["execa", "npm:2.1.0"],
+            ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:3.1.3"],
+            ["chalk", "npm:3.0.0"],
+            ["execa", "npm:4.0.0"],
             ["find-up", "npm:4.1.0"],
             ["ignore", "npm:5.1.4"],
-            ["mri", "npm:1.1.4"],
+            ["mri", "npm:1.2.0"],
             ["multimatch", "npm:4.0.0"],
             ["prettier", "npm:2.2.1"]
           ],
