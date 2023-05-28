@@ -107,7 +107,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "prettier",
-        "npm:2.2.1"
+        "npm:2.8.8"
       ],
       [
         "pretty-quick",
@@ -156,7 +156,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:4.3.8"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
-            ["prettier", "npm:2.2.1"],
+            ["prettier", "npm:2.8.8"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.4.2"],
             ["sinon", "npm:9.2.4"],
@@ -2731,7 +2731,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:4.3.8"],
             ["jest", "npm:26.6.3"],
             ["pg-promise", "npm:10.9.5"],
-            ["prettier", "npm:2.2.1"],
+            ["prettier", "npm:2.8.8"],
             ["pretty-quick", "virtual:5621638b675fb0c664c11cf04526c62695d3c39a47f67ae18fb2d78b239add60ae723db00b0074e1b4b4cdf9fa7721e2abb3608cabe41f61016d8a773452a8f9#npm:2.0.2"],
             ["semantic-release", "npm:17.4.2"],
             ["sinon", "npm:9.2.4"],
@@ -10240,10 +10240,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["prettier", [
-        ["npm:2.2.1", {
-          "packageLocation": "./.yarn/cache/prettier-npm-2.2.1-e0670992f8-92c6c9f4b8.zip/node_modules/prettier/",
+        ["npm:2.8.8", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.8.8-430828a36c-a2afc2fea5.zip/node_modules/prettier/",
           "packageDependencies": [
-            ["prettier", "npm:2.2.1"]
+            ["prettier", "npm:2.8.8"]
           ],
           "linkType": "HARD",
         }]
@@ -10283,7 +10283,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:5.1.4"],
             ["mri", "npm:1.1.4"],
             ["multimatch", "npm:4.0.0"],
-            ["prettier", "npm:2.2.1"]
+            ["prettier", "npm:2.8.8"]
           ],
           "packagePeers": [
             "prettier"
