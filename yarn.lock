@@ -2096,10 +2096,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"assert-options@npm:0.7.0":
-  version: 0.7.0
-  resolution: "assert-options@npm:0.7.0"
-  checksum: 52b3ab44881604c1027b3b92af1ca5d61e7143606d2b5406c62a145beeb8ae04698021e52ed69967888e657fa51ec83e34c425a37bddc8112f86e86e7b3bd553
+"assert-options@npm:0.8.0":
+  version: 0.8.0
+  resolution: "assert-options@npm:0.8.0"
+  checksum: 2c12e65dba2ea6804aa56c21ed9c382c3f9a7b3e373d6f2a1b4f3a4916b7cd2949cbe3762c901b749221ce933dda582b951c103538e271117d09cb0b0d71c25e
   languageName: node
   linkType: hard
 
@@ -2328,7 +2328,7 @@ __metadata:
     eslint-config-prettier: 6.15.0
     husky: 4.3.8
     jest: 26.6.3
-    pg-promise: 10.9.5
+    pg-promise: 10.15.4
     prettier: 2.2.1
     pretty-quick: 2.0.2
     semantic-release: 17.4.2
@@ -9015,10 +9015,10 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "pg-connection-string@npm:2.4.0"
-  checksum: fdb3ec1c3daa8356381b1de3ed5fe03269e69d88644c4eb83a30aec1d1e320e0a8450d7ff8c04666dd06a4798c996c9dd006497f038d338790667965ec940d1d
+"pg-connection-string@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "pg-connection-string@npm:2.5.0"
+  checksum: 504f288e5e361a903f8b426efe9d00fc289e1d55e16fcca8e4f70f89c29e3429b60291bdec65636ca9c56496319bea878eb32ea60a0d4949ef6df3d748250818
   languageName: node
   linkType: hard
 
@@ -9036,31 +9036,31 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-pool@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "pg-pool@npm:3.2.2"
+"pg-pool@npm:^3.5.2":
+  version: 3.6.0
+  resolution: "pg-pool@npm:3.6.0"
   peerDependencies:
     pg: ">=8.0"
-  checksum: d25d4d075701079433333fcca3fbf5f4fd8d0ae21bf37b11c8528849e41338daf6e335aba25a0a4f5beff133cba63bd6bf2d534dea7f811119d175e575b25446
+  checksum: f605e5ddefcb03969f5677b4a6d2065ee5cc33e58892946a4931f9abff0f0dc0c8815ccdf5b21d9d3a3c5d48279d309863149c7aa2e330872ab1ba6a55d99fb4
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.9.5":
-  version: 10.9.5
-  resolution: "pg-promise@npm:10.9.5"
+"pg-promise@npm:10.15.4":
+  version: 10.15.4
+  resolution: "pg-promise@npm:10.15.4"
   dependencies:
-    assert-options: 0.7.0
-    pg: 8.5.1
+    assert-options: 0.8.0
+    pg: 8.8.0
     pg-minify: 1.6.2
     spex: 3.2.0
-  checksum: e313f2f7a6eae4a6421ab44645e3905e43552aa367135d89ca51d7b6f6b87e23773ad9ea16feca69067498caa4b0e430ec6f42558c68803e3693c039b4166f69
+  checksum: 9bd5f5094678116c30a9dbc64214915b4fe29adfde4588df2da42657907f825ca540629e0d87522a9a1fc0f7616c40e3410232b36448ce9249a28fc7551053a3
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "pg-protocol@npm:1.4.0"
-  checksum: 2b5ebfccd014a4a9127a04e34a423a9e7fe6f6b96c32698929e0860e32c453e64438c935068405ee923ab99788345b9591a6dbaa30bba70e724d7fc4d5f5d21e
+"pg-protocol@npm:^1.5.0":
+  version: 1.6.0
+  resolution: "pg-protocol@npm:1.6.0"
+  checksum: 95a0caff50aa529830454f2f9ff32c3fb44cf110138d9e9c6b55244984d0e96fdfdd93629b74b4f7360af543c54472466a5dc9837ad4f535cc7c20235dab97e5
   languageName: node
   linkType: hard
 
@@ -9077,23 +9077,23 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg@npm:8.5.1":
-  version: 8.5.1
-  resolution: "pg@npm:8.5.1"
+"pg@npm:8.8.0":
+  version: 8.8.0
+  resolution: "pg@npm:8.8.0"
   dependencies:
     buffer-writer: 2.0.0
     packet-reader: 1.0.0
-    pg-connection-string: ^2.4.0
-    pg-pool: ^3.2.2
-    pg-protocol: ^1.4.0
+    pg-connection-string: ^2.5.0
+    pg-pool: ^3.5.2
+    pg-protocol: ^1.5.0
     pg-types: ^2.1.0
     pgpass: 1.x
   peerDependencies:
-    pg-native: ">=2.0.0"
+    pg-native: ">=3.0.1"
   peerDependenciesMeta:
     pg-native:
       optional: true
-  checksum: b8eed3cd3831ea8cce051fcc58a56f39e7c24545c18466c89e64e4f90c8c2d386e3c51c33e22b0d2e39bf51156bdd4d5ade16c6e0edad1fbff97bd89f2bd86f2
+  checksum: 49e0bd7f686db68b3c763e59a94e51ec93be6d839ba57b20aba8d02d9b0ed848b022c57ec1273aa0424b32da8cd49ff18dcbbb06b06405ff2ef6cda5eac2bea3
   languageName: node
   linkType: hard
 
