@@ -12,7 +12,7 @@
 		"pg-promise": "10.9.5"
 	},
 	"devDependencies": {
-		"@qiwi/semantic-release-gh-pages-plugin": "4.0.3",
+		"@qiwi/semantic-release-gh-pages-plugin": "5.2.12",
 		"@semantic-release/changelog": "5.0.1",
 		"@semantic-release/commit-analyzer": "8.0.1",
 		"@semantic-release/git": "9.0.0",
