@@ -2096,10 +2096,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"assert-options@npm:0.7.0":
-  version: 0.7.0
-  resolution: "assert-options@npm:0.7.0"
-  checksum: 52b3ab44881604c1027b3b92af1ca5d61e7143606d2b5406c62a145beeb8ae04698021e52ed69967888e657fa51ec83e34c425a37bddc8112f86e86e7b3bd553
+"assert-options@npm:0.8.1":
+  version: 0.8.1
+  resolution: "assert-options@npm:0.8.1"
+  checksum: 1b1928b8fab3abd769da8efe3ef418d0f28352d4585305eeb09e70becb79bf93588eae3e8b0f50799f50e3538d3cffe1d6210b51650eb5a7be2a0490bd014660
   languageName: node
   linkType: hard
 
@@ -2328,7 +2328,7 @@ __metadata:
     eslint-config-prettier: 6.15.0
     husky: 4.3.8
     jest: 26.6.3
-    pg-promise: 10.9.5
+    pg-promise: 11.5.5
     prettier: 2.2.1
     pretty-quick: 2.0.2
     semantic-release: 17.4.2
@@ -9015,10 +9015,17 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "pg-connection-string@npm:2.4.0"
-  checksum: fdb3ec1c3daa8356381b1de3ed5fe03269e69d88644c4eb83a30aec1d1e320e0a8450d7ff8c04666dd06a4798c996c9dd006497f038d338790667965ec940d1d
+"pg-cloudflare@npm:^1.1.1":
+  version: 1.4.0
+  resolution: "pg-cloudflare@npm:1.4.0"
+  checksum: bca61390e64ddc237ac6eaa8d0c1bcf0e1d2dc66d2e425ca7638d75f3082b6c9380cdbc4d2f9cbfeb717289e55df24c84d7e8f35ea99802d19afa8015a1f6a5f
+  languageName: node
+  linkType: hard
+
+"pg-connection-string@npm:^2.6.2":
+  version: 2.14.0
+  resolution: "pg-connection-string@npm:2.14.0"
+  checksum: 00a2887f798162e23eab1a07beed7a993aaa831f8822fb420130d2f07975af4e1537da6bc55a65b5da66882ef0b132bab408dbec01709a7eab93f318f75ca42d
   languageName: node
   linkType: hard
 
@@ -9029,38 +9036,38 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg-minify@npm:1.6.2":
-  version: 1.6.2
-  resolution: "pg-minify@npm:1.6.2"
-  checksum: 1416b356459816e86ac6f1b2d7507526e0277731e156bfbc609c9cc1ae97510db567603f37575a1995e11994b0be1f348e59b2258034f5e5a9c9770e68fe2138
+"pg-minify@npm:1.6.3":
+  version: 1.6.3
+  resolution: "pg-minify@npm:1.6.3"
+  checksum: f63c2edecd7920b4759444fbd5899e92b16ce1b941b9d0087152865f0edf3e9a5a6e53942fc2a331825e853e0fce33abe4ec044ea69554e1abd0d7c368cc7134
   languageName: node
   linkType: hard
 
-"pg-pool@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "pg-pool@npm:3.2.2"
+"pg-pool@npm:^3.6.1":
+  version: 3.14.0
+  resolution: "pg-pool@npm:3.14.0"
   peerDependencies:
     pg: ">=8.0"
-  checksum: d25d4d075701079433333fcca3fbf5f4fd8d0ae21bf37b11c8528849e41338daf6e335aba25a0a4f5beff133cba63bd6bf2d534dea7f811119d175e575b25446
+  checksum: d11d858aa7fc5219e710d72de0c0a13e97bb958b18033c70cca1bff0d8fb7aacc598fe74f9877b74b304c743d636b9416d7d384664e2d0e8cfea08dd1cbb6fb6
   languageName: node
   linkType: hard
 
-"pg-promise@npm:10.9.5":
-  version: 10.9.5
-  resolution: "pg-promise@npm:10.9.5"
+"pg-promise@npm:11.5.5":
+  version: 11.5.5
+  resolution: "pg-promise@npm:11.5.5"
   dependencies:
-    assert-options: 0.7.0
-    pg: 8.5.1
-    pg-minify: 1.6.2
-    spex: 3.2.0
-  checksum: e313f2f7a6eae4a6421ab44645e3905e43552aa367135d89ca51d7b6f6b87e23773ad9ea16feca69067498caa4b0e430ec6f42558c68803e3693c039b4166f69
+    assert-options: 0.8.1
+    pg: 8.11.3
+    pg-minify: 1.6.3
+    spex: 3.3.0
+  checksum: f7639f8689ec4436dfb945fa5e5c6a087a3984db4d6e0107df0e449fe73b3a2fff2c2cf3c3111b019663f1636a2904f41327741e4614db82ea1221d856a3206c
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "pg-protocol@npm:1.4.0"
-  checksum: 2b5ebfccd014a4a9127a04e34a423a9e7fe6f6b96c32698929e0860e32c453e64438c935068405ee923ab99788345b9591a6dbaa30bba70e724d7fc4d5f5d21e
+"pg-protocol@npm:^1.6.0":
+  version: 1.16.0
+  resolution: "pg-protocol@npm:1.16.0"
+  checksum: 4c8b7bd0065d1c9c8299bcbe00ce2ae8c3292b1226a4e8e6b3b07919ab7a67f1f60d6be077176ebeb60a747042387c5d15112b6e3cdf6b918a4791d857cfa46e
   languageName: node
   linkType: hard
 
@@ -9077,23 +9084,27 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"pg@npm:8.5.1":
-  version: 8.5.1
-  resolution: "pg@npm:8.5.1"
+"pg@npm:8.11.3":
+  version: 8.11.3
+  resolution: "pg@npm:8.11.3"
   dependencies:
     buffer-writer: 2.0.0
     packet-reader: 1.0.0
-    pg-connection-string: ^2.4.0
-    pg-pool: ^3.2.2
-    pg-protocol: ^1.4.0
+    pg-cloudflare: ^1.1.1
+    pg-connection-string: ^2.6.2
+    pg-pool: ^3.6.1
+    pg-protocol: ^1.6.0
     pg-types: ^2.1.0
     pgpass: 1.x
   peerDependencies:
-    pg-native: ">=2.0.0"
+    pg-native: ">=3.0.1"
+  dependenciesMeta:
+    pg-cloudflare:
+      optional: true
   peerDependenciesMeta:
     pg-native:
       optional: true
-  checksum: b8eed3cd3831ea8cce051fcc58a56f39e7c24545c18466c89e64e4f90c8c2d386e3c51c33e22b0d2e39bf51156bdd4d5ade16c6e0edad1fbff97bd89f2bd86f2
+  checksum: 66f8bf65e1b1eb0e1a10fe6fcd1521d8eb7f339e98fabe5249a044fce7bab2285e67621caf6be79a37fae97c68a69d66b9ce14879f0a2e71b7eb51dbb79a443b
   languageName: node
   linkType: hard
 
@@ -10552,10 +10563,10 @@ resolve@^1.18.1:
   languageName: node
   linkType: hard
 
-"spex@npm:3.2.0":
-  version: 3.2.0
-  resolution: "spex@npm:3.2.0"
-  checksum: a71259419cadf6a33e7853360370db2c890add2414d8779888741fcae4252842dd6fa96b43cb15979789e29cfe3ebe9d4ecffe4e155b2780f89ff6e226c463b0
+"spex@npm:3.3.0":
+  version: 3.3.0
+  resolution: "spex@npm:3.3.0"
+  checksum: fc1433bc1b535590aebadbc141beee782a28cd5a788f8e4c1284d7839de584a971b0010e6680de7e9c79b79b49645edce97336c7aa99b9da95c04bf549188164
   languageName: node
   linkType: hard
 
